@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY terms "http://purl.org/dc/terms/" >
+    <!ENTITY ssn "https://www.w3.org/ns/ssn/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY ns "http://creativecommons.org/ns#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.esonetyellowpages.com/vocab/"
+     xml:base="http://www.esonetyellowpages.com/vocab/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:ns="http://creativecommons.org/ns#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ssn="https://www.w3.org/ns/ssn/">
+    <owl:Ontology rdf:about="http://www.esonetyellowpages.com/vocab/">
+        <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://www.esonetyellowpages.com/</rdfs:seeAlso>
+        <dc:date>2016-08-01</dc:date>
+        <rdfs:comment>An attempt to semantify the ESONET yellow pages</rdfs:comment>
+        <owl:versionInfo>0.1</owl:versionInfo>
+        <dc:creator>Markus Stocker</dc:creator>
+        <owl:imports rdf:resource="https://www.w3.org/ns/ssn"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler -->
+
+    <owl:Class rdf:about="http://www.esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler">
+        <rdfs:label xml:lang="en">Acoustic Doppler Current Profiler</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.esonetyellowpages.com/vocab/HydroacousticCurrentMeter"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ssn;detects"/>
+                <owl:allValuesFrom rdf:resource="http://www.esonetyellowpages.com/vocab/DopplerEffect"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso rdf:datatype="&xsd;anyURI">https://en.wikipedia.org/wiki/Acoustic_Doppler_current_profiler</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">An acoustic Doppler current profiler (ADCP) is a hydroacoustic current meter similar to a sonar, attempting to measure water current velocities over a depth range using the Doppler effect of sound waves scattered back from particles within the water column.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esonetyellowpages.com/vocab/CurrentMeter -->
+
+    <owl:Class rdf:about="http://www.esonetyellowpages.com/vocab/CurrentMeter">
+        <rdfs:label xml:lang="en">Current Meter</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.esonetyellowpages.com/vocab/OceanographicDevice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ssn;observes"/>
+                <owl:allValuesFrom rdf:resource="http://www.esonetyellowpages.com/vocab/FlowVelocity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso rdf:datatype="&xsd;anyURI">https://en.wikipedia.org/wiki/Current_meter</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">A current meter is an oceanographic device for flow measurement by mechanical (rotor current meter), tilt (Tilt Current Meter), acoustical (ADCP) or electrical means.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esonetyellowpages.com/vocab/DopplerEffect -->
+
+    <owl:Class rdf:about="http://www.esonetyellowpages.com/vocab/DopplerEffect">
+        <rdfs:label xml:lang="en">Doppler Effect</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ssn;Stimulus"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ssn;isProxyFor"/>
+                <owl:allValuesFrom rdf:resource="http://www.esonetyellowpages.com/vocab/FlowVelocity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso rdf:datatype="&xsd;anyURI">https://en.wikipedia.org/wiki/Doppler_effect</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">The Doppler effect (or the Doppler shift) is the change in frequency of a wave (or other periodic event) for an observer moving relative to its source.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esonetyellowpages.com/vocab/FlowVelocity -->
+
+    <owl:Class rdf:about="http://www.esonetyellowpages.com/vocab/FlowVelocity">
+        <rdfs:label xml:lang="en">Flow Velocity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.esonetyellowpages.com/vocab/Velocity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ssn;isPropertyOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.esonetyellowpages.com/vocab/Fluid"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esonetyellowpages.com/vocab/Fluid -->
+
+    <owl:Class rdf:about="http://www.esonetyellowpages.com/vocab/Fluid">
+        <rdfs:label xml:lang="en">Fluid</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ssn;FeatureOfInterest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esonetyellowpages.com/vocab/HydroacousticCurrentMeter -->
+
+    <owl:Class rdf:about="http://www.esonetyellowpages.com/vocab/HydroacousticCurrentMeter">
+        <rdfs:label xml:lang="en">Hydroacoustic Current Meter</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.esonetyellowpages.com/vocab/CurrentMeter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esonetyellowpages.com/vocab/OceanographicDevice -->
+
+    <owl:Class rdf:about="http://www.esonetyellowpages.com/vocab/OceanographicDevice">
+        <rdfs:label xml:lang="en">Oceanographic Device</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esonetyellowpages.com/vocab/Velocity -->
+
+    <owl:Class rdf:about="http://www.esonetyellowpages.com/vocab/Velocity">
+        <rdfs:label xml:lang="en">Velocity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ssn;Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esonetyellowpages.com/vocab/Water -->
+
+    <owl:Class rdf:about="http://www.esonetyellowpages.com/vocab/Water">
+        <rdfs:label xml:lang="en">Water</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.esonetyellowpages.com/vocab/Fluid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esonetyellowpages.com/vocab/WorkhorseQuartermaster -->
+
+    <owl:Class rdf:about="http://www.esonetyellowpages.com/vocab/WorkhorseQuartermaster">
+        <rdfs:label xml:lang="en">Workhorse Quartermaster</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler"/>
+        <rdfs:comment xml:lang="en">Teledyne RD Instruments Workhorse Quartermaster 150 kHz ADCP</rdfs:comment>
+        <rdfs:seeAlso xml:lang="en">http://www.esonetyellowpages.com/datasheets/datasheet-adcp_whs_150khz_1458583613.pdf</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.esonetyellowpages.com/vocab/FlowVelocity -->
+
+    <owl:NamedIndividual rdf:about="http://www.esonetyellowpages.com/vocab/FlowVelocity">
+        <ssn:isPropertyOf rdf:resource="http://www.esonetyellowpages.com/vocab/WaterCurrent"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.esonetyellowpages.com/vocab/WaterCurrent -->
+
+    <owl:NamedIndividual rdf:about="http://www.esonetyellowpages.com/vocab/WaterCurrent">
+        <rdfs:label xml:lang="en">Water Current</rdfs:label>
+        <ssn:hasProperty rdf:resource="http://www.esonetyellowpages.com/vocab/FlowVelocity"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

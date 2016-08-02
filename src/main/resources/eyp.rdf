@@ -2,8 +2,7 @@
 
 
 <!DOCTYPE rdf:RDF [
-    <!ENTITY schema2 "http://schema.org/" >
-    <!ENTITY schema "https://schema.org/" >
+    <!ENTITY schema "http://schema.org/" >
     <!ENTITY terms "http://purl.org/dc/terms/" >
     <!ENTITY ssn "https://www.w3.org/ns/ssn/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
@@ -17,8 +16,7 @@
 
 <rdf:RDF xmlns="http://www.esonetyellowpages.com/vocab/"
      xml:base="http://www.esonetyellowpages.com/vocab/"
-     xmlns:schema="https://schema.org/"
-     xmlns:schema2="http://schema.org/"
+     xmlns:schema="http://schema.org/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -51,9 +49,9 @@
 
     <!-- http://schema.org/unitCode -->
 
-    <owl:ObjectProperty rdf:about="&schema2;unitCode">
+    <owl:ObjectProperty rdf:about="&schema;unitCode">
         <rdfs:label xml:lang="en">unit code</rdfs:label>
-        <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://schema.org/unitCode</rdfs:seeAlso>
+        <dc:source rdf:datatype="&xsd;anyURI">http://schema.org/unitCode</dc:source>
         <rdfs:comment xml:lang="en">The unit of measurement given using a URI. (schema.org: &quot;The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.&quot;)</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -70,9 +68,13 @@
     
 
 
-    <!-- https://schema.org/value -->
+    <!-- http://schema.org/value -->
 
-    <owl:DatatypeProperty rdf:about="&schema;value"/>
+    <owl:DatatypeProperty rdf:about="&schema;value">
+        <rdfs:label xml:lang="en">value</rdfs:label>
+        <dc:source rdf:datatype="&xsd;anyURI">http://schema.org/value</dc:source>
+        <rdfs:comment xml:lang="en">The value of the quantitative value or property value node. For QuantitativeValue and MonetaryValue, the recommended type for values is &apos;Number&apos;. For PropertyValue, it can be &apos;Text;&apos;, &apos;Number&apos;, &apos;Boolean&apos;, or &apos;StructuredValue&apos;.</rdfs:comment>
+    </owl:DatatypeProperty>
     
 
 
@@ -89,9 +91,9 @@
 
     <!-- http://schema.org/QuantitativeValue -->
 
-    <owl:Class rdf:about="&schema2;QuantitativeValue">
+    <owl:Class rdf:about="&schema;QuantitativeValue">
         <rdfs:label xml:lang="en">Quantitative Value</rdfs:label>
-        <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://schema.org/QuantitativeValue</rdfs:seeAlso>
+        <dc:source rdf:datatype="&xsd;anyURI">http://schema.org/QuantitativeValue</dc:source>
         <rdfs:comment xml:lang="en">A point value or interval for product characteristics and other purposes.</rdfs:comment>
     </owl:Class>
     
@@ -108,7 +110,7 @@
                 <owl:allValuesFrom rdf:resource="http://www.esonetyellowpages.com/vocab/DopplerEffect"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:seeAlso rdf:datatype="&xsd;anyURI">https://en.wikipedia.org/wiki/Acoustic_Doppler_current_profiler</rdfs:seeAlso>
+        <dc:source rdf:datatype="&xsd;anyURI">https://en.wikipedia.org/wiki/Acoustic_Doppler_current_profiler</dc:source>
         <rdfs:comment xml:lang="en">An acoustic Doppler current profiler (ADCP) is a hydroacoustic current meter similar to a sonar, attempting to measure water current velocities over a depth range using the Doppler effect of sound waves scattered back from particles within the water column.</rdfs:comment>
     </owl:Class>
     
@@ -125,7 +127,7 @@
                 <owl:allValuesFrom rdf:resource="http://www.esonetyellowpages.com/vocab/FlowVelocity"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:seeAlso rdf:datatype="&xsd;anyURI">https://en.wikipedia.org/wiki/Current_meter</rdfs:seeAlso>
+        <dc:source rdf:datatype="&xsd;anyURI">https://en.wikipedia.org/wiki/Current_meter</dc:source>
         <rdfs:comment xml:lang="en">A current meter is an oceanographic device for flow measurement by mechanical (rotor current meter), tilt (Tilt Current Meter), acoustical (ADCP) or electrical means.</rdfs:comment>
     </owl:Class>
     
@@ -231,7 +233,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&ssn;hasMeasurementCapability"/>
-                <owl:hasValue rdf:resource="http://www.esonetyellowpages.com/vocab/workhorse-quartermaster-adcp-frequency"/>
+                <owl:hasValue rdf:resource="http://www.esonetyellowpages.com/vocab/Workhorse-Quartermaster-150-kHz-ADCP-Frequency"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Teledyne RD Instruments Workhorse Quartermaster 150 kHz ADCP</rdfs:comment>
@@ -243,7 +245,7 @@
     <!-- https://www.w3.org/ns/ssn/MeasurementFrequency -->
 
     <rdf:Description rdf:about="&ssn;MeasurementFrequency">
-        <rdfs:subClassOf rdf:resource="&schema2;QuantitativeValue"/>
+        <rdfs:subClassOf rdf:resource="&schema;QuantitativeValue"/>
     </rdf:Description>
     
 
@@ -271,16 +273,25 @@
         <rdf:type rdf:resource="&ssn;MeasurementFrequency"/>
         <rdfs:label xml:lang="en">150 kilo Hertz</rdfs:label>
         <schema:value rdf:datatype="&xsd;int">150</schema:value>
-        <schema2:unitCode rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.esonetyellowpages.com/vocab/workhorse-quartermaster-adcp-frequency -->
+    <!-- http://www.esonetyellowpages.com/vocab/E2-M3A-ADCP-WHS-150Khz -->
 
-    <owl:NamedIndividual rdf:about="http://www.esonetyellowpages.com/vocab/workhorse-quartermaster-adcp-frequency">
+    <owl:NamedIndividual rdf:about="http://www.esonetyellowpages.com/vocab/E2-M3A-ADCP-WHS-150Khz">
+        <rdf:type rdf:resource="http://www.esonetyellowpages.com/vocab/WorkhorseQuartermaster"/>
+        <rdfs:label xml:lang="en">The Workhorse Quartermaster 150 kHz ADCP at the E2-M3A Observatory</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.esonetyellowpages.com/vocab/Workhorse-Quartermaster-150-kHz-ADCP-Frequency -->
+
+    <owl:NamedIndividual rdf:about="http://www.esonetyellowpages.com/vocab/Workhorse-Quartermaster-150-kHz-ADCP-Frequency">
         <rdf:type rdf:resource="&ssn;MeasurementCapability"/>
-        <rdfs:label xml:lang="en">workhorse quartermaster adcp frequency</rdfs:label>
+        <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Frequency</rdfs:label>
         <ssn:hasMeasurementProperty rdf:resource="http://www.esonetyellowpages.com/vocab/150KiloHertz"/>
     </owl:NamedIndividual>
 </rdf:RDF>

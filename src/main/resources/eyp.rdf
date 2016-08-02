@@ -2,6 +2,8 @@
 
 
 <!DOCTYPE rdf:RDF [
+    <!ENTITY schema2 "http://schema.org/" >
+    <!ENTITY schema "https://schema.org/" >
     <!ENTITY terms "http://purl.org/dc/terms/" >
     <!ENTITY ssn "https://www.w3.org/ns/ssn/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
@@ -15,6 +17,8 @@
 
 <rdf:RDF xmlns="http://www.esonetyellowpages.com/vocab/"
      xml:base="http://www.esonetyellowpages.com/vocab/"
+     xmlns:schema="https://schema.org/"
+     xmlns:schema2="http://schema.org/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -37,11 +41,59 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/unitCode -->
+
+    <owl:ObjectProperty rdf:about="&schema2;unitCode">
+        <rdfs:label xml:lang="en">unit code</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://schema.org/unitCode</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">The unit of measurement given using a URI. (schema.org: &quot;The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.&quot;)</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://schema.org/value -->
+
+    <owl:DatatypeProperty rdf:about="&schema;value"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://schema.org/QuantitativeValue -->
+
+    <owl:Class rdf:about="&schema2;QuantitativeValue">
+        <rdfs:label xml:lang="en">Quantitative Value</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://schema.org/QuantitativeValue</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">A point value or interval for product characteristics and other purposes.</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -125,6 +177,12 @@
     <owl:Class rdf:about="http://www.esonetyellowpages.com/vocab/HydroacousticCurrentMeter">
         <rdfs:label xml:lang="en">Hydroacoustic Current Meter</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.esonetyellowpages.com/vocab/CurrentMeter"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ssn;detects"/>
+                <owl:allValuesFrom rdf:resource="http://www.esonetyellowpages.com/vocab/SoundWave"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -134,6 +192,15 @@
     <owl:Class rdf:about="http://www.esonetyellowpages.com/vocab/OceanographicDevice">
         <rdfs:label xml:lang="en">Oceanographic Device</rdfs:label>
         <rdfs:subClassOf rdf:resource="&ssn;SensingDevice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esonetyellowpages.com/vocab/SoundWave -->
+
+    <owl:Class rdf:about="http://www.esonetyellowpages.com/vocab/SoundWave">
+        <rdfs:label xml:lang="en">Sound Wave</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ssn;Stimulus"/>
     </owl:Class>
     
 
@@ -161,9 +228,23 @@
     <owl:Class rdf:about="http://www.esonetyellowpages.com/vocab/WorkhorseQuartermaster">
         <rdfs:label xml:lang="en">Workhorse Quartermaster</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ssn;hasMeasurementCapability"/>
+                <owl:hasValue rdf:resource="http://www.esonetyellowpages.com/vocab/workhorse-quartermaster-adcp-frequency"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Teledyne RD Instruments Workhorse Quartermaster 150 kHz ADCP</rdfs:comment>
         <rdfs:seeAlso xml:lang="en">http://www.esonetyellowpages.com/datasheets/datasheet-adcp_whs_150khz_1458583613.pdf</rdfs:seeAlso>
     </owl:Class>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/MeasurementFrequency -->
+
+    <rdf:Description rdf:about="&ssn;MeasurementFrequency">
+        <rdfs:subClassOf rdf:resource="&schema2;QuantitativeValue"/>
+    </rdf:Description>
     
 
 
@@ -178,19 +259,29 @@
     
 
 
-    <!-- http://www.esonetyellowpages.com/vocab/FlowVelocity -->
+    <!-- http://qudt.org/vocab/unit#KiloHertz -->
 
-    <owl:NamedIndividual rdf:about="http://www.esonetyellowpages.com/vocab/FlowVelocity">
-        <ssn:isPropertyOf rdf:resource="http://www.esonetyellowpages.com/vocab/WaterCurrent"/>
+    <owl:NamedIndividual rdf:about="http://qudt.org/vocab/unit#KiloHertz"/>
+    
+
+
+    <!-- http://www.esonetyellowpages.com/vocab/150KiloHertz -->
+
+    <owl:NamedIndividual rdf:about="http://www.esonetyellowpages.com/vocab/150KiloHertz">
+        <rdf:type rdf:resource="&ssn;MeasurementFrequency"/>
+        <rdfs:label xml:lang="en">150 kilo Hertz</rdfs:label>
+        <schema:value rdf:datatype="&xsd;int">150</schema:value>
+        <schema2:unitCode rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.esonetyellowpages.com/vocab/WaterCurrent -->
+    <!-- http://www.esonetyellowpages.com/vocab/workhorse-quartermaster-adcp-frequency -->
 
-    <owl:NamedIndividual rdf:about="http://www.esonetyellowpages.com/vocab/WaterCurrent">
-        <rdfs:label xml:lang="en">Water Current</rdfs:label>
-        <ssn:hasProperty rdf:resource="http://www.esonetyellowpages.com/vocab/FlowVelocity"/>
+    <owl:NamedIndividual rdf:about="http://www.esonetyellowpages.com/vocab/workhorse-quartermaster-adcp-frequency">
+        <rdf:type rdf:resource="&ssn;MeasurementCapability"/>
+        <rdfs:label xml:lang="en">workhorse quartermaster adcp frequency</rdfs:label>
+        <ssn:hasMeasurementProperty rdf:resource="http://www.esonetyellowpages.com/vocab/150KiloHertz"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 

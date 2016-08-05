@@ -20,6 +20,47 @@ import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 
+import de.pangaea.vocab.EYP;
+import de.pangaea.vocab.SSN;
+import static org.apache.commons.codec.digest.DigestUtils.md5Hex;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+import javax.json.Json;
+import javax.json.JsonArray;
+import javax.json.JsonObject;
+import javax.json.JsonReader;
+
+import static de.pangaea.vocab.Schema.QuantitativeValue;
+import static de.pangaea.vocab.Schema.value;
+import static de.pangaea.vocab.Schema.unitCode;
+import static de.pangaea.vocab.SSN.Stimulus;
+import static de.pangaea.vocab.SSN.FeatureOfInterest;
+import static de.pangaea.vocab.SSN.SensingDevice;
+import static de.pangaea.vocab.SSN.Property;
+import static de.pangaea.vocab.SSN.MeasurementFrequency;
+import static de.pangaea.vocab.SSN.MeasurementRange;
+import static de.pangaea.vocab.SSN.MeasurementCapability;
+import static de.pangaea.vocab.SSN.detects;
+import static de.pangaea.vocab.SSN.observes;
+import static de.pangaea.vocab.SSN.isPropertyOf;
+import static de.pangaea.vocab.SSN.isProxyFor;
+import static de.pangaea.vocab.SSN.hasMeasurementCapability;
+import static de.pangaea.vocab.SSN.hasMeasurementProperty;
+import static de.pangaea.vocab.EYP.ProfilingRange;
+import static de.pangaea.vocab.EYP.Fluid;
+import static de.pangaea.vocab.EYP.Water;
+import static de.pangaea.vocab.EYP.OceanographicDevice;
+import static de.pangaea.vocab.EYP.CurrentMeter;
+import static de.pangaea.vocab.EYP.HydroacousticCurrentMeter;
+import static de.pangaea.vocab.EYP.AcousticDopplerCurrentProfiler;
+import static de.pangaea.vocab.EYP.SoundWave;
+import static de.pangaea.vocab.EYP.DopplerEffect;
+import static de.pangaea.vocab.EYP.Velocity;
+import static de.pangaea.vocab.EYP.FlowVelocity;
+
 /**
  * <p>
  * Title: CreateEsonetYellowPages
@@ -38,15 +79,139 @@ import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 public class CreateEsonetYellowPages {
 
 	private final IRI ns = IRI.create("http://esonetyellowpages.com/vocab/");
-	private final String file = "src/main/resources/ontologies/esonetyellowpages.rdf";
+
+	private final String eypDevicesFile = "src/main/resources/data/esonetyellowpages-devicetypes.json";
+	private final String eypFile = "src/main/resources/ontologies/esonetyellowpages.rdf";
+	private final String eypInferredFile = "src/main/resources/ontologies/esonetyellowpages-inferred.rdf";
+
+	private OntologyManager m;
+
+	private void run() throws OWLOntologyCreationException, OWLOntologyStorageException, FileNotFoundException {
+		m = new OntologyManager(ns);
+		m.addTitle("ESONET Yellow Pages Ontology");
+		m.addVersion("0.1");
+		m.addDate("2016-08-01");
+		m.addCreator("Markus Stocker");
+		m.addSeeAlso("http://www.esonetyellowpages.com/");
+		m.addImport(SSN.ns);
+
+		m.addSubClass(MeasurementFrequency, QuantitativeValue);
+		m.addSubClass(MeasurementRange, QuantitativeValue);
+		m.addSubClass(ProfilingRange, QuantitativeValue);
+
+		m.addClass(SoundWave);
+		m.addLabel(SoundWave, "Sound Wave");
+		m.addSubClass(SoundWave, Stimulus);
+
+		m.addClass(Velocity);
+		m.addLabel(Velocity, "Velocity");
+		m.addSubClass(Velocity, Property);
+
+		m.addClass(Fluid);
+		m.addLabel(Fluid, "Fluid");
+		m.addSubClass(Fluid, FeatureOfInterest);
+
+		m.addClass(Water);
+		m.addLabel(Water, "Water");
+		m.addSubClass(Water, Fluid);
+
+		m.addClass(FlowVelocity);
+		m.addLabel(FlowVelocity, "Flow Velocity");
+		m.addSubClass(FlowVelocity, Velocity);
+		m.addObjectSome(FlowVelocity, isPropertyOf, Fluid);
+
+		m.addClass(DopplerEffect);
+		m.addLabel(DopplerEffect, "Doppler Effect");
+		m.addComment(DopplerEffect,
+				"The Doppler effect (or the Doppler shift) is the change in frequency of a wave (or other periodic event) for an observer moving relative to its source.");
+		m.addSource(DopplerEffect, IRI.create("https://en.wikipedia.org/wiki/Doppler_effect"));
+		m.addSubClass(DopplerEffect, Stimulus);
+		m.addObjectAll(DopplerEffect, isProxyFor, FlowVelocity);
+
+		m.addClass(OceanographicDevice);
+		m.addLabel(OceanographicDevice, "Oceanographic Device");
+		m.addSubClass(OceanographicDevice, SensingDevice);
+
+		m.addClass(CurrentMeter);
+		m.addLabel(CurrentMeter, "Current Meter");
+		m.addComment(CurrentMeter,
+				"A current meter is an oceanographic device for flow measurement by mechanical (rotor current meter), tilt (Tilt Current Meter), acoustical (ADCP) or electrical means.");
+		m.addSource(CurrentMeter, IRI.create("https://en.wikipedia.org/wiki/Current_meter"));
+
+		m.addSubClass(CurrentMeter, OceanographicDevice);
+		m.addObjectAll(CurrentMeter, observes, FlowVelocity);
+
+		m.addClass(HydroacousticCurrentMeter);
+		m.addLabel(HydroacousticCurrentMeter, "Hydroacoustic Current Meter");
+		m.addSubClass(HydroacousticCurrentMeter, CurrentMeter);
+		m.addObjectAll(HydroacousticCurrentMeter, detects, SoundWave);
+
+		m.addClass(AcousticDopplerCurrentProfiler);
+		m.addLabel(AcousticDopplerCurrentProfiler, "Acoustic Doppler Current Profiler");
+		m.addSource(AcousticDopplerCurrentProfiler,
+				IRI.create("https://en.wikipedia.org/wiki/Acoustic_Doppler_current_profiler"));
+		m.addComment(AcousticDopplerCurrentProfiler,
+				"An acoustic Doppler current profiler (ADCP) is a hydroacoustic current meter similar to a sonar, attempting to measure water current velocities over a depth range using the Doppler effect of sound waves scattered back from particles within the water column.");
+		m.addObjectAll(AcousticDopplerCurrentProfiler, detects, DopplerEffect);		
+		m.addSubClass(AcousticDopplerCurrentProfiler, HydroacousticCurrentMeter);
 	
-	private void run() throws OWLOntologyCreationException, OWLOntologyStorageException {
-		OntologyManager m = new OntologyManager(ns);
-		
-		m.save(file);
+		JsonReader jr = Json.createReader(new FileReader(new File(eypDevicesFile)));
+		JsonArray ja = jr.readArray();
+
+		for (JsonObject jo : ja.getValuesAs(JsonObject.class)) {
+			String name = jo.getString("name");
+			String label = jo.getString("label");
+			String comment = jo.getString("comment");
+			String seeAlso = jo.getString("seeAlso");
+			JsonArray subClasses = jo.getJsonArray("subClasses");
+
+			addDevice(name, label, comment, seeAlso, subClasses);
+		}
+
+		m.save(eypFile);
+		m.saveInferred(eypInferredFile);
 	}
-	
-	public static void main(String[] args) throws OWLOntologyCreationException, OWLOntologyStorageException {
+
+	private void addDevice(String name, String label, String comment, String seeAlso, JsonArray subClasses) {
+		IRI device = IRI.create(name);
+
+		m.addClass(device);
+		m.addLabel(device, label);
+		m.addComment(device, comment);
+		m.addSeeAlso(device, seeAlso);
+
+		for (JsonObject subClass : subClasses.getValuesAs(JsonObject.class)) {
+			if (subClass.containsKey("type")) {
+				m.addSubClass(device, IRI.create(subClass.getString("type")));
+			} else if (subClass.containsKey("capability")) {
+				JsonObject capability = subClass.getJsonObject("capability");
+				String capabilityLabel = capability.getString("label");
+				JsonObject quantity = capability.getJsonObject("quantity");
+				String quantityLabel = quantity.getString("label");
+
+				IRI capabilityIRI = IRI.create(EYP.ns.toString() + md5Hex(capabilityLabel));
+				IRI quantityIRI = IRI.create(EYP.ns.toString() + md5Hex(quantityLabel));
+
+				// Value restriction on property hasMeasurementCapability
+				m.addObjectValue(device, hasMeasurementCapability, capabilityIRI);
+
+				m.addIndividual(capabilityIRI);
+				m.addType(capabilityIRI, MeasurementCapability);
+				m.addLabel(capabilityIRI, capabilityLabel);
+				m.addObjectAssertion(capabilityIRI, hasMeasurementProperty, quantityIRI);
+
+				m.addIndividual(quantityIRI);
+				m.addType(quantityIRI, IRI.create(quantity.getString("type")));
+				m.addLabel(quantityIRI, quantityLabel);
+				m.addDataAssertion(quantityIRI, value, Float.valueOf(quantity.getString("value")));
+				m.addObjectAssertion(quantityIRI, unitCode, IRI.create(quantity.getString("unitCode")));
+			}
+		}
+
+	}
+
+	public static void main(String[] args)
+			throws OWLOntologyCreationException, OWLOntologyStorageException, FileNotFoundException {
 		CreateEsonetYellowPages app = new CreateEsonetYellowPages();
 		app.run();
 	}

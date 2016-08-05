@@ -5,34 +5,17 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:dc="http://purl.org/dc/elements/1.1/">
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ssn="https://www.w3.org/ns/ssn/">
     <owl:Ontology rdf:about="http://fixo3.eu/vocab/">
         <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1</owl:versionInfo>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-08-01</dc:date>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Markus Stocker</dc:creator>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/</rdfs:seeAlso>
+        <owl:imports rdf:resource="http://esonetyellowpages.com/vocab/"/>
+        <owl:imports rdf:resource="http://schema.org/"/>
         <owl:imports rdf:resource="https://www.w3.org/ns/ssn/"/>
     </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/source -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/source"/>
-    
-
-
-    <!-- http://purl.org/dc/elements/1.1/title -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
     
 
 
@@ -62,12 +45,6 @@
         <rdfs:label xml:lang="en">Ocean Observatory</rdfs:label>
         <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
     </owl:Class>
-    
-
-
-    <!-- https://www.w3.org/ns/ssn/Platform -->
-
-    <owl:Class rdf:about="https://www.w3.org/ns/ssn/Platform"/>
     
 
 
@@ -150,6 +127,7 @@
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/e2-m3a/</dc:source>
         <rdfs:comment xml:lang="en">Deep-sea, continuous monitoring station: it provides the longest oceanographic time series in the South Adriatic Pit (Eastern Mediterranean Sea). The observatory is composed by two moorings (surface buoy and sub-surface mooring line) and designed to monitor physical and biogeochemical processes in the water column from the surface down to the bottom (approximately 1220m).  The E2-M3A surface buoy collects air/sea meteorological and physical measurements in the surface layer (2m depth). The secondary deep mooring instead, is equipped with current meters (RDI-ADCP and Seaguard-RCM), CTD’s with Dissolved Oxygen and optical sensors. New biochemical sensors (CO2 and pH) were deployed during the first year of the FiXO3 project to enhance the payload of the site.</rdfs:comment>
         <dc:title xml:lang="en">Southern Adriatic Interdisciplinary Laboratory for Ocean Research</dc:title>
+        <ssn:attachedSystem rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
     </owl:NamedIndividual>
     
 
@@ -198,6 +176,15 @@
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/sog/</dc:source>
         <rdfs:comment xml:lang="en">Currently comprising a sediment trap mooring with current sensors it is situated in the middle of the least productive gyre in the South Atlantic but in contrast to NOG, an observatory in the North Atlantic oligotrophic gyre, it is not influenced by dust supply.</rdfs:comment>
         <dc:title xml:lang="en">Southern Oligotrophic Gyre</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/WorkhorseQuartermaster150kHzADCP"/>
+        <rdfs:label xml:lang="en">The Workhorse Quartermaster 150 kHz ADCP on E2-M3A</rdfs:label>
     </owl:NamedIndividual>
     
 

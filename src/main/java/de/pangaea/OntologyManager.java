@@ -41,13 +41,23 @@ import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
-import org.semanticweb.owlapi.reasoner.ConsoleProgressMonitor;
+import org.semanticweb.owlapi.reasoner.InferenceType;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
 import org.semanticweb.owlapi.util.InferredAxiomGenerator;
 import org.semanticweb.owlapi.util.InferredClassAssertionAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredDataPropertyCharacteristicAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredDisjointClassesAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredEquivalentClassAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredEquivalentDataPropertiesAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredEquivalentObjectPropertyAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredInverseObjectPropertiesAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredObjectPropertyCharacteristicAxiomGenerator;
 import org.semanticweb.owlapi.util.InferredOntologyGenerator;
 import org.semanticweb.owlapi.util.InferredPropertyAssertionGenerator;
 import org.semanticweb.owlapi.util.InferredSubClassAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredSubDataPropertyAxiomGenerator;
+import org.semanticweb.owlapi.util.InferredSubObjectPropertyAxiomGenerator;
+import org.semanticweb.owlapi.util.SimpleIRIMapper;
 import org.semanticweb.owlapi.vocab.OWL2Datatype;
 import org.semanticweb.owlapi.vocab.OWLRDFVocabulary;
 
@@ -78,37 +88,52 @@ public class OntologyManager {
 		o = m.createOntology(ns);
 	}
 
+	public void materialize() throws OWLOntologyCreationException {
+		ReasonerFactory rf = new ReasonerFactory();
+
+		Configuration c = new Configuration();
+		OWLReasoner r = rf.createReasoner(o, c);
+
+		r.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS,
+				InferenceType.OBJECT_PROPERTY_HIERARCHY, InferenceType.DATA_PROPERTY_HIERARCHY,
+				InferenceType.OBJECT_PROPERTY_ASSERTIONS);
+
+		List<InferredAxiomGenerator<? extends OWLAxiom>> gs = new ArrayList<InferredAxiomGenerator<? extends OWLAxiom>>();
+
+		gs.add(new InferredSubClassAxiomGenerator());
+		gs.add(new InferredClassAssertionAxiomGenerator());
+		gs.add(new InferredObjectPropertyCharacteristicAxiomGenerator());
+		gs.add(new InferredPropertyAssertionGenerator());
+		gs.add(new InferredDataPropertyCharacteristicAxiomGenerator());
+		gs.add(new InferredDisjointClassesAxiomGenerator());
+		gs.add(new InferredEquivalentClassAxiomGenerator());
+		gs.add(new InferredEquivalentDataPropertiesAxiomGenerator());
+		gs.add(new InferredEquivalentObjectPropertyAxiomGenerator());
+		gs.add(new InferredInverseObjectPropertiesAxiomGenerator());
+		gs.add(new InferredSubDataPropertyAxiomGenerator());
+		gs.add(new InferredSubObjectPropertyAxiomGenerator());
+
+		InferredOntologyGenerator iog = new InferredOntologyGenerator(r, gs);
+		iog.fillOntology(m, o);
+	}
+
+	public void saveInferred(String file) throws OWLOntologyCreationException, OWLOntologyStorageException {
+		materialize();
+		save(file);
+	}
+	
 	public void save(String file) throws OWLOntologyStorageException {
 		m.saveOntology(o, new FileDocumentTarget(new File(file)));
 	}
 
-	public void saveInferred(String file) throws OWLOntologyCreationException, OWLOntologyStorageException {
-		ReasonerFactory rf = new ReasonerFactory();
-
-		Configuration c = new Configuration();
-		c.reasonerProgressMonitor = new ConsoleProgressMonitor();
-
-		OWLReasoner r = rf.createReasoner(o, c);
-		// r.precomputeInferences(InferenceType.CLASS_HIERARCHY,
-		// InferenceType.CLASS_ASSERTIONS,
-		// InferenceType.OBJECT_PROPERTY_HIERARCHY,
-		// InferenceType.DATA_PROPERTY_HIERARCHY,
-		// InferenceType.OBJECT_PROPERTY_ASSERTIONS);
-
-		List<InferredAxiomGenerator<? extends OWLAxiom>> gs = new ArrayList<InferredAxiomGenerator<? extends OWLAxiom>>();
-		gs.add(new InferredSubClassAxiomGenerator());
-		gs.add(new InferredClassAssertionAxiomGenerator());
-		gs.add(new InferredPropertyAssertionGenerator());
-
-		InferredOntologyGenerator iog = new InferredOntologyGenerator(r, gs);
-		OWLOntology iao = m.createOntology();
-		iog.fillOntology(m, iao);
-		m.saveOntology(iao, new FileDocumentTarget(new File(file)));
+	public void addImport(IRI iri, IRI mapping) throws OWLOntologyCreationException {
+		m.addIRIMapper(new SimpleIRIMapper(iri, mapping));
+		addImport(iri);
 	}
-
-	public void addImport(IRI iri) {
+	
+	public void addImport(IRI iri) throws OWLOntologyCreationException {
+		m.loadOntology(iri);
 		addImport(df.getOWLImportsDeclaration(iri));
-
 	}
 
 	public void addClass(IRI iri) {
@@ -132,13 +157,37 @@ public class OntologyManager {
 	}
 
 	public void addObjectSome(IRI cls, IRI property, OWLRDFVocabulary value) {
+		addObjectSome(cls, property, value.getIRI());
+	}
+
+	public void addObjectSome(IRI cls, IRI property, IRI value) {
 		addAxiom(df.getOWLSubClassOfAxiom(getClass(cls),
-				df.getOWLObjectSomeValuesFrom(getObjectProperty(property), getClass(value.getIRI()))));
+				df.getOWLObjectSomeValuesFrom(getObjectProperty(property), getClass(value))));
+	}
+
+	public void addObjectAll(IRI cls, IRI property, IRI value) {
+		addAxiom(df.getOWLSubClassOfAxiom(getClass(cls),
+				df.getOWLObjectAllValuesFrom(getObjectProperty(property), getClass(value))));
+	}
+
+	public void addObjectValue(IRI cls, IRI property, IRI value) {
+		addAxiom(df.getOWLSubClassOfAxiom(getClass(cls),
+				df.getOWLObjectHasValue(getObjectProperty(property), getIndividual(value))));
+	}
+
+	public void addDataSome(IRI cls, IRI property, OWL2Datatype value) {
+		addAxiom(df.getOWLSubClassOfAxiom(getClass(cls),
+				df.getOWLDataSomeValuesFrom(getDataProperty(property), value.getDatatype(df))));
 	}
 
 	public void addDataAll(IRI cls, IRI property, OWL2Datatype value) {
 		addAxiom(df.getOWLSubClassOfAxiom(getClass(cls),
 				df.getOWLDataAllValuesFrom(getDataProperty(property), value.getDatatype(df))));
+	}
+
+	public void addDataValue(IRI cls, IRI property, String value) {
+		addAxiom(df.getOWLSubClassOfAxiom(getClass(cls),
+				df.getOWLDataHasValue(getDataProperty(property), df.getOWLLiteral(value, OWL2Datatype.XSD_STRING))));
 	}
 
 	public void addLabel(IRI iri, String label) {
@@ -157,9 +206,33 @@ public class OntologyManager {
 		addAnnotation(iri, getTitle(title));
 	}
 
+	public void addTitle(String title) {
+		addOntologyAnnotation(getTitle(title));
+	}
+
 	public void addVersion(String version) {
-		addOntologyAnnotation(df.getOWLAnnotation(
-				df.getOWLAnnotationProperty(OWLRDFVocabulary.OWL_VERSION_INFO.getIRI()), df.getOWLLiteral(version)));
+		addOntologyAnnotation(getVersion(version));
+	}
+
+	public void addDate(String date) {
+		addOntologyAnnotation(getDate(date));
+	}
+
+	public void addCreator(String creator) {
+		addOntologyAnnotation(getCreator(creator));
+	}
+
+	public void addSeeAlso(IRI iri, String seeAlso) {
+		addAnnotation(iri, getSeeAlso(seeAlso));
+	}
+
+	public void addSeeAlso(String seeAlso) {
+		addOntologyAnnotation(getSeeAlso(seeAlso));
+	}
+
+	public void addOntologyTitle(String title) {
+		addOntologyAnnotation(
+				df.getOWLAnnotation(df.getOWLAnnotationProperty(IRI.create(dc, "title")), df.getOWLLiteral(title)));
 	}
 
 	public void addType(IRI individual, IRI type) {
@@ -169,6 +242,11 @@ public class OntologyManager {
 	public void addObjectAssertion(IRI subject, IRI predicate, IRI object) {
 		addAxiom(df.getOWLObjectPropertyAssertionAxiom(df.getOWLObjectProperty(predicate), getIndividual(subject),
 				getIndividual(object)));
+	}
+
+	public void addDataAssertion(IRI subject, IRI predicate, Float value) {
+		addAxiom(df.getOWLDataPropertyAssertionAxiom(df.getOWLDataProperty(predicate), getIndividual(subject),
+				df.getOWLLiteral(value)));
 	}
 
 	private void addAnnotation(IRI iri, OWLAnnotation annotation) {
@@ -220,6 +298,25 @@ public class OntologyManager {
 
 	private OWLAnnotation getTitle(String title) {
 		return df.getOWLAnnotation(df.getOWLAnnotationProperty(IRI.create(dc, "title")), df.getOWLLiteral(title, "en"));
+	}
+
+	private OWLAnnotation getVersion(String version) {
+		return df.getOWLAnnotation(df.getOWLAnnotationProperty(OWLRDFVocabulary.OWL_VERSION_INFO.getIRI()),
+				df.getOWLLiteral(version));
+	}
+
+	private OWLAnnotation getDate(String date) {
+		return df.getOWLAnnotation(df.getOWLAnnotationProperty(IRI.create(dc, "date")),
+				df.getOWLLiteral(date, OWL2Datatype.XSD_DATE_TIME));
+	}
+
+	private OWLAnnotation getCreator(String creator) {
+		return df.getOWLAnnotation(df.getOWLAnnotationProperty(IRI.create(dc, "creator")), df.getOWLLiteral(creator));
+	}
+
+	private OWLAnnotation getSeeAlso(String seeAlso) {
+		return df.getOWLAnnotation(df.getOWLAnnotationProperty(OWLRDFVocabulary.RDFS_SEE_ALSO.getIRI()),
+				df.getOWLLiteral(seeAlso, OWL2Datatype.XSD_ANY_URI));
 	}
 
 }

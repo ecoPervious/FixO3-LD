@@ -16,15 +16,20 @@
 
 package de.pangaea;
 
-import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
-import org.semanticweb.owlapi.vocab.OWL2Datatype;
-import org.semanticweb.owlapi.vocab.OWLRDFVocabulary;
+
+import static de.pangaea.vocab.Schema.ns;
+import static de.pangaea.vocab.Schema.unitCode;
+import static de.pangaea.vocab.Schema.value;
+import static de.pangaea.vocab.Schema.QuantitativeValue;
+
+import static org.semanticweb.owlapi.vocab.OWL2Datatype.XSD_FLOAT;
+import static org.semanticweb.owlapi.vocab.OWLRDFVocabulary.OWL_THING;
 
 /**
  * <p>
- * Title: CreateSchemaOrg
+ * Title: CreateSchema
  * </p>
  * <p>
  * Description:
@@ -37,17 +42,13 @@ import org.semanticweb.owlapi.vocab.OWLRDFVocabulary;
  * </p>
  */
 
-public class CreateSchemaOrg {
+public class CreateSchema {
 
-	private final IRI ns = IRI.create("http://schema.org/");
-	private final String file = "src/main/resources/ontologies/schemaorg.rdf";
+	private final String schemaFile = "src/main/resources/ontologies/schema.rdf";
+	private final String schemaInferredFile = "src/main/resources/ontologies/schema-inferred.rdf";
 
 	private void run() throws OWLOntologyCreationException, OWLOntologyStorageException {
 		OntologyManager m = new OntologyManager(ns);
-
-		IRI unitCode = IRI.create("http://schema.org/unitCode");
-		IRI value = IRI.create("http://schema.org/value");
-		IRI quantitativeValue = IRI.create("http://schema.org/QuantitativeValue");
 
 		m.addObjectProperty(unitCode);
 		m.addLabel(unitCode, "unit code");
@@ -59,17 +60,18 @@ public class CreateSchemaOrg {
 		m.addComment(value,
 				"The value of the quantitative value or property value node. For QuantitativeValue and MonetaryValue, the recommended type for values is &apos;Number&apos;. For PropertyValue, it can be &apos;Text;&apos;, &apos;Number&apos;, &apos;Boolean&apos;, or &apos;StructuredValue&apos;.");
 
-		m.addClass(quantitativeValue);
-		m.addLabel(quantitativeValue, "Quantitative Value");
-		m.addComment(quantitativeValue, "A point value or interval for product characteristics and other purposes.");
-		m.addObjectSome(quantitativeValue, unitCode, OWLRDFVocabulary.OWL_THING);
-		m.addDataAll(quantitativeValue, value, OWL2Datatype.XSD_FLOAT);
+		m.addClass(QuantitativeValue);
+		m.addLabel(QuantitativeValue, "Quantitative Value");
+		m.addComment(QuantitativeValue, "A point value or interval for product characteristics and other purposes.");
+		m.addObjectSome(QuantitativeValue, unitCode, OWL_THING);
+		m.addDataAll(QuantitativeValue, value, XSD_FLOAT);
 
-		m.save(file);
+		m.save(schemaFile);
+		m.saveInferred(schemaInferredFile);
 	}
 
 	public static void main(String[] args) throws OWLOntologyCreationException, OWLOntologyStorageException {
-		CreateSchemaOrg app = new CreateSchemaOrg();
+		CreateSchema app = new CreateSchema();
 		app.run();
 	}
 }

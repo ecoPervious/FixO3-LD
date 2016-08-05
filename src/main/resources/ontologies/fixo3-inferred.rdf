@@ -1,0 +1,2497 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://fixo3.eu/vocab/"
+     xml:base="http://fixo3.eu/vocab/"
+     xmlns:schema="http://schema.org/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ssn="https://www.w3.org/ns/ssn/">
+    <owl:Ontology rdf:about="http://fixo3.eu/vocab/">
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1</owl:versionInfo>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-08-01</dc:date>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Markus Stocker</dc:creator>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/</rdfs:seeAlso>
+        <owl:imports rdf:resource="http://esonetyellowpages.com/vocab/"/>
+        <owl:imports rdf:resource="http://schema.org/"/>
+        <owl:imports rdf:resource="https://www.w3.org/ns/ssn/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/unitCode -->
+
+    <rdf:Description rdf:about="http://schema.org/unitCode">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://schema.org/unitCode"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <owl:inverseOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/attachedSystem -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/attachedSystem">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/onPlatform"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/attachedSystem"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/deployedOnPlatform -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/deployedOnPlatform">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/inDeployment"/>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/inDeployment"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/deployedOnPlatform"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/deployedSystem -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/deployedSystem">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasDeployment"/>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasDeployment"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/deployedSystem"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/deploymentProcessPart -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/deploymentProcessPart">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/deploymentProcessPart"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/detects -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/detects">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/detects"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/featureInObservation -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/featureInObservation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/featureOfInterest"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/featureInObservation"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/featureOfInterest -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/featureOfInterest">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/featureInObservation"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/featureOfInterest"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/featureInObservation"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/forProperty -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/forProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/forProperty"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/fromStimulus -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/fromStimulus">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/fromStimulus"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/hasDeployment -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasDeployment">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/deployedSystem"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasDeployment"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/hasMeasurementCapability -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasMeasurementCapability">
+        <rdfs:subPropertyOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/hasMeasurementProperty -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasMeasurementProperty">
+        <rdfs:subPropertyOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementProperty"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/hasOperatingProperty -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasOperatingProperty">
+        <rdfs:subPropertyOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasOperatingProperty"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/hasOperatingRange -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasOperatingRange">
+        <rdfs:subPropertyOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasOperatingRange"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/hasProperty -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/hasSubSystem -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasSubSystem">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasSubSystem"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/hasSurvivalProperty -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasSurvivalProperty">
+        <rdfs:subPropertyOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasSurvivalProperty"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/hasSurvivalRange -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasSurvivalRange">
+        <rdfs:subPropertyOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasSurvivalRange"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/hasValue -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isValueOf"/>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isValueOf"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasValue"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/implementedBy -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/implementedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/implements"/>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/implements"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/implementedBy"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/implements -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/implements">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/implementedBy"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/implements"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/inCondition -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/inCondition">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/inCondition"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/inDeployment -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/inDeployment">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/inDeployment"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/deployedOnPlatform"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/isProducedBy -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/isProducedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/produces"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isProducedBy"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/produces"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/isPropertyOf -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/isPropertyOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/isProxyFor -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/isProxyFor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isProxyFor"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/isValueOf -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/isValueOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasValue"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isValueOf"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/madeObservation -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/madeObservation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/observedBy"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/madeObservation"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/observationResult -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/observationResult">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/observationResult"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/observationResultTime -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/observationResultTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/observationResultTime"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/observationSamplingTime -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/observationSamplingTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/observationSamplingTime"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/observedBy -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/observedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/madeObservation"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/observedBy"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/madeObservation"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/observedProperty -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/observedProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/observedProperty"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/observes -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/observes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/observes"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/ofFeature -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/ofFeature">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/ofFeature"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/onPlatform -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/onPlatform">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/attachedSystem"/>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/attachedSystem"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/onPlatform"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/produces -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/produces">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isProducedBy"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/produces"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/qualityOfObservation -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/qualityOfObservation">
+        <rdfs:subPropertyOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/qualityOfObservation"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/sensingMethodUsed -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/sensingMethodUsed">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/sensingMethodUsed"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/value -->
+
+    <rdf:Description rdf:about="http://schema.org/value">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler">
+        <rdfs:subClassOf rdf:resource="http://esonetyellowpages.com/vocab/HydroacousticCurrentMeter"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/CurrentMeter -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/CurrentMeter">
+        <rdfs:subClassOf rdf:resource="http://esonetyellowpages.com/vocab/OceanographicDevice"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/DopplerEffect -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/DopplerEffect">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Stimulus"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/FlowVelocity -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/FlowVelocity">
+        <rdfs:subClassOf rdf:resource="http://esonetyellowpages.com/vocab/Velocity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/Fluid -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/Fluid">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/FeatureOfInterest"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/HydroacousticCurrentMeter -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/HydroacousticCurrentMeter">
+        <rdfs:subClassOf rdf:resource="http://esonetyellowpages.com/vocab/CurrentMeter"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/OceanographicDevice -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/OceanographicDevice">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/SensingDevice"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/ProfilingRange -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/ProfilingRange">
+        <rdfs:subClassOf rdf:resource="http://schema.org/QuantitativeValue"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/SoundWave -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/SoundWave">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Stimulus"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/Velocity -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/Velocity">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/Water -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/Water">
+        <rdfs:subClassOf rdf:resource="http://esonetyellowpages.com/vocab/Fluid"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/WorkhorseQuartermaster150kHzADCP -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/WorkhorseQuartermaster150kHzADCP">
+        <rdfs:subClassOf rdf:resource="http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://fixo3.eu/vocab/FixedPointOceanObservatory -->
+
+    <owl:Class rdf:about="http://fixo3.eu/vocab/FixedPointOceanObservatory">
+        <rdfs:label xml:lang="en">Fixed-Point Ocean Observatory</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fixo3.eu/vocab/OceanObservatory -->
+
+    <owl:Class rdf:about="http://fixo3.eu/vocab/OceanObservatory">
+        <rdfs:label xml:lang="en">Ocean Observatory</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/QuantitativeValue -->
+
+    <rdf:Description rdf:about="http://schema.org/QuantitativeValue">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Accuracy -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Accuracy">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/BatteryLifetime -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/BatteryLifetime">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/SurvivalProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Condition -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Condition">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Deployment -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Deployment">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/DeploymentRelatedProcess"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/DeploymentRelatedProcess -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/DeploymentRelatedProcess">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/DetectionLimit -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/DetectionLimit">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Device -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Device">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/System"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Drift -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Drift">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/FeatureOfInterest -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/FeatureOfInterest">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/MaintenanceSchedule -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/MaintenanceSchedule">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/OperatingProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/MeasurementCapability -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/MeasurementCapability">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/MeasurementFrequency -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/MeasurementFrequency">
+        <rdfs:subClassOf rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/MeasurementLatency -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/MeasurementLatency">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/MeasurementProperty -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/MeasurementProperty">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/MeasurementRange -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/MeasurementRange">
+        <rdfs:subClassOf rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Observation -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Observation">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/ObservationValue -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/ObservationValue">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/OperatingPowerRange -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/OperatingPowerRange">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/OperatingProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/OperatingProperty -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/OperatingProperty">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/OperatingRange -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/OperatingRange">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Platform -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Platform">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Precision -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Precision">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Property -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Property">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Resolution -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Resolution">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/ResponseTime -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/ResponseTime">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Selectivity -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Selectivity">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Sensing -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Sensing">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/SensingDevice -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/SensingDevice">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Device"/>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Sensor"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Sensitivity -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Sensitivity">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Sensor -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/SensorDataSheet -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/SensorDataSheet">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/SensorOutput -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/SensorOutput">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Stimulus -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Stimulus">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/SurvivalProperty -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/SurvivalProperty">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/SurvivalRange -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/SurvivalRange">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/System -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/System">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/SystemLifetime -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/SystemLifetime">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/SurvivalProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833 -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833">
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementCapability"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <ssn:hasMeasurementProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <ssn:hasProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <ssn:isPropertyOf rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593 -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593">
+        <rdf:type rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementFrequency"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+        <schema:value rdf:datatype="http://www.w3.org/2001/XMLSchema#float">150.0</schema:value>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <ssn:isPropertyOf rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/ProfilingRange"/>
+        <rdf:type rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+        <schema:value rdf:datatype="http://www.w3.org/2001/XMLSchema#float">300.0</schema:value>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <ssn:isPropertyOf rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+        <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce">
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementCapability"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <ssn:hasMeasurementProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <ssn:hasProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <ssn:isPropertyOf rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0 -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">DYFAMED</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/dyfamed/</dc:source>
+        <dc:title xml:lang="en">Dynamique des Flux Atmospheriques en Mediterranee</dc:title>
+        <rdfs:comment xml:lang="en">Multidisciplinary site within MOOSE network (Ligurian Sea), in passage between eastern and western Med Sea. Strong influence of atmospheric deposition influencing productivity and particle export monitored by atmospheric survey (Cap Ferrat) and two permanent sediment traps. Physical parameters recorded from surface to deep waters through monthly visits and permanent deep mooring. Biogeochemical parameters obtained monthly during ship visits. The site is also a way point of gliders and used for cross- validation of bio-parameters (nitrate, oxygen).</rdfs:comment>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4 -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">ANTARES</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/antares/</dc:source>
+        <dc:title xml:lang="en"></dc:title>
+        <rdfs:comment xml:lang="en">Multidisciplinary, permanent marine observatory providing high-bandwidth real-time data transmission from deep-sea for geosciences and marine environmental sciences. Site is part of the MOOSE network providing real-time data transmission through two deep cabled moorings. These moorings are complemented by stand-alone mooring near the junction box. Physical and biogeochemical parameters recorded by autonomous sensors with regular maintenance. In addition monthly ship occupation for CTD profiles and seawater collection. Cabled extension of the neutrino telescope is offering connectors for direct link to shore in addition to operational seismometer already in place.</rdfs:comment>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589 -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">FILCHNER RONNE</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/filchner-ronne/</dc:source>
+        <dc:title xml:lang="en">S2 observatory Filchner Ronne</dc:title>
+        <rdfs:comment xml:lang="en">The S2 Observatory for long term monitoring of Ice Shelf Water (ISW) Overflow situated at the Filchner sill in the southern Weddell Sea was established in 1977 and continues to deliver the longest existing marine time series from Antarctica. The position for the observatory S2 proved to be a key site for monitoring the ISW overflow produced beneath the huge Filchner Ronne Ice Shelf and is selected to be a part of the global net of monitoring sites under CLIVAR (www.clivar.org) and OceanSITES (www.oceansites.org). Time series of current speed and direction, temperature and salinity exist back to 1977.  Continuous observation of dissolved oxygen started in 2009.</rdfs:comment>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62 -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">NEMO-SN1</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/nemo-sn1/</dc:source>
+        <rdfs:comment xml:lang="en">Multidisciplinary (geophysics, oceanography, bio-acoustics) observatory, located in Western Ionian See, offshore Catania (Sicily), deep-sea real-time multi-parameter observatory is currently being re-deployed after refurbishment and installations of new electronics.</rdfs:comment>
+        <dc:title xml:lang="en">NEMO-SN1</dc:title>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3 -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">MOMAR</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/momar/</dc:source>
+        <dc:title xml:lang="en">MoMAR EMSO Azores</dc:title>
+        <rdfs:comment xml:lang="en">Multidisciplinary (fauna, fluid chemistry, seismicity and ground deformation) situated at the mid-Atlantic (hydrothermal vent field Lucky Strike); near real time communication through acoustic link, buoy and satellite. EMSO observatory node, in operation since 2010, comprises an oceanographic mooring and nested arrays of seismometers, pressure probes, temperature probes and chemical sensors in vent fluids, as well as a camera and colonization devices for faunal and microfaunal studies. Satellite transmission of a data subset, accessible on an EMSO-related server. Yearly maintenance cruises scheduled till 2015. Upgrades of system planned for 2014 with several new connection nodes  accessible to FiXO3 collaborations.</rdfs:comment>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">E2-M3A</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/e2-m3a/</dc:source>
+        <rdfs:comment xml:lang="en">Deep-sea, continuous monitoring station: it provides the longest oceanographic time series in the South Adriatic Pit (Eastern Mediterranean Sea). The observatory is composed by two moorings (surface buoy and sub-surface mooring line) and designed to monitor physical and biogeochemical processes in the water column from the surface down to the bottom (approximately 1220m).  The E2-M3A surface buoy collects air/sea meteorological and physical measurements in the surface layer (2m depth). The secondary deep mooring instead, is equipped with current meters (RDI-ADCP and Seaguard-RCM), CTD’s with Dissolved Oxygen and optical sensors. New biochemical sensors (CO2 and pH) were deployed during the first year of the FiXO3 project to enhance the payload of the site.</rdfs:comment>
+        <dc:title xml:lang="en">Southern Adriatic Interdisciplinary Laboratory for Ocean Research</dc:title>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <ssn:attachedSystem rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666 -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">CIS</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/cis/</dc:source>
+        <dc:title xml:lang="en">Central Irminger Sea</dc:title>
+        <rdfs:comment xml:lang="en">Multidisciplinary mooring, located in the Central Irminger Sea, Subpolar North Atlantic and part of the FP7 NACLIM project. The site is located in the centre of the Irminger Gyre, characterized by particular deep winter mixed layer depth. The mixed layer deepening is promoted through the combination of the cyclonic circulation of the Irminger gyre and strong surface buoyancy forcing in winter. Focus of the interdisciplinary research is on the biogeochemical cycling in a potential deep water formtion area. The physical background field (Temperature, Salinity, Currents) of the upper 1500m is surveyed with a number of sensors. Moreover, biogeochemical sensors (O2, Chl-a, zooplankton) is measured in mixed layer. The site area is shared with the LOCO mooring established by the NIOZ in 2002. The sampling and logistics of the moorings is coordinated with the NACLIM project. In Septmber 2014 the CIS observatory was moved little south and the original position is now occupied by the 4 mooring construction as part of the US OOI initiative. With this configuration one observatory (OOI) is located at the center of the gyre, while CIS and LOCO are where typically the strongest buoyancy focring is found (related to the Greenland Tip Jet).</rdfs:comment>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2 -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">DELOS B</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/delos-b/</dc:source>
+        <dc:title xml:lang="en">Deep-ocean Environmental Long-term Observatory System</dc:title>
+        <rdfs:comment xml:lang="en">The DELOS (Deep-ocean Environmental Long-term Observatory System) system comprises two environmental monitoring platforms: DELOS A located in the near field (within 50 m of a sea floor well); and DELOS B located in the far field (~16 km from sea floor infrastructure). DELOS B located on flat (&amp;lt;1° slope), finely sedimented sea floor within petroleum lease Block 18 in a mid- slope area off Angola, between the deep-sea fans of the Congo and Kwanza rivers.  The platform hosts a camera module, oceanographic module and acoustic module, each with multiple instruments, plus a sediment trap module.</rdfs:comment>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062 -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">DELOS A</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/delos-a/</dc:source>
+        <dc:title xml:lang="en">Deep-ocean Environmental Long-term Observatory System</dc:title>
+        <rdfs:comment xml:lang="en">The DELOS (Deep-ocean Environmental Long-term Observatory System) system comprises two environmental monitoring platforms: DELOS A located in the near field (within 50 m of a sea floor well); and DELOS B located in the far field (~16 km from sea floor infrastructure). DELOS A located on flat (&amp;lt;1° slope), finely sedimented sea floor within petroleum lease Block 18 in a mid- slope area off Angola between the deep-sea fans of the Congo and Kwanza rivers.  The platform hosts a camera module, oceanographic module and acoustic module, each with multiple instruments</rdfs:comment>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">SOG</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/sog/</dc:source>
+        <rdfs:comment xml:lang="en">Currently comprising a sediment trap mooring with current sensors it is situated in the middle of the least productive gyre in the South Atlantic but in contrast to NOG, an observatory in the North Atlantic oligotrophic gyre, it is not influenced by dust supply.</rdfs:comment>
+        <dc:title xml:lang="en">Southern Oligotrophic Gyre</dc:title>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175 -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler"/>
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/CurrentMeter"/>
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/HydroacousticCurrentMeter"/>
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/OceanographicDevice"/>
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/WorkhorseQuartermaster150kHzADCP"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Device"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/SensingDevice"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Sensor"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/System"/>
+        <rdfs:label xml:lang="en">The Workhorse Quartermaster 150 kHz ADCP on E2-M3A</rdfs:label>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <ssn:hasMeasurementCapability rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <ssn:hasProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <ssn:hasMeasurementCapability rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <ssn:hasProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <ssn:onPlatform rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">LION</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/lion/</dc:source>
+        <rdfs:comment xml:lang="en">Deep-sea mooring located in the convection cell in the centre of the Gulf of Lion which aims to observe the winter convection affecting the north-western Mediterranean Sea water circulation and deep-sea ecosystem (physical data). The mooring is deployed near the ODAS meteorological surface buoy (Gulf of Lion) and integrated in the MOOSE network.</rdfs:comment>
+        <dc:title xml:lang="en">LION</dc:title>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2 -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">FRAM</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/fram/</dc:source>
+        <rdfs:comment xml:lang="en">Array of moorings and permanent sampling sites across the Fram Strait. Installed to capture the exchange of Atlantic and Arctic waters, and to study the temporal development of an Arctic marine ecosystem. Enables year-round multidisciplinary long-term observations, partially with near real-time data access.</rdfs:comment>
+        <dc:title xml:lang="en">Frontiers in Arctic Marine Monitoring</dc:title>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891 -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">E1-M3A</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/e1-m3a/</dc:source>
+        <rdfs:comment xml:lang="en">Multidisciplinary mooring located at the eastern Mediterranean off shore Crete island, an area of open sea conditions, characterized as extremely oligotrophic where dense waters with intermediate and deep characteristics are formed.</rdfs:comment>
+        <dc:title xml:lang="en">POSEIDON E1-M3A</dc:title>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">Biscay AGL</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/biscay-agl/</dc:source>
+        <rdfs:comment xml:lang="en">Mooring in SE Bay of Biscay it comprises a fully-equipped ODAS buoy transmitting data in real-time plus monthly hydrographical and biogeochemical sampling of water column from research vessel. Buoy obtains core measurements of meteorological, physical, biogeochemical, and ecological parameters with high significance to weather forecasting and climate monitoring. Data immediately provided through IEO web page (hourly).</rdfs:comment>
+        <dc:title xml:lang="en">Ocean-meteorological buoy Augusto González de Linares</dc:title>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4 -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">OBSEA</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/obsea/</dc:source>
+        <dc:title xml:lang="en">Expandable Seafloor Observatory</dc:title>
+        <rdfs:comment xml:lang="en">The main objective of this site located at Western Mediterranean is to be a test bed for the development of oceanographic instrumentation while being a shallow-water observatory providing real time data and database with historical values.</rdfs:comment>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3 -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">NOG</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/nog/</dc:source>
+        <rdfs:comment xml:lang="en">Currently comprising a sediment trap mooring with current sensors it is situated in the middle of the least productive gyre in the North Atlantic but one which is influenced to a degree by dust supply from the Sahara desert.</rdfs:comment>
+        <dc:title xml:lang="en">Northern Oligotrophic Gyre</dc:title>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">SOR</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/sor/</dc:source>
+        <dc:title xml:lang="en"></dc:title>
+        <rdfs:comment xml:lang="en">Single location mooring situated on the Mid-Atlantic Ridge south of Svalbard. A component of NOON (Norwegian Ocean Observatory Network) planned as demo mission in 2012 and then as sustained observatory in 2016.</rdfs:comment>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">CVOO</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/cvoo/</dc:source>
+        <dc:title xml:lang="en">Cape Verde Ocean Observatory</dc:title>
+        <rdfs:comment xml:lang="en">This observatory is composed of a mooring and a small vessel maintaining the time-series continuity at Tropical Eastern North Atlantic.</rdfs:comment>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21 -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">PAP</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/pap/</dc:source>
+        <rdfs:comment xml:lang="en">Array of moorings covering the entire water column and benthos with associated repeat ship occupations for process studies and collections not possible autonomously (eg benthic megafauna) Longest running multidisciplinary North Atlantic open ocean sustained observatory delivering atmospheric and physical and biogeochemical ocean datasets in near real-time.</rdfs:comment>
+        <dc:title xml:lang="en">Porcupine Abyssal Plain Observatory</dc:title>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">ESTOC</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/estoc/</dc:source>
+        <dc:title xml:lang="en">European Station for Time series in the Ocean Canary Islands</dc:title>
+        <rdfs:comment xml:lang="en">Multidisciplinary mooring, located in the Central Eastern Atlantic, open ocean site with over 15 years of continuous surface and mid-water meteorological, physical and biogeochemical monitoring.</rdfs:comment>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">W1-M3A</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/w1-m3a/</dc:source>
+        <dc:title xml:lang="en"></dc:title>
+        <rdfs:comment xml:lang="en">A single multidisciplinary observatory mooring located in the Ligurian Sea with real-time and delayed mode capability. The W1-M3A observing system is composed by a large spare buoy and a sub-surface mooring periodically deployed close to the main buoy depending on specific research needs. The W1-M3A large spar buoy specifically designed for air-sea interaction studies and the collection of meteorological data even in rough sea. Stability is the basic feature of this type of buoy with respect to the other more classical approach based on discus-shaped buoys. The buoy was specifically designed as a stable measuring platform since its total mass, the unity buoyancy at the sea level, and presence of a damping disk allow for negligible sensitivity of sea heave and height.</rdfs:comment>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">PYLOS</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/pylos/</dc:source>
+        <rdfs:comment xml:lang="en">Multidisciplinary observatory mooring located in the cross road of Adriatic and Eastern Mediterranean basins. Very geologically active area with lots of earthquakes and landslides as well as a potential source of Tsunamis that might affect the Eastern Mediterranean Sea.</rdfs:comment>
+        <dc:title xml:lang="en">Pylos Observatory</dc:title>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5 -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">STATION M</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/station-m/</dc:source>
+        <rdfs:comment xml:lang="en">Ocean Weather Station M (OWS M) has been an ocean weather station since 1948. At present there is a mooring and a surface buoy at the site, which measures hydrography, O2, chlorophyll and carbon parameters. Located in Norwegian Sea with real-time and delayed mode capabilities. The site present the longest existing homogeneous time series from deep ocean. The facility presented here is the mooring situated betveen 150 and 2000 m.</rdfs:comment>
+        <dc:title xml:lang="en">Station M</dc:title>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://qudt.org/vocab/unit#KiloHertz -->
+
+    <owl:Thing rdf:about="http://qudt.org/vocab/unit#KiloHertz">
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://qudt.org/vocab/unit#Meter -->
+
+    <owl:Thing rdf:about="http://qudt.org/vocab/unit#Meter">
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf18f90acdb24d33266f6b3814c5d2d4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/cf7e51c8d61f44756596140721ff1589"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d11d6b5082c7b6c062e8d37bf1528c62"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/d3e194dfc6c496e6f8715a88591757b3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2fa7584696920de8d3eba3e30263dc2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/ff2bce90bffcc896fa9d0119f90c2062"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/003742619cefa0b3d4213c91975d49ac"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1ebee5b3bcac949e0f3c75dff22b4ad2"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/1520897e8a52d2226ecffb5711a36891"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/16b601073356028a8ba70814ff78b92c"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/2cb7e454103c71ca9fc60955211b37f4"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/4d19bf1bf547862d42fbca2f5770fea3"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/657e79bbe1f20c407e55e385d278446e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8a9c2ebbeda6a0ee279a88ee71aa780e"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/8ab9e7edcdc1b5b483c5a3406bd6088b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/818497440837bbf00580f4e77f1c058b"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/82ceb3a583c790595ce290993613f9f5"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.10-SNAPSHOT) http://owlapi.sourceforge.net -->
+

@@ -3,8 +3,9 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ssn: <https://www.w3.org/ns/ssn/>
 PREFIX schema: <http://schema.org/>
 PREFIX unit: <http://qudt.org/vocab/unit#>
+PREFIX eyp: <http://esonetyellowpages.com/vocab/>
 
-SELECT ?sensor ?observatory ?rangeValue ?rangeUnit ?frequencyValue ?frequencyUnit
+SELECT ?sensor ?observatory ?frequencyValue ?frequencyUnit ?rangeValue ?rangeUnit
 WHERE {
 [ 
   rdf:type ssn:SensingDevice ;
@@ -14,18 +15,17 @@ WHERE {
   ] ;
   ssn:hasMeasurementCapability [
     ssn:hasMeasurementProperty [
-      rdf:type ssn:MeasurementRange ;
-      schema:value ?rangeValue ;
-      schema:unitCode ?rangeUnit ;
-    ]
-  ] ;
-  ssn:hasMeasurementCapability [
-    ssn:hasMeasurementProperty [
       rdf:type ssn:MeasurementFrequency ;
       schema:value ?frequencyValue ;
       schema:unitCode ?frequencyUnit ;
     ]
+  ] ;
+  ssn:hasMeasurementCapability [
+    ssn:hasMeasurementProperty [
+      rdf:type eyp:ProfilingRange ;
+      schema:value ?rangeValue ;
+      schema:unitCode ?rangeUnit ;
+    ]
   ]
 ]
 }
-

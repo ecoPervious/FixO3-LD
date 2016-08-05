@@ -1,0 +1,35 @@
+[
+	{
+		"name":"http://esonetyellowpages.com/vocab/WorkhorseQuartermaster150kHzADCP",
+		"label":"Workhorse Quartermaster 150 kHz ADCP",
+		"comment":"Teledyne RD Instruments Workhorse Quartermaster 150 kHz ADCP",
+		"seeAlso":"http://www.esonetyellowpages.com/datasheets/datasheet-adcp_whs_150khz_1458583613.pdf",
+		"subClasses":[
+			{ 
+				"type":"http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler"
+			},
+			{
+				"capability":{
+					"label":"Workhorse Quartermaster 150 kHz ADCP Frequency",
+					"quantity":{
+						"label":"150 kHz",
+						"value":"150",
+						"unitCode":"http://qudt.org/vocab/unit#KiloHertz",
+						"type":"https://www.w3.org/ns/ssn/MeasurementFrequency"
+					}
+				}
+			},
+			{
+				"capability":{
+					"label":"Workhorse Quartermaster 150 kHz ADCP Max Profiling Range",
+					"quantity":{
+						"label":"300 m",
+						"value":"300",
+						"unitCode":"http://qudt.org/vocab/unit#Meter",
+						"type":"http://esonetyellowpages.com/vocab/ProfilingRange"
+					}
+				}
+			}
+		]
+	}
+]

@@ -127,7 +127,17 @@
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/e2-m3a/</dc:source>
         <rdfs:comment xml:lang="en">Deep-sea, continuous monitoring station: it provides the longest oceanographic time series in the South Adriatic Pit (Eastern Mediterranean Sea). The observatory is composed by two moorings (surface buoy and sub-surface mooring line) and designed to monitor physical and biogeochemical processes in the water column from the surface down to the bottom (approximately 1220m).  The E2-M3A surface buoy collects air/sea meteorological and physical measurements in the surface layer (2m depth). The secondary deep mooring instead, is equipped with current meters (RDI-ADCP and Seaguard-RCM), CTD’s with Dissolved Oxygen and optical sensors. New biochemical sensors (CO2 and pH) were deployed during the first year of the FiXO3 project to enhance the payload of the site.</rdfs:comment>
         <dc:title xml:lang="en">Southern Adriatic Interdisciplinary Laboratory for Ocean Research</dc:title>
+        <ssn:attachedSystem rdf:resource="http://fixo3.eu/vocab/e2c9180abc695bc67abf04f811a2ff6b"/>
         <ssn:attachedSystem rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/e2c9180abc695bc67abf04f811a2ff6b -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/e2c9180abc695bc67abf04f811a2ff6b">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/CO2Pro"/>
+        <rdfs:label xml:lang="en">The CO2-Pro on E2-M3A</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -261,6 +271,15 @@
     
 
 
+    <!-- http://fixo3.eu/vocab/45767d1518b17d76ed77fba69ce8aba1 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/45767d1518b17d76ed77fba69ce8aba1">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/CO2Pro"/>
+        <rdfs:label xml:lang="en">The CO2-Pro on PAP</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe -->
 
     <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/5dc4f449b09b7cfdb1847167e660e0fe">
@@ -293,6 +312,7 @@
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/pap/</dc:source>
         <rdfs:comment xml:lang="en">Array of moorings covering the entire water column and benthos with associated repeat ship occupations for process studies and collections not possible autonomously (eg benthic megafauna) Longest running multidisciplinary North Atlantic open ocean sustained observatory delivering atmospheric and physical and biogeochemical ocean datasets in near real-time.</rdfs:comment>
         <dc:title xml:lang="en">Porcupine Abyssal Plain Observatory</dc:title>
+        <ssn:attachedSystem rdf:resource="http://fixo3.eu/vocab/45767d1518b17d76ed77fba69ce8aba1"/>
     </owl:NamedIndividual>
     
 

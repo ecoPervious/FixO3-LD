@@ -56,6 +56,10 @@
 			{
 				"label":"The Workhorse Quartermaster 150 kHz ADCP on E2-M3A",
 				"type":"http://esonetyellowpages.com/vocab/WorkhorseQuartermaster150kHzADCP"
+			},
+			{
+				"label":"The CO2-Pro on E2-M3A",
+				"type":"http://esonetyellowpages.com/vocab/CO2Pro"
 			}
 		]
 	},
@@ -111,7 +115,13 @@
 		"label":"PAP",
 		"title":"Porcupine Abyssal Plain Observatory",
 		"comment":"Array of moorings covering the entire water column and benthos with associated repeat ship occupations for process studies and collections not possible autonomously (eg benthic megafauna) Longest running multidisciplinary North Atlantic open ocean sustained observatory delivering atmospheric and physical and biogeochemical ocean datasets in near real-time.",
-		"source":"http://www.fixo3.eu/observatory/pap/"
+		"source":"http://www.fixo3.eu/observatory/pap/",
+		"attachedSystems":[
+			{
+				"label":"The CO2-Pro on PAP",
+				"type":"http://esonetyellowpages.com/vocab/CO2Pro"
+			}
+		]
 	},
 	{
 		"label":"PYLOS",

@@ -35,13 +35,13 @@ import javax.json.JsonReader;
 
 import static de.pangaea.vocab.Schema.QuantitativeValue;
 import static de.pangaea.vocab.Schema.value;
+import static de.pangaea.vocab.Schema.minValue;
+import static de.pangaea.vocab.Schema.maxValue;
 import static de.pangaea.vocab.Schema.unitCode;
 import static de.pangaea.vocab.SSN.Stimulus;
 import static de.pangaea.vocab.SSN.FeatureOfInterest;
 import static de.pangaea.vocab.SSN.SensingDevice;
 import static de.pangaea.vocab.SSN.Property;
-import static de.pangaea.vocab.SSN.MeasurementFrequency;
-import static de.pangaea.vocab.SSN.MeasurementRange;
 import static de.pangaea.vocab.SSN.MeasurementCapability;
 import static de.pangaea.vocab.SSN.detects;
 import static de.pangaea.vocab.SSN.observes;
@@ -50,12 +50,18 @@ import static de.pangaea.vocab.SSN.isProxyFor;
 import static de.pangaea.vocab.SSN.hasMeasurementCapability;
 import static de.pangaea.vocab.SSN.hasMeasurementProperty;
 import static de.pangaea.vocab.EYP.ProfilingRange;
+import static de.pangaea.vocab.EYP.CellSize;
+import static de.pangaea.vocab.EYP.OperatingDepth;
+import static de.pangaea.vocab.EYP.TemperatureRange;
+import static de.pangaea.vocab.EYP.MeasuringRange;
+import static de.pangaea.vocab.EYP.Frequency;
 import static de.pangaea.vocab.EYP.Fluid;
 import static de.pangaea.vocab.EYP.Water;
 import static de.pangaea.vocab.EYP.OceanographicDevice;
 import static de.pangaea.vocab.EYP.CurrentMeter;
 import static de.pangaea.vocab.EYP.HydroacousticCurrentMeter;
 import static de.pangaea.vocab.EYP.AcousticDopplerCurrentProfiler;
+import static de.pangaea.vocab.EYP.PartialPressureOfCO2Analyzer;
 import static de.pangaea.vocab.EYP.SoundWave;
 import static de.pangaea.vocab.EYP.DopplerEffect;
 import static de.pangaea.vocab.EYP.Velocity;
@@ -95,9 +101,18 @@ public class CreateEsonetYellowPages {
 		m.addSeeAlso("http://www.esonetyellowpages.com/");
 		m.addImport(SSN.ns);
 
-		m.addSubClass(MeasurementFrequency, QuantitativeValue);
-		m.addSubClass(MeasurementRange, QuantitativeValue);
+		m.addSubClass(Frequency, QuantitativeValue);
+		m.addLabel(Frequency, "Frequency");
 		m.addSubClass(ProfilingRange, QuantitativeValue);
+		m.addLabel(ProfilingRange, "Profiling Range");
+		m.addSubClass(CellSize, QuantitativeValue);
+		m.addLabel(CellSize, "Cell Size");
+		m.addSubClass(OperatingDepth, QuantitativeValue);
+		m.addLabel(OperatingDepth, "Operating Depth");
+		m.addSubClass(TemperatureRange, QuantitativeValue);
+		m.addLabel(TemperatureRange, "Temperature Range");
+		m.addSubClass(MeasuringRange, QuantitativeValue);
+		m.addLabel(MeasuringRange, "Measuring Range");
 
 		m.addClass(SoundWave);
 		m.addLabel(SoundWave, "Sound Wave");
@@ -152,9 +167,13 @@ public class CreateEsonetYellowPages {
 				IRI.create("https://en.wikipedia.org/wiki/Acoustic_Doppler_current_profiler"));
 		m.addComment(AcousticDopplerCurrentProfiler,
 				"An acoustic Doppler current profiler (ADCP) is a hydroacoustic current meter similar to a sonar, attempting to measure water current velocities over a depth range using the Doppler effect of sound waves scattered back from particles within the water column.");
-		m.addObjectAll(AcousticDopplerCurrentProfiler, detects, DopplerEffect);		
+		m.addObjectAll(AcousticDopplerCurrentProfiler, detects, DopplerEffect);
 		m.addSubClass(AcousticDopplerCurrentProfiler, HydroacousticCurrentMeter);
-	
+		
+		m.addClass(PartialPressureOfCO2Analyzer);
+		m.addSubClass(PartialPressureOfCO2Analyzer, SensingDevice);
+		m.addLabel(PartialPressureOfCO2Analyzer, "Partial Pressure of CO2 Analyzer");
+
 		JsonReader jr = Json.createReader(new FileReader(new File(eypDevicesFile)));
 		JsonArray ja = jr.readArray();
 
@@ -203,7 +222,16 @@ public class CreateEsonetYellowPages {
 				m.addIndividual(quantityIRI);
 				m.addType(quantityIRI, IRI.create(quantity.getString("type")));
 				m.addLabel(quantityIRI, quantityLabel);
-				m.addDataAssertion(quantityIRI, value, Float.valueOf(quantity.getString("value")));
+
+				if (quantity.containsKey("value")) {
+					m.addDataAssertion(quantityIRI, value, Float.valueOf(quantity.getString("value")));
+				} else if (quantity.containsKey("minValue") && quantity.containsKey("maxValue")) {
+					m.addDataAssertion(quantityIRI, minValue, Float.valueOf(quantity.getString("minValue")));
+					m.addDataAssertion(quantityIRI, maxValue, Float.valueOf(quantity.getString("maxValue")));
+				} else {
+					throw new RuntimeException("Expected value or min/max value [quantity = " + quantity + "]");
+				}
+
 				m.addObjectAssertion(quantityIRI, unitCode, IRI.create(quantity.getString("unitCode")));
 			}
 		}

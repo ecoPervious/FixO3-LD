@@ -41,6 +41,8 @@ public class Schema {
 	
 	public static final IRI unitCode = c("unitCode");
 	public static final IRI value = c("value");
+	public static final IRI minValue = c("minValue");
+	public static final IRI maxValue = c("maxValue");
 
 	private static IRI c(String suffix) {
 		return IRI.create(ns.toString(), suffix);

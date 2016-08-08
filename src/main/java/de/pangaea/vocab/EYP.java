@@ -38,6 +38,11 @@ public class EYP {
 	public static final IRI ns = IRI.create("http://esonetyellowpages.com/vocab/");
 
 	public static final IRI ProfilingRange = c("ProfilingRange");
+	public static final IRI CellSize = c("CellSize");
+	public static final IRI OperatingDepth = c("OperatingDepth");
+	public static final IRI TemperatureRange = c("TemperatureRange");
+	public static final IRI MeasuringRange = c("MeasuringRange");
+	public static final IRI Frequency = c("Frequency");
 	
 	public static final IRI SoundWave = c("SoundWave");
 	public static final IRI DopplerEffect = c("DopplerEffect");
@@ -51,6 +56,7 @@ public class EYP {
 	public static final IRI CurrentMeter = c("CurrentMeter");
 	public static final IRI HydroacousticCurrentMeter = c("HydroacousticCurrentMeter");
 	public static final IRI AcousticDopplerCurrentProfiler = c("AcousticDopplerCurrentProfiler");
+	public static final IRI PartialPressureOfCO2Analyzer = c("PartialPressureOfCO2Analyzer");
 
 	private static IRI c(String suffix) {
 		return IRI.create(ns.toString(), suffix);

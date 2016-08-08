@@ -15,7 +15,7 @@
 						"label":"150 kHz",
 						"value":"150",
 						"unitCode":"http://qudt.org/vocab/unit#KiloHertz",
-						"type":"https://www.w3.org/ns/ssn/MeasurementFrequency"
+						"type":"http://esonetyellowpages.com/vocab/Frequency"
 					}
 				}
 			},
@@ -27,6 +27,76 @@
 						"value":"300",
 						"unitCode":"http://qudt.org/vocab/unit#Meter",
 						"type":"http://esonetyellowpages.com/vocab/ProfilingRange"
+					}
+				}
+			},
+			{
+				"capability":{
+					"label":"Workhorse Quartermaster 150 kHz ADCP Cell Size",
+					"quantity":{
+						"label":"4 m to 24 m",
+						"minValue":"4",
+						"maxValue":"24",
+						"unitCode":"http://qudt.org/vocab/unit#Meter",
+						"type":"http://esonetyellowpages.com/vocab/CellSize"
+					}
+				}
+			},
+			{
+				"capability":{
+					"label":"Workhorse Quartermaster 150 kHz ADCP Operating Depth",
+					"quantity":{
+						"label":"1500 m",
+						"value":"1500",
+						"unitCode":"http://qudt.org/vocab/unit#Meter",
+						"type":"http://esonetyellowpages.com/vocab/OperatingDepth"
+					}
+				}
+			},
+			{
+				"capability":{
+					"label":"Workhorse Quartermaster 150 kHz ADCP Temperature Range",
+					"quantity":{
+						"label":"-5 °C to 45 °C",
+						"minValue":"-5",
+						"maxValue":"45",
+						"unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+						"type":"http://esonetyellowpages.com/vocab/TemperatureRange"
+					}
+				}
+			}
+		]
+	},
+	{
+		"name":"http://esonetyellowpages.com/vocab/CO2Pro",
+		"label":"CO2-Pro",
+		"comment":"PRO OCEANUS Submersible pCO2 Sensor",
+		"seeAlso":"http://www.esonetyellowpages.com/datasheets/datasheet-psi_gtdpro_1459187085.pdf",
+		"subClasses":[
+			{ 
+				"type":"http://esonetyellowpages.com/vocab/PartialPressureOfCO2Analyzer"
+			},
+			{
+				"capability":{
+					"label":"CO2-Pro Operating Depth",
+					"quantity":{
+						"label":"0 m to 300 m",
+						"minValue":"0",
+						"maxValue":"300",
+						"unitCode":"http://qudt.org/vocab/unit#Meter",
+						"type":"http://esonetyellowpages.com/vocab/OperatingDepth"
+					}
+				}
+			},
+			{
+				"capability":{
+					"label":"CO2-Pro Measuring Range",
+					"quantity":{
+						"label":"800 mbar to 2000 mbar",
+						"minValue":"800",
+						"maxValue":"2000",
+						"unitCode":"http://qudt.org/vocab/unit#Millibar",
+						"type":"http://esonetyellowpages.com/vocab/MeasuringRange"
 					}
 				}
 			}

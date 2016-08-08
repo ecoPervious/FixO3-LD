@@ -1,0 +1,23 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ssn: <https://www.w3.org/ns/ssn/>
+PREFIX schema: <http://schema.org/>
+PREFIX unit: <http://qudt.org/vocab/unit#>
+PREFIX eyp: <http://esonetyellowpages.com/vocab/>
+PREFIX qudt: <http://qudt.org/schema/qudt#>
+
+SELECT ?sensor ?observatory ?property ?value ?minValue ?maxValue ?unit
+WHERE {
+  ?sd rdf:type ssn:SensingDevice .
+  ?sd rdfs:label ?sensor .
+  ?sd ssn:onPlatform [ rdfs:label ?observatory ] .
+  ?sd ssn:hasMeasurementCapability ?mc .
+  ?mc ssn:hasMeasurementProperty ?mp .
+  ?mp rdf:type ?pt .
+  ?pt rdfs:label ?property .
+  OPTIONAL { ?mp schema:value ?value } .
+  OPTIONAL { ?mp schema:minValue ?minValue . ?mp schema:maxValue ?maxValue } .
+  ?mp schema:unitCode [ qudt:symbol ?unit ]
+   
+  FILTER(STRSTARTS(STR(?pt), "http://esonetyellowpages.com/vocab/"))
+}

@@ -6,18 +6,21 @@ PREFIX unit: <http://qudt.org/vocab/unit#>
 PREFIX eyp: <http://esonetyellowpages.com/vocab/>
 PREFIX qudt: <http://qudt.org/schema/qudt#>
 
-SELECT ?sensor ?observatory ?property ?value ?minValue ?maxValue ?unit
+SELECT ?observatory ?sensor ?property ?value ?minValue ?maxValue ?unit
 WHERE {
-  ?sd rdf:type ssn:SensingDevice .
-  ?sd rdfs:label ?sensor .
-  ?sd ssn:onPlatform [ rdfs:label ?observatory ] .
-  ?sd ssn:hasMeasurementCapability ?mc .
-  ?mc ssn:hasMeasurementProperty ?mp .
+  [ 
+    rdf:type ssn:SensingDevice ;
+    rdfs:label ?sensor ;
+    ssn:onPlatform [ rdfs:label ?observatory ] 
+  ]
+    ssn:hasMeasurementCapability [ ssn:hasMeasurementProperty ?mp ] .
   ?mp rdf:type ?pt .
   ?pt rdfs:label ?property .
+  ?mp schema:unitCode [ qudt:symbol ?unit ] .
+  
   OPTIONAL { ?mp schema:value ?value } .
   OPTIONAL { ?mp schema:minValue ?minValue . ?mp schema:maxValue ?maxValue } .
-  ?mp schema:unitCode [ qudt:symbol ?unit ]
-   
+
   FILTER(STRSTARTS(STR(?pt), "http://esonetyellowpages.com/vocab/"))
 }
+ORDER BY ?observatory ?sensor ?property

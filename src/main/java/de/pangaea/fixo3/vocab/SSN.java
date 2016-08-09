@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package de.pangaea.vocab;
+package de.pangaea.fixo3.vocab;
 
 import org.semanticweb.owlapi.model.IRI;
 

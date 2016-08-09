@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package de.pangaea;
+package de.pangaea.fixo3;
 
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 
-import static de.pangaea.vocab.Schema.ns;
-import static de.pangaea.vocab.Schema.unitCode;
-import static de.pangaea.vocab.Schema.value;
-import static de.pangaea.vocab.Schema.QuantitativeValue;
-
+import static de.pangaea.fixo3.vocab.Schema.QuantitativeValue;
+import static de.pangaea.fixo3.vocab.Schema.location;
+import static de.pangaea.fixo3.vocab.Schema.ns;
+import static de.pangaea.fixo3.vocab.Schema.unitCode;
+import static de.pangaea.fixo3.vocab.Schema.value;
 import static org.semanticweb.owlapi.vocab.OWL2Datatype.XSD_FLOAT;
 import static org.semanticweb.owlapi.vocab.OWLRDFVocabulary.OWL_THING;
 
@@ -54,17 +54,25 @@ public class CreateSchema {
 		m.addLabel(unitCode, "unit code");
 		m.addComment(unitCode,
 				"The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.");
+		m.addSource(unitCode, unitCode);
 
 		m.addDataProperty(value);
 		m.addLabel(value, "value");
 		m.addComment(value,
 				"The value of the quantitative value or property value node. For QuantitativeValue and MonetaryValue, the recommended type for values is &apos;Number&apos;. For PropertyValue, it can be &apos;Text;&apos;, &apos;Number&apos;, &apos;Boolean&apos;, or &apos;StructuredValue&apos;.");
-
+		m.addSource(value, value);
+		
 		m.addClass(QuantitativeValue);
 		m.addLabel(QuantitativeValue, "Quantitative Value");
 		m.addComment(QuantitativeValue, "A point value or interval for product characteristics and other purposes.");
+		m.addSource(QuantitativeValue, QuantitativeValue);
 		m.addObjectSome(QuantitativeValue, unitCode, OWL_THING);
 		m.addDataAll(QuantitativeValue, value, XSD_FLOAT);
+		
+		m.addObjectProperty(location);
+		m.addLabel(location, "location");
+		m.addComment(location, "The location of for example where the event is happening, an organization is located, or where an action takes place.");
+		m.addSource(location, location);
 
 		m.save(schemaFile);
 		m.saveInferred(schemaInferredFile);

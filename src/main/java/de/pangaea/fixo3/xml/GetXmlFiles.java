@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package de.pangaea;
+package de.pangaea.fixo3.xml;
 
 import java.io.IOException;
 import java.io.PrintWriter;

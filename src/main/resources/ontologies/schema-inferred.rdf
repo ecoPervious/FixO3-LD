@@ -4,8 +4,26 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="http://schema.org/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/source -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/source"/>
     
 
 
@@ -20,10 +38,27 @@
     
 
 
+    <!-- http://schema.org/location -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/location">
+        <rdfs:label xml:lang="en">location</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://schema.org/location</dc:source>
+        <rdfs:comment xml:lang="en">The location of for example where the event is happening, an organization is located, or where an action takes place.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://schema.org/location"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.org/unitCode -->
 
     <owl:ObjectProperty rdf:about="http://schema.org/unitCode">
         <rdfs:label xml:lang="en">unit code</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://schema.org/unitCode</dc:source>
         <rdfs:comment xml:lang="en">The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf>
@@ -50,6 +85,7 @@
 
     <owl:DatatypeProperty rdf:about="http://schema.org/value">
         <rdfs:label xml:lang="en">value</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://schema.org/value</dc:source>
         <rdfs:comment xml:lang="en">The value of the quantitative value or property value node. For QuantitativeValue and MonetaryValue, the recommended type for values is &amp;apos;Number&amp;apos;. For PropertyValue, it can be &amp;apos;Text;&amp;apos;, &amp;apos;Number&amp;apos;, &amp;apos;Boolean&amp;apos;, or &amp;apos;StructuredValue&amp;apos;.</rdfs:comment>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
     </owl:DatatypeProperty>
@@ -84,6 +120,7 @@
                 <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://schema.org/QuantitativeValue</dc:source>
         <rdfs:comment xml:lang="en">A point value or interval for product characteristics and other purposes.</rdfs:comment>
     </owl:Class>
 </rdf:RDF>

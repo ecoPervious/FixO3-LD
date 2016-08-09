@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package de.pangaea;
+package de.pangaea.fixo3;
 
 import java.io.File;
 
@@ -28,10 +28,10 @@ import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 import org.semanticweb.owlapi.util.OWLOntologyMerger;
 import org.semanticweb.owlapi.util.SimpleIRIMapper;
 
-import de.pangaea.vocab.EYP;
-import de.pangaea.vocab.FIXO3;
-import de.pangaea.vocab.SSN;
-import de.pangaea.vocab.Schema;
+import de.pangaea.fixo3.vocab.EYP;
+import de.pangaea.fixo3.vocab.FIXO3;
+import de.pangaea.fixo3.vocab.SSN;
+import de.pangaea.fixo3.vocab.Schema;
 
 /**
  * <p>

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package de.pangaea;
+package de.pangaea.fixo3;
 
 import java.io.File;
 import java.io.FileReader;
@@ -30,16 +30,15 @@ import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 
-import de.pangaea.vocab.EYP;
-import de.pangaea.vocab.FIXO3;
-import de.pangaea.vocab.SSN;
-import de.pangaea.vocab.Schema;
+import de.pangaea.fixo3.vocab.EYP;
+import de.pangaea.fixo3.vocab.FIXO3;
+import de.pangaea.fixo3.vocab.SSN;
+import de.pangaea.fixo3.vocab.Schema;
 
-import static de.pangaea.vocab.FIXO3.OceanObservatory;
-import static de.pangaea.vocab.FIXO3.FixedPointOceanObservatory;
-import static de.pangaea.vocab.SSN.Platform;
-import static de.pangaea.vocab.SSN.attachedSystem;
-
+import static de.pangaea.fixo3.vocab.FIXO3.FixedPointOceanObservatory;
+import static de.pangaea.fixo3.vocab.FIXO3.OceanObservatory;
+import static de.pangaea.fixo3.vocab.SSN.Platform;
+import static de.pangaea.fixo3.vocab.SSN.attachedSystem;
 import static org.apache.commons.codec.digest.DigestUtils.md5Hex;
 
 /**

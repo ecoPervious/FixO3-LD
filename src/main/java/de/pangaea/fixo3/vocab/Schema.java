@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package de.pangaea.vocab;
+package de.pangaea.fixo3.vocab;
 
 import org.semanticweb.owlapi.model.IRI;
 
@@ -43,6 +43,8 @@ public class Schema {
 	public static final IRI value = c("value");
 	public static final IRI minValue = c("minValue");
 	public static final IRI maxValue = c("maxValue");
+	
+	public static final IRI location = c("location");
 
 	private static IRI c(String suffix) {
 		return IRI.create(ns.toString(), suffix);

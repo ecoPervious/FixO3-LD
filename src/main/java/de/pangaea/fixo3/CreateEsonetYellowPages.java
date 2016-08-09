@@ -14,14 +14,48 @@
  * limitations under the License.
  */
 
-package de.pangaea;
+package de.pangaea.fixo3;
 
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 
-import de.pangaea.vocab.EYP;
-import de.pangaea.vocab.SSN;
+import de.pangaea.fixo3.vocab.EYP;
+import de.pangaea.fixo3.vocab.SSN;
+
+import static de.pangaea.fixo3.vocab.EYP.AcousticDopplerCurrentProfiler;
+import static de.pangaea.fixo3.vocab.EYP.CellSize;
+import static de.pangaea.fixo3.vocab.EYP.CurrentMeter;
+import static de.pangaea.fixo3.vocab.EYP.DopplerEffect;
+import static de.pangaea.fixo3.vocab.EYP.FlowVelocity;
+import static de.pangaea.fixo3.vocab.EYP.Fluid;
+import static de.pangaea.fixo3.vocab.EYP.Frequency;
+import static de.pangaea.fixo3.vocab.EYP.HydroacousticCurrentMeter;
+import static de.pangaea.fixo3.vocab.EYP.MeasuringRange;
+import static de.pangaea.fixo3.vocab.EYP.OceanographicDevice;
+import static de.pangaea.fixo3.vocab.EYP.OperatingDepth;
+import static de.pangaea.fixo3.vocab.EYP.PartialPressureOfCO2Analyzer;
+import static de.pangaea.fixo3.vocab.EYP.ProfilingRange;
+import static de.pangaea.fixo3.vocab.EYP.SoundWave;
+import static de.pangaea.fixo3.vocab.EYP.TemperatureRange;
+import static de.pangaea.fixo3.vocab.EYP.Velocity;
+import static de.pangaea.fixo3.vocab.EYP.Water;
+import static de.pangaea.fixo3.vocab.SSN.FeatureOfInterest;
+import static de.pangaea.fixo3.vocab.SSN.MeasurementCapability;
+import static de.pangaea.fixo3.vocab.SSN.Property;
+import static de.pangaea.fixo3.vocab.SSN.SensingDevice;
+import static de.pangaea.fixo3.vocab.SSN.Stimulus;
+import static de.pangaea.fixo3.vocab.SSN.detects;
+import static de.pangaea.fixo3.vocab.SSN.hasMeasurementCapability;
+import static de.pangaea.fixo3.vocab.SSN.hasMeasurementProperty;
+import static de.pangaea.fixo3.vocab.SSN.isPropertyOf;
+import static de.pangaea.fixo3.vocab.SSN.isProxyFor;
+import static de.pangaea.fixo3.vocab.SSN.observes;
+import static de.pangaea.fixo3.vocab.Schema.QuantitativeValue;
+import static de.pangaea.fixo3.vocab.Schema.maxValue;
+import static de.pangaea.fixo3.vocab.Schema.minValue;
+import static de.pangaea.fixo3.vocab.Schema.unitCode;
+import static de.pangaea.fixo3.vocab.Schema.value;
 import static org.apache.commons.codec.digest.DigestUtils.md5Hex;
 
 import java.io.File;
@@ -32,40 +66,6 @@ import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
-
-import static de.pangaea.vocab.Schema.QuantitativeValue;
-import static de.pangaea.vocab.Schema.value;
-import static de.pangaea.vocab.Schema.minValue;
-import static de.pangaea.vocab.Schema.maxValue;
-import static de.pangaea.vocab.Schema.unitCode;
-import static de.pangaea.vocab.SSN.Stimulus;
-import static de.pangaea.vocab.SSN.FeatureOfInterest;
-import static de.pangaea.vocab.SSN.SensingDevice;
-import static de.pangaea.vocab.SSN.Property;
-import static de.pangaea.vocab.SSN.MeasurementCapability;
-import static de.pangaea.vocab.SSN.detects;
-import static de.pangaea.vocab.SSN.observes;
-import static de.pangaea.vocab.SSN.isPropertyOf;
-import static de.pangaea.vocab.SSN.isProxyFor;
-import static de.pangaea.vocab.SSN.hasMeasurementCapability;
-import static de.pangaea.vocab.SSN.hasMeasurementProperty;
-import static de.pangaea.vocab.EYP.ProfilingRange;
-import static de.pangaea.vocab.EYP.CellSize;
-import static de.pangaea.vocab.EYP.OperatingDepth;
-import static de.pangaea.vocab.EYP.TemperatureRange;
-import static de.pangaea.vocab.EYP.MeasuringRange;
-import static de.pangaea.vocab.EYP.Frequency;
-import static de.pangaea.vocab.EYP.Fluid;
-import static de.pangaea.vocab.EYP.Water;
-import static de.pangaea.vocab.EYP.OceanographicDevice;
-import static de.pangaea.vocab.EYP.CurrentMeter;
-import static de.pangaea.vocab.EYP.HydroacousticCurrentMeter;
-import static de.pangaea.vocab.EYP.AcousticDopplerCurrentProfiler;
-import static de.pangaea.vocab.EYP.PartialPressureOfCO2Analyzer;
-import static de.pangaea.vocab.EYP.SoundWave;
-import static de.pangaea.vocab.EYP.DopplerEffect;
-import static de.pangaea.vocab.EYP.Velocity;
-import static de.pangaea.vocab.EYP.FlowVelocity;
 
 /**
  * <p>

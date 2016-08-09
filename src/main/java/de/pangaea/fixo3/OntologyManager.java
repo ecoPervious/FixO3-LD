@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package de.pangaea;
+package de.pangaea.fixo3;
 
 import java.io.File;
 import java.util.ArrayList;

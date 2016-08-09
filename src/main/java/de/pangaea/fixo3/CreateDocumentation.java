@@ -50,7 +50,7 @@ import de.pangaea.fixo3.vocab.Schema;
 
 public class CreateDocumentation {
 
-	private final String base = "file:///home/ms/workspace-sensdatatran/EsonetYellowPagesSparql/src/main/resources/ontologies/";
+	private final String base = "file:///home/ms/workspace-sensdatatran/FixO3-LD/src/main/resources/ontologies/";
 	
 	private final IRI schemaIRI = IRI.create(base + "schema.rdf");
 	private final IRI ssnIRI = IRI.create(base + "ssn.rdf");

@@ -92,6 +92,9 @@ public class OntologyManager {
 		ReasonerFactory rf = new ReasonerFactory();
 
 		Configuration c = new Configuration();
+        
+		c.ignoreUnsupportedDatatypes = true;
+        
 		OWLReasoner r = rf.createReasoner(o, c);
 
 		r.precomputeInferences(InferenceType.CLASS_HIERARCHY, InferenceType.CLASS_ASSERTIONS,
@@ -121,7 +124,7 @@ public class OntologyManager {
 		materialize();
 		save(file);
 	}
-	
+
 	public void save(String file) throws OWLOntologyStorageException {
 		m.saveOntology(o, new FileDocumentTarget(new File(file)));
 	}
@@ -130,7 +133,7 @@ public class OntologyManager {
 		m.addIRIMapper(new SimpleIRIMapper(iri, mapping));
 		addImport(iri);
 	}
-	
+
 	public void addImport(IRI iri) throws OWLOntologyCreationException {
 		m.loadOntology(iri);
 		addImport(df.getOWLImportsDeclaration(iri));
@@ -247,6 +250,16 @@ public class OntologyManager {
 	public void addDataAssertion(IRI subject, IRI predicate, Float value) {
 		addAxiom(df.getOWLDataPropertyAssertionAxiom(df.getOWLDataProperty(predicate), getIndividual(subject),
 				df.getOWLLiteral(value)));
+	}
+
+	public void addDataAssertion(IRI subject, IRI predicate, String value) {
+		addAxiom(df.getOWLDataPropertyAssertionAxiom(df.getOWLDataProperty(predicate), getIndividual(subject),
+				df.getOWLLiteral(value)));
+	}
+
+	public void addDataAssertion(IRI subject, IRI predicate, String value, IRI datatype) {
+		addAxiom(df.getOWLDataPropertyAssertionAxiom(df.getOWLDataProperty(predicate), getIndividual(subject),
+				df.getOWLLiteral(value, df.getOWLDatatype(datatype))));
 	}
 
 	private void addAnnotation(IRI iri, OWLAnnotation annotation) {

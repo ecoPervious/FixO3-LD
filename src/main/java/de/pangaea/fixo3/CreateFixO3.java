@@ -32,9 +32,17 @@ import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 
 import de.pangaea.fixo3.vocab.EYP;
 import de.pangaea.fixo3.vocab.FIXO3;
+import de.pangaea.fixo3.vocab.GeoSPARQL;
+import de.pangaea.fixo3.vocab.SF;
 import de.pangaea.fixo3.vocab.SSN;
 import de.pangaea.fixo3.vocab.Schema;
 
+import static de.pangaea.fixo3.vocab.Schema.location;
+import static de.pangaea.fixo3.vocab.SF.Point;
+import static de.pangaea.fixo3.vocab.GeoSPARQL.Feature;
+import static de.pangaea.fixo3.vocab.GeoSPARQL.hasGeometry;
+import static de.pangaea.fixo3.vocab.GeoSPARQL.asWKT;
+import static de.pangaea.fixo3.vocab.GeoSPARQL.wktLiteral;
 import static de.pangaea.fixo3.vocab.FIXO3.FixedPointOceanObservatory;
 import static de.pangaea.fixo3.vocab.FIXO3.OceanObservatory;
 import static de.pangaea.fixo3.vocab.SSN.Platform;
@@ -43,7 +51,7 @@ import static org.apache.commons.codec.digest.DigestUtils.md5Hex;
 
 /**
  * <p>
- * Title:
+ * Title: CreateFixO3
  * </p>
  * <p>
  * Description:
@@ -58,8 +66,8 @@ import static org.apache.commons.codec.digest.DigestUtils.md5Hex;
 
 public class CreateFixO3 {
 
-	private final String schemaFile = "file:///home/ms/workspace-sensdatatran/EsonetYellowPagesSparql/src/main/resources/ontologies/schema.rdf";
-	private final String eypFile = "file:///home/ms/workspace-sensdatatran/EsonetYellowPagesSparql/src/main/resources/ontologies/esonetyellowpages.rdf";
+	private final String schemaFile = "file:///home/ms/workspace-sensdatatran/FixO3-LD/src/main/resources/ontologies/schema.rdf";
+	private final String eypFile = "file:///home/ms/workspace-sensdatatran/FixO3-LD/src/main/resources/ontologies/esonetyellowpages.rdf";
 
 	private final String fixO3ObservatoriesFile = "src/main/resources/data/fixo3-observatories.json";
 	private final String fixO3File = "src/main/resources/ontologies/fixo3.rdf";
@@ -75,6 +83,7 @@ public class CreateFixO3 {
 		m.addCreator("Markus Stocker");
 		m.addSeeAlso("http://www.fixo3.eu/");
 		m.addImport(Schema.ns, IRI.create(schemaFile));
+//		m.addImport(SF.ns);
 		m.addImport(SSN.ns);
 		m.addImport(EYP.ns, IRI.create(eypFile));
 
@@ -90,39 +99,96 @@ public class CreateFixO3 {
 		JsonArray ja = jr.readArray();
 
 		for (JsonObject jo : ja.getValuesAs(JsonObject.class)) {
-			String label = jo.getString("label");
-			String title = jo.getString("title");
-			String comment = jo.getString("comment");
-			String source = jo.getString("source");
-			JsonArray attachedSystems = jo.getJsonArray("attachedSystems");
-
-			addFixedOceanObservatory(label, title, comment, IRI.create(source), attachedSystems);
+			addFixedOceanObservatory(jo);
 		}
 
 		m.save(fixO3File);
 		m.saveInferred(fixO3InferredFile);
 	}
 
-	private void addFixedOceanObservatory(String label, String title, String comment, IRI source,
-			JsonArray attachedSystems) {
+	private void addFixedOceanObservatory(JsonObject jo) {
+		String label;
+
+		if (jo.containsKey("label"))
+			label = jo.getString("label");
+		else
+			throw new RuntimeException("Label is expected [jo = " + jo + "]");
+
 		IRI observatory = IRI.create(FIXO3.ns.toString() + md5Hex(label));
 
 		m.addIndividual(observatory);
 		m.addType(observatory, FixedPointOceanObservatory);
 		m.addLabel(observatory, label);
-		m.addTitle(observatory, title);
-		m.addComment(observatory, comment);
-		m.addSource(observatory, source);
 
-		if (attachedSystems == null)
+		if (jo.containsKey("title")) {
+			m.addTitle(observatory, jo.getString("title"));
+		}
+		if (jo.containsKey("comment")) {
+			m.addComment(observatory, jo.getString("comment"));
+		}
+		if (jo.containsKey("source")) {
+			m.addSource(observatory, IRI.create(jo.getString("source")));
+		}
+		if (jo.containsKey("location")) {
+			JsonObject j = jo.getJsonObject("location");
+
+			String place, coordinates;
+
+			if (j.containsKey("place"))
+				place = j.getString("place");
+			else
+				throw new RuntimeException("Place is expected [j = " + j + "]");
+
+			if (j.containsKey("coordinates"))
+				coordinates = j.getString("coordinates");
+			else
+				throw new RuntimeException("Coordinates are expected [j = " + j + "]");
+
+			String fl = place + " @ " + coordinates;
+			String gl = coordinates;
+
+			IRI feature = IRI.create(FIXO3.ns.toString() + md5Hex(fl));
+			IRI geometry = IRI.create(FIXO3.ns.toString() + md5Hex(gl));
+
+			m.addIndividual(feature);
+			m.addType(feature, Feature);
+			m.addLabel(feature, fl);
+			m.addObjectAssertion(observatory, location, feature);
+
+			if (coordinates.startsWith("POINT"))
+				m.addType(geometry, Point);
+			else
+				throw new RuntimeException("Coordinates not recognized, expected POINT [j = " + j + "]");
+
+			m.addIndividual(geometry);
+			m.addLabel(geometry, gl);
+			m.addObjectAssertion(feature, hasGeometry, geometry);
+			m.addDataAssertion(geometry, asWKT, coordinates, wktLiteral);
+		}
+
+		if (!jo.containsKey("attachedSystems"))
 			return;
 
-		for (JsonObject jo : attachedSystems.getValuesAs(JsonObject.class)) {
-			IRI system = IRI.create(FIXO3.ns.toString() + md5Hex(jo.getString("label")));
+		JsonArray attachedSystems = jo.getJsonArray("attachedSystems");
+
+		for (JsonObject j : attachedSystems.getValuesAs(JsonObject.class)) {
+			String l, t;
+
+			if (j.containsKey("label"))
+				l = j.getString("label");
+			else
+				throw new RuntimeException("Label expected [j = " + j + "]");
+
+			if (j.containsKey("type"))
+				t = j.getString("type");
+			else
+				throw new RuntimeException("Type excepted [j = " + j + "]");
+
+			IRI system = IRI.create(FIXO3.ns.toString() + md5Hex(l));
 
 			m.addIndividual(system);
-			m.addType(system, IRI.create(jo.getString("type")));
-			m.addLabel(system, jo.getString("label"));
+			m.addType(system, IRI.create(t));
+			m.addLabel(system, l);
 			m.addObjectAssertion(observatory, attachedSystem, system);
 		}
 	}

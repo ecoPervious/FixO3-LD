@@ -2,14 +2,14 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ssn: <https://www.w3.org/ns/ssn/>
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX schema: <http://schema.org/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 
-SELECT ?observatory ?title ?source ?comment
+SELECT ?observatory ?title ?location
 WHERE {
-  [
-    rdf:type ssn:Platform ;
+  [ ] rdf:type ssn:Platform ;
     rdfs:label ?observatory ;
     dc:title ?title ;
-    dc:source ?source ;
-    rdfs:comment ?comment
- ]
+	schema:location [ geo:hasGeometry [ geo:asWKT ?location ] ]
 }
+ORDER BY ?observatory

@@ -11,5 +11,7 @@ WHERE {
     rdfs:label ?observatory ;
     dc:title ?title ;
 	schema:location [ geo:hasGeometry [ geo:asWKT ?location ] ]
+	
+    FILTER (datatype(?location) = geo:wktLiteral)
 }
 ORDER BY ?observatory

@@ -43,6 +43,7 @@ public class SSN {
 	public static final IRI SensingDevice = c("SensingDevice");
 	public static final IRI Property = c("Property");
 	public static final IRI MeasurementCapability = c("MeasurementCapability");
+	public static final IRI MeasurementProperty = c("MeasurementProperty");
 	public static final IRI MeasurementFrequency = c("MeasurementFrequency");
 	public static final IRI MeasurementRange = c("MeasurementRange");
 

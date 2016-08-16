@@ -45,6 +45,8 @@ public class Schema {
 	public static final IRI maxValue = c("maxValue");
 	
 	public static final IRI location = c("location");
+	public static final IRI image = c("image");
+	public static final IRI manufacturer = c("manufacturer");
 
 	private static IRI c(String suffix) {
 		return IRI.create(ns.toString(), suffix);

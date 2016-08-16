@@ -169,7 +169,7 @@ public class CreateEsonetYellowPages {
 				"An acoustic Doppler current profiler (ADCP) is a hydroacoustic current meter similar to a sonar, attempting to measure water current velocities over a depth range using the Doppler effect of sound waves scattered back from particles within the water column.");
 		m.addObjectAll(AcousticDopplerCurrentProfiler, detects, DopplerEffect);
 		m.addSubClass(AcousticDopplerCurrentProfiler, HydroacousticCurrentMeter);
-		
+
 		m.addClass(PartialPressureOfCO2Analyzer);
 		m.addSubClass(PartialPressureOfCO2Analyzer, SensingDevice);
 		m.addLabel(PartialPressureOfCO2Analyzer, "Partial Pressure of CO2 Analyzer");
@@ -199,6 +199,10 @@ public class CreateEsonetYellowPages {
 		m.addComment(device, comment);
 		m.addSeeAlso(device, seeAlso);
 
+		// Default sub class, though implicit with curated sensing device type
+		// hierarchy
+		m.addSubClass(device, SSN.SensingDevice);
+
 		for (JsonObject subClass : subClasses.getValuesAs(JsonObject.class)) {
 			if (subClass.containsKey("type")) {
 				m.addSubClass(device, IRI.create(subClass.getString("type")));
@@ -220,7 +224,12 @@ public class CreateEsonetYellowPages {
 				m.addObjectAssertion(capabilityIRI, hasMeasurementProperty, quantityIRI);
 
 				m.addIndividual(quantityIRI);
-				m.addType(quantityIRI, IRI.create(quantity.getString("type")));
+				m.addType(quantityIRI, SSN.MeasurementProperty); // Default
+
+				if (quantity.containsKey("type")) {
+					m.addType(quantityIRI, IRI.create(quantity.getString("type")));
+				}
+
 				m.addLabel(quantityIRI, quantityLabel);
 
 				if (quantity.containsKey("value")) {

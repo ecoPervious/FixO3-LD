@@ -32,8 +32,6 @@ import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 
 import de.pangaea.fixo3.vocab.EYP;
 import de.pangaea.fixo3.vocab.FIXO3;
-import de.pangaea.fixo3.vocab.GeoSPARQL;
-import de.pangaea.fixo3.vocab.SF;
 import de.pangaea.fixo3.vocab.SSN;
 import de.pangaea.fixo3.vocab.Schema;
 
@@ -83,7 +81,6 @@ public class CreateFixO3 {
 		m.addCreator("Markus Stocker");
 		m.addSeeAlso("http://www.fixo3.eu/");
 		m.addImport(Schema.ns, IRI.create(schemaFile));
-//		m.addImport(SF.ns);
 		m.addImport(SSN.ns);
 		m.addImport(EYP.ns, IRI.create(eypFile));
 

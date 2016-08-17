@@ -9,6 +9,28 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"BoWa_Snapper - Multihorizon-Bottom Water Sampler K/MT 421 Sample Volume",
+                    "quantity":{
+                        "label":"6 Liter",
+                        "value":"6",
+                        "unitCode":"http://qudt.org/vocab/unit#Liter",
+                        "type":"http://esonetyellowpages.com/vocab/SampleVolume"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"BoWa_Snapper - Multihorizon-Bottom Water Sampler K/MT 421 Samples Per Deployment",
+                    "quantity":{
+                        "label":"6 Bottle",
+                        "value":"6",
+                        "unitCode":"http://qudt.org/vocab/unit#Bottle",
+                        "type":"http://esonetyellowpages.com/vocab/SamplesPerDeployment"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"BoWa_Snapper - Multihorizon-Bottom Water Sampler K/MT 421 Maximum Operating Depth",
                     "quantity":{
                         "label":"6000 m",
@@ -76,6 +98,64 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"SeaSPY Operating Range",
+                    "quantity":{
+                        "label":"18000 - 120000 nT",
+                        "minValue":"18000",
+                        "maxValue":"120000",
+                        "unitCode":"http://qudt.org/vocab/unit#Nanotesla",
+                        "type":"http://esonetyellowpages.com/vocab/OperatingRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SeaSPY Resolution",
+                    "quantity":{
+                        "label":"0.001 nT",
+                        "value":"0.001",
+                        "unitCode":"http://qudt.org/vocab/unit#Nanotesla",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SeaSPY Absolute Accuracy",
+                    "quantity":{
+                        "label":"0.1 nT",
+                        "value":"0.1",
+                        "unitCode":"http://qudt.org/vocab/unit#Nanotesla",
+                        "type":"http://esonetyellowpages.com/vocab/AbsoluteAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SeaSPY Sampling Rate",
+                    "quantity":{
+                        "label":"0.1 - 4 Hz",
+                        "minValue":"0.1",
+                        "maxValue":"4",
+                        "unitCode":"http://qudt.org/vocab/unit#Hertz",
+                        "type":"http://esonetyellowpages.com/vocab/SamplingRate"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SeaSPY Operating Temperature",
+                    "quantity":{
+                        "label":"-45 - 60 °C",
+                        "minValue":"-45",
+                        "maxValue":"60",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/OperatingTemperature"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"SeaSPY Weight In Air",
                     "quantity":{
                         "label":"16 kg",
@@ -107,12 +187,58 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"Micro T Range",
+                    "quantity":{
+                        "label":"-2 - 32 °C",
+                        "minValue":"-2",
+                        "maxValue":"32",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Micro T Accuracy",
+                    "quantity":{
+                        "label":"±0.005 °C",
+                        "value":"±0.005",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Micro T Resolution",
+                    "quantity":{
+                        "label":"0.001 °C",
+                        "value":"0.001",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"Micro T Response Time",
                     "quantity":{
                         "label":"0.1 s",
                         "value":"0.1",
                         "unitCode":"http://qudt.org/vocab/unit#SecondTime",
                         "type":"http://esonetyellowpages.com/vocab/ResponseTime"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Micro T Supply Voltage",
+                    "quantity":{
+                        "label":"8 - 16 VDC",
+                        "minValue":"8",
+                        "maxValue":"16",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/SupplyVoltage"
                     }
                 }
             }
@@ -145,6 +271,18 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"S2T6000 Range",
+                    "quantity":{
+                        "label":"0 - 70 °C",
+                        "minValue":"0",
+                        "maxValue":"70",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"S2T6000 Response Time",
                     "quantity":{
                         "label":"1 s",
@@ -164,6 +302,17 @@
                         "type":"http://esonetyellowpages.com/vocab/DepthRating"
                     }
                 }
+            },
+            {
+                "capability":{
+                    "label":"S2T6000 Memory",
+                    "quantity":{
+                        "label":"1 Mb",
+                        "value":"1",
+                        "unitCode":"http://qudt.org/vocab/unit#Megabytes",
+                        "type":"http://esonetyellowpages.com/vocab/Memory"
+                    }
+                }
             }
         ]
     },
@@ -174,6 +323,41 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/envirofluds.png",
         "manufacturer":"TriOS GmbH",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"enviroFlu-DS Power Supply",
+                    "quantity":{
+                        "label":"-12 - 26 VDC",
+                        "minValue":"-12",
+                        "maxValue":"26",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/PowerSupply"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"enviroFlu-DS Excitation Wavelength",
+                    "quantity":{
+                        "label":"-254 nm",
+                        "value":"-254",
+                        "unitCode":"http://qudt.org/vocab/unit#Nanometer",
+                        "type":"http://esonetyellowpages.com/vocab/ExcitationWavelength"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"enviroFlu-DS Operating Temperature",
+                    "quantity":{
+                        "label":"-0 - 40 °C",
+                        "minValue":"-0",
+                        "maxValue":"40",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/OperatingTemperature"
+                    }
+                }
+            }
         ]
     },
     {
@@ -234,9 +418,21 @@
             },
             {
                 "capability":{
+                    "label":"FlowQuest 75 Cell Size",
+                    "quantity":{
+                        "label":"4 - 32 m",
+                        "minValue":"4",
+                        "maxValue":"32",
+                        "unitCode":"http://qudt.org/vocab/unit#Meter",
+                        "type":"http://esonetyellowpages.com/vocab/CellSize"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"FlowQuest 75 Maximum Transmit",
                     "quantity":{
-                        "label":"800 Watts",
+                        "label":"800 Watt",
                         "value":"800",
                         "unitCode":"http://qudt.org/vocab/unit#Watt",
                         "type":"http://esonetyellowpages.com/vocab/MaximumTransmit"
@@ -258,7 +454,7 @@
                 "capability":{
                     "label":"FlowQuest 75 Maximum Water Velocity",
                     "quantity":{
-                        "label":"20 knots",
+                        "label":"20 knot",
                         "value":"20",
                         "unitCode":"http://qudt.org/vocab/unit#Knot",
                         "type":"http://esonetyellowpages.com/vocab/MaximumWaterVelocity"
@@ -273,6 +469,17 @@
                         "value":"1",
                         "unitCode":"http://qudt.org/vocab/unit#Hertz",
                         "type":"http://esonetyellowpages.com/vocab/MaximumPingRate"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 75 Transducer Beam Angle",
+                    "quantity":{
+                        "label":"22 °",
+                        "value":"22",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
                     }
                 }
             },
@@ -328,6 +535,73 @@
                         "value":"26",
                         "unitCode":"http://qudt.org/vocab/unit#Kilogram",
                         "type":"http://esonetyellowpages.com/vocab/WeightInWater"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 75 Temperature Accuracy",
+                    "quantity":{
+                        "label":"±4 °C",
+                        "value":"±4",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TemperatureAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 75 Temperature Range",
+                    "quantity":{
+                        "label":"-5 - 45 °C",
+                        "minValue":"-5",
+                        "maxValue":"45",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TemperatureRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 75 Tilt Accuracy",
+                    "quantity":{
+                        "label":"±0.5 °C",
+                        "value":"±0.5",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TiltAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 75 Tilt Range",
+                    "quantity":{
+                        "label":"±15 °",
+                        "value":"±15",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TiltRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 75 Compass Accuracy",
+                    "quantity":{
+                        "label":"±2 °",
+                        "value":"±2",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/CompassAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 75 Compass Maximum Tilt",
+                    "quantity":{
+                        "label":"±15 °",
+                        "value":"±15",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/CompassMaximumTilt"
                     }
                 }
             }
@@ -387,6 +661,29 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"T2 Range",
+                    "quantity":{
+                        "label":"-2 - 38 °C",
+                        "minValue":"-2",
+                        "maxValue":"38",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"T2 Resolution",
+                    "quantity":{
+                        "label":"0.001 °C",
+                        "value":"0.001",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"T2 Response Time",
                     "quantity":{
                         "label":"0.02 s",
@@ -405,6 +702,29 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/ts110.png",
         "manufacturer":"NexSens Technology, Inc",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"TS110 Range",
+                    "quantity":{
+                        "label":"0 - 50 °C",
+                        "minValue":"0",
+                        "maxValue":"50",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"TS110 Accuracy",
+                    "quantity":{
+                        "label":"±0.1 °C",
+                        "value":"±0.1",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
             {
                 "capability":{
                     "label":"TS110 Depth Rating",
@@ -449,9 +769,21 @@
             },
             {
                 "capability":{
+                    "label":"Vessel-Mounted 500 Cell Size",
+                    "quantity":{
+                        "label":"1 - 12 m",
+                        "minValue":"1",
+                        "maxValue":"12",
+                        "unitCode":"http://qudt.org/vocab/unit#Meter",
+                        "type":"http://esonetyellowpages.com/vocab/CellSize"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"Vessel-Mounted 500 Maximum Transmit",
                     "quantity":{
-                        "label":"4 Watts",
+                        "label":"4 Watt",
                         "value":"4",
                         "unitCode":"http://qudt.org/vocab/unit#Watt",
                         "type":"http://esonetyellowpages.com/vocab/MaximumTransmit"
@@ -471,12 +803,45 @@
             },
             {
                 "capability":{
+                    "label":"Vessel-Mounted 500 Maximum Water Velocity",
+                    "quantity":{
+                        "label":"±10 m/s",
+                        "value":"±10",
+                        "unitCode":"http://qudt.org/vocab/unit#MeterPerSecond",
+                        "type":"http://esonetyellowpages.com/vocab/MaximumWaterVelocity"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"Vessel-Mounted 500 Maximum Ping Rate",
                     "quantity":{
                         "label":"2 Hz",
                         "value":"2",
                         "unitCode":"http://qudt.org/vocab/unit#Hertz",
                         "type":"http://esonetyellowpages.com/vocab/MaximumPingRate"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Vessel-Mounted 500 Transducer",
+                    "quantity":{
+                        "label":"3 Beam",
+                        "value":"3",
+                        "unitCode":"http://qudt.org/vocab/unit#Beam",
+                        "type":"http://esonetyellowpages.com/vocab/Transducer"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Vessel-Mounted 500 Transducer Beam Angle",
+                    "quantity":{
+                        "label":"25 °",
+                        "value":"25",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
                     }
                 }
             },
@@ -542,6 +907,18 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"S2T6000D Range",
+                    "quantity":{
+                        "label":"0 - 100 °C",
+                        "minValue":"0",
+                        "maxValue":"100",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"S2T6000D Response Time",
                     "quantity":{
                         "label":"0.5 s",
@@ -561,6 +938,17 @@
                         "type":"http://esonetyellowpages.com/vocab/DepthRating"
                     }
                 }
+            },
+            {
+                "capability":{
+                    "label":"S2T6000D Memory",
+                    "quantity":{
+                        "label":"1 Mb",
+                        "value":"1",
+                        "unitCode":"http://qudt.org/vocab/unit#Megabytes",
+                        "type":"http://esonetyellowpages.com/vocab/Memory"
+                    }
+                }
             }
         ]
     },
@@ -573,12 +961,35 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"SBE 8 Range",
+                    "quantity":{
+                        "label":"-3 - 30 °C",
+                        "minValue":"-3",
+                        "maxValue":"30",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"SBE 8 Depth Rating",
                     "quantity":{
                         "label":"6800 m",
                         "value":"6800",
                         "unitCode":"http://qudt.org/vocab/unit#Meter",
                         "type":"http://esonetyellowpages.com/vocab/DepthRating"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 8 Supply Voltage",
+                    "quantity":{
+                        "label":"±15 VDC",
+                        "value":"±15",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/SupplyVoltage"
                     }
                 }
             },
@@ -615,12 +1026,35 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"S2T600 Range",
+                    "quantity":{
+                        "label":"-5 - 50 °C",
+                        "minValue":"-5",
+                        "maxValue":"50",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"S2T600 Depth Rating",
                     "quantity":{
                         "label":"600 m",
                         "value":"600",
                         "unitCode":"http://qudt.org/vocab/unit#Meter",
                         "type":"http://esonetyellowpages.com/vocab/DepthRating"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"S2T600 Memory",
+                    "quantity":{
+                        "label":"1 Mb",
+                        "value":"1",
+                        "unitCode":"http://qudt.org/vocab/unit#Megabytes",
+                        "type":"http://esonetyellowpages.com/vocab/Memory"
                     }
                 }
             }
@@ -698,6 +1132,29 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"TempLine Range",
+                    "quantity":{
+                        "label":"-18 - 85 °C",
+                        "minValue":"-18",
+                        "maxValue":"85",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"TempLine Accuracy",
+                    "quantity":{
+                        "label":"±0.1 °C",
+                        "value":"±0.1",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"TempLine Weight In Air",
                     "quantity":{
                         "label":"1 kg",
@@ -718,12 +1175,58 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"SBE 3plus Range",
+                    "quantity":{
+                        "label":"-5 - 35 °C",
+                        "minValue":"-5",
+                        "maxValue":"35",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 3plus Accuracy",
+                    "quantity":{
+                        "label":"±0.001 °C",
+                        "value":"±0.001",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 3plus Resolution",
+                    "quantity":{
+                        "label":"0.0003 °C",
+                        "value":"0.0003",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"SBE 3plus Response Time",
                     "quantity":{
                         "label":"0.065 s",
                         "value":"0.065",
                         "unitCode":"http://qudt.org/vocab/unit#SecondTime",
                         "type":"http://esonetyellowpages.com/vocab/ResponseTime"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 3plus Supply Voltage",
+                    "quantity":{
+                        "label":"11 - 16 VDC",
+                        "minValue":"11",
+                        "maxValue":"16",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/SupplyVoltage"
                     }
                 }
             }
@@ -808,6 +1311,52 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/sbe_39.png",
         "manufacturer":"Sea-Bird Electronics, Inc.",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"SBE 39 Range",
+                    "quantity":{
+                        "label":"-5 - 35 °C",
+                        "minValue":"-5",
+                        "maxValue":"35",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 39 Accuracy",
+                    "quantity":{
+                        "label":"±0.002 °C",
+                        "value":"±0.002",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 39 Resolution",
+                    "quantity":{
+                        "label":"0.0001 °C",
+                        "value":"0.0001",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 39 Supply Voltage",
+                    "quantity":{
+                        "label":"9 - 30 VDC",
+                        "minValue":"9",
+                        "maxValue":"30",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/SupplyVoltage"
+                    }
+                }
+            }
         ]
     },
     {
@@ -817,6 +1366,17 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/tr1060.png",
         "manufacturer":"RBR Europe Ltd.",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"TR-1060 Accuracy",
+                    "quantity":{
+                        "label":"±0.002 °C",
+                        "value":"±0.002",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
             {
                 "capability":{
                     "label":"TR-1060 Response Time",
@@ -836,6 +1396,17 @@
                         "value":"1200",
                         "unitCode":"http://qudt.org/vocab/unit#Meter",
                         "type":"http://esonetyellowpages.com/vocab/DepthRating"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"TR-1060 Supply Voltage",
+                    "quantity":{
+                        "label":"3 VDC",
+                        "value":"3",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/SupplyVoltage"
                     }
                 }
             },
@@ -901,6 +1472,29 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"T-Node Range",
+                    "quantity":{
+                        "label":"0 - 50 °C",
+                        "minValue":"0",
+                        "maxValue":"50",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"T-Node Accuracy",
+                    "quantity":{
+                        "label":"±0.1 °C",
+                        "value":"±0.1",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"T-Node Depth Rating",
                     "quantity":{
                         "label":"200 m",
@@ -950,6 +1544,29 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"MacroTemp Range",
+                    "quantity":{
+                        "label":"-5 - 35 °C",
+                        "minValue":"-5",
+                        "maxValue":"35",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"MacroTemp Accuracy",
+                    "quantity":{
+                        "label":"±0.1 °C",
+                        "value":"±0.1",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"MacroTemp Weight In Air",
                     "quantity":{
                         "label":"6.8 kg",
@@ -968,6 +1585,40 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/t1.png",
         "manufacturer":"ME GRISARD GMBH",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"T1 Range",
+                    "quantity":{
+                        "label":"-2 - 38 °C",
+                        "minValue":"-2",
+                        "maxValue":"38",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"T1 Accuracy",
+                    "quantity":{
+                        "label":"±0.01 °C",
+                        "value":"±0.01",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"T1 Resolution",
+                    "quantity":{
+                        "label":"0.001 °C",
+                        "value":"0.001",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
             {
                 "capability":{
                     "label":"T1 Response Time",
@@ -990,12 +1641,58 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"SBE 3S Range",
+                    "quantity":{
+                        "label":"-5 - 35 °C",
+                        "minValue":"-5",
+                        "maxValue":"35",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 3S Accuracy",
+                    "quantity":{
+                        "label":"±0.001 °C",
+                        "value":"±0.001",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 3S Resolution",
+                    "quantity":{
+                        "label":"0.00004 °C",
+                        "value":"0.00004",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"SBE 3S Response Time",
                     "quantity":{
                         "label":"0.06 s",
                         "value":"0.06",
                         "unitCode":"http://qudt.org/vocab/unit#SecondTime",
                         "type":"http://esonetyellowpages.com/vocab/ResponseTime"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 3S Supply Voltage",
+                    "quantity":{
+                        "label":"11 - 16 VDC",
+                        "minValue":"11",
+                        "maxValue":"16",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/SupplyVoltage"
                     }
                 }
             }
@@ -1032,9 +1729,21 @@
             },
             {
                 "capability":{
+                    "label":"Aquadopp Profiler 1000 Cell Size",
+                    "quantity":{
+                        "label":"0.3 - 4 m",
+                        "minValue":"0.3",
+                        "maxValue":"4",
+                        "unitCode":"http://qudt.org/vocab/unit#Meter",
+                        "type":"http://esonetyellowpages.com/vocab/CellSize"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"Aquadopp Profiler 1000 Maximum Transmit",
                     "quantity":{
-                        "label":"20 Watts",
+                        "label":"20 Watt",
                         "value":"20",
                         "unitCode":"http://qudt.org/vocab/unit#Watt",
                         "type":"http://esonetyellowpages.com/vocab/MaximumTransmit"
@@ -1054,12 +1763,45 @@
             },
             {
                 "capability":{
+                    "label":"Aquadopp Profiler 1000 Maximum Water Velocity",
+                    "quantity":{
+                        "label":"±10 m/s",
+                        "value":"±10",
+                        "unitCode":"http://qudt.org/vocab/unit#MeterPerSecond",
+                        "type":"http://esonetyellowpages.com/vocab/MaximumWaterVelocity"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"Aquadopp Profiler 1000 Maximum Ping Rate",
                     "quantity":{
                         "label":"1 Hz",
                         "value":"1",
                         "unitCode":"http://qudt.org/vocab/unit#Hertz",
                         "type":"http://esonetyellowpages.com/vocab/MaximumPingRate"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 1000 Transducer",
+                    "quantity":{
+                        "label":"3 Beam",
+                        "value":"3",
+                        "unitCode":"http://qudt.org/vocab/unit#Beam",
+                        "type":"http://esonetyellowpages.com/vocab/Transducer"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 1000 Transducer Beam Angle",
+                    "quantity":{
+                        "label":"3.4 °",
+                        "value":"3.4",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
                     }
                 }
             },
@@ -1087,12 +1829,80 @@
             },
             {
                 "capability":{
+                    "label":"Aquadopp Profiler 1000 Overall Length",
+                    "quantity":{
+                        "label":"570 - 630 mm",
+                        "minValue":"570",
+                        "maxValue":"630",
+                        "unitCode":"http://qudt.org/vocab/unit#Millimeter",
+                        "type":"http://esonetyellowpages.com/vocab/OverallLength"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"Aquadopp Profiler 1000 Weight In Air",
                     "quantity":{
                         "label":"2.4 kg",
                         "value":"2.4",
                         "unitCode":"http://qudt.org/vocab/unit#Kilogram",
                         "type":"http://esonetyellowpages.com/vocab/WeightInAir"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 1000 Temperature Accuracy",
+                    "quantity":{
+                        "label":"0.1 °C",
+                        "value":"0.1",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TemperatureAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 1000 Temperature Range",
+                    "quantity":{
+                        "label":"-4 - 30 °C",
+                        "minValue":"-4",
+                        "maxValue":"30",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TemperatureRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 1000 Tilt Accuracy",
+                    "quantity":{
+                        "label":"0.2 °",
+                        "value":"0.2",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TiltAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 1000 Compass Accuracy",
+                    "quantity":{
+                        "label":"2 °",
+                        "value":"2",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/CompassAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 1000 Compass Maximum Tilt",
+                    "quantity":{
+                        "label":"30 °",
+                        "value":"30",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/CompassMaximumTilt"
                     }
                 }
             }
@@ -1114,6 +1924,18 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/microfluds.png",
         "manufacturer":"TriOS GmbH",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"microFlu-DS Power Supply",
+                    "quantity":{
+                        "label":"-5 - 15 VDC",
+                        "minValue":"-5",
+                        "maxValue":"15",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/PowerSupply"
+                    }
+                }
+            }
         ]
     },
     {
@@ -1150,6 +1972,41 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/ysi_6136_turbidity.png",
         "manufacturer":"YSI Incorporated",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"YSI 6136 Turbidity Turbidity Range",
+                    "quantity":{
+                        "label":"0 - 1000 NTU",
+                        "minValue":"0",
+                        "maxValue":"1000",
+                        "unitCode":"http://qudt.org/vocab/unit#NephelometricTurbidityUnit",
+                        "type":"http://esonetyellowpages.com/vocab/TurbidityRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"YSI 6136 Turbidity Resolution",
+                    "quantity":{
+                        "label":"0.1 NTU",
+                        "value":"0.1",
+                        "unitCode":"http://qudt.org/vocab/unit#NephelometricTurbidityUnit",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"YSI 6136 Turbidity Depth Rating",
+                    "quantity":{
+                        "label":"0 - 200 m",
+                        "minValue":"0",
+                        "maxValue":"200",
+                        "unitCode":"http://qudt.org/vocab/unit#Meter",
+                        "type":"http://esonetyellowpages.com/vocab/DepthRating"
+                    }
+                }
+            }
         ]
     },
     {
@@ -1168,6 +2025,50 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/advanced_ocean_temperature_hull_sensor.png",
         "manufacturer":"SubCtech GmbH",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"Advanced Ocean Temperature Hull Sensor Accuracy",
+                    "quantity":{
+                        "label":"±0.005 °C",
+                        "value":"±0.005",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Advanced Ocean Temperature Hull Sensor Resolution",
+                    "quantity":{
+                        "label":"0.0006 °C",
+                        "value":"0.0006",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Advanced Ocean Temperature Hull Sensor Response Time",
+                    "quantity":{
+                        "label":"0.5 s",
+                        "value":"0.5",
+                        "unitCode":"http://qudt.org/vocab/unit#SecondTime",
+                        "type":"http://esonetyellowpages.com/vocab/ResponseTime"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Advanced Ocean Temperature Hull Sensor Weight In Air",
+                    "quantity":{
+                        "label":"2.5 kg",
+                        "value":"2.5",
+                        "unitCode":"http://qudt.org/vocab/unit#Kilogram",
+                        "type":"http://esonetyellowpages.com/vocab/WeightInAir"
+                    }
+                }
+            }
         ]
     },
     {
@@ -1177,6 +2078,40 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/manta2.png",
         "manufacturer":"Eureka Environmental",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"Manta2 Range",
+                    "quantity":{
+                        "label":"-5 - 50 °C",
+                        "minValue":"-5",
+                        "maxValue":"50",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Manta2 Accuracy",
+                    "quantity":{
+                        "label":"±0.1 °C",
+                        "value":"±0.1",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Manta2 Resolution",
+                    "quantity":{
+                        "label":"0.01 °C",
+                        "value":"0.01",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            }
         ]
     },
     {
@@ -1204,6 +2139,28 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/advanced_ph_flowthrough.png",
         "manufacturer":"SubCtech GmbH",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"Advanced pH flow-through Maximum Pressure",
+                    "quantity":{
+                        "label":"6 Bar",
+                        "value":"6",
+                        "unitCode":"http://qudt.org/vocab/unit#Bar",
+                        "type":"http://esonetyellowpages.com/vocab/MaximumPressure"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Advanced pH flow-through Weight",
+                    "quantity":{
+                        "label":"250 g",
+                        "value":"250",
+                        "unitCode":"http://qudt.org/vocab/unit#Gram",
+                        "type":"http://esonetyellowpages.com/vocab/Weight"
+                    }
+                }
+            }
         ]
     },
     {
@@ -1222,6 +2179,40 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/tp.png",
         "manufacturer":"Nke Instrumentation",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"TP Range",
+                    "quantity":{
+                        "label":"0 - 30 °C",
+                        "minValue":"0",
+                        "maxValue":"30",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"TP Accuracy",
+                    "quantity":{
+                        "label":"±0.2 °C",
+                        "value":"±0.2",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"TP Resolution",
+                    "quantity":{
+                        "label":"0.03 °C",
+                        "value":"0.03",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
             {
                 "capability":{
                     "label":"TP Weight In Air",
@@ -1293,9 +2284,21 @@
             },
             {
                 "capability":{
+                    "label":"FlowQuest 1000 Cell Size",
+                    "quantity":{
+                        "label":"0.25 - 2 m",
+                        "minValue":"0.25",
+                        "maxValue":"2",
+                        "unitCode":"http://qudt.org/vocab/unit#Meter",
+                        "type":"http://esonetyellowpages.com/vocab/CellSize"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"FlowQuest 1000 Maximum Transmit",
                     "quantity":{
-                        "label":"50 Watts",
+                        "label":"50 Watt",
                         "value":"50",
                         "unitCode":"http://qudt.org/vocab/unit#Watt",
                         "type":"http://esonetyellowpages.com/vocab/MaximumTransmit"
@@ -1317,7 +2320,7 @@
                 "capability":{
                     "label":"FlowQuest 1000 Maximum Water Velocity",
                     "quantity":{
-                        "label":"20 knots",
+                        "label":"20 knot",
                         "value":"20",
                         "unitCode":"http://qudt.org/vocab/unit#Knot",
                         "type":"http://esonetyellowpages.com/vocab/MaximumWaterVelocity"
@@ -1332,6 +2335,17 @@
                         "value":"5",
                         "unitCode":"http://qudt.org/vocab/unit#Hertz",
                         "type":"http://esonetyellowpages.com/vocab/MaximumPingRate"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 1000 Transducer Beam Angle",
+                    "quantity":{
+                        "label":"22 °",
+                        "value":"22",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
                     }
                 }
             },
@@ -1354,6 +2368,73 @@
                         "value":"200",
                         "unitCode":"http://qudt.org/vocab/unit#Millimeter",
                         "type":"http://esonetyellowpages.com/vocab/HousingDiameter"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 1000 Temperature Accuracy",
+                    "quantity":{
+                        "label":"±0.4 °C",
+                        "value":"±0.4",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TemperatureAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 1000 Temperature Range",
+                    "quantity":{
+                        "label":"-5 - 45 °C",
+                        "minValue":"-5",
+                        "maxValue":"45",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TemperatureRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 1000 Tilt Accuracy",
+                    "quantity":{
+                        "label":"±0.5 °C",
+                        "value":"±0.5",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TiltAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 1000 Tilt Range",
+                    "quantity":{
+                        "label":"±15 °",
+                        "value":"±15",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TiltRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 1000 Compass Accuracy",
+                    "quantity":{
+                        "label":"±2 °",
+                        "value":"±2",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/CompassAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 1000 Compass Maximum Tilt",
+                    "quantity":{
+                        "label":"±15 °",
+                        "value":"±15",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/CompassMaximumTilt"
                     }
                 }
             }
@@ -1384,6 +2465,52 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/temperature_sensor_4060.png",
         "manufacturer":"Aanderaa Data Instruments Inc.",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"Temperature Sensor 4060 Range",
+                    "quantity":{
+                        "label":"-4 - 36 °C",
+                        "minValue":"-4",
+                        "maxValue":"36",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Temperature Sensor 4060 Accuracy",
+                    "quantity":{
+                        "label":"±0.03 °C",
+                        "value":"±0.03",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Temperature Sensor 4060 Resolution",
+                    "quantity":{
+                        "label":"0.001 °C",
+                        "value":"0.001",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Temperature Sensor 4060 Supply Voltage",
+                    "quantity":{
+                        "label":"6 - 14 VDC",
+                        "minValue":"6",
+                        "maxValue":"14",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/SupplyVoltage"
+                    }
+                }
+            },
             {
                 "capability":{
                     "label":"Temperature Sensor 4060 Weight In Air",
@@ -1433,6 +2560,17 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"PULSE 10 Power Requirement",
+                    "quantity":{
+                        "label":"12 VDC",
+                        "value":"12",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/PowerRequirement"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"PULSE 10 Weight In Air",
                     "quantity":{
                         "label":"9 kg",
@@ -1460,6 +2598,40 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/t3.png",
         "manufacturer":"ME GRISARD GMBH",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"T3 Range",
+                    "quantity":{
+                        "label":"-2 - 38 °C",
+                        "minValue":"-2",
+                        "maxValue":"38",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"T3 Accuracy",
+                    "quantity":{
+                        "label":"±0.005 °C",
+                        "value":"±0.005",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"T3 Resolution",
+                    "quantity":{
+                        "label":"0.001 °C",
+                        "value":"0.001",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
             {
                 "capability":{
                     "label":"T3 Response Time",
@@ -1498,6 +2670,75 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/explorer.png",
         "manufacturer":"Marine Magnetics Corp.",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"Explorer Operating Range",
+                    "quantity":{
+                        "label":"18000 - 120000 nT",
+                        "minValue":"18000",
+                        "maxValue":"120000",
+                        "unitCode":"http://qudt.org/vocab/unit#Nanotesla",
+                        "type":"http://esonetyellowpages.com/vocab/OperatingRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Explorer Resolution",
+                    "quantity":{
+                        "label":"0.001 nT",
+                        "value":"0.001",
+                        "unitCode":"http://qudt.org/vocab/unit#Nanotesla",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Explorer Absolute Accuracy",
+                    "quantity":{
+                        "label":"0.1 nT",
+                        "value":"0.1",
+                        "unitCode":"http://qudt.org/vocab/unit#Nanotesla",
+                        "type":"http://esonetyellowpages.com/vocab/AbsoluteAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Explorer Gradient Tolerance",
+                    "quantity":{
+                        "label":"10000 nT/m",
+                        "value":"10000",
+                        "unitCode":"http://qudt.org/vocab/unit#NanoteslaPerMeter",
+                        "type":"http://esonetyellowpages.com/vocab/GradientTolerance"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Explorer Sampling Rate",
+                    "quantity":{
+                        "label":"0.1 - 4 Hz",
+                        "minValue":"0.1",
+                        "maxValue":"4",
+                        "unitCode":"http://qudt.org/vocab/unit#Hertz",
+                        "type":"http://esonetyellowpages.com/vocab/SamplingRate"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Explorer Operating Temperature",
+                    "quantity":{
+                        "label":"-45 - 60 °C",
+                        "minValue":"-45",
+                        "maxValue":"60",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/OperatingTemperature"
+                    }
+                }
+            },
             {
                 "capability":{
                     "label":"Explorer Weight In Air",
@@ -1553,9 +2794,21 @@
             },
             {
                 "capability":{
+                    "label":"Aquadopp Profiler 600 Cell Size",
+                    "quantity":{
+                        "label":"1 - 4 m",
+                        "minValue":"1",
+                        "maxValue":"4",
+                        "unitCode":"http://qudt.org/vocab/unit#Meter",
+                        "type":"http://esonetyellowpages.com/vocab/CellSize"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"Aquadopp Profiler 600 Maximum Transmit",
                     "quantity":{
-                        "label":"20 Watts",
+                        "label":"20 Watt",
                         "value":"20",
                         "unitCode":"http://qudt.org/vocab/unit#Watt",
                         "type":"http://esonetyellowpages.com/vocab/MaximumTransmit"
@@ -1575,12 +2828,45 @@
             },
             {
                 "capability":{
+                    "label":"Aquadopp Profiler 600 Maximum Water Velocity",
+                    "quantity":{
+                        "label":"±10 m/s",
+                        "value":"±10",
+                        "unitCode":"http://qudt.org/vocab/unit#MeterPerSecond",
+                        "type":"http://esonetyellowpages.com/vocab/MaximumWaterVelocity"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"Aquadopp Profiler 600 Maximum Ping Rate",
                     "quantity":{
                         "label":"1 Hz",
                         "value":"1",
                         "unitCode":"http://qudt.org/vocab/unit#Hertz",
                         "type":"http://esonetyellowpages.com/vocab/MaximumPingRate"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 600 Transducer",
+                    "quantity":{
+                        "label":"3 Beam",
+                        "value":"3",
+                        "unitCode":"http://qudt.org/vocab/unit#Beam",
+                        "type":"http://esonetyellowpages.com/vocab/Transducer"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 600 Transducer Beam Angle",
+                    "quantity":{
+                        "label":"3 °",
+                        "value":"3",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
                     }
                 }
             },
@@ -1627,6 +2913,62 @@
                         "type":"http://esonetyellowpages.com/vocab/WeightInAir"
                     }
                 }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 600 Temperature Accuracy",
+                    "quantity":{
+                        "label":"0.1 °C",
+                        "value":"0.1",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TemperatureAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 600 Temperature Range",
+                    "quantity":{
+                        "label":"-4 - 30 °C",
+                        "minValue":"-4",
+                        "maxValue":"30",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TemperatureRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 600 Tilt Accuracy",
+                    "quantity":{
+                        "label":"0.2 °",
+                        "value":"0.2",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TiltAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 600 Compass Accuracy",
+                    "quantity":{
+                        "label":"2 °",
+                        "value":"2",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/CompassAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 600 Compass Maximum Tilt",
+                    "quantity":{
+                        "label":"30 °",
+                        "value":"30",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/CompassMaximumTilt"
+                    }
+                }
             }
         ]
     },
@@ -1637,6 +2979,40 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/hydrolab.png",
         "manufacturer":"HACH Environmental",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"Hydrolab Range",
+                    "quantity":{
+                        "label":"-5 - 50 °C",
+                        "minValue":"-5",
+                        "maxValue":"50",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Hydrolab Accuracy",
+                    "quantity":{
+                        "label":"±0.1 °C",
+                        "value":"±0.1",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Hydrolab Resolution",
+                    "quantity":{
+                        "label":"0.01 °C",
+                        "value":"0.01",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            }
         ]
     },
     {
@@ -1646,6 +3022,18 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/nwthd2.png",
         "manufacturer":"Nichiyu Giken Kogyo Co., Ltd.",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"NWT-HD2 Range",
+                    "quantity":{
+                        "label":"0 - 400 °C",
+                        "minValue":"0",
+                        "maxValue":"400",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
             {
                 "capability":{
                     "label":"NWT-HD2 Depth Rating",
@@ -1695,6 +3083,18 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/hydroscat6p.png",
         "manufacturer":"HOBI Labs, Inc.",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"HydroScat-6P Operating Temperature",
+                    "quantity":{
+                        "label":"0 - 35 C",
+                        "minValue":"0",
+                        "maxValue":"35",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/OperatingTemperature"
+                    }
+                }
+            }
         ]
     },
     {
@@ -1713,6 +3113,18 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/lisstdeep.png",
         "manufacturer":"Sequoia Scientific, Inc.",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"LISST-DEEP Sediment Size Concentration Range",
+                    "quantity":{
+                        "label":"0.5 - 250 mg/l",
+                        "minValue":"0.5",
+                        "maxValue":"250",
+                        "unitCode":"http://qudt.org/vocab/unit#MilligramPerLiter",
+                        "type":"http://esonetyellowpages.com/vocab/SedimentSizeConcentrationRange"
+                    }
+                }
+            }
         ]
     },
     {
@@ -1764,9 +3176,21 @@
             },
             {
                 "capability":{
+                    "label":"Vessel-Mounted 1000 Cell Size",
+                    "quantity":{
+                        "label":"0.4 - 4 m",
+                        "minValue":"0.4",
+                        "maxValue":"4",
+                        "unitCode":"http://qudt.org/vocab/unit#Meter",
+                        "type":"http://esonetyellowpages.com/vocab/CellSize"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"Vessel-Mounted 1000 Maximum Transmit",
                     "quantity":{
-                        "label":"1 Watts",
+                        "label":"1 Watt",
                         "value":"1",
                         "unitCode":"http://qudt.org/vocab/unit#Watt",
                         "type":"http://esonetyellowpages.com/vocab/MaximumTransmit"
@@ -1786,12 +3210,45 @@
             },
             {
                 "capability":{
+                    "label":"Vessel-Mounted 1000 Maximum Water Velocity",
+                    "quantity":{
+                        "label":"±10 m/s",
+                        "value":"±10",
+                        "unitCode":"http://qudt.org/vocab/unit#MeterPerSecond",
+                        "type":"http://esonetyellowpages.com/vocab/MaximumWaterVelocity"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"Vessel-Mounted 1000 Maximum Ping Rate",
                     "quantity":{
                         "label":"6 Hz",
                         "value":"6",
                         "unitCode":"http://qudt.org/vocab/unit#Hertz",
                         "type":"http://esonetyellowpages.com/vocab/MaximumPingRate"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Vessel-Mounted 1000 Transducer",
+                    "quantity":{
+                        "label":"3 Beam",
+                        "value":"3",
+                        "unitCode":"http://qudt.org/vocab/unit#Beam",
+                        "type":"http://esonetyellowpages.com/vocab/Transducer"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Vessel-Mounted 1000 Transducer Beam Angle",
+                    "quantity":{
+                        "label":"25 °",
+                        "value":"25",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
                     }
                 }
             },
@@ -1848,6 +3305,40 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"SBE 38 Range",
+                    "quantity":{
+                        "label":"-5 - 35 °C",
+                        "minValue":"-5",
+                        "maxValue":"35",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 38 Accuracy",
+                    "quantity":{
+                        "label":"±0.001 °C",
+                        "value":"±0.001",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 38 Resolution",
+                    "quantity":{
+                        "label":"0.00025 °C",
+                        "value":"0.00025",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"SBE 38 Response Time",
                     "quantity":{
                         "label":"0.5 s",
@@ -1865,6 +3356,18 @@
                         "value":"10500",
                         "unitCode":"http://qudt.org/vocab/unit#Meter",
                         "type":"http://esonetyellowpages.com/vocab/DepthRating"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 38 Supply Voltage",
+                    "quantity":{
+                        "label":"8 - 15 VDC",
+                        "minValue":"8",
+                        "maxValue":"15",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/SupplyVoltage"
                     }
                 }
             },
@@ -1899,6 +3402,30 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/envirofluhc.png",
         "manufacturer":"TriOS GmbH",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"enviroFlu-HC Temperature Range",
+                    "quantity":{
+                        "label":"-0 - 40 °C",
+                        "minValue":"-0",
+                        "maxValue":"40",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TemperatureRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"enviroFlu-HC Power Supply",
+                    "quantity":{
+                        "label":"-12 - 26 VDC",
+                        "minValue":"-12",
+                        "maxValue":"26",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/PowerSupply"
+                    }
+                }
+            }
         ]
     },
     {
@@ -1908,6 +3435,28 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/bottom_water_sampler_kmt_420.png",
         "manufacturer":"K.U.M. Umwelt-und Meerestechnik Kiel GmbH",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"Bottom Water Sampler K/MT 420 Sample Volume",
+                    "quantity":{
+                        "label":"5 Liter",
+                        "value":"5",
+                        "unitCode":"http://qudt.org/vocab/unit#Liter",
+                        "type":"http://esonetyellowpages.com/vocab/SampleVolume"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Bottom Water Sampler K/MT 420 Samples Per Deployment",
+                    "quantity":{
+                        "label":"5 Bottle",
+                        "value":"5",
+                        "unitCode":"http://qudt.org/vocab/unit#Bottle",
+                        "type":"http://esonetyellowpages.com/vocab/SamplesPerDeployment"
+                    }
+                }
+            },
             {
                 "capability":{
                     "label":"Bottom Water Sampler K/MT 420 Maximum Operating Depth",
@@ -1958,6 +3507,17 @@
                         "value":"6000",
                         "unitCode":"http://qudt.org/vocab/unit#Meter",
                         "type":"http://esonetyellowpages.com/vocab/DepthRating"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"S2T6000DH Memory",
+                    "quantity":{
+                        "label":"1 Mb",
+                        "value":"1",
+                        "unitCode":"http://qudt.org/vocab/unit#Megabytes",
+                        "type":"http://esonetyellowpages.com/vocab/Memory"
                     }
                 }
             }
@@ -2015,6 +3575,39 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/underwayctd_uctd.png",
         "manufacturer":"Oceanscience Group",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"UnderwayCTD (UCTD™) Maximum Pressure",
+                    "quantity":{
+                        "label":"2000 m",
+                        "value":"2000",
+                        "unitCode":"http://qudt.org/vocab/unit#Meter",
+                        "type":"http://esonetyellowpages.com/vocab/MaximumPressure"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"UnderwayCTD (UCTD™) Weight",
+                    "quantity":{
+                        "label":"3.6 Kg",
+                        "value":"3.6",
+                        "unitCode":"http://qudt.org/vocab/unit#Kilogram",
+                        "type":"http://esonetyellowpages.com/vocab/Weight"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"UnderwayCTD (UCTD™) Sampling Rates",
+                    "quantity":{
+                        "label":"16 Hz",
+                        "value":"16",
+                        "unitCode":"http://qudt.org/vocab/unit#Hertz",
+                        "type":"http://esonetyellowpages.com/vocab/SamplingRates"
+                    }
+                }
+            }
         ]
     },
     {
@@ -2057,9 +3650,21 @@
             },
             {
                 "capability":{
+                    "label":"FlowQuest 600 Cell Size",
+                    "quantity":{
+                        "label":"0.5 - 4 m",
+                        "minValue":"0.5",
+                        "maxValue":"4",
+                        "unitCode":"http://qudt.org/vocab/unit#Meter",
+                        "type":"http://esonetyellowpages.com/vocab/CellSize"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"FlowQuest 600 Maximum Transmit",
                     "quantity":{
-                        "label":"100 Watts",
+                        "label":"100 Watt",
                         "value":"100",
                         "unitCode":"http://qudt.org/vocab/unit#Watt",
                         "type":"http://esonetyellowpages.com/vocab/MaximumTransmit"
@@ -2081,7 +3686,7 @@
                 "capability":{
                     "label":"FlowQuest 600 Maximum Water Velocity",
                     "quantity":{
-                        "label":"20 knots",
+                        "label":"20 knot",
                         "value":"20",
                         "unitCode":"http://qudt.org/vocab/unit#Knot",
                         "type":"http://esonetyellowpages.com/vocab/MaximumWaterVelocity"
@@ -2096,6 +3701,17 @@
                         "value":"2",
                         "unitCode":"http://qudt.org/vocab/unit#Hertz",
                         "type":"http://esonetyellowpages.com/vocab/MaximumPingRate"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 600 Transducer Beam Angle",
+                    "quantity":{
+                        "label":"22 °",
+                        "value":"22",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
                     }
                 }
             },
@@ -2120,6 +3736,73 @@
                         "type":"http://esonetyellowpages.com/vocab/HousingDiameter"
                     }
                 }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 600 Temperature Accuracy",
+                    "quantity":{
+                        "label":"±0.4 °C",
+                        "value":"±0.4",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TemperatureAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 600 Temperature Range",
+                    "quantity":{
+                        "label":"-5 - 45 °C",
+                        "minValue":"-5",
+                        "maxValue":"45",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TemperatureRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 600 Tilt Accuracy",
+                    "quantity":{
+                        "label":"±0.5 °C",
+                        "value":"±0.5",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TiltAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 600 Tilt Range",
+                    "quantity":{
+                        "label":"±15 °",
+                        "value":"±15",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TiltRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 600 Compass Accuracy",
+                    "quantity":{
+                        "label":"±2 °",
+                        "value":"±2",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/CompassAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 600 Compass Maximum Tilt",
+                    "quantity":{
+                        "label":"±15 °",
+                        "value":"±15",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/CompassMaximumTilt"
+                    }
+                }
             }
         ]
     },
@@ -2139,6 +3822,18 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/ysi_6150_dissolved_oxygen.png",
         "manufacturer":"YSI Incorporated",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"YSI 6150 Dissolved Oxygen Depth Rating",
+                    "quantity":{
+                        "label":"0 - 200 m",
+                        "minValue":"0",
+                        "maxValue":"200",
+                        "unitCode":"http://qudt.org/vocab/unit#Meter",
+                        "type":"http://esonetyellowpages.com/vocab/DepthRating"
+                    }
+                }
+            }
         ]
     },
     {
@@ -2222,12 +3917,58 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"SBE 35 Range",
+                    "quantity":{
+                        "label":"-5 - 35 °C",
+                        "minValue":"-5",
+                        "maxValue":"35",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 35 Accuracy",
+                    "quantity":{
+                        "label":"±0.001 °C",
+                        "value":"±0.001",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 35 Resolution",
+                    "quantity":{
+                        "label":"0.000025 °C",
+                        "value":"0.000025",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"SBE 35 Depth Rating",
                     "quantity":{
                         "label":"6800 m",
                         "value":"6800",
                         "unitCode":"http://qudt.org/vocab/unit#Meter",
                         "type":"http://esonetyellowpages.com/vocab/DepthRating"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 35 Supply Voltage",
+                    "quantity":{
+                        "label":"9 - 16 VDC",
+                        "minValue":"9",
+                        "maxValue":"16",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/SupplyVoltage"
                     }
                 }
             },
@@ -2309,6 +4050,29 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"SM-10 Power Requirement",
+                    "quantity":{
+                        "label":"9 VDC",
+                        "value":"9",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/PowerRequirement"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SM-10 Operating Temperature",
+                    "quantity":{
+                        "label":"-18 - 49 °C",
+                        "minValue":"-18",
+                        "maxValue":"49",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/OperatingTemperature"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"SM-10 Weight In Air",
                     "quantity":{
                         "label":"2.6 kg",
@@ -2351,9 +4115,21 @@
             },
             {
                 "capability":{
+                    "label":"FlowQuest 150 Cell Size",
+                    "quantity":{
+                        "label":"2 - 16 m",
+                        "minValue":"2",
+                        "maxValue":"16",
+                        "unitCode":"http://qudt.org/vocab/unit#Meter",
+                        "type":"http://esonetyellowpages.com/vocab/CellSize"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"FlowQuest 150 Maximum Transmit",
                     "quantity":{
-                        "label":"400 Watts",
+                        "label":"400 Watt",
                         "value":"400",
                         "unitCode":"http://qudt.org/vocab/unit#Watt",
                         "type":"http://esonetyellowpages.com/vocab/MaximumTransmit"
@@ -2375,7 +4151,7 @@
                 "capability":{
                     "label":"FlowQuest 150 Maximum Water Velocity",
                     "quantity":{
-                        "label":"20 knots",
+                        "label":"20 knot",
                         "value":"20",
                         "unitCode":"http://qudt.org/vocab/unit#Knot",
                         "type":"http://esonetyellowpages.com/vocab/MaximumWaterVelocity"
@@ -2390,6 +4166,17 @@
                         "value":"2",
                         "unitCode":"http://qudt.org/vocab/unit#Hertz",
                         "type":"http://esonetyellowpages.com/vocab/MaximumPingRate"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 150 Transducer Beam Angle",
+                    "quantity":{
+                        "label":"22 °",
+                        "value":"22",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
                     }
                 }
             },
@@ -2447,6 +4234,73 @@
                         "type":"http://esonetyellowpages.com/vocab/WeightInWater"
                     }
                 }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 150 Temperature Accuracy",
+                    "quantity":{
+                        "label":"±0.4 °C",
+                        "value":"±0.4",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TemperatureAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 150 Temperature Range",
+                    "quantity":{
+                        "label":"-5 - 45 °C",
+                        "minValue":"-5",
+                        "maxValue":"45",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TemperatureRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 150 Tilt Accuracy",
+                    "quantity":{
+                        "label":"±0.5 °C",
+                        "value":"±0.5",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TiltAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 150 Tilt Range",
+                    "quantity":{
+                        "label":"±15 °",
+                        "value":"±15",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TiltRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 150 Compass Accuracy",
+                    "quantity":{
+                        "label":"±2 °",
+                        "value":"±2",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/CompassAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 150 Compass Maximum Tilt",
+                    "quantity":{
+                        "label":"±15 °",
+                        "value":"±15",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/CompassMaximumTilt"
+                    }
+                }
             }
         ]
     },
@@ -2477,12 +4331,58 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"SBE 35RT Range",
+                    "quantity":{
+                        "label":"-5 - 35 °C",
+                        "minValue":"-5",
+                        "maxValue":"35",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 35RT Accuracy",
+                    "quantity":{
+                        "label":"±0.001 °C",
+                        "value":"±0.001",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 35RT Resolution",
+                    "quantity":{
+                        "label":"0.000025 °C",
+                        "value":"0.000025",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"SBE 35RT Depth Rating",
                     "quantity":{
                         "label":"6800 m",
                         "value":"6800",
                         "unitCode":"http://qudt.org/vocab/unit#Meter",
                         "type":"http://esonetyellowpages.com/vocab/DepthRating"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 35RT Supply Voltage",
+                    "quantity":{
+                        "label":"9 - 16 VDC",
+                        "minValue":"9",
+                        "maxValue":"16",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/SupplyVoltage"
                     }
                 }
             },
@@ -2564,12 +4464,47 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"SBE 3F Range",
+                    "quantity":{
+                        "label":"-5 - 35 °C",
+                        "minValue":"-5",
+                        "maxValue":"35",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 3F Accuracy",
+                    "quantity":{
+                        "label":"±0.001 °C",
+                        "value":"±0.001",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"SBE 3F Response Time",
                     "quantity":{
                         "label":"0.07 s",
                         "value":"0.07",
                         "unitCode":"http://qudt.org/vocab/unit#SecondTime",
                         "type":"http://esonetyellowpages.com/vocab/ResponseTime"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 3F Supply Voltage",
+                    "quantity":{
+                        "label":"11 - 16 VDC",
+                        "minValue":"11",
+                        "maxValue":"16",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/SupplyVoltage"
                     }
                 }
             }
@@ -2615,12 +4550,46 @@
             },
             {
                 "capability":{
+                    "label":"Aquadopp Profiler 2000 Cell Size",
+                    "quantity":{
+                        "label":"0.1 - 2 m",
+                        "minValue":"0.1",
+                        "maxValue":"2",
+                        "unitCode":"http://qudt.org/vocab/unit#Meter",
+                        "type":"http://esonetyellowpages.com/vocab/CellSize"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"Aquadopp Profiler 2000 Maximum Transmit",
                     "quantity":{
-                        "label":"20 Watts",
+                        "label":"20 Watt",
                         "value":"20",
                         "unitCode":"http://qudt.org/vocab/unit#Watt",
                         "type":"http://esonetyellowpages.com/vocab/MaximumTransmit"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 2000 Blank Distance",
+                    "quantity":{
+                        "label":"0.05 m",
+                        "value":"0.05",
+                        "unitCode":"http://qudt.org/vocab/unit#Meter",
+                        "type":"http://esonetyellowpages.com/vocab/BlankDistance"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 2000 Maximum Water Velocity",
+                    "quantity":{
+                        "label":"±10 m/s",
+                        "value":"±10",
+                        "unitCode":"http://qudt.org/vocab/unit#MeterPerSecond",
+                        "type":"http://esonetyellowpages.com/vocab/MaximumWaterVelocity"
                     }
                 }
             },
@@ -2632,6 +4601,28 @@
                         "value":"1",
                         "unitCode":"http://qudt.org/vocab/unit#Hertz",
                         "type":"http://esonetyellowpages.com/vocab/MaximumPingRate"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 2000 Transducer",
+                    "quantity":{
+                        "label":"3 Beam",
+                        "value":"3",
+                        "unitCode":"http://qudt.org/vocab/unit#Beam",
+                        "type":"http://esonetyellowpages.com/vocab/Transducer"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 2000 Transducer Beam Angle",
+                    "quantity":{
+                        "label":"1.7 °",
+                        "value":"1.7",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
                     }
                 }
             },
@@ -2659,12 +4650,80 @@
             },
             {
                 "capability":{
+                    "label":"Aquadopp Profiler 2000 Overall Length",
+                    "quantity":{
+                        "label":"570 - 630 mm",
+                        "minValue":"570",
+                        "maxValue":"630",
+                        "unitCode":"http://qudt.org/vocab/unit#Millimeter",
+                        "type":"http://esonetyellowpages.com/vocab/OverallLength"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"Aquadopp Profiler 2000 Weight In Air",
                     "quantity":{
                         "label":"2.4 kg",
                         "value":"2.4",
                         "unitCode":"http://qudt.org/vocab/unit#Kilogram",
                         "type":"http://esonetyellowpages.com/vocab/WeightInAir"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 2000 Temperature Accuracy",
+                    "quantity":{
+                        "label":"0.1 °C",
+                        "value":"0.1",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TemperatureAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 2000 Temperature Range",
+                    "quantity":{
+                        "label":"-4 - 30 °C",
+                        "minValue":"-4",
+                        "maxValue":"30",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TemperatureRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 2000 Tilt Accuracy",
+                    "quantity":{
+                        "label":"0.2 °",
+                        "value":"0.2",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TiltAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 2000 Compass Accuracy",
+                    "quantity":{
+                        "label":"2 °",
+                        "value":"2",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/CompassAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 2000 Compass Maximum Tilt",
+                    "quantity":{
+                        "label":"30 °",
+                        "value":"30",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/CompassMaximumTilt"
                     }
                 }
             }
@@ -2686,6 +4745,18 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/proton_4.png",
         "manufacturer":"JW Fishers Mfg.",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"PROTON 4 Sampling Rate",
+                    "quantity":{
+                        "label":"2 - 4 Hz",
+                        "minValue":"2",
+                        "maxValue":"4",
+                        "unitCode":"http://qudt.org/vocab/unit#Hertz",
+                        "type":"http://esonetyellowpages.com/vocab/SamplingRate"
+                    }
+                }
+            },
             {
                 "capability":{
                     "label":"PROTON 4 Weight In Air",
@@ -2715,6 +4786,51 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/sbe_39im.png",
         "manufacturer":"Sea-Bird Electronics, Inc.",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"SBE 39-IM Range",
+                    "quantity":{
+                        "label":"-5 - 35 °C",
+                        "minValue":"-5",
+                        "maxValue":"35",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 39-IM Accuracy",
+                    "quantity":{
+                        "label":"±0.002 °C",
+                        "value":"±0.002",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 39-IM Resolution",
+                    "quantity":{
+                        "label":"0.0001 °C",
+                        "value":"0.0001",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"SBE 39-IM Supply Voltage",
+                    "quantity":{
+                        "label":"7.2 VDC",
+                        "value":"7.2",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/SupplyVoltage"
+                    }
+                }
+            }
         ]
     },
     {
@@ -2742,6 +4858,28 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/tr1050.png",
         "manufacturer":"RBR Europe Ltd.",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"TR-1050 Accuracy",
+                    "quantity":{
+                        "label":"±0.002 °C",
+                        "value":"±0.002",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"TR-1050 Supply Voltage",
+                    "quantity":{
+                        "label":"6 VDC",
+                        "value":"6",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/SupplyVoltage"
+                    }
+                }
+            }
         ]
     },
     {
@@ -2753,12 +4891,69 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"Sentinel Operating Range",
+                    "quantity":{
+                        "label":"18000 - 120000 nT",
+                        "minValue":"18000",
+                        "maxValue":"120000",
+                        "unitCode":"http://qudt.org/vocab/unit#Nanotesla",
+                        "type":"http://esonetyellowpages.com/vocab/OperatingRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Sentinel Resolution",
+                    "quantity":{
+                        "label":"0.001 nT",
+                        "value":"0.001",
+                        "unitCode":"http://qudt.org/vocab/unit#Nanotesla",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Sentinel Absolute Accuracy",
+                    "quantity":{
+                        "label":"0.2 nT",
+                        "value":"0.2",
+                        "unitCode":"http://qudt.org/vocab/unit#Nanotesla",
+                        "type":"http://esonetyellowpages.com/vocab/AbsoluteAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"Sentinel Depth Rating",
                     "quantity":{
                         "label":"1000 m",
                         "value":"1000",
                         "unitCode":"http://qudt.org/vocab/unit#Meter",
                         "type":"http://esonetyellowpages.com/vocab/DepthRating"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Sentinel Power Requirement",
+                    "quantity":{
+                        "label":"12 VDC",
+                        "value":"12",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/PowerRequirement"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Sentinel Operating Temperature",
+                    "quantity":{
+                        "label":"-25 - 60 °C",
+                        "minValue":"-25",
+                        "maxValue":"60",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/OperatingTemperature"
                     }
                 }
             },
@@ -2811,6 +5006,17 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"SDM-4000 Operating Range",
+                    "quantity":{
+                        "label":"±100000 nT",
+                        "value":"±100000",
+                        "unitCode":"http://qudt.org/vocab/unit#Nanotesla",
+                        "type":"http://esonetyellowpages.com/vocab/OperatingRange"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"SDM-4000 Depth Rating",
                     "quantity":{
                         "label":"1200 m",
@@ -2842,6 +5048,29 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"MX500 Digital Operating Range",
+                    "quantity":{
+                        "label":"22000 - 65000 nT",
+                        "minValue":"22000",
+                        "maxValue":"65000",
+                        "unitCode":"http://qudt.org/vocab/unit#Nanotesla",
+                        "type":"http://esonetyellowpages.com/vocab/OperatingRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"MX500 Digital Resolution",
+                    "quantity":{
+                        "label":"0.5 nT",
+                        "value":"0.5",
+                        "unitCode":"http://qudt.org/vocab/unit#Nanotesla",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"MX500 Digital Weight In Air",
                     "quantity":{
                         "label":"12 kg",
@@ -2860,6 +5089,40 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/tchain.png",
         "manufacturer":"Precision Measurement Engineering",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"TChain Range",
+                    "quantity":{
+                        "label":"0 - 36 °C",
+                        "minValue":"0",
+                        "maxValue":"36",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"TChain Accuracy",
+                    "quantity":{
+                        "label":"±0.01 °C",
+                        "value":"±0.01",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"TChain Resolution",
+                    "quantity":{
+                        "label":"±0.0005 °C",
+                        "value":"±0.0005",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
             {
                 "capability":{
                     "label":"TChain Response Time",
@@ -2929,12 +5192,34 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"XR-420T(x) Accuracy",
+                    "quantity":{
+                        "label":"±0.005 °C",
+                        "value":"±0.005",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"XR-420T(x) Depth Rating",
                     "quantity":{
                         "label":"4000 m",
                         "value":"4000",
                         "unitCode":"http://qudt.org/vocab/unit#Meter",
                         "type":"http://esonetyellowpages.com/vocab/DepthRating"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"XR-420T(x) Supply Voltage",
+                    "quantity":{
+                        "label":"12 VDC",
+                        "value":"12",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/SupplyVoltage"
                     }
                 }
             }
@@ -2949,12 +5234,46 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"AQTE-PT100 Range",
+                    "quantity":{
+                        "label":"-2 - 38 °C",
+                        "minValue":"-2",
+                        "maxValue":"38",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"AQTE-PT100 Accuracy",
+                    "quantity":{
+                        "label":"±0.02 °C",
+                        "value":"±0.02",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"AQTE-PT100 Response Time",
                     "quantity":{
                         "label":"0.1 s",
                         "value":"0.1",
                         "unitCode":"http://qudt.org/vocab/unit#SecondTime",
                         "type":"http://esonetyellowpages.com/vocab/ResponseTime"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"AQTE-PT100 Depth Rating",
+                    "quantity":{
+                        "label":"250 psi",
+                        "value":"250",
+                        "unitCode":"http://qudt.org/vocab/unit#PoundForcePerSquareInch",
+                        "type":"http://esonetyellowpages.com/vocab/DepthRating"
                     }
                 }
             },
@@ -3043,6 +5362,18 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"THP Range",
+                    "quantity":{
+                        "label":"-2 - 35 °C",
+                        "minValue":"-2",
+                        "maxValue":"35",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"THP Depth Rating",
                     "quantity":{
                         "label":"6000 m",
@@ -3100,6 +5431,28 @@
                         "value":"200",
                         "unitCode":"http://qudt.org/vocab/unit#Meter",
                         "type":"http://esonetyellowpages.com/vocab/DepthRating"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Turbidity Sensor 3712 Power Supply",
+                    "quantity":{
+                        "label":"9 VDC",
+                        "value":"9",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/PowerSupply"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Turbidity Sensor 3712 Maximum Power Consumption",
+                    "quantity":{
+                        "label":"0.15 mA",
+                        "value":"0.15",
+                        "unitCode":"http://qudt.org/vocab/unit#Milliampere",
+                        "type":"http://esonetyellowpages.com/vocab/MaximumPowerConsumption"
                     }
                 }
             },
@@ -3163,12 +5516,57 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"NWT-DN Range",
+                    "quantity":{
+                        "label":"-10 - 50 °C",
+                        "minValue":"-10",
+                        "maxValue":"50",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"NWT-DN Accuracy",
+                    "quantity":{
+                        "label":"±0.05 °C",
+                        "value":"±0.05",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"NWT-DN Resolution",
+                    "quantity":{
+                        "label":"0.001 °C",
+                        "value":"0.001",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"NWT-DN Depth Rating",
                     "quantity":{
                         "label":"6000 m",
                         "value":"6000",
                         "unitCode":"http://qudt.org/vocab/unit#Meter",
                         "type":"http://esonetyellowpages.com/vocab/DepthRating"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"NWT-DN Supply Voltage",
+                    "quantity":{
+                        "label":"7.2 VDC",
+                        "value":"7.2",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/SupplyVoltage"
                     }
                 }
             },
@@ -3221,6 +5619,53 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/wq101.png",
         "manufacturer":"Global Water",
         "subClasses":[
+            {
+                "capability":{
+                    "label":"WQ101 Range",
+                    "quantity":{
+                        "label":"-50 - 50 °C",
+                        "minValue":"-50",
+                        "maxValue":"50",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"WQ101 Accuracy",
+                    "quantity":{
+                        "label":"±0.1 °C",
+                        "value":"±0.1",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"WQ101 Supply Voltage",
+                    "quantity":{
+                        "label":"10 - 36 VDC",
+                        "minValue":"10",
+                        "maxValue":"36",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/SupplyVoltage"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"WQ101 Communications",
+                    "quantity":{
+                        "label":"4 - 20 mA",
+                        "minValue":"4",
+                        "maxValue":"20",
+                        "unitCode":"http://qudt.org/vocab/unit#Milliampere",
+                        "type":"http://esonetyellowpages.com/vocab/Communications"
+                    }
+                }
+            }
         ]
     },
     {
@@ -3232,12 +5677,58 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"Temperature Sensor 4050 Range",
+                    "quantity":{
+                        "label":"-4 - 36 °C",
+                        "minValue":"-4",
+                        "maxValue":"36",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Range"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Temperature Sensor 4050 Accuracy",
+                    "quantity":{
+                        "label":"±0.03 °C",
+                        "value":"±0.03",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Accuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Temperature Sensor 4050 Resolution",
+                    "quantity":{
+                        "label":"0.001 °C",
+                        "value":"0.001",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/Resolution"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"Temperature Sensor 4050 Depth Rating",
                     "quantity":{
                         "label":"6000 m",
                         "value":"6000",
                         "unitCode":"http://qudt.org/vocab/unit#Meter",
                         "type":"http://esonetyellowpages.com/vocab/DepthRating"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Temperature Sensor 4050 Supply Voltage",
+                    "quantity":{
+                        "label":"6 - 14 VDC",
+                        "minValue":"6",
+                        "maxValue":"14",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/SupplyVoltage"
                     }
                 }
             },
@@ -3292,6 +5783,39 @@
             },
             {
                 "capability":{
+                    "label":"RDCP 600 Maximum Water Velocity",
+                    "quantity":{
+                        "label":"5 m/s",
+                        "value":"5",
+                        "unitCode":"http://qudt.org/vocab/unit#MeterPerSecond",
+                        "type":"http://esonetyellowpages.com/vocab/MaximumWaterVelocity"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"RDCP 600 Transducer",
+                    "quantity":{
+                        "label":"4 Beam",
+                        "value":"4",
+                        "unitCode":"http://qudt.org/vocab/unit#Beam",
+                        "type":"http://esonetyellowpages.com/vocab/Transducer"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"RDCP 600 Transducer Beam Angle",
+                    "quantity":{
+                        "label":"25 °",
+                        "value":"25",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"RDCP 600 Transducer Assembly Diameter",
                     "quantity":{
                         "label":"187 mm",
@@ -3320,6 +5844,51 @@
                         "value":"580",
                         "unitCode":"http://qudt.org/vocab/unit#Millimeter",
                         "type":"http://esonetyellowpages.com/vocab/OverallLength"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"RDCP 600 Temperature Accuracy",
+                    "quantity":{
+                        "label":"±0.05 °C",
+                        "value":"±0.05",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TemperatureAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"RDCP 600 Tilt Accuracy",
+                    "quantity":{
+                        "label":"±1.5 °C",
+                        "value":"±1.5",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TiltAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"RDCP 600 Tilt Range",
+                    "quantity":{
+                        "label":"±45 °",
+                        "value":"±45",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TiltRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"RDCP 600 Compass Maximum Tilt",
+                    "quantity":{
+                        "label":"0 - 360 °",
+                        "minValue":"0",
+                        "maxValue":"360",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/CompassMaximumTilt"
                     }
                 }
             }
@@ -3352,6 +5921,17 @@
         "subClasses":[
             {
                 "capability":{
+                    "label":"Model 802-H DeepWater Angular Range",
+                    "quantity":{
+                        "label":"±0.5 °",
+                        "value":"±0.5",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/AngularRange"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"Model 802-H DeepWater Time Constant",
                     "quantity":{
                         "label":"1.75 sec",
@@ -3369,6 +5949,30 @@
                         "value":"700",
                         "unitCode":"http://qudt.org/vocab/unit#Bar",
                         "type":"http://esonetyellowpages.com/vocab/DepthRating"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Model 802-H DeepWater Power",
+                    "quantity":{
+                        "label":"8 - 18 VDC",
+                        "minValue":"8",
+                        "maxValue":"18",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/Power"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Model 802-H DeepWater Operating Temperature",
+                    "quantity":{
+                        "label":"-25 - 70 °C",
+                        "minValue":"-25",
+                        "maxValue":"70",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/OperatingTemperature"
                     }
                 }
             },
@@ -3416,9 +6020,21 @@
             },
             {
                 "capability":{
+                    "label":"FlowQuest 300 Cell Size",
+                    "quantity":{
+                        "label":"1 - 8 m",
+                        "minValue":"1",
+                        "maxValue":"8",
+                        "unitCode":"http://qudt.org/vocab/unit#Meter",
+                        "type":"http://esonetyellowpages.com/vocab/CellSize"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"FlowQuest 300 Maximum Transmit",
                     "quantity":{
-                        "label":"200 Watts",
+                        "label":"200 Watt",
                         "value":"200",
                         "unitCode":"http://qudt.org/vocab/unit#Watt",
                         "type":"http://esonetyellowpages.com/vocab/MaximumTransmit"
@@ -3440,7 +6056,7 @@
                 "capability":{
                     "label":"FlowQuest 300 Maximum Water Velocity",
                     "quantity":{
-                        "label":"20 knots",
+                        "label":"20 knot",
                         "value":"20",
                         "unitCode":"http://qudt.org/vocab/unit#Knot",
                         "type":"http://esonetyellowpages.com/vocab/MaximumWaterVelocity"
@@ -3455,6 +6071,17 @@
                         "value":"2",
                         "unitCode":"http://qudt.org/vocab/unit#Hertz",
                         "type":"http://esonetyellowpages.com/vocab/MaximumPingRate"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 300 Transducer Beam Angle",
+                    "quantity":{
+                        "label":"22 °",
+                        "value":"22",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
                     }
                 }
             },
@@ -3477,6 +6104,73 @@
                         "value":"200",
                         "unitCode":"http://qudt.org/vocab/unit#Millimeter",
                         "type":"http://esonetyellowpages.com/vocab/HousingDiameter"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 300 Temperature Accuracy",
+                    "quantity":{
+                        "label":"±0.4 °C",
+                        "value":"±0.4",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TemperatureAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 300 Temperature Range",
+                    "quantity":{
+                        "label":"-5 - 45 °C",
+                        "minValue":"-5",
+                        "maxValue":"45",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TemperatureRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 300 Tilt Accuracy",
+                    "quantity":{
+                        "label":"±0.5 °C",
+                        "value":"±0.5",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TiltAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 300 Tilt Range",
+                    "quantity":{
+                        "label":"±15 °",
+                        "value":"±15",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TiltRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 300 Compass Accuracy",
+                    "quantity":{
+                        "label":"±2 °",
+                        "value":"±2",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/CompassAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"FlowQuest 300 Compass Maximum Tilt",
+                    "quantity":{
+                        "label":"±15 °",
+                        "value":"±15",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/CompassMaximumTilt"
                     }
                 }
             }
@@ -3522,9 +6216,21 @@
             },
             {
                 "capability":{
+                    "label":"Aquadopp Profiler 400 Cell Size",
+                    "quantity":{
+                        "label":"2 - 8 m",
+                        "minValue":"2",
+                        "maxValue":"8",
+                        "unitCode":"http://qudt.org/vocab/unit#Meter",
+                        "type":"http://esonetyellowpages.com/vocab/CellSize"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"Aquadopp Profiler 400 Maximum Transmit",
                     "quantity":{
-                        "label":"20 Watts",
+                        "label":"20 Watt",
                         "value":"20",
                         "unitCode":"http://qudt.org/vocab/unit#Watt",
                         "type":"http://esonetyellowpages.com/vocab/MaximumTransmit"
@@ -3544,12 +6250,45 @@
             },
             {
                 "capability":{
+                    "label":"Aquadopp Profiler 400 Maximum Water Velocity",
+                    "quantity":{
+                        "label":"±10 m/s",
+                        "value":"±10",
+                        "unitCode":"http://qudt.org/vocab/unit#MeterPerSecond",
+                        "type":"http://esonetyellowpages.com/vocab/MaximumWaterVelocity"
+                    }
+                }
+            },
+            {
+                "capability":{
                     "label":"Aquadopp Profiler 400 Maximum Ping Rate",
                     "quantity":{
                         "label":"1 Hz",
                         "value":"1",
                         "unitCode":"http://qudt.org/vocab/unit#Hertz",
                         "type":"http://esonetyellowpages.com/vocab/MaximumPingRate"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 400 Transducer",
+                    "quantity":{
+                        "label":"3 Beam",
+                        "value":"3",
+                        "unitCode":"http://qudt.org/vocab/unit#Beam",
+                        "type":"http://esonetyellowpages.com/vocab/Transducer"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 400 Transducer Beam Angle",
+                    "quantity":{
+                        "label":"3.7 °",
+                        "value":"3.7",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
                     }
                 }
             },
@@ -3594,6 +6333,62 @@
                         "value":"3.7",
                         "unitCode":"http://qudt.org/vocab/unit#Kilogram",
                         "type":"http://esonetyellowpages.com/vocab/WeightInAir"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 400 Temperature Accuracy",
+                    "quantity":{
+                        "label":"0.1 °C",
+                        "value":"0.1",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TemperatureAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 400 Temperature Range",
+                    "quantity":{
+                        "label":"-4 - 30 °C",
+                        "minValue":"-4",
+                        "maxValue":"30",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/TemperatureRange"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 400 Tilt Accuracy",
+                    "quantity":{
+                        "label":"0.2 °",
+                        "value":"0.2",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/TiltAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 400 Compass Accuracy",
+                    "quantity":{
+                        "label":"2 °",
+                        "value":"2",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/CompassAccuracy"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"Aquadopp Profiler 400 Compass Maximum Tilt",
+                    "quantity":{
+                        "label":"30 °",
+                        "value":"30",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
+                        "type":"http://esonetyellowpages.com/vocab/CompassMaximumTilt"
                     }
                 }
             }

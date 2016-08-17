@@ -192,20 +192,20 @@ public class CreateEsonetYellowPages {
 	}
 
 	private void addDevice(String name, String label, String comment, String seeAlso, JsonArray subClasses) {
-		IRI device = IRI.create(name);
+		IRI deviceIRI = IRI.create(name);
 
-		m.addClass(device);
-		m.addLabel(device, label);
-		m.addComment(device, comment);
-		m.addSeeAlso(device, seeAlso);
+		m.addClass(deviceIRI);
+		m.addLabel(deviceIRI, label);
+		m.addComment(deviceIRI, comment);
+		m.addSeeAlso(deviceIRI, seeAlso);
 
 		// Default sub class, though implicit with curated sensing device type
 		// hierarchy
-		m.addSubClass(device, SSN.SensingDevice);
+		m.addSubClass(deviceIRI, SSN.SensingDevice);
 
 		for (JsonObject subClass : subClasses.getValuesAs(JsonObject.class)) {
 			if (subClass.containsKey("type")) {
-				m.addSubClass(device, IRI.create(subClass.getString("type")));
+				m.addSubClass(deviceIRI, IRI.create(subClass.getString("type")));
 			} else if (subClass.containsKey("capability")) {
 				JsonObject capability = subClass.getJsonObject("capability");
 				String capabilityLabel = capability.getString("label");
@@ -216,7 +216,7 @@ public class CreateEsonetYellowPages {
 				IRI quantityIRI = IRI.create(EYP.ns.toString() + md5Hex(quantityLabel));
 
 				// Value restriction on property hasMeasurementCapability
-				m.addObjectValue(device, hasMeasurementCapability, capabilityIRI);
+				m.addObjectValue(deviceIRI, hasMeasurementCapability, capabilityIRI);
 
 				m.addIndividual(capabilityIRI);
 				m.addType(capabilityIRI, MeasurementCapability);
@@ -224,7 +224,8 @@ public class CreateEsonetYellowPages {
 				m.addObjectAssertion(capabilityIRI, hasMeasurementProperty, quantityIRI);
 
 				m.addIndividual(quantityIRI);
-				m.addType(quantityIRI, SSN.MeasurementProperty); // Default
+				// Default
+				m.addType(quantityIRI, SSN.MeasurementProperty); 
 
 				if (quantity.containsKey("type")) {
 					m.addType(quantityIRI, IRI.create(quantity.getString("type")));

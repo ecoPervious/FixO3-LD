@@ -27,6 +27,8 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.json.Json;
 import javax.json.JsonArrayBuilder;
@@ -72,26 +74,50 @@ public class ProcessXmlFiles {
 	private final String jsonFileName = "src/main/resources/data/esonetyellowpages-devicetypes-export.json";
 
 	private final Logger log = Logger.getLogger(ProcessXmlFiles.class.getName());
-	
+
 	private static Map<String, String> unitCodeMap = new HashMap<String, String>();
-	
+
 	// http://qudt.org/1.1/vocab/unit
 	static {
+		unitCodeMap.put("g", "http://qudt.org/vocab/unit#Gram");
+		unitCodeMap.put("mg/l", "http://qudt.org/vocab/unit#MilligramPerLiter");
 		unitCodeMap.put("kg", "http://qudt.org/vocab/unit#Kilogram");
+		unitCodeMap.put("Kg", "http://qudt.org/vocab/unit#Kilogram");
 		unitCodeMap.put("Hz", "http://qudt.org/vocab/unit#Hertz");
 		unitCodeMap.put("kHz", "http://qudt.org/vocab/unit#KiloHertz");
 		unitCodeMap.put("m", "http://qudt.org/vocab/unit#Meter");
+		unitCodeMap.put("meters", "http://qudt.org/vocab/unit#Meter");
 		unitCodeMap.put("mm", "http://qudt.org/vocab/unit#Millimeter");
 		unitCodeMap.put("nm", "http://qudt.org/vocab/unit#Nanometer");
 		unitCodeMap.put("m/s", "http://qudt.org/vocab/unit#MeterPerSecond");
 		unitCodeMap.put("mm/s", "http://qudt.org/vocab/unit#MetermeterPerSecond");
 		unitCodeMap.put("ºC", "http://qudt.org/vocab/unit#DegreeCelsius");
 		unitCodeMap.put("°C", "http://qudt.org/vocab/unit#DegreeCelsius");
+		unitCodeMap.put("C", "http://qudt.org/vocab/unit#DegreeCelsius");
+		// Typo, should be fixed but left in the map
 		unitCodeMap.put("knots", "http://qudt.org/vocab/unit#Knot");
+		unitCodeMap.put("knot", "http://qudt.org/vocab/unit#Knot");
+		// Typo, should be fixed but left in the map
 		unitCodeMap.put("Watts", "http://qudt.org/vocab/unit#Watt");
+		unitCodeMap.put("Watt", "http://qudt.org/vocab/unit#Watt");
 		unitCodeMap.put("bar", "http://qudt.org/vocab/unit#Bar");
+		unitCodeMap.put("Bar", "http://qudt.org/vocab/unit#Bar");
 		unitCodeMap.put("sec", "http://qudt.org/vocab/unit#SecondTime");
 		unitCodeMap.put("s", "http://qudt.org/vocab/unit#SecondTime");
+		unitCodeMap.put("VDC", "http://qudt.org/vocab/unit#Volt");
+		unitCodeMap.put("mA", "http://qudt.org/vocab/unit#Milliampere");
+		unitCodeMap.put("°", "http://qudt.org/vocab/unit#DegreeAngle");
+		unitCodeMap.put("T", "http://qudt.org/vocab/unit#Tesla");
+		unitCodeMap.put("nT", "http://qudt.org/vocab/unit#Nanotesla");
+		unitCodeMap.put("nT/m", "http://qudt.org/vocab/unit#NanoteslaPerMeter");
+		unitCodeMap.put("litres", "http://qudt.org/vocab/unit#Liter");
+		unitCodeMap.put("Liter", "http://qudt.org/vocab/unit#Liter");
+		unitCodeMap.put("bottles", "http://qudt.org/vocab/unit#Bottle");
+		unitCodeMap.put("Bottle", "http://qudt.org/vocab/unit#Bottle");
+		unitCodeMap.put("Mb", "http://qudt.org/vocab/unit#Megabytes");
+		unitCodeMap.put("Beam", "http://qudt.org/vocab/unit#Beam");
+		unitCodeMap.put("NTU", "http://qudt.org/vocab/unit#NephelometricTurbidityUnit");
+		unitCodeMap.put("psi", "http://qudt.org/vocab/unit#PoundForcePerSquareInch");
 	}
 
 	private void run() throws FileNotFoundException, SAXException, IOException, ParserConfigurationException,
@@ -145,6 +171,9 @@ public class ProcessXmlFiles {
 		XPathExpression exTerm = x
 				.compile("/sml:PhysicalSystem/sml:classification/sml:ClassifierList/sml:classifier/sml:Term");
 
+		int m = 0;
+		int n = 0;
+
 		for (File file : files) {
 			log.info(file.getName());
 			doc = dbf.newDocumentBuilder().parse(new FileInputStream(file));
@@ -195,11 +224,15 @@ public class ProcessXmlFiles {
 					continue;
 				}
 
+				n++;
+
 				Quantity quantity = getQuantity(attributeValue);
 
 				if (quantity == null) {
 					continue;
 				}
+
+				m++;
 
 				JsonObjectBuilder jobSubClass = Json.createObjectBuilder();
 				JsonObjectBuilder jobCapability = Json.createObjectBuilder();
@@ -207,7 +240,7 @@ public class ProcessXmlFiles {
 
 				String quantityLabel = getQuantityLabel(attributeLabel);
 				String capabilityLabel = deviceLabel + " " + quantityLabel;
-				
+
 				jobCapability.add("label", capabilityLabel);
 
 				jobQuantity.add("label", quantity.getLabel());
@@ -221,7 +254,7 @@ public class ProcessXmlFiles {
 					throw new RuntimeException(
 							"Failed to determine quantity value [attributeValue = " + attributeValue + "]");
 				}
-				
+
 				jobQuantity.add("unitCode", quantity.getUnitCode());
 				jobQuantity.add("type", toUri(quantityLabel));
 
@@ -243,6 +276,8 @@ public class ProcessXmlFiles {
 		JsonWriter jsonWriter = jsonWriterFactory.createWriter(new FileWriter(new File(jsonFileName)));
 		jsonWriter.write(json.build());
 		jsonWriter.close();
+
+		System.out.println("Fraction of characteristics included: " + m + "/" + n);
 	}
 
 	public static void main(String[] args) throws FileNotFoundException, SAXException, IOException,
@@ -253,12 +288,13 @@ public class ProcessXmlFiles {
 
 	private String getQuantityLabel(String s) {
 		s = s.replace("Max.", "Maximum");
-		
+		s = s.replace("max.", "maximum");
+
 		s = WordUtils.capitalize(s);
-		
+
 		return s;
 	}
-	
+
 	private String toUri(String s) {
 		s = s.replaceAll(" ", "");
 		s = s.replaceAll("_", "");
@@ -286,27 +322,71 @@ public class ProcessXmlFiles {
 	private Quantity getQuantity(String s) {
 		Quantity ret = null;
 
+		if (s == null)
+			return ret;
+
+		if (s.isEmpty())
+			return ret;
+
+		if (s.equals("null"))
+			return ret;
+
 		if (s.equals("-"))
 			return ret;
-			
-		// number-space-unit case, e.g. 150 kHz		
-		if (s.matches("[0-9]+\\.{0,1}[0-9]*\\s[a-zA-Z]*")) {
-			String[] components = s.split(" ");
-			String value = components[0];
-			String unit = components[1];
-			String unitCode = unitCodeMap.get(unit);
-			
-			if (unitCode == null) {
-				log.warning("Unit not mapped [unit = " + unit + "]");
-				return ret;
-			}
-			
-			ret = new Quantity(s, value, unitCode);			
+
+		// Fix typos and do other normalizations
+		s = s.replace("Watts", "Watt");
+		s = s.replace("knots", "knot");
+		s = s.replace("meters", "m");
+		s = s.replace("litres", "Liter");
+		s = s.replace("bottles", "Bottle");
+		s = s.replace("º", "°");
+		s = s.replace("..", "-");
+
+		Matcher matcher;
+		// Examples: 150 kHz, 30°, 5 m/s, ±15°, ±0.5 °C, ± 10 m/s
+		Pattern singeValueUnitPattern = Pattern
+				.compile("([±\\-\\−]*)(\\s*)([0-9]+)([\\.,]{0,1})([0-9]*)(\\s*)([°/a-zA-Z]+)");
+		// Examples: 1 - 8 m, 1 to 8 m, -4 to 30°C, −25 to 70 °C
+		Pattern rangeValueUnitPattern = Pattern.compile(
+				"([\\-\\−]*)(\\s*)([0-9]+)([\\.,]{0,1})([0-9]*)(\\s*)(\\-|to)(\\s*)([\\-\\−]*)(\\s*)([0-9]+)([\\.,]{0,1})([0-9]*)(\\s*)([°/a-zA-Z]+)");
+
+		if ((matcher = singeValueUnitPattern.matcher(s)).matches()) {
+			String value = getValue(matcher.group(1), matcher.group(3), matcher.group(4), matcher.group(5));
+			String unit = matcher.group(7);
+
+			ret = new Quantity(value, unit);
+		} else if ((matcher = rangeValueUnitPattern.matcher(s)).matches()) {
+			String minValue = getValue(matcher.group(1), matcher.group(3), matcher.group(4), matcher.group(5));
+			String maxValue = getValue(matcher.group(9), matcher.group(11), matcher.group(12), matcher.group(13));
+			String unit = matcher.group(15);
+
+			ret = new Quantity(minValue, maxValue, unit);
 		} else {
-//			System.out.println(s);
+			System.out.println(s);
 		}
-		
+
 		return ret;
+	}
+
+	private String getValue(String s1, String s2, String s3, String s4) {
+		StringBuffer ret = new StringBuffer();
+
+		if (s1.equals("−")) {
+			ret.append("-");
+		} else {
+			ret.append(s1);
+		}
+
+		ret.append(s2);
+
+		if (s3.equals(".") || s3.equals(",")) {
+			ret.append(".");
+		}
+
+		ret.append(s4);
+
+		return ret.toString();
 	}
 
 	private class Quantity {
@@ -317,12 +397,21 @@ public class ProcessXmlFiles {
 		String maxValue = null;
 		String unitCode = null;
 
-		public Quantity(String label, String value, String unitCode) {
-			this.label = label;
+		public Quantity(String value, String unit) {
+			this.label = value + " " + unit;
 			this.value = value;
-			this.unitCode = unitCode;
+
+			setUnitCode(unit);
 		}
-		
+
+		public Quantity(String minValue, String maxValue, String unit) {
+			this.label = minValue + " - " + maxValue + " " + unit;
+			this.minValue = minValue;
+			this.maxValue = maxValue;
+
+			setUnitCode(unit);
+		}
+
 		public String getLabel() {
 			return label;
 		}
@@ -341,6 +430,21 @@ public class ProcessXmlFiles {
 
 		public String getUnitCode() {
 			return unitCode;
+		}
+
+		private void setUnitCode(String unit) {
+			String unitCode = unitCodeMap.get(unit);
+
+			if (unitCode == null) {
+				throw new RuntimeException("Unit not mapped [unit = " + unit + "; quantity = " + toString() + "]");
+			}
+
+			this.unitCode = unitCode;
+		}
+		
+		@Override
+		public String toString() {
+			return "[label = " + label + "]";
 		}
 
 	}

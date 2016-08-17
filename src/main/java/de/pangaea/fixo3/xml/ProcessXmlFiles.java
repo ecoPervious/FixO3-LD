@@ -17,6 +17,7 @@
 package de.pangaea.fixo3.xml;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -124,7 +125,16 @@ public class ProcessXmlFiles {
 			XPathExpressionException {
 		// src/test/resources/, src/main/resources/files
 		File folder = new File("src/main/resources/files");
-		File[] files = folder.listFiles();
+		File[] files = folder.listFiles(new FileFilter() {
+
+			@Override
+			public boolean accept(File pathname) {
+				if (pathname.getName().endsWith(".xml"))
+					return true;
+
+				return false;
+			}
+		});
 
 		JsonArrayBuilder json = Json.createArrayBuilder();
 
@@ -398,7 +408,12 @@ public class ProcessXmlFiles {
 		String unitCode = null;
 
 		public Quantity(String value, String unit) {
-			this.label = value + " " + unit;
+			if (unit.equals("°")) {
+				this.label = value + unit;
+			} else {
+				this.label = value + " " + unit;
+			}
+
 			this.value = value;
 
 			setUnitCode(unit);
@@ -441,7 +456,7 @@ public class ProcessXmlFiles {
 
 			this.unitCode = unitCode;
 		}
-		
+
 		@Override
 		public String toString() {
 			return "[label = " + label + "]";

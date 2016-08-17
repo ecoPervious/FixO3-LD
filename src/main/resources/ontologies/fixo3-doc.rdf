@@ -2,6 +2,7 @@
 <rdf:RDF xmlns="http://fixo3.eu/vocab/doc/"
      xml:base="http://fixo3.eu/vocab/doc/"
      xmlns:schema="http://schema.org/"
+     xmlns:geosparql="http://www.opengis.net/ont/geosparql#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -106,6 +107,23 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#wktLiteral -->
+
+    <rdfs:Datatype rdf:about="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -114,12 +132,29 @@
     
 
 
+    <!-- http://schema.org/location -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/location">
+        <rdfs:label xml:lang="en">location</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://schema.org/location</dc:source>
+        <rdfs:comment xml:lang="en">The location of for example where the event is happening, an organization is located, or where an action takes place.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://schema.org/unitCode -->
 
     <owl:ObjectProperty rdf:about="http://schema.org/unitCode">
         <rdfs:label xml:lang="en">unit code</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://schema.org/unitCode</dc:source>
         <rdfs:comment xml:lang="en">The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.</rdfs:comment>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#hasGeometry -->
+
+    <owl:ObjectProperty rdf:about="http://www.opengis.net/ont/geosparql#hasGeometry"/>
     
 
 
@@ -550,8 +585,15 @@ can&apos;t be used, because (by the OWL2 decidability restrictions) that would m
 
     <owl:DatatypeProperty rdf:about="http://schema.org/value">
         <rdfs:label xml:lang="en">value</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://schema.org/value</dc:source>
         <rdfs:comment xml:lang="en">The value of the quantitative value or property value node. For QuantitativeValue and MonetaryValue, the recommended type for values is &amp;apos;Number&amp;apos;. For PropertyValue, it can be &amp;apos;Text;&amp;apos;, &amp;apos;Number&amp;apos;, &amp;apos;Boolean&amp;apos;, or &amp;apos;StructuredValue&amp;apos;.</rdfs:comment>
     </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#asWKT -->
+
+    <owl:DatatypeProperty rdf:about="http://www.opengis.net/ont/geosparql#asWKT"/>
     
 
 
@@ -588,6 +630,7 @@ can&apos;t be used, because (by the OWL2 decidability restrictions) that would m
     <owl:Class rdf:about="http://esonetyellowpages.com/vocab/CO2Pro">
         <rdfs:label xml:lang="en">CO2-Pro</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://esonetyellowpages.com/vocab/PartialPressureOfCO2Analyzer"/>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/SensingDevice"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
@@ -783,10 +826,17 @@ can&apos;t be used, because (by the OWL2 decidability restrictions) that would m
     <owl:Class rdf:about="http://esonetyellowpages.com/vocab/WorkhorseQuartermaster150kHzADCP">
         <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler"/>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/SensingDevice"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
-                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -798,19 +848,13 @@ can&apos;t be used, because (by the OWL2 decidability restrictions) that would m
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
                 <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
-                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
-                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.esonetyellowpages.com/datasheets/datasheet-adcp_whs_150khz_1458583613.pdf</rdfs:seeAlso>
@@ -853,8 +897,21 @@ can&apos;t be used, because (by the OWL2 decidability restrictions) that would m
                 <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://schema.org/QuantitativeValue</dc:source>
         <rdfs:comment xml:lang="en">A point value or interval for product characteristics and other purposes.</rdfs:comment>
     </owl:Class>
+    
+
+
+    <!-- http://www.opengis.net/ont/sfPoint -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/sfPoint"/>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Feature -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
     
 
 
@@ -971,13 +1028,13 @@ can&apos;t be used, because (by the OWL2 decidability restrictions) that would m
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
-                <owl:someValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Property"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+                <owl:someValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Property"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>A feature is an abstraction of real world phenomena (thing, person, event, etc).</rdfs:comment>
@@ -1010,14 +1067,14 @@ can&apos;t be used, because (by the OWL2 decidability restrictions) that would m
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/inCondition"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Condition"/>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/forProperty"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Property"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/forProperty"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/inCondition"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Condition"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:source>Similar idea to MeasurementCapability in MMI Device Ontology
@@ -1083,13 +1140,8 @@ The conditions specified here are those that affect the measurement properties, 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/observedProperty"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Property"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/observedBy"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Sensor"/>
+                <owl:onClass rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1100,21 +1152,9 @@ The conditions specified here are those that affect the measurement properties, 
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/observedProperty"/>
-                <owl:onClass rdf:resource="https://www.w3.org/ns/ssn/Property"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/sensingMethodUsed"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Sensing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/featureOfInterest"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/FeatureOfInterest"/>
+                <owl:onClass rdf:resource="https://www.w3.org/ns/ssn/Sensing"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1127,8 +1167,19 @@ The conditions specified here are those that affect the measurement properties, 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/sensingMethodUsed"/>
-                <owl:onClass rdf:resource="https://www.w3.org/ns/ssn/Sensing"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Sensing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/observedProperty"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/observedBy"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Sensor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1142,6 +1193,12 @@ The conditions specified here are those that affect the measurement properties, 
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/observationResult"/>
                 <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/SensorOutput"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/featureOfInterest"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/FeatureOfInterest"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>An Observation is a Situation in which a Sensing method has been used to estimate or calculate a value of a Property of a FeatureOfInterest.  Links to Sensing and Sensor describe what made the Observation and how; links to Property and Feature detail what was sensed; the result is the output of a Sensor; other metadata details times etc.</rdfs:comment>
@@ -1237,14 +1294,14 @@ The difference is that here we also allow for qualities that aren&apos;t VIM inf
         <rdfs:label>Platform</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/inDeployment"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Deployment"/>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/attachedSystem"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/System"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/attachedSystem"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/System"/>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/inDeployment"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Deployment"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>An Entity to which other Entities can be attached - particuarly Sensors and other Platforms.  For example, a post might act as the Platform, a bouy might act as a Platform, or a fish might act as a Platform for an attached sensor.</rdfs:comment>
@@ -1370,14 +1427,14 @@ The difference is that here we also allow for qualities that aren&apos;t VIM inf
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/detects"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Stimulus"/>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/MeasurementCapability"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/MeasurementCapability"/>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/detects"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Stimulus"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:source>skos:exactMatch &apos;sensor&apos; [SensorML OGC-0700]
@@ -1409,14 +1466,14 @@ Generally a sensor&apos;s properties are recorded directly (with hasMeasurementC
         <rdfs:label>Sensor Output</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasValue"/>
-                <owl:someValuesFrom rdf:resource="https://www.w3.org/ns/ssn/ObservationValue"/>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/isProducedBy"/>
+                <owl:someValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Sensor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/isProducedBy"/>
-                <owl:someValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Sensor"/>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasValue"/>
+                <owl:someValuesFrom rdf:resource="https://www.w3.org/ns/ssn/ObservationValue"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>A sensor outputs a piece of information (an observed value), the value itself being represented by an ObservationValue.</rdfs:comment>
@@ -1463,14 +1520,14 @@ See comments at ObservationValue.</dc:source>
         <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/inCondition"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Condition"/>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasSurvivalProperty"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/SurvivalProperty"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasSurvivalProperty"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/SurvivalProperty"/>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/inCondition"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Condition"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:source>skos:narrowerMatch &apos;limiting operating condition&apos; [VIM 4.10]
@@ -1486,24 +1543,6 @@ See comments at ObservationValue.</dc:source>
         <rdfs:label>System</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasSurvivalRange"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/SurvivalRange"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasOperatingRange"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/OperatingRange"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasDeployment"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Deployment"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasSubSystem"/>
                 <owl:someValuesFrom rdf:resource="https://www.w3.org/ns/ssn/System"/>
             </owl:Restriction>
@@ -1516,8 +1555,26 @@ See comments at ObservationValue.</dc:source>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasSurvivalRange"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/SurvivalRange"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/onPlatform"/>
                 <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasOperatingRange"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/OperatingRange"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasDeployment"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Deployment"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>System is a unit of abstraction for pieces of infrastructure (and we largely care that they are) for sensing. A system has components, its subsystems, which are other systems.</rdfs:comment>
@@ -1560,6 +1617,7 @@ See comments at ObservationValue.</dc:source>
 
     <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/b37a584face0b891be80bdb695554d04">
         <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/MeasuringRange"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
         <rdfs:label xml:lang="en">800 mbar to 2000 mbar</rdfs:label>
         <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2000.0</schema:maxValue>
         <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">800.0</schema:minValue>
@@ -1582,6 +1640,7 @@ See comments at ObservationValue.</dc:source>
 
     <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/c77943a0cdddd3a777ab4f8ecd7308d1">
         <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/CellSize"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
         <rdfs:label xml:lang="en">4 m to 24 m</rdfs:label>
         <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">24.0</schema:maxValue>
         <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.0</schema:minValue>
@@ -1594,6 +1653,7 @@ See comments at ObservationValue.</dc:source>
 
     <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/cb34d28c75dfe319c890a190121fba78">
         <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/OperatingDepth"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
         <rdfs:label xml:lang="en">1500 m</rdfs:label>
         <schema:value rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1500.0</schema:value>
         <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#Meter"/>
@@ -1605,6 +1665,7 @@ See comments at ObservationValue.</dc:source>
 
     <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/e26826eadf1d7b6d66b8fbf9a9f643da">
         <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/OperatingDepth"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
         <rdfs:label xml:lang="en">0 m to 300 m</rdfs:label>
         <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</schema:minValue>
         <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">300.0</schema:maxValue>
@@ -1637,6 +1698,7 @@ See comments at ObservationValue.</dc:source>
 
     <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593">
         <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/Frequency"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
         <rdfs:label xml:lang="en">150 kHz</rdfs:label>
         <schema:value rdf:datatype="http://www.w3.org/2001/XMLSchema#float">150.0</schema:value>
         <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
@@ -1648,6 +1710,7 @@ See comments at ObservationValue.</dc:source>
 
     <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e">
         <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/ProfilingRange"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
         <rdfs:label xml:lang="en">300 m</rdfs:label>
         <schema:value rdf:datatype="http://www.w3.org/2001/XMLSchema#float">300.0</schema:value>
         <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#Meter"/>
@@ -1659,6 +1722,7 @@ See comments at ObservationValue.</dc:source>
 
     <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/7bed744ef9f3a37d21c42afed990e3d3">
         <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/TemperatureRange"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
         <rdfs:label xml:lang="en">-5 °C to 45 °C</rdfs:label>
         <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-5.0</schema:minValue>
         <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">45.0</schema:maxValue>
@@ -1697,6 +1761,96 @@ See comments at ObservationValue.</dc:source>
     
 
 
+    <!-- http://fixo3.eu/vocab/a30a19f7743630abc4bf30e67289a7ff -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/a30a19f7743630abc4bf30e67289a7ff">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (-41.10 23.77)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (-41.10 23.77)</geosparql:asWKT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/a33699d431a2628de5f1823c3e399cce -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/a33699d431a2628de5f1823c3e399cce">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (-16.5 49.0)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (-16.5 49.0)</geosparql:asWKT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/a80b139c9b9d10277472f772f513790b -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/a80b139c9b9d10277472f772f513790b">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (9.16 43.79)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (9.16 43.79)</geosparql:asWKT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/ab5bbb6dd39e05cf3909c2e5b74e7026 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/ab5bbb6dd39e05cf3909c2e5b74e7026">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Ligurian Sea @ POINT (9.16 43.79)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/a80b139c9b9d10277472f772f513790b"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/add04559b4c5755364e8f156a2db0159 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/add04559b4c5755364e8f156a2db0159">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Fram Strait @ POINT (4.0 79.0)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/780af6c774b88088a44c9398cb39bebb"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/b62a411263888c395a20ad94db3fdfa2 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/b62a411263888c395a20ad94db3fdfa2">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Northern Oligotrophic Gyre @ POINT (-41.10 23.77)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/a30a19f7743630abc4bf30e67289a7ff"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/b8010df2cf95dee6afa45ccea9c9e532 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/b8010df2cf95dee6afa45ccea9c9e532">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (2.0 66.0)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (2.0 66.0)</geosparql:asWKT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/c7b362184d8d4554d694cb3920b72325 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/c7b362184d8d4554d694cb3920b72325">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (21.6 36.8)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (21.6 36.8)</geosparql:asWKT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/cba5d2ca7d1c7628b274c3a1f8194fe3 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/cba5d2ca7d1c7628b274c3a1f8194fe3">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (8.0 75.0)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (8.0 75.0)</geosparql:asWKT>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0 -->
 
     <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/cd07fca9601b698a31015d605709cfe0">
@@ -1705,6 +1859,7 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/dyfamed/</dc:source>
         <dc:title xml:lang="en">Dynamique des Flux Atmospheriques en Mediterranee</dc:title>
         <rdfs:comment xml:lang="en">Multidisciplinary site within MOOSE network (Ligurian Sea), in passage between eastern and western Med Sea. Strong influence of atmospheric deposition influencing productivity and particle export monitored by atmospheric survey (Cap Ferrat) and two permanent sediment traps. Physical parameters recorded from surface to deep waters through monthly visits and permanent deep mooring. Biogeochemical parameters obtained monthly during ship visits. The site is also a way point of gliders and used for cross- validation of bio-parameters (nitrate, oxygen).</rdfs:comment>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/7e44869bfcec0c07a9d7d98b08f2d729"/>
     </owl:NamedIndividual>
     
 
@@ -1717,6 +1872,7 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/antares/</dc:source>
         <dc:title xml:lang="en"></dc:title>
         <rdfs:comment xml:lang="en">Multidisciplinary, permanent marine observatory providing high-bandwidth real-time data transmission from deep-sea for geosciences and marine environmental sciences. Site is part of the MOOSE network providing real-time data transmission through two deep cabled moorings. These moorings are complemented by stand-alone mooring near the junction box. Physical and biogeochemical parameters recorded by autonomous sensors with regular maintenance. In addition monthly ship occupation for CTD profiles and seawater collection. Cabled extension of the neutrino telescope is offering connectors for direct link to shore in addition to operational seismometer already in place.</rdfs:comment>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/3b77ff62bc32085019740461d30e6517"/>
     </owl:NamedIndividual>
     
 
@@ -1729,6 +1885,7 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/filchner-ronne/</dc:source>
         <dc:title xml:lang="en">S2 observatory Filchner Ronne</dc:title>
         <rdfs:comment xml:lang="en">The S2 Observatory for long term monitoring of Ice Shelf Water (ISW) Overflow situated at the Filchner sill in the southern Weddell Sea was established in 1977 and continues to deliver the longest existing marine time series from Antarctica. The position for the observatory S2 proved to be a key site for monitoring the ISW overflow produced beneath the huge Filchner Ronne Ice Shelf and is selected to be a part of the global net of monitoring sites under CLIVAR (www.clivar.org) and OceanSITES (www.oceansites.org). Time series of current speed and direction, temperature and salinity exist back to 1977.  Continuous observation of dissolved oxygen started in 2009.</rdfs:comment>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/eeed1d0401cfa17d2b8586922003150d"/>
     </owl:NamedIndividual>
     
 
@@ -1741,6 +1898,17 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/nemo-sn1/</dc:source>
         <rdfs:comment xml:lang="en">Multidisciplinary (geophysics, oceanography, bio-acoustics) observatory, located in Western Ionian See, offshore Catania (Sicily), deep-sea real-time multi-parameter observatory is currently being re-deployed after refurbishment and installations of new electronics.</rdfs:comment>
         <dc:title xml:lang="en">NEMO-SN1</dc:title>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/6491c48055a571dcfcdf18fe3f0a5c85"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/d2b4b9bccd0a12dbb271d05e9a3d04f8 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/d2b4b9bccd0a12dbb271d05e9a3d04f8">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (-33.55 -74.65)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (-33.55 -74.65)</geosparql:asWKT>
     </owl:NamedIndividual>
     
 
@@ -1753,6 +1921,17 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/momar/</dc:source>
         <dc:title xml:lang="en">MoMAR EMSO Azores</dc:title>
         <rdfs:comment xml:lang="en">Multidisciplinary (fauna, fluid chemistry, seismicity and ground deformation) situated at the mid-Atlantic (hydrothermal vent field Lucky Strike); near real time communication through acoustic link, buoy and satellite. EMSO observatory node, in operation since 2010, comprises an oceanographic mooring and nested arrays of seismometers, pressure probes, temperature probes and chemical sensors in vent fluids, as well as a camera and colonization devices for faunal and microfaunal studies. Satellite transmission of a data subset, accessible on an EMSO-related server. Yearly maintenance cruises scheduled till 2015. Upgrades of system planned for 2014 with several new connection nodes  accessible to FiXO3 collaborations.</rdfs:comment>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/2587cb4ee8b1e5f2a867fba5b30366fa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/d7feaf42e90e6c6b6898ce673a83d83b -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/d7feaf42e90e6c6b6898ce673a83d83b">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Angola @ POINT (12.28 -7.95)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/33710122be0cb835792bddd57f1f3f33"/>
     </owl:NamedIndividual>
     
 
@@ -1767,6 +1946,7 @@ See comments at ObservationValue.</dc:source>
         <dc:title xml:lang="en">Southern Adriatic Interdisciplinary Laboratory for Ocean Research</dc:title>
         <ssn:attachedSystem rdf:resource="http://fixo3.eu/vocab/e2c9180abc695bc67abf04f811a2ff6b"/>
         <ssn:attachedSystem rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
     </owl:NamedIndividual>
     
 
@@ -1780,6 +1960,26 @@ See comments at ObservationValue.</dc:source>
     
 
 
+    <!-- http://fixo3.eu/vocab/e67fbfe86e76e268c6d78bf5dffc04a7 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/e67fbfe86e76e268c6d78bf5dffc04a7">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (15.4 37.5)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (15.4 37.5)</geosparql:asWKT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/e768d31043764090b17ffab6ae2b7649 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/e768d31043764090b17ffab6ae2b7649">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (5.0 42.0)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (5.0 42.0)</geosparql:asWKT>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666 -->
 
     <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/ecc1ac1c8bbbe26063ab974bb48fc666">
@@ -1788,6 +1988,37 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/cis/</dc:source>
         <dc:title xml:lang="en">Central Irminger Sea</dc:title>
         <rdfs:comment xml:lang="en">Multidisciplinary mooring, located in the Central Irminger Sea, Subpolar North Atlantic and part of the FP7 NACLIM project. The site is located in the centre of the Irminger Gyre, characterized by particular deep winter mixed layer depth. The mixed layer deepening is promoted through the combination of the cyclonic circulation of the Irminger gyre and strong surface buoyancy forcing in winter. Focus of the interdisciplinary research is on the biogeochemical cycling in a potential deep water formtion area. The physical background field (Temperature, Salinity, Currents) of the upper 1500m is surveyed with a number of sensors. Moreover, biogeochemical sensors (O2, Chl-a, zooplankton) is measured in mixed layer. The site area is shared with the LOCO mooring established by the NIOZ in 2002. The sampling and logistics of the moorings is coordinated with the NACLIM project. In Septmber 2014 the CIS observatory was moved little south and the original position is now occupied by the 4 mooring construction as part of the US OOI initiative. With this configuration one observatory (OOI) is located at the center of the gyre, while CIS and LOCO are where typically the strongest buoyancy focring is found (related to the Greenland Tip Jet).</rdfs:comment>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/1f46aa7c67f5337c897c26489b9fe8dc"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/eeed1d0401cfa17d2b8586922003150d -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/eeed1d0401cfa17d2b8586922003150d">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Southern Weddell Sea @ POINT (-33.55 -74.65)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/d2b4b9bccd0a12dbb271d05e9a3d04f8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/f1a766598dfce3e681699c777597bf44 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/f1a766598dfce3e681699c777597bf44">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Western Mediterranean @ POINT (1.7523 41.1819)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/72a34d0779a05043f0698b07664b308f"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (18.08 41.52)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (18.08 41.52)</geosparql:asWKT>
     </owl:NamedIndividual>
     
 
@@ -1800,6 +2031,17 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/delos-b/</dc:source>
         <dc:title xml:lang="en">Deep-ocean Environmental Long-term Observatory System</dc:title>
         <rdfs:comment xml:lang="en">The DELOS (Deep-ocean Environmental Long-term Observatory System) system comprises two environmental monitoring platforms: DELOS A located in the near field (within 50 m of a sea floor well); and DELOS B located in the far field (~16 km from sea floor infrastructure). DELOS B located on flat (&amp;lt;1° slope), finely sedimented sea floor within petroleum lease Block 18 in a mid- slope area off Angola, between the deep-sea fans of the Congo and Kwanza rivers.  The platform hosts a camera module, oceanographic module and acoustic module, each with multiple instruments, plus a sediment trap module.</rdfs:comment>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/d7feaf42e90e6c6b6898ce673a83d83b"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/f94320a935d871e882dd4e71c310a452 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/f94320a935d871e882dd4e71c310a452">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (6.17 42.8)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (6.17 42.8)</geosparql:asWKT>
     </owl:NamedIndividual>
     
 
@@ -1812,6 +2054,7 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/delos-a/</dc:source>
         <dc:title xml:lang="en">Deep-ocean Environmental Long-term Observatory System</dc:title>
         <rdfs:comment xml:lang="en">The DELOS (Deep-ocean Environmental Long-term Observatory System) system comprises two environmental monitoring platforms: DELOS A located in the near field (within 50 m of a sea floor well); and DELOS B located in the far field (~16 km from sea floor infrastructure). DELOS A located on flat (&amp;lt;1° slope), finely sedimented sea floor within petroleum lease Block 18 in a mid- slope area off Angola between the deep-sea fans of the Congo and Kwanza rivers.  The platform hosts a camera module, oceanographic module and acoustic module, each with multiple instruments</rdfs:comment>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/026cf46fbec8cf4898e2399ae7670681"/>
     </owl:NamedIndividual>
     
 
@@ -1824,6 +2067,7 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/sog/</dc:source>
         <rdfs:comment xml:lang="en">Currently comprising a sediment trap mooring with current sensors it is situated in the middle of the least productive gyre in the South Atlantic but in contrast to NOG, an observatory in the North Atlantic oligotrophic gyre, it is not influenced by dust supply.</rdfs:comment>
         <dc:title xml:lang="en">Southern Oligotrophic Gyre</dc:title>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/7cc646f3a03987dd0da1fe888be3ad12"/>
     </owl:NamedIndividual>
     
 
@@ -1837,6 +2081,16 @@ See comments at ObservationValue.</dc:source>
     
 
 
+    <!-- http://fixo3.eu/vocab/026cf46fbec8cf4898e2399ae7670681 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/026cf46fbec8cf4898e2399ae7670681">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Angola @ POINT (12.14 -7.9)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/429c3e23c86212a7d1fbcca73a9cdee0"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c -->
 
     <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/049fed08304a907815556d593538ae0c">
@@ -1845,6 +2099,7 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/lion/</dc:source>
         <rdfs:comment xml:lang="en">Deep-sea mooring located in the convection cell in the centre of the Gulf of Lion which aims to observe the winter convection affecting the north-western Mediterranean Sea water circulation and deep-sea ecosystem (physical data). The mooring is deployed near the ODAS meteorological surface buoy (Gulf of Lion) and integrated in the MOOSE network.</rdfs:comment>
         <dc:title xml:lang="en">LION</dc:title>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/88213cd8dc2bee4163c1edce96ac83af"/>
     </owl:NamedIndividual>
     
 
@@ -1857,6 +2112,17 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/fram/</dc:source>
         <rdfs:comment xml:lang="en">Array of moorings and permanent sampling sites across the Fram Strait. Installed to capture the exchange of Atlantic and Arctic waters, and to study the temporal development of an Arctic marine ecosystem. Enables year-round multidisciplinary long-term observations, partially with near real-time data access.</rdfs:comment>
         <dc:title xml:lang="en">Frontiers in Arctic Marine Monitoring</dc:title>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/add04559b4c5755364e8f156a2db0159"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/1f46aa7c67f5337c897c26489b9fe8dc -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/1f46aa7c67f5337c897c26489b9fe8dc">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Central Irminger Sea @ POINT (-39.7 59.7)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/7b7f12045858e9d1b13fa67bd0e7caae"/>
     </owl:NamedIndividual>
     
 
@@ -1869,6 +2135,7 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/e1-m3a/</dc:source>
         <rdfs:comment xml:lang="en">Multidisciplinary mooring located at the eastern Mediterranean off shore Crete island, an area of open sea conditions, characterized as extremely oligotrophic where dense waters with intermediate and deep characteristics are formed.</rdfs:comment>
         <dc:title xml:lang="en">POSEIDON E1-M3A</dc:title>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/3535ee396519f1d320e9c955839facae"/>
     </owl:NamedIndividual>
     
 
@@ -1881,6 +2148,17 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/biscay-agl/</dc:source>
         <rdfs:comment xml:lang="en">Mooring in SE Bay of Biscay it comprises a fully-equipped ODAS buoy transmitting data in real-time plus monthly hydrographical and biogeochemical sampling of water column from research vessel. Buoy obtains core measurements of meteorological, physical, biogeochemical, and ecological parameters with high significance to weather forecasting and climate monitoring. Data immediately provided through IEO web page (hourly).</rdfs:comment>
         <dc:title xml:lang="en">Ocean-meteorological buoy Augusto González de Linares</dc:title>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/70d6d6cc5ad65e9b93427c09108d42ea"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/16217966c4f65ef414293ba47118b74b -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/16217966c4f65ef414293ba47118b74b">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (25.07 35.44)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (25.07 35.44)</geosparql:asWKT>
     </owl:NamedIndividual>
     
 
@@ -1893,6 +2171,57 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/obsea/</dc:source>
         <dc:title xml:lang="en">Expandable Seafloor Observatory</dc:title>
         <rdfs:comment xml:lang="en">The main objective of this site located at Western Mediterranean is to be a test bed for the development of oceanographic instrumentation while being a shallow-water observatory providing real time data and database with historical values.</rdfs:comment>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/f1a766598dfce3e681699c777597bf44"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/2587cb4ee8b1e5f2a867fba5b30366fa -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/2587cb4ee8b1e5f2a867fba5b30366fa">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Mid Atlantic @ POINT (-33.0 37.5)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/6e6cf83c3e88b49e2ec42a4a1c804ef4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/3b77ff62bc32085019740461d30e6517 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/3b77ff62bc32085019740461d30e6517">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Ligurian Sea @ POINT (6.17 42.8)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/f94320a935d871e882dd4e71c310a452"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Eastern Mediterranean Sea @ POINT (18.08 41.52)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/33710122be0cb835792bddd57f1f3f33 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/33710122be0cb835792bddd57f1f3f33">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (12.28 -7.95)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (12.28 -7.95)</geosparql:asWKT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/3535ee396519f1d320e9c955839facae -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/3535ee396519f1d320e9c955839facae">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Eastern Mediterranean Sea @ POINT (25.07 35.44)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/16217966c4f65ef414293ba47118b74b"/>
     </owl:NamedIndividual>
     
 
@@ -1905,6 +2234,27 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/nog/</dc:source>
         <rdfs:comment xml:lang="en">Currently comprising a sediment trap mooring with current sensors it is situated in the middle of the least productive gyre in the North Atlantic but one which is influenced to a degree by dust supply from the Sahara desert.</rdfs:comment>
         <dc:title xml:lang="en">Northern Oligotrophic Gyre</dc:title>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/b62a411263888c395a20ad94db3fdfa2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/4efa768666305a206409b754eb0aefc4 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/4efa768666305a206409b754eb0aefc4">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Central Eastern Atlantic @ POINT (-15.5 29.167)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/6068b06be8da1e67d399e23a55445cde"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/429c3e23c86212a7d1fbcca73a9cdee0 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/429c3e23c86212a7d1fbcca73a9cdee0">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (12.14 -7.9)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (12.14 -7.9)</geosparql:asWKT>
     </owl:NamedIndividual>
     
 
@@ -1926,6 +2276,47 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/sor/</dc:source>
         <dc:title xml:lang="en"></dc:title>
         <rdfs:comment xml:lang="en">Single location mooring situated on the Mid-Atlantic Ridge south of Svalbard. A component of NOON (Norwegian Ocean Observatory Network) planned as demo mission in 2012 and then as sustained observatory in 2016.</rdfs:comment>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/97230ff1dc0d9c33d1f42f66ecedfef9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/6e6cf83c3e88b49e2ec42a4a1c804ef4 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/6e6cf83c3e88b49e2ec42a4a1c804ef4">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (-33.0 37.5)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (-33.0 37.5)</geosparql:asWKT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/6fa0fda865a574d70eeb70c23c50ca29 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/6fa0fda865a574d70eeb70c23c50ca29">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (-25.1 -18.53)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (-25.1 -18.53)</geosparql:asWKT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/6068b06be8da1e67d399e23a55445cde -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/6068b06be8da1e67d399e23a55445cde">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (-15.5 29.167)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (-15.5 29.167)</geosparql:asWKT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/6491c48055a571dcfcdf18fe3f0a5c85 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/6491c48055a571dcfcdf18fe3f0a5c85">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Western Ionian See @ POINT (15.4 37.5)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/e67fbfe86e76e268c6d78bf5dffc04a7"/>
     </owl:NamedIndividual>
     
 
@@ -1938,6 +2329,37 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/cvoo/</dc:source>
         <dc:title xml:lang="en">Cape Verde Ocean Observatory</dc:title>
         <rdfs:comment xml:lang="en">This observatory is composed of a mooring and a small vessel maintaining the time-series continuity at Tropical Eastern North Atlantic.</rdfs:comment>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/86c39852c800117d215c0e2e04ac2a6e"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/6711cadd91176dd2c52dd9eed5f771f5 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/6711cadd91176dd2c52dd9eed5f771f5">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Northeast Atlantic @ POINT (-16.5 49.0)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/a33699d431a2628de5f1823c3e399cce"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/7b7f12045858e9d1b13fa67bd0e7caae -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/7b7f12045858e9d1b13fa67bd0e7caae">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (-39.7 59.7)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (-39.7 59.7)</geosparql:asWKT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/7cc646f3a03987dd0da1fe888be3ad12 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/7cc646f3a03987dd0da1fe888be3ad12">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Southern Oligotrophic Gyre @ POINT (-25.1 -18.53)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/6fa0fda865a574d70eeb70c23c50ca29"/>
     </owl:NamedIndividual>
     
 
@@ -1951,6 +2373,67 @@ See comments at ObservationValue.</dc:source>
         <rdfs:comment xml:lang="en">Array of moorings covering the entire water column and benthos with associated repeat ship occupations for process studies and collections not possible autonomously (eg benthic megafauna) Longest running multidisciplinary North Atlantic open ocean sustained observatory delivering atmospheric and physical and biogeochemical ocean datasets in near real-time.</rdfs:comment>
         <dc:title xml:lang="en">Porcupine Abyssal Plain Observatory</dc:title>
         <ssn:attachedSystem rdf:resource="http://fixo3.eu/vocab/45767d1518b17d76ed77fba69ce8aba1"/>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/6711cadd91176dd2c52dd9eed5f771f5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/7e44869bfcec0c07a9d7d98b08f2d729 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/7e44869bfcec0c07a9d7d98b08f2d729">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Ligurian Sea @ POINT (7.87 43.42)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/94d6d23dd42d441d75e7c49b42c4c31b"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/7fd1d23dbaafe0b6d56898d5ebccfc1c -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/7fd1d23dbaafe0b6d56898d5ebccfc1c">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Norwegian Sea @ POINT (2.0 66.0)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/b8010df2cf95dee6afa45ccea9c9e532"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/70d6d6cc5ad65e9b93427c09108d42ea -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/70d6d6cc5ad65e9b93427c09108d42ea">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Bay of Biscay @ POINT (-3.78 43.83)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/95c0f09207faa487572cc77c6b69f77c"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/72a34d0779a05043f0698b07664b308f -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/72a34d0779a05043f0698b07664b308f">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (1.7523 41.1819)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (1.7523 41.1819)</geosparql:asWKT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/780af6c774b88088a44c9398cb39bebb -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/780af6c774b88088a44c9398cb39bebb">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (4.0 79.0)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (4.0 79.0)</geosparql:asWKT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/8a407947a9f94276e436afaa99dc8f35 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/8a407947a9f94276e436afaa99dc8f35">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (-24.5 17.4)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (-24.5 17.4)</geosparql:asWKT>
     </owl:NamedIndividual>
     
 
@@ -1963,6 +2446,7 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/estoc/</dc:source>
         <dc:title xml:lang="en">European Station for Time series in the Ocean Canary Islands</dc:title>
         <rdfs:comment xml:lang="en">Multidisciplinary mooring, located in the Central Eastern Atlantic, open ocean site with over 15 years of continuous surface and mid-water meteorological, physical and biogeochemical monitoring.</rdfs:comment>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/4efa768666305a206409b754eb0aefc4"/>
     </owl:NamedIndividual>
     
 
@@ -1975,6 +2459,17 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/w1-m3a/</dc:source>
         <dc:title xml:lang="en"></dc:title>
         <rdfs:comment xml:lang="en">A single multidisciplinary observatory mooring located in the Ligurian Sea with real-time and delayed mode capability. The W1-M3A observing system is composed by a large spare buoy and a sub-surface mooring periodically deployed close to the main buoy depending on specific research needs. The W1-M3A large spar buoy specifically designed for air-sea interaction studies and the collection of meteorological data even in rough sea. Stability is the basic feature of this type of buoy with respect to the other more classical approach based on discus-shaped buoys. The buoy was specifically designed as a stable measuring platform since its total mass, the unity buoyancy at the sea level, and presence of a damping disk allow for negligible sensitivity of sea heave and height.</rdfs:comment>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/ab5bbb6dd39e05cf3909c2e5b74e7026"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/8f11c9078b57f4d0523b26a3968cdf0d -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/8f11c9078b57f4d0523b26a3968cdf0d">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Southern Ionian Sea @ POINT (21.6 36.8)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/c7b362184d8d4554d694cb3920b72325"/>
     </owl:NamedIndividual>
     
 
@@ -1987,6 +2482,7 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/pylos/</dc:source>
         <rdfs:comment xml:lang="en">Multidisciplinary observatory mooring located in the cross road of Adriatic and Eastern Mediterranean basins. Very geologically active area with lots of earthquakes and landslides as well as a potential source of Tsunamis that might affect the Eastern Mediterranean Sea.</rdfs:comment>
         <dc:title xml:lang="en">Pylos Observatory</dc:title>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/8f11c9078b57f4d0523b26a3968cdf0d"/>
     </owl:NamedIndividual>
     
 
@@ -1999,6 +2495,57 @@ See comments at ObservationValue.</dc:source>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/station-m/</dc:source>
         <rdfs:comment xml:lang="en">Ocean Weather Station M (OWS M) has been an ocean weather station since 1948. At present there is a mooring and a surface buoy at the site, which measures hydrography, O2, chlorophyll and carbon parameters. Located in Norwegian Sea with real-time and delayed mode capabilities. The site present the longest existing homogeneous time series from deep ocean. The facility presented here is the mooring situated betveen 150 and 2000 m.</rdfs:comment>
         <dc:title xml:lang="en">Station M</dc:title>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/7fd1d23dbaafe0b6d56898d5ebccfc1c"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/86c39852c800117d215c0e2e04ac2a6e -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/86c39852c800117d215c0e2e04ac2a6e">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Cape Verde @ POINT (-24.5 17.4)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/8a407947a9f94276e436afaa99dc8f35"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/88213cd8dc2bee4163c1edce96ac83af -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/88213cd8dc2bee4163c1edce96ac83af">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Gulf of Lion @ POINT (5.0 42.0)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/e768d31043764090b17ffab6ae2b7649"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/94d6d23dd42d441d75e7c49b42c4c31b -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/94d6d23dd42d441d75e7c49b42c4c31b">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (7.87 43.42)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (7.87 43.42)</geosparql:asWKT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/95c0f09207faa487572cc77c6b69f77c -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/95c0f09207faa487572cc77c6b69f77c">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (-3.78 43.83)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (-3.78 43.83)</geosparql:asWKT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/97230ff1dc0d9c33d1f42f66ecedfef9 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/97230ff1dc0d9c33d1f42f66ecedfef9">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Mid-Atlantic Ridge south of Svalbard @ POINT (8.0 75.0)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/cba5d2ca7d1c7628b274c3a1f8194fe3"/>
     </owl:NamedIndividual>
     
 

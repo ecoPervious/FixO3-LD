@@ -98,16 +98,17 @@
     <owl:Class rdf:about="http://esonetyellowpages.com/vocab/CO2Pro">
         <rdfs:label xml:lang="en">CO2-Pro</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://esonetyellowpages.com/vocab/PartialPressureOfCO2Analyzer"/>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/SensingDevice"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
-                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/fc84ea3fd1d982e5c0c767595f89d06a"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/237d45f1add37bc4d07024fb61161047"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
-                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/237d45f1add37bc4d07024fb61161047"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/fc84ea3fd1d982e5c0c767595f89d06a"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.esonetyellowpages.com/datasheets/datasheet-psi_gtdpro_1459187085.pdf</rdfs:seeAlso>
@@ -293,16 +294,17 @@
     <owl:Class rdf:about="http://esonetyellowpages.com/vocab/WorkhorseQuartermaster150kHzADCP">
         <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler"/>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/SensingDevice"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
-                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
-                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -314,13 +316,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
-                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
-                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.esonetyellowpages.com/datasheets/datasheet-adcp_whs_150khz_1458583613.pdf</rdfs:seeAlso>
@@ -360,6 +362,7 @@
 
     <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/b37a584face0b891be80bdb695554d04">
         <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/MeasuringRange"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
         <rdfs:label xml:lang="en">800 mbar to 2000 mbar</rdfs:label>
         <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2000.0</schema:maxValue>
         <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">800.0</schema:minValue>
@@ -382,6 +385,7 @@
 
     <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/c77943a0cdddd3a777ab4f8ecd7308d1">
         <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/CellSize"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
         <rdfs:label xml:lang="en">4 m to 24 m</rdfs:label>
         <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">24.0</schema:maxValue>
         <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.0</schema:minValue>
@@ -394,6 +398,7 @@
 
     <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/cb34d28c75dfe319c890a190121fba78">
         <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/OperatingDepth"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
         <rdfs:label xml:lang="en">1500 m</rdfs:label>
         <schema:value rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1500.0</schema:value>
         <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#Meter"/>
@@ -405,6 +410,7 @@
 
     <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/e26826eadf1d7b6d66b8fbf9a9f643da">
         <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/OperatingDepth"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
         <rdfs:label xml:lang="en">0 m to 300 m</rdfs:label>
         <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</schema:minValue>
         <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">300.0</schema:maxValue>
@@ -437,6 +443,7 @@
 
     <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/3a2861c7a2d11588693e881d2f429593">
         <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/Frequency"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
         <rdfs:label xml:lang="en">150 kHz</rdfs:label>
         <schema:value rdf:datatype="http://www.w3.org/2001/XMLSchema#float">150.0</schema:value>
         <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
@@ -448,6 +455,7 @@
 
     <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/40ce3f0e68fa4df3ee065fbc725b292e">
         <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/ProfilingRange"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
         <rdfs:label xml:lang="en">300 m</rdfs:label>
         <schema:value rdf:datatype="http://www.w3.org/2001/XMLSchema#float">300.0</schema:value>
         <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#Meter"/>
@@ -459,6 +467,7 @@
 
     <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/7bed744ef9f3a37d21c42afed990e3d3">
         <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/TemperatureRange"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
         <rdfs:label xml:lang="en">-5 °C to 45 °C</rdfs:label>
         <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-5.0</schema:minValue>
         <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">45.0</schema:maxValue>

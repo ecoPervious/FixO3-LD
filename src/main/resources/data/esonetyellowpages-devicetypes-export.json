@@ -339,8 +339,8 @@
                 "capability":{
                     "label":"enviroFlu-DS Excitation Wavelength",
                     "quantity":{
-                        "label":"-254 nm",
-                        "value":"-254",
+                        "label":"254 nm",
+                        "value":"254",
                         "unitCode":"http://qudt.org/vocab/unit#Nanometer",
                         "type":"http://esonetyellowpages.com/vocab/ExcitationWavelength"
                     }
@@ -350,8 +350,8 @@
                 "capability":{
                     "label":"enviroFlu-DS Operating Temperature",
                     "quantity":{
-                        "label":"-0 - 40 °C",
-                        "minValue":"-0",
+                        "label":"0 - 40 °C",
+                        "minValue":"0",
                         "maxValue":"40",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
                         "type":"http://esonetyellowpages.com/vocab/OperatingTemperature"
@@ -476,7 +476,7 @@
                 "capability":{
                     "label":"FlowQuest 75 Transducer Beam Angle",
                     "quantity":{
-                        "label":"22 °",
+                        "label":"22°",
                         "value":"22",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
@@ -576,7 +576,7 @@
                 "capability":{
                     "label":"FlowQuest 75 Tilt Range",
                     "quantity":{
-                        "label":"±15 °",
+                        "label":"±15°",
                         "value":"±15",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TiltRange"
@@ -587,7 +587,7 @@
                 "capability":{
                     "label":"FlowQuest 75 Compass Accuracy",
                     "quantity":{
-                        "label":"±2 °",
+                        "label":"±2°",
                         "value":"±2",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/CompassAccuracy"
@@ -598,7 +598,7 @@
                 "capability":{
                     "label":"FlowQuest 75 Compass Maximum Tilt",
                     "quantity":{
-                        "label":"±15 °",
+                        "label":"±15°",
                         "value":"±15",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/CompassMaximumTilt"
@@ -838,7 +838,7 @@
                 "capability":{
                     "label":"Vessel-Mounted 500 Transducer Beam Angle",
                     "quantity":{
-                        "label":"25 °",
+                        "label":"25°",
                         "value":"25",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
@@ -1121,6 +1121,50 @@
         "image":"http://www.ifremer.fr/isi/sensorNanny/images/aqco7c60.png",
         "manufacturer":"Aquamatic",
         "subClasses":[
+        ]
+    },
+    {
+        "name":"http://esonetyellowpages.com/vocab/EnviroFluDS",
+        "label":"enviroFlu-DS",
+        "comment":"The enviroFlu-DS is a new generation of high sensitive deepsea submersible sensors for oil-in-water measurement. The used UV fluorescence principle for detection is much more sensitive than any other existing detection principle. This allows the detection of PAH traces down to single ppb levels. The pressure housing is completely made of titanium and rated to 6,000m / 20,000 feet. Analog outputs, as well as a RS232 interface makes it easy to integrate the sensors in any control or data logging system. Solid secondary standards are available for all versions and grant fast and reliable functional checks, without the need of chemicals or laboratory.",
+        "image":"http://www.ifremer.fr/isi/sensorNanny/images/envirofluds.png",
+        "manufacturer":"TriOS GmbH",
+        "subClasses":[
+            {
+                "capability":{
+                    "label":"enviroFlu-DS Power Supply",
+                    "quantity":{
+                        "label":"-12 - 26 VDC",
+                        "minValue":"-12",
+                        "maxValue":"26",
+                        "unitCode":"http://qudt.org/vocab/unit#Volt",
+                        "type":"http://esonetyellowpages.com/vocab/PowerSupply"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"enviroFlu-DS Excitation Wavelength",
+                    "quantity":{
+                        "label":"-254 nm",
+                        "value":"-254",
+                        "unitCode":"http://qudt.org/vocab/unit#Nanometer",
+                        "type":"http://esonetyellowpages.com/vocab/ExcitationWavelength"
+                    }
+                }
+            },
+            {
+                "capability":{
+                    "label":"enviroFlu-DS Operating Temperature",
+                    "quantity":{
+                        "label":"-0 - 40 °C",
+                        "minValue":"-0",
+                        "maxValue":"40",
+                        "unitCode":"http://qudt.org/vocab/unit#DegreeCelsius",
+                        "type":"http://esonetyellowpages.com/vocab/OperatingTemperature"
+                    }
+                }
+            }
         ]
     },
     {
@@ -1798,7 +1842,7 @@
                 "capability":{
                     "label":"Aquadopp Profiler 1000 Transducer Beam Angle",
                     "quantity":{
-                        "label":"3.4 °",
+                        "label":"3.4°",
                         "value":"3.4",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
@@ -1877,7 +1921,7 @@
                 "capability":{
                     "label":"Aquadopp Profiler 1000 Tilt Accuracy",
                     "quantity":{
-                        "label":"0.2 °",
+                        "label":"0.2°",
                         "value":"0.2",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TiltAccuracy"
@@ -1888,7 +1932,7 @@
                 "capability":{
                     "label":"Aquadopp Profiler 1000 Compass Accuracy",
                     "quantity":{
-                        "label":"2 °",
+                        "label":"2°",
                         "value":"2",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/CompassAccuracy"
@@ -1899,7 +1943,7 @@
                 "capability":{
                     "label":"Aquadopp Profiler 1000 Compass Maximum Tilt",
                     "quantity":{
-                        "label":"30 °",
+                        "label":"30°",
                         "value":"30",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/CompassMaximumTilt"
@@ -2342,7 +2386,7 @@
                 "capability":{
                     "label":"FlowQuest 1000 Transducer Beam Angle",
                     "quantity":{
-                        "label":"22 °",
+                        "label":"22°",
                         "value":"22",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
@@ -2409,7 +2453,7 @@
                 "capability":{
                     "label":"FlowQuest 1000 Tilt Range",
                     "quantity":{
-                        "label":"±15 °",
+                        "label":"±15°",
                         "value":"±15",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TiltRange"
@@ -2420,7 +2464,7 @@
                 "capability":{
                     "label":"FlowQuest 1000 Compass Accuracy",
                     "quantity":{
-                        "label":"±2 °",
+                        "label":"±2°",
                         "value":"±2",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/CompassAccuracy"
@@ -2431,7 +2475,7 @@
                 "capability":{
                     "label":"FlowQuest 1000 Compass Maximum Tilt",
                     "quantity":{
-                        "label":"±15 °",
+                        "label":"±15°",
                         "value":"±15",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/CompassMaximumTilt"
@@ -2863,7 +2907,7 @@
                 "capability":{
                     "label":"Aquadopp Profiler 600 Transducer Beam Angle",
                     "quantity":{
-                        "label":"3 °",
+                        "label":"3°",
                         "value":"3",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
@@ -2941,7 +2985,7 @@
                 "capability":{
                     "label":"Aquadopp Profiler 600 Tilt Accuracy",
                     "quantity":{
-                        "label":"0.2 °",
+                        "label":"0.2°",
                         "value":"0.2",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TiltAccuracy"
@@ -2952,7 +2996,7 @@
                 "capability":{
                     "label":"Aquadopp Profiler 600 Compass Accuracy",
                     "quantity":{
-                        "label":"2 °",
+                        "label":"2°",
                         "value":"2",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/CompassAccuracy"
@@ -2963,7 +3007,7 @@
                 "capability":{
                     "label":"Aquadopp Profiler 600 Compass Maximum Tilt",
                     "quantity":{
-                        "label":"30 °",
+                        "label":"30°",
                         "value":"30",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/CompassMaximumTilt"
@@ -3245,7 +3289,7 @@
                 "capability":{
                     "label":"Vessel-Mounted 1000 Transducer Beam Angle",
                     "quantity":{
-                        "label":"25 °",
+                        "label":"25°",
                         "value":"25",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
@@ -3708,7 +3752,7 @@
                 "capability":{
                     "label":"FlowQuest 600 Transducer Beam Angle",
                     "quantity":{
-                        "label":"22 °",
+                        "label":"22°",
                         "value":"22",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
@@ -3775,7 +3819,7 @@
                 "capability":{
                     "label":"FlowQuest 600 Tilt Range",
                     "quantity":{
-                        "label":"±15 °",
+                        "label":"±15°",
                         "value":"±15",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TiltRange"
@@ -3786,7 +3830,7 @@
                 "capability":{
                     "label":"FlowQuest 600 Compass Accuracy",
                     "quantity":{
-                        "label":"±2 °",
+                        "label":"±2°",
                         "value":"±2",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/CompassAccuracy"
@@ -3797,7 +3841,7 @@
                 "capability":{
                     "label":"FlowQuest 600 Compass Maximum Tilt",
                     "quantity":{
-                        "label":"±15 °",
+                        "label":"±15°",
                         "value":"±15",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/CompassMaximumTilt"
@@ -4173,7 +4217,7 @@
                 "capability":{
                     "label":"FlowQuest 150 Transducer Beam Angle",
                     "quantity":{
-                        "label":"22 °",
+                        "label":"22°",
                         "value":"22",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
@@ -4273,7 +4317,7 @@
                 "capability":{
                     "label":"FlowQuest 150 Tilt Range",
                     "quantity":{
-                        "label":"±15 °",
+                        "label":"±15°",
                         "value":"±15",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TiltRange"
@@ -4284,7 +4328,7 @@
                 "capability":{
                     "label":"FlowQuest 150 Compass Accuracy",
                     "quantity":{
-                        "label":"±2 °",
+                        "label":"±2°",
                         "value":"±2",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/CompassAccuracy"
@@ -4295,7 +4339,7 @@
                 "capability":{
                     "label":"FlowQuest 150 Compass Maximum Tilt",
                     "quantity":{
-                        "label":"±15 °",
+                        "label":"±15°",
                         "value":"±15",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/CompassMaximumTilt"
@@ -4619,7 +4663,7 @@
                 "capability":{
                     "label":"Aquadopp Profiler 2000 Transducer Beam Angle",
                     "quantity":{
-                        "label":"1.7 °",
+                        "label":"1.7°",
                         "value":"1.7",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
@@ -4698,7 +4742,7 @@
                 "capability":{
                     "label":"Aquadopp Profiler 2000 Tilt Accuracy",
                     "quantity":{
-                        "label":"0.2 °",
+                        "label":"0.2°",
                         "value":"0.2",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TiltAccuracy"
@@ -4709,7 +4753,7 @@
                 "capability":{
                     "label":"Aquadopp Profiler 2000 Compass Accuracy",
                     "quantity":{
-                        "label":"2 °",
+                        "label":"2°",
                         "value":"2",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/CompassAccuracy"
@@ -4720,7 +4764,7 @@
                 "capability":{
                     "label":"Aquadopp Profiler 2000 Compass Maximum Tilt",
                     "quantity":{
-                        "label":"30 °",
+                        "label":"30°",
                         "value":"30",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/CompassMaximumTilt"
@@ -5807,7 +5851,7 @@
                 "capability":{
                     "label":"RDCP 600 Transducer Beam Angle",
                     "quantity":{
-                        "label":"25 °",
+                        "label":"25°",
                         "value":"25",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
@@ -5873,7 +5917,7 @@
                 "capability":{
                     "label":"RDCP 600 Tilt Range",
                     "quantity":{
-                        "label":"±45 °",
+                        "label":"±45°",
                         "value":"±45",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TiltRange"
@@ -5923,7 +5967,7 @@
                 "capability":{
                     "label":"Model 802-H DeepWater Angular Range",
                     "quantity":{
-                        "label":"±0.5 °",
+                        "label":"±0.5°",
                         "value":"±0.5",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/AngularRange"
@@ -6078,7 +6122,7 @@
                 "capability":{
                     "label":"FlowQuest 300 Transducer Beam Angle",
                     "quantity":{
-                        "label":"22 °",
+                        "label":"22°",
                         "value":"22",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
@@ -6145,7 +6189,7 @@
                 "capability":{
                     "label":"FlowQuest 300 Tilt Range",
                     "quantity":{
-                        "label":"±15 °",
+                        "label":"±15°",
                         "value":"±15",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TiltRange"
@@ -6156,7 +6200,7 @@
                 "capability":{
                     "label":"FlowQuest 300 Compass Accuracy",
                     "quantity":{
-                        "label":"±2 °",
+                        "label":"±2°",
                         "value":"±2",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/CompassAccuracy"
@@ -6167,7 +6211,7 @@
                 "capability":{
                     "label":"FlowQuest 300 Compass Maximum Tilt",
                     "quantity":{
-                        "label":"±15 °",
+                        "label":"±15°",
                         "value":"±15",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/CompassMaximumTilt"
@@ -6285,7 +6329,7 @@
                 "capability":{
                     "label":"Aquadopp Profiler 400 Transducer Beam Angle",
                     "quantity":{
-                        "label":"3.7 °",
+                        "label":"3.7°",
                         "value":"3.7",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TransducerBeamAngle"
@@ -6363,7 +6407,7 @@
                 "capability":{
                     "label":"Aquadopp Profiler 400 Tilt Accuracy",
                     "quantity":{
-                        "label":"0.2 °",
+                        "label":"0.2°",
                         "value":"0.2",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/TiltAccuracy"
@@ -6374,7 +6418,7 @@
                 "capability":{
                     "label":"Aquadopp Profiler 400 Compass Accuracy",
                     "quantity":{
-                        "label":"2 °",
+                        "label":"2°",
                         "value":"2",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/CompassAccuracy"
@@ -6385,7 +6429,7 @@
                 "capability":{
                     "label":"Aquadopp Profiler 400 Compass Maximum Tilt",
                     "quantity":{
-                        "label":"30 °",
+                        "label":"30°",
                         "value":"30",
                         "unitCode":"http://qudt.org/vocab/unit#DegreeAngle",
                         "type":"http://esonetyellowpages.com/vocab/CompassMaximumTilt"

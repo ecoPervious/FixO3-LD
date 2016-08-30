@@ -1,0 +1,16 @@
+div #comment {
+	font-style: italic;
+	padding-top: 10px;
+}
+
+div .displayble {
+	display: none;
+}
+
+div .platform {
+	padding-bottom: 20px;
+}
+
+div .sensor {
+	padding-bottom: 10px;
+}

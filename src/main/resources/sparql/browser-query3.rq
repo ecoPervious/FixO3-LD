@@ -6,14 +6,15 @@ PREFIX unit: <http://qudt.org/vocab/unit#>
 PREFIX eyp: <http://esonetyellowpages.com/vocab/>
 PREFIX qudt: <http://qudt.org/schema/qudt#>
 
-SELECT ?propertyLabel ?value ?minValue ?maxValue ?unitSymbol
+SELECT ?propertyLabel ?value ?minValue ?maxValue ?unitId ?unitSymbol
 WHERE {
   <SENSOR_ID> rdf:type ssn:SensingDevice .
   <SENSOR_ID> ssn:hasMeasurementCapability [ ssn:hasMeasurementProperty ?mp ] .
   
   ?mp rdf:type ?pt .
   ?pt rdfs:label ?propertyLabel .
-  ?mp schema:unitCode [ qudt:symbol ?unitSymbol ] .
+  ?mp schema:unitCode ?unitId .
+  ?unitId qudt:symbol ?unitSymbol .
   
   OPTIONAL { ?mp schema:value ?value } .
   OPTIONAL { ?mp schema:minValue ?minValue . ?mp schema:maxValue ?maxValue } .

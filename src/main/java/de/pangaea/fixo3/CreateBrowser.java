@@ -46,24 +46,23 @@ public class CreateBrowser {
 	private static final String service = "http://seprojects.marum.de:3030/fixo3observatories/sparql";
 
 	private void run() throws IOException {
-		StringBuffer sb = new StringBuffer();
+		StringBuffer observatories = new StringBuffer();
 
-		sb.append("<!doctype html>");
-		sb.append("<html>");
-		sb.append("<head>");
-		sb.append("<meta charset=\"utf-8\">");
-		sb.append("<link rel=\"stylesheet\" href=\"main.css\">");
-		sb.append("<script language=\"javascript\" type=\"text/javascript\" src=\"functions.js\"></script>");
-		sb.append("</head>");
-		sb.append("<body>");
+		observatories.append("<!doctype html>");
+		observatories.append("<html>");
+		observatories.append("<head>");
+		observatories.append("<meta charset=\"utf-8\">");
+		observatories.append("<link rel=\"stylesheet\" href=\"main.css\">");
+		observatories.append("</head>");
+		observatories.append("<body>");
 
 		QueryExecution qe1 = QueryExecutionFactory.sparqlService(service,
 				FileUtils.readFileToString(new File("src/main/resources/sparql/browser-query1.rq")));
 
 		ResultSet rs1 = qe1.execSelect();
 
-		sb.append("<div>");
-		sb.append("<h2>Platforms</h2>");
+		observatories.append("<div id=\"main\">");
+		observatories.append("<h1>FixO3 Observatories</h1>");
 
 		while (rs1.hasNext()) {
 			QuerySolution qs1 = rs1.next();
@@ -72,128 +71,198 @@ public class CreateBrowser {
 			String obsLabel = qs1.getLiteral("obsLabel").getLexicalForm();
 			String obsTitle = qs1.getLiteral("obsTitle").getLexicalForm();
 			String obsComment = qs1.getLiteral("obsComment").getLexicalForm();
+			String obsLocation = qs1.getLiteral("obsLocation").getLexicalForm();
+			Point point = new Point(obsLocation);
 
-			sb.append("<div class=\"platform\" id=\"a" + obsLocalName + "\">");
-			sb.append("<a href=\"#a" + obsLocalName + "\" onclick=\"display('" + obsLocalName + "')\">");
-			sb.append("<strong>");
-			sb.append(obsLabel);
-			sb.append("</strong>");
-			sb.append("</a>");
-			sb.append("</br>");
-			sb.append(obsTitle);
-			sb.append("<div class=\"displayble\" id=\"" + obsLocalName + "\">");
-			sb.append("<div id=\"comment\">");
-			sb.append(obsComment);
-			sb.append("</div>");
-		
+			observatories.append("<div class=\"platform\">");
+			observatories.append("<a href=\"" + obsLocalName + ".html\">");
+			observatories.append("<strong>");
+			observatories.append(obsLabel);
+			observatories.append("</strong>");
+			observatories.append("</a>");
+			observatories.append("</br>");
+			observatories.append(obsTitle);
+			observatories.append("</div>");
+
+			StringBuffer observatory = new StringBuffer();
+
+			observatory.append("<!doctype html>");
+			observatory.append("<html>");
+			observatory.append("<head>");
+			observatory.append("<meta charset=\"utf-8\">");
+			observatory.append("<link rel=\"stylesheet\" href=\"main.css\">");
+			observatory.append(
+					"<script language=\"javascript\" type=\"text/javascript\" src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyCeLgOdZllXtTwtjlmuvbbw5Z8AeSFYwjE&signed_in=true\"></script>");
+			observatory.append("</head>");
+			observatory.append("<body>");
+
+			observatory.append("<div id=\"main\">");
+			observatory.append("<section id=\"header\">");
+			observatory.append("<h1>");
+			observatory.append(obsLabel);
+			observatory.append("</h1>");
+			observatory.append("<h2>");
+			observatory.append(obsTitle);
+			observatory.append("</h2>");
+			observatory.append("</section>");
+			
+			observatory.append("<section id=\"content\">");
+			observatory.append("<div id=\"description\">");
+			observatory.append(obsComment);
+			observatory.append("</div>");
+			observatory.append("<div id=\"location\">");
+			observatory.append("<div id=\"map\"></div>");
+			observatory.append("<script>");
+			observatory.append("var coords = {lat: " + point.getLat() + ", lng: " + point.getLon() + "};");
+			observatory.append("new google.maps.Marker({");
+			observatory.append("position: coords,");
+			observatory.append("map: new google.maps.Map(document.getElementById('map'), {");
+			observatory.append("zoom: 4,");
+			observatory.append("center: coords");
+			observatory.append("})");
+			observatory.append("});");
+			observatory.append("</script>");
+			observatory.append("</div>");
+			observatory.append("</section>");
+
 			QueryExecution qe2 = QueryExecutionFactory.sparqlService(service,
 					FileUtils.readFileToString(new File("src/main/resources/sparql/browser-query2.rq"))
 							.replaceAll("OBS_ID", obsId));
-			
+
 			ResultSet rs2 = qe2.execSelect();
-			
+
 			boolean hasSensors = false;
-			
+
 			if (rs2.hasNext()) {
-				sb.append("<div>");
-				sb.append("<h3>Sensors</h3>");
+				observatory.append("<div id=\"sensors\">");
+				observatory.append("<h3>Sensors</h3>");
 				hasSensors = true;
 			}
-			
+
 			while (rs2.hasNext()) {
 				QuerySolution qs2 = rs2.next();
 				String sensorId = qs2.getResource("sensorId").getURI();
-				String sensorLocalName = qs2.getResource("sensorId").getLocalName();
 				String sensorLabel = qs2.getLiteral("sensorLabel").getLexicalForm();
-				
-				sb.append("<div class=\"sensor\" id=\"a" + obsLocalName + "\">");
-				sb.append("<a href=\"#a" + obsLocalName + "\" onclick=\"display('" + sensorLocalName + "')\">");
-				sb.append("<strong>");
-				sb.append(sensorLabel);
-				sb.append("</strong>");
-				sb.append("</a>");
-				sb.append("<div class=\"displayble\" id=\"" + sensorLocalName + "\">");
-				sb.append("<div>");
-				sb.append("<table>");
-				
+
+				observatory.append("<div class=\"sensor\">");
+				observatory.append("<h4>");
+				observatory.append(sensorLabel);
+				observatory.append("</h4>");
+				observatory.append("<div>");
+				observatory.append("<table>");
+
 				QueryExecution qe3 = QueryExecutionFactory.sparqlService(service,
 						FileUtils.readFileToString(new File("src/main/resources/sparql/browser-query3.rq"))
 								.replaceAll("SENSOR_ID", sensorId));
-				
+
 				ResultSet rs3 = qe3.execSelect();
-				
+
 				while (rs3.hasNext()) {
 					QuerySolution qs3 = rs3.next();
-					
+
 					String value = null;
 					String minValue = null;
 					String maxValue = null;
+					String unitId = null;
 					String unitSymbol = null;
-					
+
 					String propertyLabel = qs3.getLiteral("propertyLabel").getLexicalForm();
-					
+
 					if (qs3.getLiteral("value") != null)
 						value = qs3.getLiteral("value").getLexicalForm();
 					if (qs3.getLiteral("minValue") != null)
 						minValue = qs3.getLiteral("minValue").getLexicalForm();
 					if (qs3.getLiteral("maxValue") != null)
 						maxValue = qs3.getLiteral("maxValue").getLexicalForm();
+					if (qs3.getResource("unitId") != null)
+						unitId = qs3.getResource("unitId").getURI();
 					if (qs3.getLiteral("unitSymbol") != null)
 						unitSymbol = qs3.getLiteral("unitSymbol").getLexicalForm();
-					
-					sb.append("<tr>");
-					sb.append("<td>");
-					sb.append(propertyLabel);
-					sb.append("</td>");
-					sb.append("<td>");
-					
+
+					observatory.append("<tr>");
+					observatory.append("<td>");
+					observatory.append(propertyLabel);
+					observatory.append("</td>");
+					observatory.append("<td>");
+
 					if (value != null) {
-						sb.append(value);
+						observatory.append(value);
 					} else if (minValue != null && maxValue != null) {
-						sb.append(minValue + " - " + maxValue); 
+						observatory.append(minValue + " - " + maxValue);
 					}
-					
-					if (unitSymbol != null) {
-						sb.append(" " + unitSymbol);
+
+					if (unitId != null && unitSymbol != null) {
+						observatory.append("&nbsp;");
+						observatory.append("<a href=\"" + unitId + "\">");
+						observatory.append(unitSymbol);
+						observatory.append("</a>");
 					}
-					
-					sb.append("</td>");
-					sb.append("</tr>");
+
+					observatory.append("</td>");
+					observatory.append("</tr>");
 				}
-				
+
 				qe3.close();
-				
-				sb.append("</table>");
-				sb.append("</div>");
-				sb.append("</div>");
-				sb.append("</div>");
+
+				observatory.append("</table>");
+				observatory.append("</div>");
+
+				observatory.append("</div>");
+
 			}
-			
+
 			qe2.close();
 
 			if (hasSensors) {
-				sb.append("</div>");
+				observatory.append("</div>");
 			}
-			
-			sb.append("</div>");
-			sb.append("</div>");
+
+			observatory.append("</div>");
+			observatory.append("</body>");
+			observatory.append("</html>");
+
+			FileWriter fw = new FileWriter(new File("browser/" + obsLocalName + ".html"));
+			fw.append(observatory);
+			fw.close();
 		}
 
 		qe1.close();
 
-		sb.append("</div>");
-
-		sb.append("</body>");
-		sb.append("</html>");
+		observatories.append("</div>");
+		observatories.append("</body>");
+		observatories.append("</html>");
 
 		FileWriter fw = new FileWriter(new File("browser/index.html"));
-		fw.append(sb);
+		fw.append(observatories);
 		fw.close();
 	}
 
 	public static void main(String[] args) throws IOException {
 		CreateBrowser app = new CreateBrowser();
 		app.run();
+	}
+
+	private class Point {
+
+		String lat, lon;
+
+		public Point(String wkt) {
+			wkt = wkt.replace("POINT (", "");
+			wkt = wkt.replace(")", "");
+
+			String[] coords = wkt.split(" ");
+
+			lon = coords[0];
+			lat = coords[1];
+		}
+
+		public String getLat() {
+			return lat;
+		}
+
+		public String getLon() {
+			return lon;
+		}
 	}
 
 }

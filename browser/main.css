@@ -1,16 +1,37 @@
-div #comment {
-	font-style: italic;
-	padding-top: 10px;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
-
-div .displayble {
-	display: none;
+#main {
+	width: 800px;  
+	margin: auto;
 }
-
-div .platform {
+#header {
+	margin-bottom: 50px;
+}
+#content {
+    margin: auto;
+}
+#description {
+	width: 50%;
+    float: left;
+    padding-right: 30px;
+}
+#location {
+	padding-left: 20px;
+}
+#map {
+	width: 350px;
+    height: 350px;
+}
+#sensors {
+	float: left;
+	margin-top: 20px;
+}
+.platform {
 	padding-bottom: 20px;
 }
-
-div .sensor {
+.sensor {
 	padding-bottom: 10px;
 }

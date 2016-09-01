@@ -1,0 +1,8 @@
+SELECT ?property ?object
+WHERE {
+  <UNIT_ID> ?property ?object .
+  FILTER(STRSTARTS(STR(?property), "http://qudt.org/schema/qudt#")
+  	|| STRSTARTS(STR(?property), "http://www.w3.org/1999/02/22-rdf-syntax-ns#")
+  )
+  FILTER(!STRSTARTS(STR(?object), "http://www.w3.org/2002/07/owl#"))
+}

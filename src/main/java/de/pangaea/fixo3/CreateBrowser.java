@@ -44,6 +44,10 @@ import org.apache.jena.query.ResultSet;
 public class CreateBrowser {
 
 	private static final String service = "http://seprojects.marum.de:3030/fixo3observatories/sparql";
+	private static final String unit = "http://qudt.org/vocab/unit#";
+	private static final String qudt = "http://qudt.org/schema/qudt#";
+	private static final String xsd = "http://www.w3.org/2001/XMLSchema#";
+	private static final String rdf = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
 
 	private void run() throws IOException {
 		StringBuffer observatories = new StringBuffer();
@@ -105,7 +109,7 @@ public class CreateBrowser {
 			observatory.append(obsTitle);
 			observatory.append("</h2>");
 			observatory.append("</section>");
-			
+
 			observatory.append("<section id=\"content\">");
 			observatory.append("<div id=\"description\">");
 			observatory.append(obsComment);
@@ -139,6 +143,8 @@ public class CreateBrowser {
 				hasSensors = true;
 			}
 
+			int propertyCount = 0;
+			
 			while (rs2.hasNext()) {
 				QuerySolution qs2 = rs2.next();
 				String sensorId = qs2.getResource("sensorId").getURI();
@@ -193,13 +199,61 @@ public class CreateBrowser {
 
 					if (unitId != null && unitSymbol != null) {
 						observatory.append("&nbsp;");
-						observatory.append("<a href=\"" + unitId + "\">");
+						observatory.append("<a href=\"#openModal" + propertyCount + "\">");
 						observatory.append(unitSymbol);
 						observatory.append("</a>");
+
+						observatory.append("<div id=\"openModal" + propertyCount + "\" class=\"modalDialog\">");
+						observatory.append("<div>");
+						observatory.append("<a href=\"#close\" title=\"Close\" class=\"close\">X</a>");
+
+						QueryExecution qe4 = QueryExecutionFactory
+								.sparqlService(service,
+										FileUtils
+												.readFileToString(
+														new File("src/main/resources/sparql/browser-query4.rq"))
+												.replaceAll("UNIT_ID", unitId));
+
+						ResultSet rs4 = qe4.execSelect();
+
+						observatory.append("<h2>");
+						observatory.append(unitId.replace(unit, "unit:"));
+						observatory.append("</h2>");
+
+						observatory.append("<a href=\"" + unitId + "\">" + unitId + "</a>");
+
+						observatory.append("<div id=\"unit\">");
+						observatory.append("<table>");
+
+						while (rs4.hasNext()) {
+							QuerySolution qs4 = rs4.next();
+
+							observatory.append("<tr>");
+							observatory.append("<td>");
+							observatory.append(
+									qs4.getResource("property").getURI().replace(qudt, "qudt:").replace(rdf, "rdf:"));
+							observatory.append("</td>");
+							observatory.append("<td>");
+
+							if (qs4.get("object").isResource())
+								observatory.append(qs4.getResource("object").getURI().replace(qudt, "qudt:"));
+							else
+								observatory.append(qs4.getLiteral("object").toString().replace(xsd, "xsd:"));
+
+							observatory.append("</td>");
+							observatory.append("</tr>");
+						}
+
+						observatory.append("</table>");
+						observatory.append("</div>");
+						observatory.append("</div>");
+						observatory.append("</div>");
 					}
 
 					observatory.append("</td>");
 					observatory.append("</tr>");
+
+					propertyCount++;
 				}
 
 				qe3.close();

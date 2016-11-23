@@ -1,0 +1,2116 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://fixo3.eu/vocab/"
+     xml:base="http://fixo3.eu/vocab/"
+     xmlns:schema="http://schema.org/"
+     xmlns:geosparql="http://www.opengis.net/ont/geosparql#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ssn="https://www.w3.org/ns/ssn/">
+    <owl:Ontology rdf:about="http://fixo3.eu/vocab/">
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-11-23</dc:date>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Markus Stocker</dc:creator>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/</rdfs:seeAlso>
+        <owl:imports rdf:resource="http://esonetyellowpages.com/vocab/"/>
+        <owl:imports rdf:resource="http://schema.org/"/>
+        <owl:imports rdf:resource="https://www.w3.org/ns/ssn/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#wktLiteral -->
+
+    <rdfs:Datatype rdf:about="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+    
+
+
+    <!-- internal:anonymous-constants -->
+
+    <rdfs:Datatype rdf:about="internal:anonymous-constants"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/location -->
+
+    <rdf:Description rdf:about="http://schema.org/location">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://schema.org/location"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://schema.org/unitCode -->
+
+    <rdf:Description rdf:about="http://schema.org/unitCode">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://schema.org/unitCode"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#hasGeometry -->
+
+    <owl:ObjectProperty rdf:about="http://www.opengis.net/ont/geosparql#hasGeometry">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <owl:inverseOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/attachedSystem -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/attachedSystem">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/attachedSystem"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/onPlatform"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/deployedOnPlatform -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/deployedOnPlatform">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/inDeployment"/>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/inDeployment"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/deployedOnPlatform"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/deployedSystem -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/deployedSystem">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasDeployment"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/deployedSystem"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasDeployment"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/deploymentProcessPart -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/deploymentProcessPart">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/deploymentProcessPart"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/detects -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/detects">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/detects"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/featureInObservation -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/featureInObservation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/featureOfInterest"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/featureInObservation"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/featureOfInterest -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/featureOfInterest">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/featureInObservation"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/featureOfInterest"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/featureInObservation"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/forProperty -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/forProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/forProperty"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/fromStimulus -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/fromStimulus">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/fromStimulus"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/hasDeployment -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasDeployment">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasDeployment"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/deployedSystem"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/hasMeasurementCapability -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasMeasurementCapability">
+        <rdfs:subPropertyOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/hasMeasurementProperty -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasMeasurementProperty">
+        <rdfs:subPropertyOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementProperty"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/hasOperatingProperty -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasOperatingProperty">
+        <rdfs:subPropertyOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasOperatingProperty"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/hasOperatingRange -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasOperatingRange">
+        <rdfs:subPropertyOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasOperatingRange"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/hasProperty -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/hasSubSystem -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasSubSystem">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasSubSystem"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/hasSurvivalProperty -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasSurvivalProperty">
+        <rdfs:subPropertyOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasSurvivalProperty"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/hasSurvivalRange -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasSurvivalRange">
+        <rdfs:subPropertyOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasSurvivalRange"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/hasValue -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isValueOf"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasValue"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isValueOf"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/implementedBy -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/implementedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/implements"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/implementedBy"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/implements"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/implements -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/implements">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/implements"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/implementedBy"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/inCondition -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/inCondition">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/inCondition"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/inDeployment -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/inDeployment">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/deployedOnPlatform"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/inDeployment"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/isProducedBy -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/isProducedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/produces"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isProducedBy"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/produces"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/isPropertyOf -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/isPropertyOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/isProxyFor -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/isProxyFor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isProxyFor"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/isValueOf -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/isValueOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isValueOf"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasValue"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/madeObservation -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/madeObservation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/madeObservation"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/observedBy"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/observationResult -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/observationResult">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/observationResult"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/observationResultTime -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/observationResultTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/observationResultTime"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/observationSamplingTime -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/observationSamplingTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/observationSamplingTime"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/observedBy -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/observedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/madeObservation"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/observedBy"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/madeObservation"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/observedProperty -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/observedProperty">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/observedProperty"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/observes -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/observes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/observes"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/ofFeature -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/ofFeature">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/ofFeature"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/onPlatform -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/onPlatform">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/attachedSystem"/>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/attachedSystem"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/onPlatform"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/produces -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/produces">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/produces"/>
+            </rdf:Description>
+        </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isProducedBy"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/qualityOfObservation -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/qualityOfObservation">
+        <rdfs:subPropertyOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/qualityOfObservation"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/sensingMethodUsed -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/sensingMethodUsed">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/sensingMethodUsed"/>
+            </rdf:Description>
+        </owl:inverseOf>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/maxValue -->
+
+    <rdf:Description rdf:about="http://schema.org/maxValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://schema.org/minValue -->
+
+    <rdf:Description rdf:about="http://schema.org/minValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://schema.org/value -->
+
+    <rdf:Description rdf:about="http://schema.org/value">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#asWKT -->
+
+    <owl:DatatypeProperty rdf:about="http://www.opengis.net/ont/geosparql#asWKT">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/SensingDevice"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/CellSize -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/CellSize">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/DopplerEffect -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/DopplerEffect">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Stimulus"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/Frequency -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/Frequency">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/MeasuringRange -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/MeasuringRange">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/OperatingDepth -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/OperatingDepth">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/ProfilingRange -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/ProfilingRange">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/TemperatureRange -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/TemperatureRange">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/Velocity -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/Velocity">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/WaterCurrent -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/WaterCurrent">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/FeatureOfInterest"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/WaterCurrentVelocity -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/WaterCurrentVelocity">
+        <rdfs:subClassOf rdf:resource="http://esonetyellowpages.com/vocab/Velocity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/WorkhorseQuartermaster150kHzADCP -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/WorkhorseQuartermaster150kHzADCP">
+        <rdfs:subClassOf rdf:resource="http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://fixo3.eu/vocab/FixedPointOceanObservatory -->
+
+    <owl:Class rdf:about="http://fixo3.eu/vocab/FixedPointOceanObservatory">
+        <rdfs:label xml:lang="en">Fixed-Point Ocean Observatory</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fixo3.eu/vocab/OceanObservatory -->
+
+    <owl:Class rdf:about="http://fixo3.eu/vocab/OceanObservatory">
+        <rdfs:label xml:lang="en">Ocean Observatory</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/QuantitativeValue -->
+
+    <rdf:Description rdf:about="http://schema.org/QuantitativeValue">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.opengis.net/ont/sfPoint -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/sfPoint">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Feature -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Feature">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Accuracy -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Accuracy">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/BatteryLifetime -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/BatteryLifetime">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/SurvivalProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Condition -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Condition">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Deployment -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Deployment">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/DeploymentRelatedProcess"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/DeploymentRelatedProcess -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/DeploymentRelatedProcess">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/DetectionLimit -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/DetectionLimit">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Device -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Device">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/System"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Drift -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Drift">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/FeatureOfInterest -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/FeatureOfInterest">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/MaintenanceSchedule -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/MaintenanceSchedule">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/OperatingProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/MeasurementCapability -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/MeasurementCapability">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/MeasurementFrequency -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/MeasurementFrequency">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/MeasurementLatency -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/MeasurementLatency">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/MeasurementProperty -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/MeasurementProperty">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/MeasurementRange -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/MeasurementRange">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Observation -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Observation">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/ObservationValue -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/ObservationValue">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/OperatingPowerRange -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/OperatingPowerRange">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/OperatingProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/OperatingProperty -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/OperatingProperty">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/OperatingRange -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/OperatingRange">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Platform -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Platform">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Precision -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Precision">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Property -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Property">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Resolution -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Resolution">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/ResponseTime -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/ResponseTime">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Selectivity -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Selectivity">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Sensing -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Sensing">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/SensingDevice -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/SensingDevice">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Device"/>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Sensor"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Sensitivity -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Sensitivity">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Sensor -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/SensorDataSheet -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/SensorDataSheet">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/SensorOutput -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/SensorOutput">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/Stimulus -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/Stimulus">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/SurvivalProperty -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/SurvivalProperty">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/SurvivalRange -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/SurvivalRange">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/System -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/System">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3.org/ns/ssn/SystemLifetime -->
+
+    <rdf:Description rdf:about="https://www.w3.org/ns/ssn/SystemLifetime">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/SurvivalProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833 -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/Frequency"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <ssn:isPropertyOf rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <ssn:hasValue rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5 -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/OperatingDepth"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <ssn:isPropertyOf rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <ssn:hasValue rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159 -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159">
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementCapability"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <ssn:hasProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <ssn:hasMeasurementProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <ssn:isPropertyOf rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff">
+        <rdf:type rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/ObservationValue"/>
+        <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-5.0</schema:minValue>
+        <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">45.0</schema:maxValue>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <ssn:isValueOf rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa">
+        <rdf:type rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/ObservationValue"/>
+        <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">24.0</schema:maxValue>
+        <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.0</schema:minValue>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <ssn:isValueOf rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+        <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9 -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9">
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementCapability"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <ssn:hasProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <ssn:hasMeasurementProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <ssn:isPropertyOf rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c">
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementCapability"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+        <ssn:hasProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <ssn:hasMeasurementProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <ssn:isPropertyOf rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206 -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206">
+        <rdf:type rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/ObservationValue"/>
+        <schema:value rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1500.0</schema:value>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <ssn:isValueOf rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+        <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/Velocity"/>
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/WaterCurrentVelocity"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad">
+        <rdf:type rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/ObservationValue"/>
+        <schema:value rdf:datatype="http://www.w3.org/2001/XMLSchema#float">300.0</schema:value>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <ssn:isValueOf rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72 -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72">
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementCapability"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <ssn:hasMeasurementProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <ssn:hasProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <ssn:isPropertyOf rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6 -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/DopplerEffect"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Stimulus"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/ProfilingRange"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <ssn:hasValue rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <ssn:isPropertyOf rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805 -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805">
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementCapability"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <ssn:hasProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <ssn:hasMeasurementProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <ssn:isPropertyOf rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074 -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/CellSize"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <ssn:isPropertyOf rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <ssn:hasValue rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9 -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9">
+        <rdf:type rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/ObservationValue"/>
+        <schema:value rdf:datatype="http://www.w3.org/2001/XMLSchema#float">150.0</schema:value>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <ssn:isValueOf rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec -->
+
+    <owl:Thing rdf:about="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/TemperatureRange"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <ssn:hasValue rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <ssn:isPropertyOf rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+        <rdfs:label xml:lang="en">E2-M3A</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/e2-m3a/</dc:source>
+        <rdfs:comment xml:lang="en">Deep-sea, continuous monitoring station: it provides the longest oceanographic time series in the South Adriatic Pit (Eastern Mediterranean Sea). The observatory is composed by two moorings (surface buoy and sub-surface mooring line) and designed to monitor physical and biogeochemical processes in the water column from the surface down to the bottom (approximately 1220m).  The E2-M3A surface buoy collects air/sea meteorological and physical measurements in the surface layer (2m depth). The secondary deep mooring instead, is equipped with current meters (RDI-ADCP and Seaguard-RCM), CTD’s with Dissolved Oxygen and optical sensors. New biochemical sensors (CO2 and pH) were deployed during the first year of the FiXO3 project to enhance the payload of the site.</rdfs:comment>
+        <dc:title xml:lang="en">Southern Adriatic Interdisciplinary Laboratory for Ocean Research</dc:title>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <ssn:attachedSystem rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0 -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdfs:label xml:lang="en">POINT (18.08 41.52)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (18.08 41.52)</geosparql:asWKT>
+        <geosparql:asWKT rdf:datatype="internal:anonymous-constants">POINT (18.08 41.52)</geosparql:asWKT>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175 -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler"/>
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/WorkhorseQuartermaster150kHzADCP"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Device"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/SensingDevice"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/Sensor"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/System"/>
+        <rdfs:label xml:lang="en">The Workhorse Quartermaster 150 kHz ADCP on E2-M3A</rdfs:label>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <ssn:hasProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <ssn:hasMeasurementCapability rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <ssn:hasMeasurementCapability rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <ssn:hasProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <ssn:hasMeasurementCapability rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <ssn:hasProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <ssn:observes rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <ssn:hasMeasurementCapability rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <ssn:hasProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <ssn:detects rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <ssn:hasMeasurementCapability rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <ssn:hasProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <ssn:onPlatform rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a -->
+
+    <owl:Thing rdf:about="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+        <rdfs:label xml:lang="en">Eastern Mediterranean Sea @ POINT (18.08 41.52)</rdfs:label>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://qudt.org/vocab/unit#DegreeCelsius -->
+
+    <owl:Thing rdf:about="http://qudt.org/vocab/unit#DegreeCelsius">
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://qudt.org/vocab/unit#KiloHertz -->
+
+    <owl:Thing rdf:about="http://qudt.org/vocab/unit#KiloHertz">
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://qudt.org/vocab/unit#Meter -->
+
+    <owl:Thing rdf:about="http://qudt.org/vocab/unit#Meter">
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+        <owl:topObjectProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <owl:topObjectProperty rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+        <owl:topObjectProperty rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:Thing>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.10-SNAPSHOT) http://owlapi.sourceforge.net -->
+

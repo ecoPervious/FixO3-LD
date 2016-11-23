@@ -24,6 +24,8 @@ import static de.pangaea.fixo3.vocab.Schema.location;
 import static de.pangaea.fixo3.vocab.Schema.ns;
 import static de.pangaea.fixo3.vocab.Schema.unitCode;
 import static de.pangaea.fixo3.vocab.Schema.value;
+import static de.pangaea.fixo3.vocab.Schema.minValue;
+import static de.pangaea.fixo3.vocab.Schema.maxValue;
 import static org.semanticweb.owlapi.vocab.OWL2Datatype.XSD_FLOAT;
 import static org.semanticweb.owlapi.vocab.OWLRDFVocabulary.OWL_THING;
 
@@ -44,8 +46,8 @@ import static org.semanticweb.owlapi.vocab.OWLRDFVocabulary.OWL_THING;
 
 public class CreateSchema {
 
-	private final String schemaFile = "src/main/resources/ontologies/schema.rdf";
-	private final String schemaInferredFile = "src/main/resources/ontologies/schema-inferred.rdf";
+	private final String schemaFile = "src/main/resources/thesis/schema.rdf";
+	private final String schemaInferredFile = "src/main/resources/thesis/schema-inferred.rdf";
 
 	private void run() throws OWLOntologyCreationException, OWLOntologyStorageException {
 		OntologyManager m = new OntologyManager(ns);
@@ -61,6 +63,18 @@ public class CreateSchema {
 		m.addComment(value,
 				"The value of the quantitative value or property value node. For QuantitativeValue and MonetaryValue, the recommended type for values is &apos;Number&apos;. For PropertyValue, it can be &apos;Text;&apos;, &apos;Number&apos;, &apos;Boolean&apos;, or &apos;StructuredValue&apos;.");
 		m.addSource(value, value);
+		
+		m.addDataProperty(minValue);
+		m.addLabel(minValue, "min value");
+		m.addComment(minValue,
+				"The lower value of some characteristic or property.");
+		m.addSource(minValue, minValue);
+		
+		m.addDataProperty(maxValue);
+		m.addLabel(maxValue, "max value");
+		m.addComment(maxValue,
+				"The upper value of some characteristic or property.");
+		m.addSource(maxValue, maxValue);
 		
 		m.addClass(QuantitativeValue);
 		m.addLabel(QuantitativeValue, "Quantitative Value");

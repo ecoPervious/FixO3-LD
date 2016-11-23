@@ -64,20 +64,20 @@ import static org.apache.commons.codec.digest.DigestUtils.md5Hex;
 
 public class CreateFixO3 {
 
-	private final String schemaFile = "file:///home/ms/workspace-sensdatatran/FixO3-LD/src/main/resources/ontologies/schema.rdf";
-	private final String eypFile = "file:///home/ms/workspace-sensdatatran/FixO3-LD/src/main/resources/ontologies/esonetyellowpages.rdf";
+	private final String schemaFile = "file:///home/ms/workspace-sensdatatran/FixO3-LD/src/main/resources/thesis/schema.rdf";
+	private final String eypFile = "file:///home/ms/workspace-sensdatatran/FixO3-LD/src/main/resources/thesis/esonetyellowpages.rdf";
 
-	private final String fixO3ObservatoriesFile = "src/main/resources/data/fixo3-observatories.json";
-	private final String fixO3File = "src/main/resources/ontologies/fixo3.rdf";
-	private final String fixO3InferredFile = "src/main/resources/ontologies/fixo3-inferred.rdf";
+	private final String fixO3ObservatoriesFile = "src/main/resources/thesis/fixo3-observatories.json";
+	private final String fixO3File = "src/main/resources/thesis/fixo3.rdf";
+	private final String fixO3InferredFile = "src/main/resources/thesis/fixo3-inferred.rdf";
 
 	private OntologyManager m;
 
 	private void run()
 			throws OWLOntologyCreationException, OWLOntologyStorageException, NoSuchAlgorithmException, IOException {
 		m = new OntologyManager(FIXO3.ns);
-		m.addVersion("0.1");
-		m.addDate("2016-08-01");
+		m.addVersion("1.0");
+		m.addDate("2016-11-23");
 		m.addCreator("Markus Stocker");
 		m.addSeeAlso("http://www.fixo3.eu/");
 		m.addImport(Schema.ns, IRI.create(schemaFile));

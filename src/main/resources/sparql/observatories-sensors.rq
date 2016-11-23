@@ -2,13 +2,15 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ssn: <https://www.w3.org/ns/ssn/>
 
-SELECT ?observatory ?sensor
+SELECT ?observatory ?sensor ?property ?stimulus
 WHERE {
   [
     rdf:type ssn:Platform ;
     rdfs:label ?observatory ;
     ssn:attachedSystem [
-      rdfs:label ?sensor 
+      rdfs:label ?sensor ;
+      ssn:observes [ rdf:type [ rdfs:label ?property ] ] ;
+      ssn:detects [ rdf:type [ rdfs:label ?stimulus ] ] ;
     ]
  ]
 }

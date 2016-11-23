@@ -9,16 +9,15 @@ PREFIX qudt: <http://qudt.org/schema/qudt#>
 SELECT ?propertyLabel ?value ?minValue ?maxValue ?unitId ?unitSymbol
 WHERE {
   <SENSOR_ID> rdf:type ssn:SensingDevice .
-  <SENSOR_ID> ssn:hasMeasurementCapability [ ssn:hasMeasurementProperty ?mp ] .
+  <SENSOR_ID> ssn:hasMeasurementCapability [ ssn:hasMeasurementProperty [ rdfs:label ?propertyLabel ; ssn:hasValue ?ov ] ] .
   
-  ?mp rdf:type ?pt .
-  ?pt rdfs:label ?propertyLabel .
-  ?mp schema:unitCode ?unitId .
+  ?ov rdf:type ?vt .
+  ?ov schema:unitCode ?unitId .
   ?unitId qudt:symbol ?unitSymbol .
   
-  OPTIONAL { ?mp schema:value ?value } .
-  OPTIONAL { ?mp schema:minValue ?minValue . ?mp schema:maxValue ?maxValue } .
+  OPTIONAL { ?ov schema:value ?value } .
+  OPTIONAL { ?ov schema:minValue ?minValue . ?ov schema:maxValue ?maxValue } .
 
-  FILTER(STRSTARTS(STR(?pt), "http://esonetyellowpages.com/vocab/"))
+  FILTER(?vt = <https://www.w3.org/ns/ssn/ObservationValue>)
 }
 ORDER BY ?propertyLabel

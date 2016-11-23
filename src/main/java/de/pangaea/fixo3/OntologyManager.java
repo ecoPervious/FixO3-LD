@@ -154,6 +154,10 @@ public class OntologyManager {
 	public void addIndividual(IRI iri) {
 		addAxiom(df.getOWLDeclarationAxiom(df.getOWLEntity(EntityType.NAMED_INDIVIDUAL, iri)));
 	}
+	
+	public void addClassAssertion(IRI cls, IRI ind) {
+		addAxiom(df.getOWLClassAssertionAxiom(getClass(cls), getIndividual(ind)));
+	}
 
 	public void addSubClass(IRI sub, IRI sup) {
 		addAxiom(df.getOWLSubClassOfAxiom(getClass(sub), getClass(sup)));

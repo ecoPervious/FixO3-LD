@@ -13,14 +13,14 @@ WHERE {
     rdfs:label ?sensor ;
     ssn:onPlatform [ rdfs:label ?observatory ] 
   ]
-    ssn:hasMeasurementCapability [ ssn:hasMeasurementProperty ?mp ] .
-  ?mp rdf:type ?pt .
-  ?pt rdfs:label ?property .
-  ?mp schema:unitCode [ qudt:symbol ?unit ] .
+    ssn:hasMeasurementCapability [ ssn:hasMeasurementProperty [ rdfs:label ?propertyLabel ; ssn:hasValue ?ov ] ] .
+    
+  ?ov rdf:type ?vt .
+  ?ov schema:unitCode [ qudt:symbol ?unit ] .
   
-  OPTIONAL { ?mp schema:value ?value } .
-  OPTIONAL { ?mp schema:minValue ?minValue . ?mp schema:maxValue ?maxValue } .
+  OPTIONAL { ?ov schema:value ?value } .
+  OPTIONAL { ?ov schema:minValue ?minValue . ?ov schema:maxValue ?maxValue } .
 
-  FILTER(STRSTARTS(STR(?pt), "http://esonetyellowpages.com/vocab/"))
+  FILTER(?vt = <https://www.w3.org/ns/ssn/ObservationValue>)
 }
 ORDER BY ?observatory ?sensor ?property

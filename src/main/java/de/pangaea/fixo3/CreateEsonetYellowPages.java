@@ -27,8 +27,7 @@ import static de.pangaea.fixo3.vocab.EYP.AcousticDopplerCurrentProfiler;
 import static de.pangaea.fixo3.vocab.EYP.CellSize;
 import static de.pangaea.fixo3.vocab.EYP.CurrentMeter;
 import static de.pangaea.fixo3.vocab.EYP.DopplerEffect;
-import static de.pangaea.fixo3.vocab.EYP.FlowVelocity;
-import static de.pangaea.fixo3.vocab.EYP.Fluid;
+import static de.pangaea.fixo3.vocab.EYP.WaterCurrent;
 import static de.pangaea.fixo3.vocab.EYP.Frequency;
 import static de.pangaea.fixo3.vocab.EYP.HydroacousticCurrentMeter;
 import static de.pangaea.fixo3.vocab.EYP.MeasuringRange;
@@ -39,7 +38,9 @@ import static de.pangaea.fixo3.vocab.EYP.ProfilingRange;
 import static de.pangaea.fixo3.vocab.EYP.SoundWave;
 import static de.pangaea.fixo3.vocab.EYP.TemperatureRange;
 import static de.pangaea.fixo3.vocab.EYP.Velocity;
-import static de.pangaea.fixo3.vocab.EYP.Water;
+import static de.pangaea.fixo3.vocab.EYP.WaterCurrentVelocity;
+import static de.pangaea.fixo3.vocab.SSN.ObservationValue;
+import static de.pangaea.fixo3.vocab.SSN.MeasurementProperty;
 import static de.pangaea.fixo3.vocab.SSN.FeatureOfInterest;
 import static de.pangaea.fixo3.vocab.SSN.MeasurementCapability;
 import static de.pangaea.fixo3.vocab.SSN.Property;
@@ -51,6 +52,7 @@ import static de.pangaea.fixo3.vocab.SSN.hasMeasurementProperty;
 import static de.pangaea.fixo3.vocab.SSN.isPropertyOf;
 import static de.pangaea.fixo3.vocab.SSN.isProxyFor;
 import static de.pangaea.fixo3.vocab.SSN.observes;
+import static de.pangaea.fixo3.vocab.SSN.hasValue;
 import static de.pangaea.fixo3.vocab.Schema.QuantitativeValue;
 import static de.pangaea.fixo3.vocab.Schema.maxValue;
 import static de.pangaea.fixo3.vocab.Schema.minValue;
@@ -86,80 +88,46 @@ public class CreateEsonetYellowPages {
 
 	private final IRI ns = IRI.create("http://esonetyellowpages.com/vocab/");
 
-	private final String eypDevicesFile = "src/main/resources/data/esonetyellowpages-devicetypes.json";
-	private final String eypFile = "src/main/resources/ontologies/esonetyellowpages.rdf";
-	private final String eypInferredFile = "src/main/resources/ontologies/esonetyellowpages-inferred.rdf";
+	private final String eypDevicesFile = "src/main/resources/thesis/esonetyellowpages-devicetypes.json";
+	private final String eypFile = "src/main/resources/thesis/esonetyellowpages.rdf";
+	private final String eypInferredFile = "src/main/resources/thesis/esonetyellowpages-inferred.rdf";
 
 	private OntologyManager m;
 
 	private void run() throws OWLOntologyCreationException, OWLOntologyStorageException, FileNotFoundException {
 		m = new OntologyManager(ns);
 		m.addTitle("ESONET Yellow Pages Ontology");
-		m.addVersion("0.1");
-		m.addDate("2016-08-01");
+		m.addVersion("1.0");
+		m.addDate("2016-11-23");
 		m.addCreator("Markus Stocker");
 		m.addSeeAlso("http://www.esonetyellowpages.com/");
 		m.addImport(SSN.ns);
 
-		m.addSubClass(Frequency, QuantitativeValue);
+		m.addSubClass(Frequency, MeasurementProperty);
 		m.addLabel(Frequency, "Frequency");
-		m.addSubClass(ProfilingRange, QuantitativeValue);
+		m.addSubClass(ProfilingRange, MeasurementProperty);
 		m.addLabel(ProfilingRange, "Profiling Range");
-		m.addSubClass(CellSize, QuantitativeValue);
+		m.addSubClass(CellSize, MeasurementProperty);
 		m.addLabel(CellSize, "Cell Size");
-		m.addSubClass(OperatingDepth, QuantitativeValue);
+		m.addSubClass(OperatingDepth, MeasurementProperty);
 		m.addLabel(OperatingDepth, "Operating Depth");
-		m.addSubClass(TemperatureRange, QuantitativeValue);
+		m.addSubClass(TemperatureRange, MeasurementProperty);
 		m.addLabel(TemperatureRange, "Temperature Range");
-		m.addSubClass(MeasuringRange, QuantitativeValue);
+		m.addSubClass(MeasuringRange, MeasurementProperty);
 		m.addLabel(MeasuringRange, "Measuring Range");
 
-		m.addClass(SoundWave);
-		m.addLabel(SoundWave, "Sound Wave");
-		m.addSubClass(SoundWave, Stimulus);
+		m.addClass(WaterCurrent);
+		m.addLabel(WaterCurrent, "Water Current");
+		m.addSubClass(WaterCurrent, FeatureOfInterest);
 
 		m.addClass(Velocity);
 		m.addLabel(Velocity, "Velocity");
 		m.addSubClass(Velocity, Property);
 
-		m.addClass(Fluid);
-		m.addLabel(Fluid, "Fluid");
-		m.addSubClass(Fluid, FeatureOfInterest);
-
-		m.addClass(Water);
-		m.addLabel(Water, "Water");
-		m.addSubClass(Water, Fluid);
-
-		m.addClass(FlowVelocity);
-		m.addLabel(FlowVelocity, "Flow Velocity");
-		m.addSubClass(FlowVelocity, Velocity);
-		m.addObjectSome(FlowVelocity, isPropertyOf, Fluid);
-
-		m.addClass(DopplerEffect);
-		m.addLabel(DopplerEffect, "Doppler Effect");
-		m.addComment(DopplerEffect,
-				"The Doppler effect (or the Doppler shift) is the change in frequency of a wave (or other periodic event) for an observer moving relative to its source.");
-		m.addSource(DopplerEffect, IRI.create("https://en.wikipedia.org/wiki/Doppler_effect"));
-		m.addSubClass(DopplerEffect, Stimulus);
-		m.addObjectAll(DopplerEffect, isProxyFor, FlowVelocity);
-
-		m.addClass(OceanographicDevice);
-		m.addLabel(OceanographicDevice, "Oceanographic Device");
-		m.addSubClass(OceanographicDevice, SensingDevice);
-
-		m.addClass(CurrentMeter);
-		m.addLabel(CurrentMeter, "Current Meter");
-		m.addComment(CurrentMeter,
-				"A current meter is an oceanographic device for flow measurement by mechanical (rotor current meter), tilt (Tilt Current Meter), acoustical (ADCP) or electrical means.");
-		m.addSource(CurrentMeter, IRI.create("https://en.wikipedia.org/wiki/Current_meter"));
-
-		m.addSubClass(CurrentMeter, OceanographicDevice);
-		m.addObjectAll(CurrentMeter, observes, FlowVelocity);
-
-		m.addClass(HydroacousticCurrentMeter);
-		m.addLabel(HydroacousticCurrentMeter, "Hydroacoustic Current Meter");
-		m.addSubClass(HydroacousticCurrentMeter, CurrentMeter);
-		m.addObjectAll(HydroacousticCurrentMeter, detects, SoundWave);
+		m.addClass(WaterCurrentVelocity);
+		m.addLabel(WaterCurrentVelocity, "Water Current Velocity");
+		m.addSubClass(WaterCurrentVelocity, Velocity);
+		m.addObjectSome(WaterCurrentVelocity, isPropertyOf, WaterCurrent);
 
 		m.addClass(AcousticDopplerCurrentProfiler);
 		m.addLabel(AcousticDopplerCurrentProfiler, "Acoustic Doppler Current Profiler");
@@ -168,11 +136,20 @@ public class CreateEsonetYellowPages {
 		m.addComment(AcousticDopplerCurrentProfiler,
 				"An acoustic Doppler current profiler (ADCP) is a hydroacoustic current meter similar to a sonar, attempting to measure water current velocities over a depth range using the Doppler effect of sound waves scattered back from particles within the water column.");
 		m.addObjectAll(AcousticDopplerCurrentProfiler, detects, DopplerEffect);
-		m.addSubClass(AcousticDopplerCurrentProfiler, HydroacousticCurrentMeter);
+		m.addSubClass(AcousticDopplerCurrentProfiler, SensingDevice);
 
-		m.addClass(PartialPressureOfCO2Analyzer);
-		m.addSubClass(PartialPressureOfCO2Analyzer, SensingDevice);
-		m.addLabel(PartialPressureOfCO2Analyzer, "Partial Pressure of CO2 Analyzer");
+		m.addClass(DopplerEffect);
+		m.addLabel(DopplerEffect, "Doppler Effect");
+		m.addComment(DopplerEffect,
+				"The Doppler effect (or the Doppler shift) is the change in frequency of a wave (or other periodic event) for an observer moving relative to its source.");
+		m.addSource(DopplerEffect, IRI.create("https://en.wikipedia.org/wiki/Doppler_effect"));
+		m.addSubClass(DopplerEffect, Stimulus);
+		m.addObjectAll(DopplerEffect, isProxyFor, WaterCurrentVelocity);
+
+		// m.addClass(PartialPressureOfCO2Analyzer);
+		// m.addSubClass(PartialPressureOfCO2Analyzer, SensingDevice);
+		// m.addLabel(PartialPressureOfCO2Analyzer, "Partial Pressure of CO2
+		// Analyzer");
 
 		JsonReader jr = Json.createReader(new FileReader(new File(eypDevicesFile)));
 		JsonArray ja = jr.readArray();
@@ -206,43 +183,70 @@ public class CreateEsonetYellowPages {
 		for (JsonObject subClass : subClasses.getValuesAs(JsonObject.class)) {
 			if (subClass.containsKey("type")) {
 				m.addSubClass(deviceIRI, IRI.create(subClass.getString("type")));
+			} else if (subClass.containsKey("observes")) {
+				JsonObject observesJson = subClass.getJsonObject("observes");
+				String propertyLabel = observesJson.getString("label");
+				String propertyType = observesJson.getString("type");
+
+				IRI propertyIRI = IRI.create(EYP.ns.toString() + md5Hex(propertyLabel));
+				IRI propertyTypeIRI = IRI.create(propertyType);
+
+				m.addObjectValue(deviceIRI, observes, propertyIRI);
+				m.addIndividual(propertyIRI);
+				m.addType(propertyIRI, propertyTypeIRI);
+				m.addLabel(propertyIRI, propertyLabel);
+			} else if (subClass.containsKey("detects")) {
+				JsonObject detectsJson = subClass.getJsonObject("detects");
+				String stimulusLabel = detectsJson.getString("label");
+				String stimulusType = detectsJson.getString("type");
+
+				IRI stimulusIRI = IRI.create(EYP.ns.toString() + md5Hex(stimulusLabel));
+				IRI stimulusTypeIRI = IRI.create(stimulusType);
+
+				m.addObjectValue(deviceIRI, detects, stimulusIRI);
+				m.addIndividual(stimulusIRI);
+				m.addType(stimulusIRI, stimulusTypeIRI);
+				m.addLabel(stimulusIRI, stimulusLabel);
 			} else if (subClass.containsKey("capability")) {
-				JsonObject capability = subClass.getJsonObject("capability");
-				String capabilityLabel = capability.getString("label");
-				JsonObject quantity = capability.getJsonObject("quantity");
-				String quantityLabel = quantity.getString("label");
+				JsonObject capabilityJson = subClass.getJsonObject("capability");
+				String capabilityLabel = capabilityJson.getString("label");
+				JsonObject propertyJson = capabilityJson.getJsonObject("property");
+				String propertyLabel = propertyJson.getString("label");
+				String propertyType = propertyJson.getString("type");
+				JsonObject valueJson = propertyJson.getJsonObject("value");
+				String valueLabel = valueJson.getString("label");
 
 				IRI capabilityIRI = IRI.create(EYP.ns.toString() + md5Hex(capabilityLabel));
-				IRI quantityIRI = IRI.create(EYP.ns.toString() + md5Hex(quantityLabel));
+				IRI propertyIRI = IRI.create(EYP.ns.toString() + md5Hex(propertyLabel));
+				IRI propertyTypeIRI = IRI.create(propertyType);
+				IRI valueIRI = IRI.create(EYP.ns.toString() + md5Hex(valueLabel));
 
-				// Value restriction on property hasMeasurementCapability
 				m.addObjectValue(deviceIRI, hasMeasurementCapability, capabilityIRI);
-
 				m.addIndividual(capabilityIRI);
 				m.addType(capabilityIRI, MeasurementCapability);
 				m.addLabel(capabilityIRI, capabilityLabel);
-				m.addObjectAssertion(capabilityIRI, hasMeasurementProperty, quantityIRI);
+				m.addObjectAssertion(capabilityIRI, hasMeasurementProperty, propertyIRI);
+				m.addIndividual(propertyIRI);
+				m.addType(propertyIRI, SSN.MeasurementProperty);
+				m.addType(propertyIRI, propertyTypeIRI);
+				m.addLabel(propertyIRI, propertyLabel);
+				m.addObjectAssertion(propertyIRI, hasValue, valueIRI);
+				m.addIndividual(valueIRI);
+				m.addType(valueIRI, SSN.ObservationValue);
+				m.addLabel(valueIRI, valueLabel);
 
-				m.addIndividual(quantityIRI);
-				// Default
-				m.addType(quantityIRI, SSN.MeasurementProperty); 
-
-				if (quantity.containsKey("type")) {
-					m.addType(quantityIRI, IRI.create(quantity.getString("type")));
-				}
-
-				m.addLabel(quantityIRI, quantityLabel);
-
-				if (quantity.containsKey("value")) {
-					m.addDataAssertion(quantityIRI, value, Float.valueOf(quantity.getString("value")));
-				} else if (quantity.containsKey("minValue") && quantity.containsKey("maxValue")) {
-					m.addDataAssertion(quantityIRI, minValue, Float.valueOf(quantity.getString("minValue")));
-					m.addDataAssertion(quantityIRI, maxValue, Float.valueOf(quantity.getString("maxValue")));
+				if (valueJson.containsKey("value")) {
+					m.addType(valueIRI, QuantitativeValue);
+					m.addDataAssertion(valueIRI, value, Float.valueOf(valueJson.getString("value")));
+				} else if (valueJson.containsKey("minValue") && valueJson.containsKey("maxValue")) {
+					m.addType(valueIRI, QuantitativeValue);
+					m.addDataAssertion(valueIRI, minValue, Float.valueOf(valueJson.getString("minValue")));
+					m.addDataAssertion(valueIRI, maxValue, Float.valueOf(valueJson.getString("maxValue")));
 				} else {
-					throw new RuntimeException("Expected value or min/max value [quantity = " + quantity + "]");
+					throw new RuntimeException("Expected value or min/max value [valueJson = " + valueJson + "]");
 				}
 
-				m.addObjectAssertion(quantityIRI, unitCode, IRI.create(quantity.getString("unitCode")));
+				m.addObjectAssertion(valueIRI, unitCode, IRI.create(valueJson.getString("unitCode")));
 			}
 		}
 

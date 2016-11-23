@@ -44,8 +44,7 @@ public class SSN {
 	public static final IRI Property = c("Property");
 	public static final IRI MeasurementCapability = c("MeasurementCapability");
 	public static final IRI MeasurementProperty = c("MeasurementProperty");
-	public static final IRI MeasurementFrequency = c("MeasurementFrequency");
-	public static final IRI MeasurementRange = c("MeasurementRange");
+	public static final IRI ObservationValue = c("ObservationValue");
 
 	public static final IRI detects = c("detects");
 	public static final IRI observes = c("observes");
@@ -54,6 +53,7 @@ public class SSN {
 	public static final IRI attachedSystem = c("attachedSystem");
 	public static final IRI hasMeasurementCapability = c("hasMeasurementCapability");
 	public static final IRI hasMeasurementProperty = c("hasMeasurementProperty");
+	public static final IRI hasValue = c("hasValue");
 
 	private static IRI c(String suffix) {
 		return IRI.create(ns.toString(), suffix);

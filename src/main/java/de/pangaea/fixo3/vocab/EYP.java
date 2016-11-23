@@ -44,19 +44,19 @@ public class EYP {
 	public static final IRI MeasuringRange = c("MeasuringRange");
 	public static final IRI Frequency = c("Frequency");
 	
+	public static final IRI Velocity = c("Velocity");
+	public static final IRI WaterCurrent = c("WaterCurrent");
+	
 	public static final IRI SoundWave = c("SoundWave");
 	public static final IRI DopplerEffect = c("DopplerEffect");
-	public static final IRI Velocity = c("Velocity");
-	public static final IRI FlowVelocity = c("FlowVelocity");
-	
-	public static final IRI Fluid = c("Fluid");
-	public static final IRI Water = c("Water");
 	
 	public static final IRI OceanographicDevice = c("OceanographicDevice");
 	public static final IRI CurrentMeter = c("CurrentMeter");
 	public static final IRI HydroacousticCurrentMeter = c("HydroacousticCurrentMeter");
 	public static final IRI AcousticDopplerCurrentProfiler = c("AcousticDopplerCurrentProfiler");
 	public static final IRI PartialPressureOfCO2Analyzer = c("PartialPressureOfCO2Analyzer");
+	
+	public static final IRI WaterCurrentVelocity = c("WaterCurrentVelocity");
 
 	private static IRI c(String suffix) {
 		return IRI.create(ns.toString(), suffix);

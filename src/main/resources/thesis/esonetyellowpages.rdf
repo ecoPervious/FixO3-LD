@@ -1,0 +1,476 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://esonetyellowpages.com/vocab/"
+     xml:base="http://esonetyellowpages.com/vocab/"
+     xmlns:schema="http://schema.org/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ssn="https://www.w3.org/ns/ssn/">
+    <owl:Ontology rdf:about="http://esonetyellowpages.com/vocab/">
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</owl:versionInfo>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-11-23</dc:date>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Markus Stocker</dc:creator>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.esonetyellowpages.com/</rdfs:seeAlso>
+        <dc:title xml:lang="en">ESONET Yellow Pages Ontology</dc:title>
+        <owl:imports rdf:resource="https://www.w3.org/ns/ssn/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/unitCode -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/unitCode"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/maxValue -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/maxValue"/>
+    
+
+
+    <!-- http://schema.org/minValue -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/minValue"/>
+    
+
+
+    <!-- http://schema.org/value -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/value"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler">
+        <rdfs:label xml:lang="en">Acoustic Doppler Current Profiler</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/SensingDevice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/detects"/>
+                <owl:allValuesFrom rdf:resource="http://esonetyellowpages.com/vocab/DopplerEffect"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Acoustic_Doppler_current_profiler</dc:source>
+        <rdfs:comment xml:lang="en">An acoustic Doppler current profiler (ADCP) is a hydroacoustic current meter similar to a sonar, attempting to measure water current velocities over a depth range using the Doppler effect of sound waves scattered back from particles within the water column.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/CellSize -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/CellSize">
+        <rdfs:label xml:lang="en">Cell Size</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/DopplerEffect -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/DopplerEffect">
+        <rdfs:label xml:lang="en">Doppler Effect</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Stimulus"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/isProxyFor"/>
+                <owl:allValuesFrom rdf:resource="http://esonetyellowpages.com/vocab/WaterCurrentVelocity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Doppler_effect</dc:source>
+        <rdfs:comment xml:lang="en">The Doppler effect (or the Doppler shift) is the change in frequency of a wave (or other periodic event) for an observer moving relative to its source.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/Frequency -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/Frequency">
+        <rdfs:label xml:lang="en">Frequency</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/MeasuringRange -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/MeasuringRange">
+        <rdfs:label xml:lang="en">Measuring Range</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/OperatingDepth -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/OperatingDepth">
+        <rdfs:label xml:lang="en">Operating Depth</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/ProfilingRange -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/ProfilingRange">
+        <rdfs:label xml:lang="en">Profiling Range</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/TemperatureRange -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/TemperatureRange">
+        <rdfs:label xml:lang="en">Temperature Range</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/Velocity -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/Velocity">
+        <rdfs:label xml:lang="en">Velocity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+    </owl:Class>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/WaterCurrent -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/WaterCurrent">
+        <rdfs:label xml:lang="en">Water Current</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/FeatureOfInterest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/WaterCurrentVelocity -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/WaterCurrentVelocity">
+        <rdfs:label xml:lang="en">Water Current Velocity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://esonetyellowpages.com/vocab/Velocity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+                <owl:someValuesFrom rdf:resource="http://esonetyellowpages.com/vocab/WaterCurrent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/WorkhorseQuartermaster150kHzADCP -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/WorkhorseQuartermaster150kHzADCP">
+        <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler"/>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/SensingDevice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/observes"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/detects"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.esonetyellowpages.com/datasheets/datasheet-adcp_whs_150khz_1458583613.pdf</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">Teledyne RD Instruments Workhorse Quartermaster 150 kHz ADCP</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/QuantitativeValue -->
+
+    <owl:Class rdf:about="http://schema.org/QuantitativeValue"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/Frequency"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+        <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Frequency</rdfs:label>
+        <ssn:hasValue rdf:resource="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/OperatingDepth"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+        <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Operating Depth</rdfs:label>
+        <ssn:hasValue rdf:resource="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159">
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementCapability"/>
+        <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Measurement Capability (Cell Size)</rdfs:label>
+        <ssn:hasMeasurementProperty rdf:resource="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff">
+        <rdf:type rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/ObservationValue"/>
+        <rdfs:label xml:lang="en">Quantitative Value (-5 °C to 45 °C)</rdfs:label>
+        <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-5.0</schema:minValue>
+        <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">45.0</schema:maxValue>
+        <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#DegreeCelsius"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa">
+        <rdf:type rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/ObservationValue"/>
+        <rdfs:label xml:lang="en">Quantitative Value (4 m to 24 m)</rdfs:label>
+        <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">24.0</schema:maxValue>
+        <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.0</schema:minValue>
+        <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9">
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementCapability"/>
+        <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Measurement Capability (Operating Depth)</rdfs:label>
+        <ssn:hasMeasurementProperty rdf:resource="http://esonetyellowpages.com/vocab/bbaf420f77901117aca3b08a3c48b9d5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c">
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementCapability"/>
+        <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Measurement Capability (Frequency)</rdfs:label>
+        <ssn:hasMeasurementProperty rdf:resource="http://esonetyellowpages.com/vocab/b2df3ca1afd421cff9b5b181817c5833"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/37684b4dc9d2499dd2ca9b9f270e1206">
+        <rdf:type rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/ObservationValue"/>
+        <rdfs:label xml:lang="en">Quantitative Value (1500 m)</rdfs:label>
+        <schema:value rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1500.0</schema:value>
+        <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/WaterCurrentVelocity"/>
+        <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Observed Property (Water Current Velocity)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad">
+        <rdf:type rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/ObservationValue"/>
+        <rdfs:label xml:lang="en">Quantitative Value (300 m)</rdfs:label>
+        <schema:value rdf:datatype="http://www.w3.org/2001/XMLSchema#float">300.0</schema:value>
+        <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72">
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementCapability"/>
+        <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Measurement Capability (Max Profiling Range)</rdfs:label>
+        <ssn:hasMeasurementProperty rdf:resource="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/DopplerEffect"/>
+        <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Detected Stimulus (Doppler Effect)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/7e1018a428bea5021f388dd812580dce">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/ProfilingRange"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+        <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Max Profiling Range</rdfs:label>
+        <ssn:hasValue rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805">
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementCapability"/>
+        <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Measurement Capability (Temperature Range)</rdfs:label>
+        <ssn:hasMeasurementProperty rdf:resource="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/7848499d28130febcdd5843efdbaf074">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/CellSize"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+        <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Cell Size</rdfs:label>
+        <ssn:hasValue rdf:resource="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/7979e8f4e8211a09a88e511ec1b593c9">
+        <rdf:type rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/ObservationValue"/>
+        <rdfs:label xml:lang="en">Quantitative Value (150 kHz)</rdfs:label>
+        <schema:value rdf:datatype="http://www.w3.org/2001/XMLSchema#float">150.0</schema:value>
+        <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#KiloHertz"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/8148568235658792efe60fe4fd7638ec">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/TemperatureRange"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+        <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Temperature Range</rdfs:label>
+        <ssn:hasValue rdf:resource="http://esonetyellowpages.com/vocab/bc78d25c3356a22d5d08ddf1c7ea12ff"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://qudt.org/vocab/unit#DegreeCelsius -->
+
+    <owl:NamedIndividual rdf:about="http://qudt.org/vocab/unit#DegreeCelsius"/>
+    
+
+
+    <!-- http://qudt.org/vocab/unit#KiloHertz -->
+
+    <owl:NamedIndividual rdf:about="http://qudt.org/vocab/unit#KiloHertz"/>
+    
+
+
+    <!-- http://qudt.org/vocab/unit#Meter -->
+
+    <owl:NamedIndividual rdf:about="http://qudt.org/vocab/unit#Meter"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.10-SNAPSHOT) http://owlapi.sourceforge.net -->
+

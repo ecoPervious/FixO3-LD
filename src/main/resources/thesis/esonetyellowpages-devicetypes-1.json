@@ -1,0 +1,47 @@
+	{
+		"name":"http://esonetyellowpages.com/vocab/CO2Pro",
+		"label":"CO2-Pro",
+		"comment":"PRO OCEANUS Submersible pCO2 Sensor",
+		"seeAlso":"http://www.esonetyellowpages.com/datasheets/datasheet-psi_gtdpro_1459187085.pdf",
+		"subClasses":[
+			{ 
+				"type":"http://esonetyellowpages.com/vocab/PartialPressureOfCO2Analyzer"
+			},
+			{
+				"observes":{
+					"label":"CO2-Pro Observed Property (Water Current Velocity)",
+					"type":"http://esonetyellowpages.com/vocab/WaterCurrentVelocity"
+				}
+			},
+			{
+				"capability":{
+					"label":"CO2-Pro Measurement Capability (Operating Depth)",
+					"property":{
+						"label":"CO2-Pro Operating Depth",
+						"value":{
+							"label":"0 m to 300 m",
+							"minValue":"0",
+							"maxValue":"300",
+							"unitCode":"http://qudt.org/vocab/unit#Meter",
+							"type":"http://esonetyellowpages.com/vocab/OperatingDepth"
+						}
+					}
+				}
+			},
+			{
+				"capability":{
+					"label":"CO2-Pro Measurement Capability (Measuring Range)",
+					"property":{
+						"label":"CO2-Pro Measuring Range",
+						"value":{
+							"label":"800 mbar to 2000 mbar",
+							"minValue":"800",
+							"maxValue":"2000",
+							"unitCode":"http://qudt.org/vocab/unit#Millibar",
+							"type":"http://esonetyellowpages.com/vocab/MeasuringRange"
+						}
+					}
+				}
+			}
+		]
+	}

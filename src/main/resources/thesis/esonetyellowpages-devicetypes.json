@@ -1,0 +1,97 @@
+[
+	{
+		"name":"http://esonetyellowpages.com/vocab/WorkhorseQuartermaster150kHzADCP",
+		"label":"Workhorse Quartermaster 150 kHz ADCP",
+		"comment":"Teledyne RD Instruments Workhorse Quartermaster 150 kHz ADCP",
+		"seeAlso":"http://www.esonetyellowpages.com/datasheets/datasheet-adcp_whs_150khz_1458583613.pdf",
+		"subClasses":[
+			{ 
+				"type":"http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler"
+			},
+			{
+				"observes":{
+					"label":"Workhorse Quartermaster 150 kHz ADCP Observed Property (Water Current Velocity)",
+					"type":"http://esonetyellowpages.com/vocab/WaterCurrentVelocity"
+				}
+			},
+			{
+				"detects":{
+					"label":"Workhorse Quartermaster 150 kHz ADCP Detected Stimulus (Doppler Effect)",
+					"type":"http://esonetyellowpages.com/vocab/DopplerEffect"
+				}
+			},
+			{
+				"capability":{
+					"label":"Workhorse Quartermaster 150 kHz ADCP Measurement Capability (Frequency)",
+					"property":{
+						"label":"Workhorse Quartermaster 150 kHz ADCP Frequency",
+						"type":"http://esonetyellowpages.com/vocab/Frequency",
+						"value":{
+							"label":"Quantitative Value (150 kHz)",
+							"value":"150",
+							"unitCode":"http://qudt.org/vocab/unit#KiloHertz"
+						}
+					}
+				}
+			},
+			{
+				"capability":{
+					"label":"Workhorse Quartermaster 150 kHz ADCP Measurement Capability (Max Profiling Range)",
+					"property":{
+						"label":"Workhorse Quartermaster 150 kHz ADCP Max Profiling Range",
+						"type":"http://esonetyellowpages.com/vocab/ProfilingRange",
+						"value":{
+							"label":"Quantitative Value (300 m)",
+							"value":"300",
+							"unitCode":"http://qudt.org/vocab/unit#Meter"
+						}
+					}
+				}
+			},
+			{
+				"capability":{
+					"label":"Workhorse Quartermaster 150 kHz ADCP Measurement Capability (Cell Size)",
+					"property":{
+						"label":"Workhorse Quartermaster 150 kHz ADCP Cell Size",
+						"type":"http://esonetyellowpages.com/vocab/CellSize",
+						"value":{
+							"label":"Quantitative Value (4 m to 24 m)",
+							"minValue":"4",
+							"maxValue":"24",
+							"unitCode":"http://qudt.org/vocab/unit#Meter"
+						}
+					}
+				}
+			},
+			{
+				"capability":{
+					"label":"Workhorse Quartermaster 150 kHz ADCP Measurement Capability (Operating Depth)",
+					"property":{
+						"label":"Workhorse Quartermaster 150 kHz ADCP Operating Depth",
+						"type":"http://esonetyellowpages.com/vocab/OperatingDepth",
+						"value":{
+							"label":"Quantitative Value (1500 m)",
+							"value":"1500",
+							"unitCode":"http://qudt.org/vocab/unit#Meter"
+						}
+					}
+				}
+			},
+			{
+				"capability":{
+					"label":"Workhorse Quartermaster 150 kHz ADCP Measurement Capability (Temperature Range)",
+					"property":{
+						"label":"Workhorse Quartermaster 150 kHz ADCP Temperature Range",
+						"type":"http://esonetyellowpages.com/vocab/TemperatureRange",
+						"value":{
+							"label":"Quantitative Value (-5 °C to 45 °C)",
+							"minValue":"-5",
+							"maxValue":"45",
+							"unitCode":"http://qudt.org/vocab/unit#DegreeCelsius"
+						}
+					}
+				}
+			}
+		]
+	}
+]

@@ -1,0 +1,18 @@
+[
+	{
+		"label":"E2-M3A",
+		"title":"Southern Adriatic Interdisciplinary Laboratory for Ocean Research",
+		"comment":"Deep-sea, continuous monitoring station: it provides the longest oceanographic time series in the South Adriatic Pit (Eastern Mediterranean Sea). The observatory is composed by two moorings (surface buoy and sub-surface mooring line) and designed to monitor physical and biogeochemical processes in the water column from the surface down to the bottom (approximately 1220m).  The E2-M3A surface buoy collects air/sea meteorological and physical measurements in the surface layer (2m depth). The secondary deep mooring instead, is equipped with current meters (RDI-ADCP and Seaguard-RCM), CTD’s with Dissolved Oxygen and optical sensors. New biochemical sensors (CO2 and pH) were deployed during the first year of the FiXO3 project to enhance the payload of the site.",
+		"source":"http://www.fixo3.eu/observatory/e2-m3a/",
+		"location":{
+			"place":"Eastern Mediterranean Sea",
+			"coordinates":"POINT (18.08 41.52)"
+		},
+		"attachedSystems":[
+			{
+				"label":"The Workhorse Quartermaster 150 kHz ADCP on E2-M3A",
+				"type":"http://esonetyellowpages.com/vocab/WorkhorseQuartermaster150kHzADCP"
+			}
+		]
+	}
+]

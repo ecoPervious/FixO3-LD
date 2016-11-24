@@ -37,6 +37,7 @@ public class SSN {
 
 	public static final IRI ns = IRI.create("https://www.w3.org/ns/ssn/");
 
+	public static final IRI Observation = c("Observation");
 	public static final IRI Platform = c("Platform");
 	public static final IRI Stimulus = c("Stimulus");
 	public static final IRI FeatureOfInterest = c("FeatureOfInterest");
@@ -45,15 +46,22 @@ public class SSN {
 	public static final IRI MeasurementCapability = c("MeasurementCapability");
 	public static final IRI MeasurementProperty = c("MeasurementProperty");
 	public static final IRI ObservationValue = c("ObservationValue");
+	public static final IRI SensorOutput = c("SensorOutput");
 
 	public static final IRI detects = c("detects");
 	public static final IRI observes = c("observes");
+	public static final IRI observedBy = c("observedBy");
+	public static final IRI observedProperty = c("observedProperty");
 	public static final IRI isPropertyOf = c("isPropertyOf");
 	public static final IRI isProxyFor = c("isProxyFor");
 	public static final IRI attachedSystem = c("attachedSystem");
 	public static final IRI hasMeasurementCapability = c("hasMeasurementCapability");
 	public static final IRI hasMeasurementProperty = c("hasMeasurementProperty");
 	public static final IRI hasValue = c("hasValue");
+	public static final IRI featureOfInterest = c("featureOfInterest");
+	public static final IRI fromStimulus = c("fromStimulus");
+	public static final IRI observationResult = c("observationResult");
+	public static final IRI observationResultTime = c("observationResultTime");
 
 	private static IRI c(String suffix) {
 		return IRI.create(ns.toString(), suffix);

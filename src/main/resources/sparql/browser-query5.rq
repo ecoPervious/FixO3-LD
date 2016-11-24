@@ -1,0 +1,16 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ssn: <https://www.w3.org/ns/ssn/>
+PREFIX schema: <http://schema.org/>
+PREFIX time: <http://www.w3.org/2006/time#>
+
+SELECT ?time ?value ?unit
+WHERE {
+  [
+  	rdf:type ssn:Observation ;
+    ssn:observedBy <SENSOR_ID> ;
+    ssn:observationResultTime [ time:inXSDDateTime ?time ] ; 
+    ssn:observationResult [ ssn:hasValue [ schema:value ?value; schema:unitCode ?unit ] ]
+  ]
+}
+ORDER BY ?time

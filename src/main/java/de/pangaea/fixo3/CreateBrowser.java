@@ -19,12 +19,18 @@ package de.pangaea.fixo3;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
 import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.ISODateTimeFormat;
 
 /**
  * <p>
@@ -51,6 +57,12 @@ public class CreateBrowser {
 
 	private void run() throws IOException {
 		StringBuffer observatories = new StringBuffer();
+
+		Set<String> propertiesBlackList = new HashSet<String>();
+		propertiesBlackList.add("Property");
+
+		Set<String> stimulusBlackList = new HashSet<String>();
+		stimulusBlackList.add("Stimulus");
 
 		observatories.append("<!doctype html>");
 		observatories.append("<html>");
@@ -96,7 +108,8 @@ public class CreateBrowser {
 			observatory.append("<meta charset=\"utf-8\">");
 			observatory.append("<link rel=\"stylesheet\" href=\"main.css\">");
 			observatory.append(
-					"<script language=\"javascript\" type=\"text/javascript\" src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyCeLgOdZllXtTwtjlmuvbbw5Z8AeSFYwjE&signed_in=true\"></script>");
+					"<script src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyCeLgOdZllXtTwtjlmuvbbw5Z8AeSFYwjE&signed_in=true\"></script>");
+			observatory.append("<script src=\"https://cdn.plot.ly/plotly-latest.min.js\"></script>");
 			observatory.append("</head>");
 			observatory.append("<body>");
 
@@ -135,26 +148,54 @@ public class CreateBrowser {
 
 			ResultSet rs2 = qe2.execSelect();
 
-			boolean hasSensors = false;
+			observatory.append("<div id=\"sensors\">");
 
 			if (rs2.hasNext()) {
-				observatory.append("<div id=\"sensors\">");
 				observatory.append("<h3>Sensors</h3>");
-				hasSensors = true;
 			}
 
 			int propertyCount = 0;
-			
+
 			while (rs2.hasNext()) {
 				QuerySolution qs2 = rs2.next();
 				String sensorId = qs2.getResource("sensorId").getURI();
 				String sensorLabel = qs2.getLiteral("sensorLabel").getLexicalForm();
+				String observedPropertyLabel = qs2.getLiteral("propertyLabel").getLexicalForm();
+				String stimulusLabel = qs2.getLiteral("stimulusLabel").getLexicalForm();
+
+				if (propertiesBlackList.contains(observedPropertyLabel))
+					continue;
+				if (stimulusBlackList.contains(stimulusLabel))
+					continue;
 
 				observatory.append("<div class=\"sensor\">");
 				observatory.append("<h4>");
 				observatory.append(sensorLabel);
 				observatory.append("</h4>");
+
 				observatory.append("<div>");
+				observatory.append("<table>");
+
+				observatory.append("<tr>");
+				observatory.append("<td>");
+				observatory.append("<i>Observes</i>");
+				observatory.append("</td>");
+				observatory.append("<td>");
+				observatory.append(observedPropertyLabel);
+				observatory.append("</td>");
+				observatory.append("</tr>");
+
+				observatory.append("<tr>");
+				observatory.append("<td>");
+				observatory.append("<i>Detects</i>");
+				observatory.append("</td>");
+				observatory.append("<td>");
+				observatory.append(stimulusLabel);
+				observatory.append("</td>");
+				observatory.append("</tr>");
+
+				observatory.append("</table>");
+
 				observatory.append("<table>");
 
 				QueryExecution qe3 = QueryExecutionFactory.sparqlService(service,
@@ -187,7 +228,7 @@ public class CreateBrowser {
 
 					observatory.append("<tr>");
 					observatory.append("<td>");
-					observatory.append(propertyLabel);
+					observatory.append("<i>" + propertyLabel + "</i>");
 					observatory.append("</td>");
 					observatory.append("<td>");
 
@@ -261,15 +302,63 @@ public class CreateBrowser {
 				observatory.append("</table>");
 				observatory.append("</div>");
 
+				QueryExecution qe5 = QueryExecutionFactory.sparqlService(service,
+						FileUtils.readFileToString(new File("src/main/resources/sparql/browser-query5.rq"))
+								.replaceAll("SENSOR_ID", sensorId));
+
+				ResultSet rs5 = qe5.execSelect();
+
+				List<String> times = new ArrayList<String>();
+				List<String> values = new ArrayList<String>();
+				
+				while (rs5.hasNext()) {
+					QuerySolution qs = rs5.next();
+					String time = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss").print(ISODateTimeFormat.dateTime()
+							.withOffsetParsed().parseDateTime(qs.getLiteral("time").getLexicalForm()));
+					String value = qs.getLiteral("value").getLexicalForm();
+					
+					times.add(time);
+					values.add(value);
+				}
+
+				observatory.append("<div id=\"plot\" style=\"width:800px;height:600px;\"></div>");
+				observatory.append("<script>");
+				observatory.append("var data = [");
+				observatory.append("{");
+				observatory.append("x: [");
+				
+				boolean first = true;
+				
+				for (String time : times) {
+					if (!first)
+						observatory.append(",");
+					observatory.append("'" + time + "'");
+					first = false;
+				}
+				
+				observatory.append("],");
+				observatory.append("y: [");
+				
+				for (String value : values) {
+					if (!first)
+						observatory.append(",");
+					observatory.append(value);
+					first = false;
+				}
+				
+				observatory.append("],");
+				observatory.append("type: 'scatter'");
+				observatory.append("}");
+				observatory.append("];");
+				observatory.append("Plotly.newPlot('plot', data);");
+				observatory.append("</script>");
 				observatory.append("</div>");
 
 			}
 
 			qe2.close();
 
-			if (hasSensors) {
-				observatory.append("</div>");
-			}
+			observatory.append("</div>");
 
 			observatory.append("</div>");
 			observatory.append("</body>");

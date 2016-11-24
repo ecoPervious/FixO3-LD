@@ -10,8 +10,12 @@
 			},
 			{
 				"observes":{
-					"label":"Workhorse Quartermaster 150 kHz ADCP Observed Property (Water Current Velocity)",
-					"type":"http://esonetyellowpages.com/vocab/WaterCurrentVelocity"
+					"label":"Workhorse Quartermaster 150 kHz ADCP Observed Property (Velocity)",
+					"type":"http://esonetyellowpages.com/vocab/Velocity",
+					"isPropertyOf":{
+						"label":"Workhorse Quartermaster 150 kHz ADCP Feature of Interest (Water Current)",
+						"type":"http://esonetyellowpages.com/vocab/WaterCurrent"
+					}
 				}
 			},
 			{

@@ -38,7 +38,6 @@ import static de.pangaea.fixo3.vocab.EYP.ProfilingRange;
 import static de.pangaea.fixo3.vocab.EYP.SoundWave;
 import static de.pangaea.fixo3.vocab.EYP.TemperatureRange;
 import static de.pangaea.fixo3.vocab.EYP.Velocity;
-import static de.pangaea.fixo3.vocab.EYP.WaterCurrentVelocity;
 import static de.pangaea.fixo3.vocab.SSN.ObservationValue;
 import static de.pangaea.fixo3.vocab.SSN.MeasurementProperty;
 import static de.pangaea.fixo3.vocab.SSN.FeatureOfInterest;
@@ -122,12 +121,7 @@ public class CreateEsonetYellowPages {
 
 		m.addClass(Velocity);
 		m.addLabel(Velocity, "Velocity");
-		m.addSubClass(Velocity, Property);
-
-		m.addClass(WaterCurrentVelocity);
-		m.addLabel(WaterCurrentVelocity, "Water Current Velocity");
-		m.addSubClass(WaterCurrentVelocity, Velocity);
-		m.addObjectSome(WaterCurrentVelocity, isPropertyOf, WaterCurrent);
+		m.addObjectSome(Velocity, isPropertyOf, WaterCurrent);
 
 		m.addClass(AcousticDopplerCurrentProfiler);
 		m.addLabel(AcousticDopplerCurrentProfiler, "Acoustic Doppler Current Profiler");
@@ -144,7 +138,7 @@ public class CreateEsonetYellowPages {
 				"The Doppler effect (or the Doppler shift) is the change in frequency of a wave (or other periodic event) for an observer moving relative to its source.");
 		m.addSource(DopplerEffect, IRI.create("https://en.wikipedia.org/wiki/Doppler_effect"));
 		m.addSubClass(DopplerEffect, Stimulus);
-		m.addObjectAll(DopplerEffect, isProxyFor, WaterCurrentVelocity);
+		m.addObjectAll(DopplerEffect, isProxyFor, Velocity);
 
 		// m.addClass(PartialPressureOfCO2Analyzer);
 		// m.addSubClass(PartialPressureOfCO2Analyzer, SensingDevice);
@@ -187,14 +181,23 @@ public class CreateEsonetYellowPages {
 				JsonObject observesJson = subClass.getJsonObject("observes");
 				String propertyLabel = observesJson.getString("label");
 				String propertyType = observesJson.getString("type");
+				JsonObject featureJson = observesJson.getJsonObject("isPropertyOf");
+				String featureLabel = featureJson.getString("label");
+				String featureType = featureJson.getString("type");
 
 				IRI propertyIRI = IRI.create(EYP.ns.toString() + md5Hex(propertyLabel));
 				IRI propertyTypeIRI = IRI.create(propertyType);
+				IRI featureIRI = IRI.create(EYP.ns.toString() + md5Hex(featureLabel));
+				IRI featureTypeIRI = IRI.create(featureType);
 
 				m.addObjectValue(deviceIRI, observes, propertyIRI);
 				m.addIndividual(propertyIRI);
 				m.addType(propertyIRI, propertyTypeIRI);
 				m.addLabel(propertyIRI, propertyLabel);
+				m.addIndividual(featureIRI);
+				m.addType(featureIRI, featureTypeIRI);
+				m.addLabel(featureIRI, featureLabel);
+				m.addObjectAssertion(propertyIRI, isPropertyOf, featureIRI);				
 			} else if (subClass.containsKey("detects")) {
 				JsonObject detectsJson = subClass.getJsonObject("detects");
 				String stimulusLabel = detectsJson.getString("label");

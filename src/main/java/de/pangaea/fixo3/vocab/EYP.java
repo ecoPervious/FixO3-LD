@@ -55,8 +55,6 @@ public class EYP {
 	public static final IRI HydroacousticCurrentMeter = c("HydroacousticCurrentMeter");
 	public static final IRI AcousticDopplerCurrentProfiler = c("AcousticDopplerCurrentProfiler");
 	public static final IRI PartialPressureOfCO2Analyzer = c("PartialPressureOfCO2Analyzer");
-	
-	public static final IRI WaterCurrentVelocity = c("WaterCurrentVelocity");
 
 	private static IRI c(String suffix) {
 		return IRI.create(ns.toString(), suffix);

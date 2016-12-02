@@ -43,16 +43,12 @@ public class EYP {
 	public static final IRI TemperatureRange = c("TemperatureRange");
 	public static final IRI MeasuringRange = c("MeasuringRange");
 	public static final IRI Frequency = c("Frequency");
-	
-	public static final IRI Velocity = c("Velocity");
+	public static final IRI Speed = c("Speed");
+	public static final IRI PartialPressure = c("PartialPressure");
 	public static final IRI WaterCurrent = c("WaterCurrent");
-	
-	public static final IRI SoundWave = c("SoundWave");
+	public static final IRI CarbonDioxide = c("CarbonDioxide");
 	public static final IRI DopplerEffect = c("DopplerEffect");
-	
-	public static final IRI OceanographicDevice = c("OceanographicDevice");
-	public static final IRI CurrentMeter = c("CurrentMeter");
-	public static final IRI HydroacousticCurrentMeter = c("HydroacousticCurrentMeter");
+	public static final IRI Infrared = c("Infrared");
 	public static final IRI AcousticDopplerCurrentProfiler = c("AcousticDopplerCurrentProfiler");
 	public static final IRI PartialPressureOfCO2Analyzer = c("PartialPressureOfCO2Analyzer");
 

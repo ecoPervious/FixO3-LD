@@ -2,6 +2,7 @@
 <rdf:RDF xmlns="http://fixo3.eu/vocab/doc/"
      xml:base="http://fixo3.eu/vocab/doc/"
      xmlns:schema="http://schema.org/"
+     xmlns:geosparql="http://www.opengis.net/ont/geosparql#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -106,6 +107,23 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#wktLiteral -->
+
+    <rdfs:Datatype rdf:about="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -131,6 +149,12 @@
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://schema.org/unitCode</dc:source>
         <rdfs:comment xml:lang="en">The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.</rdfs:comment>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#hasGeometry -->
+
+    <owl:ObjectProperty rdf:about="http://www.opengis.net/ont/geosparql#hasGeometry"/>
     
 
 
@@ -575,6 +599,12 @@ can&apos;t be used, because (by the OWL2 decidability restrictions) that would m
     
 
 
+    <!-- http://www.opengis.net/ont/geosparql#asWKT -->
+
+    <owl:DatatypeProperty rdf:about="http://www.opengis.net/ont/geosparql#asWKT"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -603,6 +633,51 @@ can&apos;t be used, because (by the OWL2 decidability restrictions) that would m
     
 
 
+    <!-- http://esonetyellowpages.com/vocab/CO2Pro -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/CO2Pro">
+        <rdfs:label xml:lang="en">CO2-Pro</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://esonetyellowpages.com/vocab/PartialPressureOfCO2Analyzer"/>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/SensingDevice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/observes"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/2dfc4c07a3258b5131d86de3b7dff46b"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/b23090be352a29f2f09add69e7a19f76"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/detects"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/746b9db404bec413ab9c469487a98f33"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/a9c61ba0cc17d40fe35fb7171c226468"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.esonetyellowpages.com/datasheets/datasheet-psi_gtdpro_1459187085.pdf</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">PRO OCEANUS Submersible pCO2 Sensor</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/CarbonDioxide -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/CarbonDioxide">
+        <rdfs:label xml:lang="en">Carbon Dioxide</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/FeatureOfInterest"/>
+    </owl:Class>
+    
+
+
     <!-- http://esonetyellowpages.com/vocab/CellSize -->
 
     <owl:Class rdf:about="http://esonetyellowpages.com/vocab/CellSize">
@@ -620,7 +695,7 @@ can&apos;t be used, because (by the OWL2 decidability restrictions) that would m
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/isProxyFor"/>
-                <owl:allValuesFrom rdf:resource="http://esonetyellowpages.com/vocab/WaterCurrentVelocity"/>
+                <owl:allValuesFrom rdf:resource="http://esonetyellowpages.com/vocab/Speed"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Doppler_effect</dc:source>
@@ -634,6 +709,23 @@ can&apos;t be used, because (by the OWL2 decidability restrictions) that would m
     <owl:Class rdf:about="http://esonetyellowpages.com/vocab/Frequency">
         <rdfs:label xml:lang="en">Frequency</rdfs:label>
         <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/Infrared -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/Infrared">
+        <rdfs:label xml:lang="en">Infrared</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Stimulus"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/isProxyFor"/>
+                <owl:allValuesFrom rdf:resource="http://esonetyellowpages.com/vocab/PartialPressure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Infrared</dc:source>
+        <rdfs:comment xml:lang="en">Infrared (IR) is an invisible radiant energy.</rdfs:comment>
     </owl:Class>
     
 
@@ -656,11 +748,56 @@ can&apos;t be used, because (by the OWL2 decidability restrictions) that would m
     
 
 
+    <!-- http://esonetyellowpages.com/vocab/PartialPressure -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/PartialPressure">
+        <rdfs:label xml:lang="en">Partial Pressure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+                <owl:someValuesFrom rdf:resource="http://esonetyellowpages.com/vocab/CarbonDioxide"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/PartialPressureOfCO2Analyzer -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/PartialPressureOfCO2Analyzer">
+        <rdfs:label xml:lang="en">Partial Pressure of CO2 Analyzer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/SensingDevice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/detects"/>
+                <owl:allValuesFrom rdf:resource="http://esonetyellowpages.com/vocab/Infrared"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- http://esonetyellowpages.com/vocab/ProfilingRange -->
 
     <owl:Class rdf:about="http://esonetyellowpages.com/vocab/ProfilingRange">
         <rdfs:label xml:lang="en">Profiling Range</rdfs:label>
         <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/Speed -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/Speed">
+        <rdfs:label xml:lang="en">Speed</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+                <owl:someValuesFrom rdf:resource="http://esonetyellowpages.com/vocab/WaterCurrent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -674,15 +811,6 @@ can&apos;t be used, because (by the OWL2 decidability restrictions) that would m
     
 
 
-    <!-- http://esonetyellowpages.com/vocab/Velocity -->
-
-    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/Velocity">
-        <rdfs:label xml:lang="en">Velocity</rdfs:label>
-        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
-    </owl:Class>
-    
-
-
     <!-- http://esonetyellowpages.com/vocab/WaterCurrent -->
 
     <owl:Class rdf:about="http://esonetyellowpages.com/vocab/WaterCurrent">
@@ -692,31 +820,35 @@ can&apos;t be used, because (by the OWL2 decidability restrictions) that would m
     
 
 
-    <!-- http://esonetyellowpages.com/vocab/WaterCurrentVelocity -->
-
-    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/WaterCurrentVelocity">
-        <rdfs:label xml:lang="en">Water Current Velocity</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://esonetyellowpages.com/vocab/Velocity"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
-                <owl:someValuesFrom rdf:resource="http://esonetyellowpages.com/vocab/WaterCurrent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
     <!-- http://esonetyellowpages.com/vocab/WorkhorseQuartermaster150kHzADCP -->
 
     <owl:Class rdf:about="http://esonetyellowpages.com/vocab/WorkhorseQuartermaster150kHzADCP">
         <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP</rdfs:label>
+        <owl:equivalentClass rdf:resource="http://vocab.nerc.ac.uk/collection/L22/current/TOOL0732/"/>
         <rdfs:subClassOf rdf:resource="http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler"/>
         <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/SensingDevice"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/detects"/>
                 <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -728,13 +860,7 @@ can&apos;t be used, because (by the OWL2 decidability restrictions) that would m
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/observes"/>
-                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
-                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/c656387b92a29bb14edd50267ec1dec6"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -743,20 +869,26 @@ can&apos;t be used, because (by the OWL2 decidability restrictions) that would m
                 <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
-                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
-                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.esonetyellowpages.com/datasheets/datasheet-adcp_whs_150khz_1458583613.pdf</rdfs:seeAlso>
         <rdfs:comment xml:lang="en">Teledyne RD Instruments Workhorse Quartermaster 150 kHz ADCP</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://fixo3.eu/vocab/FixedPointOceanObservatory -->
+
+    <owl:Class rdf:about="http://fixo3.eu/vocab/FixedPointOceanObservatory">
+        <rdfs:label xml:lang="en">Fixed-Point Ocean Observatory</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://fixo3.eu/vocab/OceanObservatory"/>
+    </owl:Class>
+    
+
+
+    <!-- http://fixo3.eu/vocab/OceanObservatory -->
+
+    <owl:Class rdf:about="http://fixo3.eu/vocab/OceanObservatory">
+        <rdfs:label xml:lang="en">Ocean Observatory</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
     </owl:Class>
     
 
@@ -767,19 +899,37 @@ can&apos;t be used, because (by the OWL2 decidability restrictions) that would m
         <rdfs:label xml:lang="en">Quantitative Value</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/unitCode"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+                <owl:onProperty rdf:resource="http://schema.org/value"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://schema.org/value"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                <owl:onProperty rdf:resource="http://schema.org/unitCode"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://schema.org/QuantitativeValue</dc:source>
         <rdfs:comment xml:lang="en">A point value or interval for product characteristics and other purposes.</rdfs:comment>
     </owl:Class>
+    
+
+
+    <!-- http://vocab.nerc.ac.uk/collection/L22/current/TOOL0732/ -->
+
+    <owl:Class rdf:about="http://vocab.nerc.ac.uk/collection/L22/current/TOOL0732/"/>
+    
+
+
+    <!-- http://www.opengis.net/ont/sfPoint -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/sfPoint"/>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Feature -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
     
 
 
@@ -822,14 +972,14 @@ can&apos;t be used, because (by the OWL2 decidability restrictions) that would m
         <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/DeploymentRelatedProcess"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/deployedSystem"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/System"/>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/deployedOnPlatform"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/deployedOnPlatform"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Platform"/>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/deployedSystem"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/System"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>The ongoing Process of Entities (for the purposes of this ontology, mainly sensors) deployed for a particular purpose.  For example, a particular Sensor deployed on a Platform, or a whole network of Sensors deployed for an observation campaign.  The deployment may have sub processes, such as installation, maintenance, addition, and decomissioning and removal.</rdfs:comment>
@@ -896,13 +1046,13 @@ can&apos;t be used, because (by the OWL2 decidability restrictions) that would m
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+                <owl:someValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Property"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
-                <owl:someValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Property"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>A feature is an abstraction of real world phenomena (thing, person, event, etc).</rdfs:comment>
@@ -1007,21 +1157,15 @@ The conditions specified here are those that affect the measurement properties, 
         <rdfs:label>Observation</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/observedProperty"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Property"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/featureOfInterest"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/FeatureOfInterest"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/featureOfInterest"/>
                 <owl:onClass rdf:resource="https://www.w3.org/ns/ssn/FeatureOfInterest"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/observedProperty"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Property"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1033,8 +1177,7 @@ The conditions specified here are those that affect the measurement properties, 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/observedBy"/>
-                <owl:onClass rdf:resource="https://www.w3.org/ns/ssn/Sensor"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Sensor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1045,15 +1188,8 @@ The conditions specified here are those that affect the measurement properties, 
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/observedProperty"/>
-                <owl:onClass rdf:resource="https://www.w3.org/ns/ssn/Property"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/sensingMethodUsed"/>
-                <owl:onClass rdf:resource="https://www.w3.org/ns/ssn/Sensing"/>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/observedBy"/>
+                <owl:onClass rdf:resource="https://www.w3.org/ns/ssn/Sensor"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1065,8 +1201,22 @@ The conditions specified here are those that affect the measurement properties, 
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/observedBy"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Sensor"/>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/observedProperty"/>
+                <owl:onClass rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/featureOfInterest"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/FeatureOfInterest"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/sensingMethodUsed"/>
+                <owl:onClass rdf:resource="https://www.w3.org/ns/ssn/Sensing"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>An Observation is a Situation in which a Sensing method has been used to estimate or calculate a value of a Property of a FeatureOfInterest.  Links to Sensing and Sensor describe what made the Observation and how; links to Property and Feature detail what was sensed; the result is the output of a Sensor; other metadata details times etc.</rdfs:comment>
@@ -1137,14 +1287,14 @@ O&amp;M conflates what we have as SensorOutput and ObservationValue into observa
         <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasOperatingProperty"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/OperatingProperty"/>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/inCondition"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Condition"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/inCondition"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Condition"/>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasOperatingProperty"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/OperatingProperty"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:source>skos:broaderMatch &apos;reference operating condition&apos; [VIM 4.11]
@@ -1162,14 +1312,14 @@ The difference is that here we also allow for qualities that aren&apos;t VIM inf
         <rdfs:label>Platform</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/attachedSystem"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/System"/>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/inDeployment"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Deployment"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/inDeployment"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Deployment"/>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/attachedSystem"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/System"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>An Entity to which other Entities can be attached - particuarly Sensors and other Platforms.  For example, a post might act as the Platform, a bouy might act as a Platform, or a fish might act as a Platform for an attached sensor.</rdfs:comment>
@@ -1289,6 +1439,12 @@ The difference is that here we also allow for qualities that aren&apos;t VIM inf
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/MeasurementCapability"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/detects"/>
                 <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Stimulus"/>
             </owl:Restriction>
@@ -1297,12 +1453,6 @@ The difference is that here we also allow for qualities that aren&apos;t VIM inf
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/implements"/>
                 <owl:someValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Sensing"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/MeasurementCapability"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:source>skos:exactMatch &apos;sensor&apos; [SensorML OGC-0700]
@@ -1334,14 +1484,14 @@ Generally a sensor&apos;s properties are recorded directly (with hasMeasurementC
         <rdfs:label>Sensor Output</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/isProducedBy"/>
-                <owl:someValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Sensor"/>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasValue"/>
+                <owl:someValuesFrom rdf:resource="https://www.w3.org/ns/ssn/ObservationValue"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasValue"/>
-                <owl:someValuesFrom rdf:resource="https://www.w3.org/ns/ssn/ObservationValue"/>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/isProducedBy"/>
+                <owl:someValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Sensor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>A sensor outputs a piece of information (an observed value), the value itself being represented by an ObservationValue.</rdfs:comment>
@@ -1411,6 +1561,12 @@ See comments at ObservationValue.</dc:source>
         <rdfs:label>System</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasOperatingRange"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/OperatingRange"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasSubSystem"/>
                 <owl:someValuesFrom rdf:resource="https://www.w3.org/ns/ssn/System"/>
             </owl:Restriction>
@@ -1423,18 +1579,6 @@ See comments at ObservationValue.</dc:source>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasOperatingRange"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/OperatingRange"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasSurvivalRange"/>
-                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/SurvivalRange"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasDeployment"/>
                 <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/Deployment"/>
             </owl:Restriction>
@@ -1443,6 +1587,12 @@ See comments at ObservationValue.</dc:source>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasSubSystem"/>
                 <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasSurvivalRange"/>
+                <owl:allValuesFrom rdf:resource="https://www.w3.org/ns/ssn/SurvivalRange"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>System is a unit of abstraction for pieces of infrastructure (and we largely care that they are) for sensing. A system has components, its subsystems, which are other systems.</rdfs:comment>
@@ -1468,6 +1618,26 @@ See comments at ObservationValue.</dc:source>
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/a9c61ba0cc17d40fe35fb7171c226468 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/a9c61ba0cc17d40fe35fb7171c226468">
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementCapability"/>
+        <rdfs:label xml:lang="en">CO2-Pro Measurement Capability (Measuring Range)</rdfs:label>
+        <ssn:hasMeasurementProperty rdf:resource="http://esonetyellowpages.com/vocab/237d45f1add37bc4d07024fb61161047"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/b23090be352a29f2f09add69e7a19f76 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/b23090be352a29f2f09add69e7a19f76">
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementCapability"/>
+        <rdfs:label xml:lang="en">CO2-Pro Measurement Capability (Operating Depth)</rdfs:label>
+        <ssn:hasMeasurementProperty rdf:resource="http://esonetyellowpages.com/vocab/fc84ea3fd1d982e5c0c767595f89d06a"/>
+    </owl:NamedIndividual>
     
 
 
@@ -1516,6 +1686,29 @@ See comments at ObservationValue.</dc:source>
     
 
 
+    <!-- http://esonetyellowpages.com/vocab/c656387b92a29bb14edd50267ec1dec6 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/c656387b92a29bb14edd50267ec1dec6">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/Speed"/>
+        <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Observed Property (Speed)</rdfs:label>
+        <ssn:isPropertyOf rdf:resource="http://esonetyellowpages.com/vocab/f9211947db29a7c0590ab410a5c5111b"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/edd008b57f0d3693484e8e08a9175530 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/edd008b57f0d3693484e8e08a9175530">
+        <rdf:type rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/ObservationValue"/>
+        <rdfs:label xml:lang="en">Quantitative Value (0 m to 300 m)</rdfs:label>
+        <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</schema:minValue>
+        <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">300.0</schema:maxValue>
+        <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa -->
 
     <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/f5a37843e990e3be26abc9602e7303aa">
@@ -1525,6 +1718,47 @@ See comments at ObservationValue.</dc:source>
         <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">24.0</schema:maxValue>
         <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.0</schema:minValue>
         <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#Meter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/f9211947db29a7c0590ab410a5c5111b -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/f9211947db29a7c0590ab410a5c5111b">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/WaterCurrent"/>
+        <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Feature of Interest (Water Current)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/fc84ea3fd1d982e5c0c767595f89d06a -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/fc84ea3fd1d982e5c0c767595f89d06a">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/OperatingDepth"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+        <rdfs:label xml:lang="en">CO2-Pro Operating Depth</rdfs:label>
+        <ssn:hasValue rdf:resource="http://esonetyellowpages.com/vocab/edd008b57f0d3693484e8e08a9175530"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/2dfc4c07a3258b5131d86de3b7dff46b -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/2dfc4c07a3258b5131d86de3b7dff46b">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/PartialPressure"/>
+        <rdfs:label xml:lang="en">CO2-Pro Observed Property (Partial Pressure)</rdfs:label>
+        <ssn:isPropertyOf rdf:resource="http://esonetyellowpages.com/vocab/541de5db9a763b1589dfa2381e24f7b1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/237d45f1add37bc4d07024fb61161047 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/237d45f1add37bc4d07024fb61161047">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/MeasuringRange"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+        <rdfs:label xml:lang="en">CO2-Pro Measuring Range</rdfs:label>
+        <ssn:hasValue rdf:resource="http://esonetyellowpages.com/vocab/57d0b03f32d0f07755a542a11b3b0b55"/>
     </owl:NamedIndividual>
     
 
@@ -1561,15 +1795,6 @@ See comments at ObservationValue.</dc:source>
     
 
 
-    <!-- http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc -->
-
-    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/4c25c702ff8d6a587d84bfe5065d28bc">
-        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/WaterCurrentVelocity"/>
-        <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Observed Property (Water Current Velocity)</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad -->
 
     <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad">
@@ -1592,6 +1817,28 @@ See comments at ObservationValue.</dc:source>
     
 
 
+    <!-- http://esonetyellowpages.com/vocab/541de5db9a763b1589dfa2381e24f7b1 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/541de5db9a763b1589dfa2381e24f7b1">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/CarbonDioxide"/>
+        <rdfs:label xml:lang="en">CO2-Pro Feature of Interest (Carbon Dioxide)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/57d0b03f32d0f07755a542a11b3b0b55 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/57d0b03f32d0f07755a542a11b3b0b55">
+        <rdf:type rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/ObservationValue"/>
+        <rdfs:label xml:lang="en">Quantitative Value (800 mbar to 2000 mbar)</rdfs:label>
+        <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2000.0</schema:maxValue>
+        <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">800.0</schema:minValue>
+        <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#Millibar"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6 -->
 
     <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6">
@@ -1608,6 +1855,15 @@ See comments at ObservationValue.</dc:source>
         <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
         <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Max Profiling Range</rdfs:label>
         <ssn:hasValue rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/746b9db404bec413ab9c469487a98f33 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/746b9db404bec413ab9c469487a98f33">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/Infrared"/>
+        <rdfs:label xml:lang="en">CO2-Pro Detected Stimulus (Infrared)</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1656,6 +1912,102 @@ See comments at ObservationValue.</dc:source>
     
 
 
+    <!-- http://fixo3.eu/vocab/a33699d431a2628de5f1823c3e399cce -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/a33699d431a2628de5f1823c3e399cce">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (-16.5 49.0)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (-16.5 49.0)</geosparql:asWKT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/e00a1023965ba98cde761fe9e710bfcc">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdfs:label xml:lang="en">E2-M3A</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/e2-m3a/</dc:source>
+        <rdfs:comment xml:lang="en">Deep-sea, continuous monitoring station: it provides the longest oceanographic time series in the South Adriatic Pit (Eastern Mediterranean Sea). The observatory is composed by two moorings (surface buoy and sub-surface mooring line) and designed to monitor physical and biogeochemical processes in the water column from the surface down to the bottom (approximately 1220m).  The E2-M3A surface buoy collects air/sea meteorological and physical measurements in the surface layer (2m depth). The secondary deep mooring instead, is equipped with current meters (RDI-ADCP and Seaguard-RCM), CTD’s with Dissolved Oxygen and optical sensors. New biochemical sensors (CO2 and pH) were deployed during the first year of the FiXO3 project to enhance the payload of the site.</rdfs:comment>
+        <dc:title xml:lang="en">Southern Adriatic Interdisciplinary Laboratory for Ocean Research</dc:title>
+        <ssn:attachedSystem rdf:resource="http://fixo3.eu/vocab/e2c9180abc695bc67abf04f811a2ff6b"/>
+        <ssn:attachedSystem rdf:resource="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175"/>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/e2c9180abc695bc67abf04f811a2ff6b -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/e2c9180abc695bc67abf04f811a2ff6b">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/CO2Pro"/>
+        <rdfs:label xml:lang="en">The CO2-Pro on E2-M3A</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/sfPoint"/>
+        <rdfs:label xml:lang="en">POINT (18.08 41.52)</rdfs:label>
+        <geosparql:asWKT rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">POINT (18.08 41.52)</geosparql:asWKT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/WorkhorseQuartermaster150kHzADCP"/>
+        <rdfs:label xml:lang="en">The Workhorse Quartermaster 150 kHz ADCP on E2-M3A</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/31357ead1ff26f860373676bdf3dc36a">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Eastern Mediterranean Sea @ POINT (18.08 41.52)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/f2aca7dbe09f45af8571c9e7732802c0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/45767d1518b17d76ed77fba69ce8aba1 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/45767d1518b17d76ed77fba69ce8aba1">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/CO2Pro"/>
+        <rdfs:label xml:lang="en">The CO2-Pro on PAP</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/6711cadd91176dd2c52dd9eed5f771f5 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/6711cadd91176dd2c52dd9eed5f771f5">
+        <rdf:type rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:label xml:lang="en">Northeast Atlantic @ POINT (-16.5 49.0)</rdfs:label>
+        <geosparql:hasGeometry rdf:resource="http://fixo3.eu/vocab/a33699d431a2628de5f1823c3e399cce"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21 -->
+
+    <owl:NamedIndividual rdf:about="http://fixo3.eu/vocab/7deac531045e960dfe13fd1db1077d21">
+        <rdf:type rdf:resource="http://fixo3.eu/vocab/FixedPointOceanObservatory"/>
+        <rdfs:label xml:lang="en">PAP</rdfs:label>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.fixo3.eu/observatory/pap/</dc:source>
+        <rdfs:comment xml:lang="en">Array of moorings covering the entire water column and benthos with associated repeat ship occupations for process studies and collections not possible autonomously (eg benthic megafauna) Longest running multidisciplinary North Atlantic open ocean sustained observatory delivering atmospheric and physical and biogeochemical ocean datasets in near real-time.</rdfs:comment>
+        <dc:title xml:lang="en">Porcupine Abyssal Plain Observatory</dc:title>
+        <ssn:attachedSystem rdf:resource="http://fixo3.eu/vocab/45767d1518b17d76ed77fba69ce8aba1"/>
+        <schema:location rdf:resource="http://fixo3.eu/vocab/6711cadd91176dd2c52dd9eed5f771f5"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://qudt.org/vocab/unit#DegreeCelsius -->
 
     <owl:NamedIndividual rdf:about="http://qudt.org/vocab/unit#DegreeCelsius"/>
@@ -1671,6 +2023,12 @@ See comments at ObservationValue.</dc:source>
     <!-- http://qudt.org/vocab/unit#Meter -->
 
     <owl:NamedIndividual rdf:about="http://qudt.org/vocab/unit#Meter"/>
+    
+
+
+    <!-- http://qudt.org/vocab/unit#Millibar -->
+
+    <owl:NamedIndividual rdf:about="http://qudt.org/vocab/unit#Millibar"/>
 </rdf:RDF>
 
 

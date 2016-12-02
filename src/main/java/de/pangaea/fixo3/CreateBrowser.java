@@ -61,6 +61,9 @@ public class CreateBrowser {
 		Set<String> propertiesBlackList = new HashSet<String>();
 		propertiesBlackList.add("Property");
 
+		Set<String> featuresBlackList = new HashSet<String>();
+		featuresBlackList.add("Feature of Interest");
+		
 		Set<String> stimulusBlackList = new HashSet<String>();
 		stimulusBlackList.add("Stimulus");
 
@@ -155,15 +158,19 @@ public class CreateBrowser {
 			}
 
 			int propertyCount = 0;
+			int plotCount = 0;
 
 			while (rs2.hasNext()) {
 				QuerySolution qs2 = rs2.next();
 				String sensorId = qs2.getResource("sensorId").getURI();
 				String sensorLabel = qs2.getLiteral("sensorLabel").getLexicalForm();
 				String observedPropertyLabel = qs2.getLiteral("propertyLabel").getLexicalForm();
+				String featureLabel = qs2.getLiteral("featureLabel").getLexicalForm();
 				String stimulusLabel = qs2.getLiteral("stimulusLabel").getLexicalForm();
 
 				if (propertiesBlackList.contains(observedPropertyLabel))
+					continue;
+				if (featuresBlackList.contains(featureLabel))
 					continue;
 				if (stimulusBlackList.contains(stimulusLabel))
 					continue;
@@ -178,16 +185,25 @@ public class CreateBrowser {
 
 				observatory.append("<tr>");
 				observatory.append("<td>");
-				observatory.append("<i>Observes</i>");
+				observatory.append("<i>Observed Property</i>");
 				observatory.append("</td>");
 				observatory.append("<td>");
 				observatory.append(observedPropertyLabel);
 				observatory.append("</td>");
 				observatory.append("</tr>");
+				
+				observatory.append("<tr>");
+				observatory.append("<td>");
+				observatory.append("<i>Monitored Feature</i>");
+				observatory.append("</td>");
+				observatory.append("<td>");
+				observatory.append(featureLabel);
+				observatory.append("</td>");
+				observatory.append("</tr>");
 
 				observatory.append("<tr>");
 				observatory.append("<td>");
-				observatory.append("<i>Detects</i>");
+				observatory.append("<i>Detected Stimulus</i>");
 				observatory.append("</td>");
 				observatory.append("<td>");
 				observatory.append(stimulusLabel);
@@ -196,6 +212,8 @@ public class CreateBrowser {
 
 				observatory.append("</table>");
 
+				observatory.append("<h5>Measurement Capabilities</h5>");
+				
 				observatory.append("<table>");
 
 				QueryExecution qe3 = QueryExecutionFactory.sparqlService(service,
@@ -321,7 +339,7 @@ public class CreateBrowser {
 					values.add(value);
 				}
 
-				observatory.append("<div id=\"plot\" style=\"width:800px;height:600px;\"></div>");
+				observatory.append("<div id=\"plot" + plotCount + "\" style=\"width:800px;height:600px;\"></div>");
 				observatory.append("<script>");
 				observatory.append("var data = [");
 				observatory.append("{");
@@ -339,6 +357,8 @@ public class CreateBrowser {
 				observatory.append("],");
 				observatory.append("y: [");
 				
+				first = true;
+				
 				for (String value : values) {
 					if (!first)
 						observatory.append(",");
@@ -350,10 +370,11 @@ public class CreateBrowser {
 				observatory.append("type: 'scatter'");
 				observatory.append("}");
 				observatory.append("];");
-				observatory.append("Plotly.newPlot('plot', data);");
+				observatory.append("Plotly.newPlot('plot" + plotCount + "', data);");
 				observatory.append("</script>");
 				observatory.append("</div>");
-
+				
+				plotCount++;
 			}
 
 			qe2.close();

@@ -162,6 +162,10 @@ public class OntologyManager {
 	public void addSubClass(IRI sub, IRI sup) {
 		addAxiom(df.getOWLSubClassOfAxiom(getClass(sub), getClass(sup)));
 	}
+	
+	public void addEquivalentClass(IRI cls1, IRI cls2) {
+		addAxiom(df.getOWLEquivalentClassesAxiom(getClass(cls1), getClass(cls2)));
+	}
 
 	public void addObjectSome(IRI cls, IRI property, OWLRDFVocabulary value) {
 		addObjectSome(cls, property, value.getIRI());

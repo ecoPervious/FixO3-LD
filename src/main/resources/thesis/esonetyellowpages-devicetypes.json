@@ -4,14 +4,19 @@
 		"label":"Workhorse Quartermaster 150 kHz ADCP",
 		"comment":"Teledyne RD Instruments Workhorse Quartermaster 150 kHz ADCP",
 		"seeAlso":"http://www.esonetyellowpages.com/datasheets/datasheet-adcp_whs_150khz_1458583613.pdf",
+		"equivalentClasses":[
+			{
+				"type":"http://vocab.nerc.ac.uk/collection/L22/current/TOOL0732/"
+			}
+		],
 		"subClasses":[
 			{ 
 				"type":"http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler"
 			},
 			{
 				"observes":{
-					"label":"Workhorse Quartermaster 150 kHz ADCP Observed Property (Velocity)",
-					"type":"http://esonetyellowpages.com/vocab/Velocity",
+					"label":"Workhorse Quartermaster 150 kHz ADCP Observed Property (Speed)",
+					"type":"http://esonetyellowpages.com/vocab/Speed",
 					"isPropertyOf":{
 						"label":"Workhorse Quartermaster 150 kHz ADCP Feature of Interest (Water Current)",
 						"type":"http://esonetyellowpages.com/vocab/WaterCurrent"
@@ -92,6 +97,64 @@
 							"minValue":"-5",
 							"maxValue":"45",
 							"unitCode":"http://qudt.org/vocab/unit#DegreeCelsius"
+						}
+					}
+				}
+			}
+		]
+	},
+	{
+		"name":"http://esonetyellowpages.com/vocab/CO2Pro",
+		"label":"CO2-Pro",
+		"comment":"PRO OCEANUS Submersible pCO2 Sensor",
+		"seeAlso":"http://www.esonetyellowpages.com/datasheets/datasheet-psi_gtdpro_1459187085.pdf",
+		"equivalentClasses":[ ],
+		"subClasses":[
+			{ 
+				"type":"http://esonetyellowpages.com/vocab/PartialPressureOfCO2Analyzer"
+			},
+			{
+				"observes":{
+					"label":"CO2-Pro Observed Property (Partial Pressure)",
+					"type":"http://esonetyellowpages.com/vocab/PartialPressure",
+					"isPropertyOf":{
+						"label":"CO2-Pro Feature of Interest (Carbon Dioxide)",
+						"type":"http://esonetyellowpages.com/vocab/CarbonDioxide"
+					}
+				}
+			},
+			{
+				"detects":{
+					"label":"CO2-Pro Detected Stimulus (Infrared)",
+					"type":"http://esonetyellowpages.com/vocab/Infrared"
+				}
+			},
+			{
+				"capability":{
+					"label":"CO2-Pro Measurement Capability (Operating Depth)",
+					"property":{
+						"label":"CO2-Pro Operating Depth",
+						"type":"http://esonetyellowpages.com/vocab/OperatingDepth",
+						"value":{
+							"label":"Quantitative Value (0 m to 300 m)",
+							"minValue":"0",
+							"maxValue":"300",
+							"unitCode":"http://qudt.org/vocab/unit#Meter"
+						}
+					}
+				}
+			},
+			{
+				"capability":{
+					"label":"CO2-Pro Measurement Capability (Measuring Range)",
+					"property":{
+						"label":"CO2-Pro Measuring Range",
+						"type":"http://esonetyellowpages.com/vocab/MeasuringRange",
+						"value":{
+							"label":"Quantitative Value (800 mbar to 2000 mbar)",
+							"minValue":"800",
+							"maxValue":"2000",
+							"unitCode":"http://qudt.org/vocab/unit#Millibar"
 						}
 					}
 				}

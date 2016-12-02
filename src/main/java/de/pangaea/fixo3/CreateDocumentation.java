@@ -55,7 +55,7 @@ public class CreateDocumentation {
 	private final IRI schemaIRI = IRI.create(base + "schema.rdf");
 	private final IRI ssnIRI = IRI.create(base + "ssn.rdf");
 	private final IRI eypIRI = IRI.create(base + "esonetyellowpages.rdf");
-//	private final IRI fixo3IRI = IRI.create(base + "fixo3.rdf");
+	private final IRI fixo3IRI = IRI.create(base + "fixo3.rdf");
 	private final IRI mergedIRI = IRI.create("http://fixo3.eu/vocab/doc/");
 	
 	private final String fixo3DocFile = "src/main/resources/thesis/fixo3-doc.rdf";
@@ -65,12 +65,12 @@ public class CreateDocumentation {
 		man.addIRIMapper(new SimpleIRIMapper(Schema.ns, schemaIRI));
 		man.addIRIMapper(new SimpleIRIMapper(SSN.ns, ssnIRI));
 		man.addIRIMapper(new SimpleIRIMapper(EYP.ns, eypIRI));
-//		man.addIRIMapper(new SimpleIRIMapper(FIXO3.ns, fixo3IRI));
+		man.addIRIMapper(new SimpleIRIMapper(FIXO3.ns, fixo3IRI));
 	
 		man.loadOntology(schemaIRI);
 		man.loadOntology(ssnIRI);
 		man.loadOntology(eypIRI);
-//		man.loadOntology(fixo3IRI);
+		man.loadOntology(fixo3IRI);
 		
 		OWLOntologyMerger merger = new OWLOntologyMerger(man);
 		OWLOntology ret = merger.createMergedOntology(man, mergedIRI);

@@ -93,6 +93,51 @@
     
 
 
+    <!-- http://esonetyellowpages.com/vocab/CO2Pro -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/CO2Pro">
+        <rdfs:label xml:lang="en">CO2-Pro</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://esonetyellowpages.com/vocab/PartialPressureOfCO2Analyzer"/>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/SensingDevice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/detects"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/746b9db404bec413ab9c469487a98f33"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/observes"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/2dfc4c07a3258b5131d86de3b7dff46b"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/b23090be352a29f2f09add69e7a19f76"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/a9c61ba0cc17d40fe35fb7171c226468"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.esonetyellowpages.com/datasheets/datasheet-psi_gtdpro_1459187085.pdf</rdfs:seeAlso>
+        <rdfs:comment xml:lang="en">PRO OCEANUS Submersible pCO2 Sensor</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/CarbonDioxide -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/CarbonDioxide">
+        <rdfs:label xml:lang="en">Carbon Dioxide</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/FeatureOfInterest"/>
+    </owl:Class>
+    
+
+
     <!-- http://esonetyellowpages.com/vocab/CellSize -->
 
     <owl:Class rdf:about="http://esonetyellowpages.com/vocab/CellSize">
@@ -110,7 +155,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/isProxyFor"/>
-                <owl:allValuesFrom rdf:resource="http://esonetyellowpages.com/vocab/Velocity"/>
+                <owl:allValuesFrom rdf:resource="http://esonetyellowpages.com/vocab/Speed"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Doppler_effect</dc:source>
@@ -124,6 +169,23 @@
     <owl:Class rdf:about="http://esonetyellowpages.com/vocab/Frequency">
         <rdfs:label xml:lang="en">Frequency</rdfs:label>
         <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/Infrared -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/Infrared">
+        <rdfs:label xml:lang="en">Infrared</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Stimulus"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/isProxyFor"/>
+                <owl:allValuesFrom rdf:resource="http://esonetyellowpages.com/vocab/PartialPressure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:source rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wikipedia.org/wiki/Infrared</dc:source>
+        <rdfs:comment xml:lang="en">Infrared (IR) is an invisible radiant energy.</rdfs:comment>
     </owl:Class>
     
 
@@ -146,6 +208,36 @@
     
 
 
+    <!-- http://esonetyellowpages.com/vocab/PartialPressure -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/PartialPressure">
+        <rdfs:label xml:lang="en">Partial Pressure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+                <owl:someValuesFrom rdf:resource="http://esonetyellowpages.com/vocab/CarbonDioxide"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/PartialPressureOfCO2Analyzer -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/PartialPressureOfCO2Analyzer">
+        <rdfs:label xml:lang="en">Partial Pressure of CO2 Analyzer</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/SensingDevice"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/detects"/>
+                <owl:allValuesFrom rdf:resource="http://esonetyellowpages.com/vocab/Infrared"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- http://esonetyellowpages.com/vocab/ProfilingRange -->
 
     <owl:Class rdf:about="http://esonetyellowpages.com/vocab/ProfilingRange">
@@ -155,25 +247,26 @@
     
 
 
-    <!-- http://esonetyellowpages.com/vocab/TemperatureRange -->
+    <!-- http://esonetyellowpages.com/vocab/Speed -->
 
-    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/TemperatureRange">
-        <rdfs:label xml:lang="en">Temperature Range</rdfs:label>
-        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
-    </owl:Class>
-    
-
-
-    <!-- http://esonetyellowpages.com/vocab/Velocity -->
-
-    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/Velocity">
-        <rdfs:label xml:lang="en">Velocity</rdfs:label>
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/Speed">
+        <rdfs:label xml:lang="en">Speed</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/Property"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
                 <owl:someValuesFrom rdf:resource="http://esonetyellowpages.com/vocab/WaterCurrent"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/TemperatureRange -->
+
+    <owl:Class rdf:about="http://esonetyellowpages.com/vocab/TemperatureRange">
+        <rdfs:label xml:lang="en">Temperature Range</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
     </owl:Class>
     
 
@@ -191,12 +284,31 @@
 
     <owl:Class rdf:about="http://esonetyellowpages.com/vocab/WorkhorseQuartermaster150kHzADCP">
         <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP</rdfs:label>
+        <owl:equivalentClass rdf:resource="http://vocab.nerc.ac.uk/collection/L22/current/TOOL0732/"/>
         <rdfs:subClassOf rdf:resource="http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler"/>
         <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/SensingDevice"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
-                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/observes"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/c656387b92a29bb14edd50267ec1dec6"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -208,31 +320,13 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
-                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/3ee84ecb7a3713d2995ea7498f40fee9"/>
+                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/75b8b7fbfaa48dedd3cad8e2908e0805"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
                 <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/34f245a5e0b6fa25d8093543b15a328c"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
-                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/bc278331051ab7f26cd9a38ab5e8d159"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/observes"/>
-                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/da9d4f1ed93c43acc135d6daba0cfe26"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://www.w3.org/ns/ssn/hasMeasurementCapability"/>
-                <owl:hasValue rdf:resource="http://esonetyellowpages.com/vocab/409fda4bcf98680cfea84e736c533f72"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.esonetyellowpages.com/datasheets/datasheet-adcp_whs_150khz_1458583613.pdf</rdfs:seeAlso>
@@ -247,6 +341,12 @@
     
 
 
+    <!-- http://vocab.nerc.ac.uk/collection/L22/current/TOOL0732/ -->
+
+    <owl:Class rdf:about="http://vocab.nerc.ac.uk/collection/L22/current/TOOL0732/"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -255,6 +355,26 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/a9c61ba0cc17d40fe35fb7171c226468 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/a9c61ba0cc17d40fe35fb7171c226468">
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementCapability"/>
+        <rdfs:label xml:lang="en">CO2-Pro Measurement Capability (Measuring Range)</rdfs:label>
+        <ssn:hasMeasurementProperty rdf:resource="http://esonetyellowpages.com/vocab/237d45f1add37bc4d07024fb61161047"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/b23090be352a29f2f09add69e7a19f76 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/b23090be352a29f2f09add69e7a19f76">
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementCapability"/>
+        <rdfs:label xml:lang="en">CO2-Pro Measurement Capability (Operating Depth)</rdfs:label>
+        <ssn:hasMeasurementProperty rdf:resource="http://esonetyellowpages.com/vocab/fc84ea3fd1d982e5c0c767595f89d06a"/>
+    </owl:NamedIndividual>
     
 
 
@@ -303,12 +423,25 @@
     
 
 
-    <!-- http://esonetyellowpages.com/vocab/da9d4f1ed93c43acc135d6daba0cfe26 -->
+    <!-- http://esonetyellowpages.com/vocab/c656387b92a29bb14edd50267ec1dec6 -->
 
-    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/da9d4f1ed93c43acc135d6daba0cfe26">
-        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/Velocity"/>
-        <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Observed Property (Velocity)</rdfs:label>
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/c656387b92a29bb14edd50267ec1dec6">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/Speed"/>
+        <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Observed Property (Speed)</rdfs:label>
         <ssn:isPropertyOf rdf:resource="http://esonetyellowpages.com/vocab/f9211947db29a7c0590ab410a5c5111b"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/edd008b57f0d3693484e8e08a9175530 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/edd008b57f0d3693484e8e08a9175530">
+        <rdf:type rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/ObservationValue"/>
+        <rdfs:label xml:lang="en">Quantitative Value (0 m to 300 m)</rdfs:label>
+        <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</schema:minValue>
+        <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">300.0</schema:maxValue>
+        <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#Meter"/>
     </owl:NamedIndividual>
     
 
@@ -331,6 +464,38 @@
     <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/f9211947db29a7c0590ab410a5c5111b">
         <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/WaterCurrent"/>
         <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Feature of Interest (Water Current)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/fc84ea3fd1d982e5c0c767595f89d06a -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/fc84ea3fd1d982e5c0c767595f89d06a">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/OperatingDepth"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+        <rdfs:label xml:lang="en">CO2-Pro Operating Depth</rdfs:label>
+        <ssn:hasValue rdf:resource="http://esonetyellowpages.com/vocab/edd008b57f0d3693484e8e08a9175530"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/2dfc4c07a3258b5131d86de3b7dff46b -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/2dfc4c07a3258b5131d86de3b7dff46b">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/PartialPressure"/>
+        <rdfs:label xml:lang="en">CO2-Pro Observed Property (Partial Pressure)</rdfs:label>
+        <ssn:isPropertyOf rdf:resource="http://esonetyellowpages.com/vocab/541de5db9a763b1589dfa2381e24f7b1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/237d45f1add37bc4d07024fb61161047 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/237d45f1add37bc4d07024fb61161047">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/MeasuringRange"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+        <rdfs:label xml:lang="en">CO2-Pro Measuring Range</rdfs:label>
+        <ssn:hasValue rdf:resource="http://esonetyellowpages.com/vocab/57d0b03f32d0f07755a542a11b3b0b55"/>
     </owl:NamedIndividual>
     
 
@@ -389,6 +554,28 @@
     
 
 
+    <!-- http://esonetyellowpages.com/vocab/541de5db9a763b1589dfa2381e24f7b1 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/541de5db9a763b1589dfa2381e24f7b1">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/CarbonDioxide"/>
+        <rdfs:label xml:lang="en">CO2-Pro Feature of Interest (Carbon Dioxide)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/57d0b03f32d0f07755a542a11b3b0b55 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/57d0b03f32d0f07755a542a11b3b0b55">
+        <rdf:type rdf:resource="http://schema.org/QuantitativeValue"/>
+        <rdf:type rdf:resource="https://www.w3.org/ns/ssn/ObservationValue"/>
+        <rdfs:label xml:lang="en">Quantitative Value (800 mbar to 2000 mbar)</rdfs:label>
+        <schema:maxValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2000.0</schema:maxValue>
+        <schema:minValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">800.0</schema:minValue>
+        <schema:unitCode rdf:resource="http://qudt.org/vocab/unit#Millibar"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6 -->
 
     <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/6fd421abc092d7996a4bed6f50e582f6">
@@ -405,6 +592,15 @@
         <rdf:type rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
         <rdfs:label xml:lang="en">Workhorse Quartermaster 150 kHz ADCP Max Profiling Range</rdfs:label>
         <ssn:hasValue rdf:resource="http://esonetyellowpages.com/vocab/4021a332eb7b010ed862011f7b84f6ad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/746b9db404bec413ab9c469487a98f33 -->
+
+    <owl:NamedIndividual rdf:about="http://esonetyellowpages.com/vocab/746b9db404bec413ab9c469487a98f33">
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/Infrared"/>
+        <rdfs:label xml:lang="en">CO2-Pro Detected Stimulus (Infrared)</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -468,6 +664,12 @@
     <!-- http://qudt.org/vocab/unit#Meter -->
 
     <owl:NamedIndividual rdf:about="http://qudt.org/vocab/unit#Meter"/>
+    
+
+
+    <!-- http://qudt.org/vocab/unit#Millibar -->
+
+    <owl:NamedIndividual rdf:about="http://qudt.org/vocab/unit#Millibar"/>
 </rdf:RDF>
 
 

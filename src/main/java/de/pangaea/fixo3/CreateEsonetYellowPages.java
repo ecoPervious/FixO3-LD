@@ -25,24 +25,22 @@ import de.pangaea.fixo3.vocab.SSN;
 
 import static de.pangaea.fixo3.vocab.EYP.AcousticDopplerCurrentProfiler;
 import static de.pangaea.fixo3.vocab.EYP.CellSize;
-import static de.pangaea.fixo3.vocab.EYP.CurrentMeter;
 import static de.pangaea.fixo3.vocab.EYP.DopplerEffect;
+import static de.pangaea.fixo3.vocab.EYP.Infrared;
 import static de.pangaea.fixo3.vocab.EYP.WaterCurrent;
+import static de.pangaea.fixo3.vocab.EYP.CarbonDioxide;
 import static de.pangaea.fixo3.vocab.EYP.Frequency;
-import static de.pangaea.fixo3.vocab.EYP.HydroacousticCurrentMeter;
 import static de.pangaea.fixo3.vocab.EYP.MeasuringRange;
-import static de.pangaea.fixo3.vocab.EYP.OceanographicDevice;
 import static de.pangaea.fixo3.vocab.EYP.OperatingDepth;
 import static de.pangaea.fixo3.vocab.EYP.PartialPressureOfCO2Analyzer;
 import static de.pangaea.fixo3.vocab.EYP.ProfilingRange;
-import static de.pangaea.fixo3.vocab.EYP.SoundWave;
 import static de.pangaea.fixo3.vocab.EYP.TemperatureRange;
-import static de.pangaea.fixo3.vocab.EYP.Velocity;
-import static de.pangaea.fixo3.vocab.SSN.ObservationValue;
+import static de.pangaea.fixo3.vocab.EYP.Speed;
+import static de.pangaea.fixo3.vocab.EYP.PartialPressure;
 import static de.pangaea.fixo3.vocab.SSN.MeasurementProperty;
 import static de.pangaea.fixo3.vocab.SSN.FeatureOfInterest;
-import static de.pangaea.fixo3.vocab.SSN.MeasurementCapability;
 import static de.pangaea.fixo3.vocab.SSN.Property;
+import static de.pangaea.fixo3.vocab.SSN.MeasurementCapability;
 import static de.pangaea.fixo3.vocab.SSN.SensingDevice;
 import static de.pangaea.fixo3.vocab.SSN.Stimulus;
 import static de.pangaea.fixo3.vocab.SSN.detects;
@@ -119,9 +117,34 @@ public class CreateEsonetYellowPages {
 		m.addLabel(WaterCurrent, "Water Current");
 		m.addSubClass(WaterCurrent, FeatureOfInterest);
 
-		m.addClass(Velocity);
-		m.addLabel(Velocity, "Velocity");
-		m.addObjectSome(Velocity, isPropertyOf, WaterCurrent);
+		m.addClass(CarbonDioxide);
+		m.addLabel(CarbonDioxide, "Carbon Dioxide");
+		m.addSubClass(CarbonDioxide, FeatureOfInterest);
+
+		m.addClass(Speed);
+		m.addLabel(Speed, "Speed");
+		m.addSubClass(Speed, Property);
+		m.addObjectSome(Speed, isPropertyOf, WaterCurrent);
+
+		m.addClass(PartialPressure);
+		m.addLabel(PartialPressure, "Partial Pressure");
+		m.addSubClass(PartialPressure, Property);
+		m.addObjectSome(PartialPressure, isPropertyOf, CarbonDioxide);
+
+		m.addClass(DopplerEffect);
+		m.addSubClass(DopplerEffect, Stimulus);
+		m.addLabel(DopplerEffect, "Doppler Effect");
+		m.addComment(DopplerEffect,
+				"The Doppler effect (or the Doppler shift) is the change in frequency of a wave (or other periodic event) for an observer moving relative to its source.");
+		m.addSource(DopplerEffect, IRI.create("https://en.wikipedia.org/wiki/Doppler_effect"));
+		m.addObjectAll(DopplerEffect, isProxyFor, Speed);
+
+		m.addClass(Infrared);
+		m.addSubClass(Infrared, Stimulus);
+		m.addLabel(Infrared, "Infrared");
+		m.addComment(Infrared, "Infrared (IR) is an invisible radiant energy.");
+		m.addSource(Infrared, IRI.create("https://en.wikipedia.org/wiki/Infrared"));
+		m.addObjectAll(Infrared, isProxyFor, PartialPressure);
 
 		m.addClass(AcousticDopplerCurrentProfiler);
 		m.addLabel(AcousticDopplerCurrentProfiler, "Acoustic Doppler Current Profiler");
@@ -132,18 +155,10 @@ public class CreateEsonetYellowPages {
 		m.addObjectAll(AcousticDopplerCurrentProfiler, detects, DopplerEffect);
 		m.addSubClass(AcousticDopplerCurrentProfiler, SensingDevice);
 
-		m.addClass(DopplerEffect);
-		m.addLabel(DopplerEffect, "Doppler Effect");
-		m.addComment(DopplerEffect,
-				"The Doppler effect (or the Doppler shift) is the change in frequency of a wave (or other periodic event) for an observer moving relative to its source.");
-		m.addSource(DopplerEffect, IRI.create("https://en.wikipedia.org/wiki/Doppler_effect"));
-		m.addSubClass(DopplerEffect, Stimulus);
-		m.addObjectAll(DopplerEffect, isProxyFor, Velocity);
-
-		// m.addClass(PartialPressureOfCO2Analyzer);
-		// m.addSubClass(PartialPressureOfCO2Analyzer, SensingDevice);
-		// m.addLabel(PartialPressureOfCO2Analyzer, "Partial Pressure of CO2
-		// Analyzer");
+		m.addClass(PartialPressureOfCO2Analyzer);
+		m.addLabel(PartialPressureOfCO2Analyzer, "Partial Pressure of CO2 Analyzer");
+		m.addObjectAll(PartialPressureOfCO2Analyzer, detects, Infrared);
+		m.addSubClass(PartialPressureOfCO2Analyzer, SensingDevice);
 
 		JsonReader jr = Json.createReader(new FileReader(new File(eypDevicesFile)));
 		JsonArray ja = jr.readArray();
@@ -153,30 +168,38 @@ public class CreateEsonetYellowPages {
 			String label = jo.getString("label");
 			String comment = jo.getString("comment");
 			String seeAlso = jo.getString("seeAlso");
+			JsonArray equivalentClasses = jo.getJsonArray("equivalentClasses");
 			JsonArray subClasses = jo.getJsonArray("subClasses");
 
-			addDevice(name, label, comment, seeAlso, subClasses);
+			addDeviceType(name, label, comment, seeAlso, equivalentClasses, subClasses);
 		}
 
 		m.save(eypFile);
 		m.saveInferred(eypInferredFile);
 	}
 
-	private void addDevice(String name, String label, String comment, String seeAlso, JsonArray subClasses) {
-		IRI deviceIRI = IRI.create(name);
+	private void addDeviceType(String name, String label, String comment, String seeAlso, JsonArray equivalentClasses,
+			JsonArray subClasses) {
+		IRI deviceTypeIRI = IRI.create(name);
 
-		m.addClass(deviceIRI);
-		m.addLabel(deviceIRI, label);
-		m.addComment(deviceIRI, comment);
-		m.addSeeAlso(deviceIRI, seeAlso);
+		m.addClass(deviceTypeIRI);
+		m.addLabel(deviceTypeIRI, label);
+		m.addComment(deviceTypeIRI, comment);
+		m.addSeeAlso(deviceTypeIRI, seeAlso);
 
 		// Default sub class, though implicit with curated sensing device type
 		// hierarchy
-		m.addSubClass(deviceIRI, SSN.SensingDevice);
+		m.addSubClass(deviceTypeIRI, SSN.SensingDevice);
+
+		for (JsonObject equivalentClass : equivalentClasses.getValuesAs(JsonObject.class)) {
+			if (equivalentClass.containsKey("type")) {
+				m.addEquivalentClass(deviceTypeIRI, IRI.create(equivalentClass.getString("type")));
+			}
+		}
 
 		for (JsonObject subClass : subClasses.getValuesAs(JsonObject.class)) {
 			if (subClass.containsKey("type")) {
-				m.addSubClass(deviceIRI, IRI.create(subClass.getString("type")));
+				m.addSubClass(deviceTypeIRI, IRI.create(subClass.getString("type")));
 			} else if (subClass.containsKey("observes")) {
 				JsonObject observesJson = subClass.getJsonObject("observes");
 				String propertyLabel = observesJson.getString("label");
@@ -190,14 +213,14 @@ public class CreateEsonetYellowPages {
 				IRI featureIRI = IRI.create(EYP.ns.toString() + md5Hex(featureLabel));
 				IRI featureTypeIRI = IRI.create(featureType);
 
-				m.addObjectValue(deviceIRI, observes, propertyIRI);
+				m.addObjectValue(deviceTypeIRI, observes, propertyIRI);
 				m.addIndividual(propertyIRI);
 				m.addType(propertyIRI, propertyTypeIRI);
 				m.addLabel(propertyIRI, propertyLabel);
 				m.addIndividual(featureIRI);
 				m.addType(featureIRI, featureTypeIRI);
 				m.addLabel(featureIRI, featureLabel);
-				m.addObjectAssertion(propertyIRI, isPropertyOf, featureIRI);				
+				m.addObjectAssertion(propertyIRI, isPropertyOf, featureIRI);
 			} else if (subClass.containsKey("detects")) {
 				JsonObject detectsJson = subClass.getJsonObject("detects");
 				String stimulusLabel = detectsJson.getString("label");
@@ -206,7 +229,7 @@ public class CreateEsonetYellowPages {
 				IRI stimulusIRI = IRI.create(EYP.ns.toString() + md5Hex(stimulusLabel));
 				IRI stimulusTypeIRI = IRI.create(stimulusType);
 
-				m.addObjectValue(deviceIRI, detects, stimulusIRI);
+				m.addObjectValue(deviceTypeIRI, detects, stimulusIRI);
 				m.addIndividual(stimulusIRI);
 				m.addType(stimulusIRI, stimulusTypeIRI);
 				m.addLabel(stimulusIRI, stimulusLabel);
@@ -224,7 +247,7 @@ public class CreateEsonetYellowPages {
 				IRI propertyTypeIRI = IRI.create(propertyType);
 				IRI valueIRI = IRI.create(EYP.ns.toString() + md5Hex(valueLabel));
 
-				m.addObjectValue(deviceIRI, hasMeasurementCapability, capabilityIRI);
+				m.addObjectValue(deviceTypeIRI, hasMeasurementCapability, capabilityIRI);
 				m.addIndividual(capabilityIRI);
 				m.addType(capabilityIRI, MeasurementCapability);
 				m.addLabel(capabilityIRI, capabilityLabel);

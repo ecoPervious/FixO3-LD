@@ -2,7 +2,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ssn: <https://www.w3.org/ns/ssn/>
 
-SELECT ?sensorId ?sensorLabel ?propertyLabel ?stimulusLabel
+SELECT ?sensorId ?sensorLabel ?propertyLabel ?featureLabel ?stimulusLabel
 WHERE {
 	<OBS_ID> rdf:type ssn:Platform .
     <OBS_ID> ssn:attachedSystem ?sensorId .
@@ -10,6 +10,9 @@ WHERE {
     ?sensorId ssn:observes ?propertyId .
     ?propertyId rdf:type ?propertyTypeId .
     ?propertyTypeId rdfs:label ?propertyLabel .
+    ?propertyId ssn:isPropertyOf ?featureId .
+    ?featureId rdf:type ?featureTypeId .
+    ?featureTypeId rdfs:label ?featureLabel .
     ?sensorId ssn:detects ?stimulusId .
     ?stimulusId rdf:type ?stimulusTypeId .
     ?stimulusTypeId rdfs:label ?stimulusLabel .

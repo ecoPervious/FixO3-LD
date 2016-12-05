@@ -25,6 +25,9 @@ body {
 	width: 350px;
     height: 350px;
 }
+#sparql {
+	text-align: right;
+}
 #sensors {
 	float: left;
 	margin-top: 20px;
@@ -59,6 +62,38 @@ body {
 }
 .modalDialog > div {
     width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+/*   
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+*/
+}
+.modalDialogSparql {
+	position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 200ms ease-in;
+    -moz-transition: opacity 200ms ease-in;
+    transition: opacity 200ms ease-in;
+    pointer-events: none;
+}
+.modalDialogSparql:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+.modalDialogSparql > div {
+    width: 600px;
     position: relative;
     margin: 10% auto;
     padding: 5px 20px 13px 20px;

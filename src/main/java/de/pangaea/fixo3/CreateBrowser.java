@@ -63,7 +63,7 @@ public class CreateBrowser {
 
 		Set<String> featuresBlackList = new HashSet<String>();
 		featuresBlackList.add("Feature of Interest");
-		
+
 		Set<String> stimulusBlackList = new HashSet<String>();
 		stimulusBlackList.add("Stimulus");
 
@@ -75,8 +75,9 @@ public class CreateBrowser {
 		observatories.append("</head>");
 		observatories.append("<body>");
 
-		QueryExecution qe1 = QueryExecutionFactory.sparqlService(service,
-				FileUtils.readFileToString(new File("src/main/resources/sparql/browser-query1.rq")));
+		String q1 = FileUtils.readFileToString(new File("src/main/resources/sparql/browser-query1.rq"));
+
+		QueryExecution qe1 = QueryExecutionFactory.sparqlService(service, q1);
 
 		ResultSet rs1 = qe1.execSelect();
 
@@ -95,7 +96,7 @@ public class CreateBrowser {
 
 			observatories.append("<div class=\"platform\">");
 			observatories.append("<a href=\"" + obsLocalName + ".html\">");
-			observatories.append("<strong>");
+			observatories.append("<strong title=\"" + obsId + "\">");
 			observatories.append(obsLabel);
 			observatories.append("</strong>");
 			observatories.append("</a>");
@@ -191,7 +192,7 @@ public class CreateBrowser {
 				observatory.append(observedPropertyLabel);
 				observatory.append("</td>");
 				observatory.append("</tr>");
-				
+
 				observatory.append("<tr>");
 				observatory.append("<td>");
 				observatory.append("<i>Monitored Feature</i>");
@@ -213,7 +214,7 @@ public class CreateBrowser {
 				observatory.append("</table>");
 
 				observatory.append("<h5>Measurement Capabilities</h5>");
-				
+
 				observatory.append("<table>");
 
 				QueryExecution qe3 = QueryExecutionFactory.sparqlService(service,
@@ -326,15 +327,18 @@ public class CreateBrowser {
 
 				ResultSet rs5 = qe5.execSelect();
 
+				if (!rs5.hasNext()) 
+					continue;
+				
 				List<String> times = new ArrayList<String>();
 				List<String> values = new ArrayList<String>();
-				
+
 				while (rs5.hasNext()) {
 					QuerySolution qs = rs5.next();
 					String time = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss").print(ISODateTimeFormat.dateTime()
 							.withOffsetParsed().parseDateTime(qs.getLiteral("time").getLexicalForm()));
 					String value = qs.getLiteral("value").getLexicalForm();
-					
+
 					times.add(time);
 					values.add(value);
 				}
@@ -344,28 +348,28 @@ public class CreateBrowser {
 				observatory.append("var data = [");
 				observatory.append("{");
 				observatory.append("x: [");
-				
+
 				boolean first = true;
-				
+
 				for (String time : times) {
 					if (!first)
 						observatory.append(",");
 					observatory.append("'" + time + "'");
 					first = false;
 				}
-				
+
 				observatory.append("],");
 				observatory.append("y: [");
-				
+
 				first = true;
-				
+
 				for (String value : values) {
 					if (!first)
 						observatory.append(",");
 					observatory.append(value);
 					first = false;
 				}
-				
+
 				observatory.append("],");
 				observatory.append("type: 'scatter'");
 				observatory.append("}");
@@ -373,7 +377,7 @@ public class CreateBrowser {
 				observatory.append("Plotly.newPlot('plot" + plotCount + "', data);");
 				observatory.append("</script>");
 				observatory.append("</div>");
-				
+
 				plotCount++;
 			}
 
@@ -392,6 +396,16 @@ public class CreateBrowser {
 
 		qe1.close();
 
+		observatories.append("<div id=\"sparql\">");
+		observatories.append("<a href=\"#openModal\">Show SPARQL</a>");
+		observatories.append("</div>");
+		observatories.append("<div id=\"openModal\" class=\"modalDialogSparql\">");
+		observatories.append("<div>");
+		observatories.append("<h2>SPARQL</h2>");
+		observatories.append("<a href=\"#close\" title=\"Close\" class=\"close\">X</a>");
+		observatories.append(q1.replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("  ", "&nbsp;&nbsp;")
+				.replaceAll("\n", "<br/>"));
+		observatories.append("</div>");
 		observatories.append("</div>");
 		observatories.append("</body>");
 		observatories.append("</html>");

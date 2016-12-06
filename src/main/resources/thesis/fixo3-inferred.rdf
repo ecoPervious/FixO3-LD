@@ -127,16 +127,16 @@
     <rdf:Description rdf:about="https://www.w3.org/ns/ssn/deployedOnPlatform">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/inDeployment"/>
-        <owl:inverseOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/deployedOnPlatform"/>
-            </rdf:Description>
-        </owl:inverseOf>
         <owl:equivalentProperty>
             <rdf:Description>
                 <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/inDeployment"/>
             </rdf:Description>
         </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/deployedOnPlatform"/>
+            </rdf:Description>
+        </owl:inverseOf>
     </rdf:Description>
     
 
@@ -146,16 +146,16 @@
     <rdf:Description rdf:about="https://www.w3.org/ns/ssn/deployedSystem">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasDeployment"/>
-        <owl:equivalentProperty>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasDeployment"/>
-            </rdf:Description>
-        </owl:equivalentProperty>
         <owl:inverseOf>
             <rdf:Description>
                 <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/deployedSystem"/>
             </rdf:Description>
         </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasDeployment"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
     </rdf:Description>
     
 
@@ -190,16 +190,16 @@
 
     <rdf:Description rdf:about="https://www.w3.org/ns/ssn/featureInObservation">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:equivalentProperty>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/featureOfInterest"/>
-            </rdf:Description>
-        </owl:equivalentProperty>
         <owl:inverseOf>
             <rdf:Description>
                 <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/featureInObservation"/>
             </rdf:Description>
         </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/featureOfInterest"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
     </rdf:Description>
     
 
@@ -209,16 +209,16 @@
     <rdf:Description rdf:about="https://www.w3.org/ns/ssn/featureOfInterest">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/featureInObservation"/>
-        <owl:equivalentProperty>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/featureInObservation"/>
-            </rdf:Description>
-        </owl:equivalentProperty>
         <owl:inverseOf>
             <rdf:Description>
                 <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/featureOfInterest"/>
             </rdf:Description>
         </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/featureInObservation"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
     </rdf:Description>
     
 
@@ -307,16 +307,16 @@
 
     <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasOperatingProperty">
         <rdfs:subPropertyOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
-        <owl:inverseOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasOperatingProperty"/>
-            </rdf:Description>
-        </owl:inverseOf>
         <rdfs:subPropertyOf>
             <rdf:Description>
                 <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
             </rdf:Description>
         </rdfs:subPropertyOf>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasOperatingProperty"/>
+            </rdf:Description>
+        </owl:inverseOf>
     </rdf:Description>
     
 
@@ -375,16 +375,16 @@
 
     <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasSurvivalProperty">
         <rdfs:subPropertyOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
-        <owl:inverseOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasSurvivalProperty"/>
-            </rdf:Description>
-        </owl:inverseOf>
         <rdfs:subPropertyOf>
             <rdf:Description>
                 <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
             </rdf:Description>
         </rdfs:subPropertyOf>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasSurvivalProperty"/>
+            </rdf:Description>
+        </owl:inverseOf>
     </rdf:Description>
     
 
@@ -393,16 +393,16 @@
 
     <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasSurvivalRange">
         <rdfs:subPropertyOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
         <owl:inverseOf>
             <rdf:Description>
                 <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasSurvivalRange"/>
             </rdf:Description>
         </owl:inverseOf>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </rdf:Description>
     
 
@@ -412,16 +412,16 @@
     <rdf:Description rdf:about="https://www.w3.org/ns/ssn/hasValue">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isValueOf"/>
-        <owl:inverseOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasValue"/>
-            </rdf:Description>
-        </owl:inverseOf>
         <owl:equivalentProperty>
             <rdf:Description>
                 <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isValueOf"/>
             </rdf:Description>
         </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasValue"/>
+            </rdf:Description>
+        </owl:inverseOf>
     </rdf:Description>
     
 
@@ -449,16 +449,16 @@
 
     <rdf:Description rdf:about="https://www.w3.org/ns/ssn/implements">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:equivalentProperty>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/implementedBy"/>
-            </rdf:Description>
-        </owl:equivalentProperty>
         <owl:inverseOf>
             <rdf:Description>
                 <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/implements"/>
             </rdf:Description>
         </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/implementedBy"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
     </rdf:Description>
     
 
@@ -480,16 +480,16 @@
 
     <rdf:Description rdf:about="https://www.w3.org/ns/ssn/inDeployment">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/inDeployment"/>
-            </rdf:Description>
-        </owl:inverseOf>
         <owl:equivalentProperty>
             <rdf:Description>
                 <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/deployedOnPlatform"/>
             </rdf:Description>
         </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/inDeployment"/>
+            </rdf:Description>
+        </owl:inverseOf>
     </rdf:Description>
     
 
@@ -499,16 +499,16 @@
     <rdf:Description rdf:about="https://www.w3.org/ns/ssn/isProducedBy">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/produces"/>
-        <owl:equivalentProperty>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/produces"/>
-            </rdf:Description>
-        </owl:equivalentProperty>
         <owl:inverseOf>
             <rdf:Description>
                 <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isProducedBy"/>
             </rdf:Description>
         </owl:inverseOf>
+        <owl:equivalentProperty>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/produces"/>
+            </rdf:Description>
+        </owl:equivalentProperty>
     </rdf:Description>
     
 
@@ -548,16 +548,16 @@
 
     <rdf:Description rdf:about="https://www.w3.org/ns/ssn/isValueOf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isValueOf"/>
-            </rdf:Description>
-        </owl:inverseOf>
         <owl:equivalentProperty>
             <rdf:Description>
                 <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/hasValue"/>
             </rdf:Description>
         </owl:equivalentProperty>
+        <owl:inverseOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isValueOf"/>
+            </rdf:Description>
+        </owl:inverseOf>
     </rdf:Description>
     
 
@@ -718,16 +718,16 @@
 
     <rdf:Description rdf:about="https://www.w3.org/ns/ssn/qualityOfObservation">
         <rdfs:subPropertyOf rdf:resource="https://www.w3.org/ns/ssn/hasProperty"/>
-        <rdfs:subPropertyOf>
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
-            </rdf:Description>
-        </rdfs:subPropertyOf>
         <owl:inverseOf>
             <rdf:Description>
                 <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/qualityOfObservation"/>
             </rdf:Description>
         </owl:inverseOf>
+        <rdfs:subPropertyOf>
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="https://www.w3.org/ns/ssn/isPropertyOf"/>
+            </rdf:Description>
+        </rdfs:subPropertyOf>
     </rdf:Description>
     
 
@@ -802,7 +802,7 @@
     <!-- http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler -->
 
     <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler">
-        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/SensingDevice"/>
+        <rdfs:subClassOf rdf:resource="http://esonetyellowpages.com/vocab/HydroacousticCurrentMeter"/>
     </rdf:Description>
     
 
@@ -843,6 +843,14 @@
 
     <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/Frequency">
         <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/MeasurementProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://esonetyellowpages.com/vocab/HydroacousticCurrentMeter -->
+
+    <rdf:Description rdf:about="http://esonetyellowpages.com/vocab/HydroacousticCurrentMeter">
+        <rdfs:subClassOf rdf:resource="https://www.w3.org/ns/ssn/SensingDevice"/>
     </rdf:Description>
     
 
@@ -2910,6 +2918,7 @@
 
     <owl:Thing rdf:about="http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175">
         <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/AcousticDopplerCurrentProfiler"/>
+        <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/HydroacousticCurrentMeter"/>
         <rdf:type rdf:resource="http://esonetyellowpages.com/vocab/WorkhorseQuartermaster150kHzADCP"/>
         <rdf:type rdf:resource="http://vocab.nerc.ac.uk/collection/L22/current/TOOL0732/"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>

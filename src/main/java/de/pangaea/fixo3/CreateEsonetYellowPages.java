@@ -24,6 +24,7 @@ import de.pangaea.fixo3.vocab.EYP;
 import de.pangaea.fixo3.vocab.SSN;
 
 import static de.pangaea.fixo3.vocab.EYP.AcousticDopplerCurrentProfiler;
+import static de.pangaea.fixo3.vocab.EYP.HydroacousticCurrentMeter;
 import static de.pangaea.fixo3.vocab.EYP.CellSize;
 import static de.pangaea.fixo3.vocab.EYP.DopplerEffect;
 import static de.pangaea.fixo3.vocab.EYP.Infrared;
@@ -153,12 +154,18 @@ public class CreateEsonetYellowPages {
 		m.addComment(AcousticDopplerCurrentProfiler,
 				"An acoustic Doppler current profiler (ADCP) is a hydroacoustic current meter similar to a sonar, attempting to measure water current velocities over a depth range using the Doppler effect of sound waves scattered back from particles within the water column.");
 		m.addObjectAll(AcousticDopplerCurrentProfiler, detects, DopplerEffect);
-		m.addSubClass(AcousticDopplerCurrentProfiler, SensingDevice);
+		m.addObjectAll(AcousticDopplerCurrentProfiler, observes, Speed);
+		m.addSubClass(AcousticDopplerCurrentProfiler, HydroacousticCurrentMeter);
 
 		m.addClass(PartialPressureOfCO2Analyzer);
 		m.addLabel(PartialPressureOfCO2Analyzer, "Partial Pressure of CO2 Analyzer");
 		m.addObjectAll(PartialPressureOfCO2Analyzer, detects, Infrared);
+		m.addObjectAll(PartialPressureOfCO2Analyzer, observes, PartialPressure);
 		m.addSubClass(PartialPressureOfCO2Analyzer, SensingDevice);
+		
+		m.addClass(HydroacousticCurrentMeter);
+		m.addLabel(HydroacousticCurrentMeter, "Hydroacoustic Current Meter");
+		m.addSubClass(HydroacousticCurrentMeter, SensingDevice);
 
 		JsonReader jr = Json.createReader(new FileReader(new File(eypDevicesFile)));
 		JsonArray ja = jr.readArray();
@@ -189,7 +196,7 @@ public class CreateEsonetYellowPages {
 
 		// Default sub class, though implicit with curated sensing device type
 		// hierarchy
-		m.addSubClass(deviceTypeIRI, SSN.SensingDevice);
+//		m.addSubClass(deviceTypeIRI, SSN.SensingDevice);
 
 		for (JsonObject equivalentClass : equivalentClasses.getValuesAs(JsonObject.class)) {
 			if (equivalentClass.containsKey("type")) {

@@ -50,6 +50,7 @@ public class EYP {
 	public static final IRI DopplerEffect = c("DopplerEffect");
 	public static final IRI Infrared = c("Infrared");
 	public static final IRI AcousticDopplerCurrentProfiler = c("AcousticDopplerCurrentProfiler");
+	public static final IRI HydroacousticCurrentMeter = c("HydroacousticCurrentMeter");
 	public static final IRI PartialPressureOfCO2Analyzer = c("PartialPressureOfCO2Analyzer");
 
 	private static IRI c(String suffix) {

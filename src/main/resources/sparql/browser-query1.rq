@@ -4,6 +4,7 @@ PREFIX ssn: <https://www.w3.org/ns/ssn/>
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX schema: <http://schema.org/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX fixo3: <http://fixo3.eu/vocab/>
 
 SELECT ?obsId ?obsLabel ?obsTitle ?obsComment ?obsLocation
 WHERE {
@@ -11,7 +12,11 @@ WHERE {
   ?obsId rdfs:label ?obsLabel .
   ?obsId dc:title ?obsTitle .
   ?obsId rdfs:comment ?obsComment .
-  ?obsId schema:location [ geo:hasGeometry [ geo:asWKT ?obsLocation ] ] .
+  ?obsId schema:location [ 
+    geo:hasGeometry [ 
+      geo:asWKT ?obsLocation 
+    ] 
+  ] .
   
   FILTER (datatype(?obsLocation) = geo:wktLiteral)
 }

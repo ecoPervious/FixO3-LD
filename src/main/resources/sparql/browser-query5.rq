@@ -3,14 +3,26 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ssn: <https://www.w3.org/ns/ssn/>
 PREFIX schema: <http://schema.org/>
 PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX eyp: <http://esonetyellowpages.com/vocab/>
+PREFIX fixo3: <http://fixo3.eu/vocab/>
 
 SELECT ?time ?value ?unit
 WHERE {
   [
   	rdf:type ssn:Observation ;
-    ssn:observedBy <SENSOR_ID> ;
-    ssn:observationResultTime [ time:inXSDDateTime ?time ] ; 
-    ssn:observationResult [ ssn:hasValue [ schema:value ?value; schema:unitCode ?unit ] ]
+    ssn:observedBy SENSOR_ID ;
+    ssn:featureOfInterest FEATURE_ID ;
+    ssn:observedProperty PROPERTY_ID ;
+    ssn:fromStimulus STIMULUS_ID ;
+    ssn:observationResultTime [ 
+      time:inXSDDateTime ?time 
+    ] ; 
+    ssn:observationResult [ 
+      ssn:hasValue [ 
+        schema:value ?value; 
+        schema:unitCode ?unit 
+      ] 
+    ]
   ]
 }
 ORDER BY ?time

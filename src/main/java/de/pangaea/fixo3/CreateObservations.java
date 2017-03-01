@@ -62,7 +62,7 @@ public class CreateObservations {
 	 "src/main/resources/thesis/e2-m3a-adcp-horizontal-current-speed-monthly.csv";
 	 private static final DateTime skipBefore = new DateTime(2011, 5, 1, 0, 0,
 	 0);
-	 private static final Double skipDepth = 253.0;
+	 private static final Double skipDepth = Double.valueOf(253.0);
 	 Resource sensorId =
 	 ResourceFactory.createResource("http://fixo3.eu/vocab/0195d649bded6f89d28c061b55b4b175");
 	 Resource propertyId = ResourceFactory
@@ -79,7 +79,7 @@ public class CreateObservations {
 	// "src/main/resources/thesis/pap-pco2.csv";
 	// private static final DateTime skipBefore = new DateTime(2010, 1, 1, 0, 0,
 	// 0);
-	// private static final Double skipDepth = 0.0;
+	// private static final Double skipDepth = Double.valueOf(0.0);
 	// Resource sensorId =
 	// ResourceFactory.createResource("http://fixo3.eu/vocab/45767d1518b17d76ed77fba69ce8aba1");
 	// Resource propertyId = ResourceFactory
@@ -128,8 +128,8 @@ public class CreateObservations {
 					continue;
 
 				Double depth = Double.valueOf(row[1]);
-
-				if (depth == skipDepth)
+				
+				if (depth.equals(skipDepth))
 					continue;
 
 				Double speed = Double.valueOf(row[2]);

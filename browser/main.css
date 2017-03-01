@@ -25,7 +25,7 @@ body {
 	width: 350px;
     height: 350px;
 }
-#sparql {
+#action {
 	text-align: right;
 }
 #sensors {
@@ -73,7 +73,7 @@ body {
     background: -o-linear-gradient(#fff, #999);
 */
 }
-.modalDialogSparql {
+.modalDialogPopUp {
 	position: fixed;
     font-family: Arial, Helvetica, sans-serif;
     top: 0;
@@ -88,13 +88,15 @@ body {
     transition: opacity 200ms ease-in;
     pointer-events: none;
 }
-.modalDialogSparql:target {
+.modalDialogPopUp:target {
     opacity: 1;
     pointer-events: auto;
 }
-.modalDialogSparql > div {
+.modalDialogPopUp > div {
 	font-size: 14px;
     width: 800px;
+    height: 600px;
+    overflow: auto; 
     position: relative;
     margin: 10% auto;
     padding: 20px 20px 13px 20px;
@@ -111,9 +113,9 @@ body {
     color: #FFFFFF;
     line-height: 25px;
     position: absolute;
-    right: -12px;
+    right: 15px;
     text-align: center;
-    top: -10px;
+    top: 10px;
     width: 24px;
     text-decoration: none;
     font-weight: bold;

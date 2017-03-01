@@ -1,0 +1,28 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ssn: <https://www.w3.org/ns/ssn/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX schema: <http://schema.org/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX fixo3: <http://fixo3.eu/vocab/>
+
+CONSTRUCT {
+  ?obsId rdf:type ssn:Platform .
+  ?obsId rdfs:label ?obsLabel .
+  ?obsId dc:title ?obsTitle .
+  ?obsId rdfs:comment ?obsComment .
+  ?obsId schema:location ?locationId . 
+  ?locationId geo:hasGeometry ?geometryId . 
+  ?geometryId geo:asWKT ?obsLocation . 
+}
+WHERE {
+  ?obsId rdf:type ssn:Platform .
+  ?obsId rdfs:label ?obsLabel .
+  ?obsId dc:title ?obsTitle .
+  ?obsId rdfs:comment ?obsComment .
+  ?obsId schema:location ?locationId . 
+  ?locationId geo:hasGeometry ?geometryId . 
+  ?geometryId geo:asWKT ?obsLocation . 
+  
+  FILTER (datatype(?obsLocation) = geo:wktLiteral)
+}

@@ -1,0 +1,38 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ssn: <https://www.w3.org/ns/ssn/>
+PREFIX schema: <http://schema.org/>
+PREFIX unit: <http://qudt.org/vocab/unit#>
+PREFIX eyp: <http://esonetyellowpages.com/vocab/>
+PREFIX qudt: <http://qudt.org/schema/qudt#>
+PREFIX fixo3: <http://fixo3.eu/vocab/>
+
+CONSTRUCT {
+  SENSOR_ID rdf:type ssn:SensingDevice .
+  SENSOR_ID ssn:hasMeasurementCapability ?capabilityId . 
+  ?capabilityId ssn:hasMeasurementProperty ?propertyId . 
+  ?propertyId rdfs:label ?propertyLabel . 
+  ?propertyId ssn:hasValue ?ov . 
+  ?ov rdf:type ?vt .
+  ?ov schema:unitCode ?unitId .
+  ?unitId qudt:symbol ?unitSymbol .
+  ?ov schema:value ?value .
+  ?ov schema:minValue ?minValue . 
+  ?ov schema:maxValue ?maxValue .
+}
+WHERE {
+  SENSOR_ID rdf:type ssn:SensingDevice .
+  SENSOR_ID ssn:hasMeasurementCapability ?capabilityId . 
+  ?capabilityId ssn:hasMeasurementProperty ?propertyId . 
+  ?propertyId rdfs:label ?propertyLabel . 
+  ?propertyId ssn:hasValue ?ov . 
+  ?ov rdf:type ?vt .
+  ?ov schema:unitCode ?unitId .
+  ?unitId qudt:symbol ?unitSymbol .
+  
+  OPTIONAL { ?ov schema:value ?value } .
+  OPTIONAL { ?ov schema:minValue ?minValue . ?ov schema:maxValue ?maxValue } .
+
+  FILTER(?vt = ssn:ObservationValue)
+}
+ORDER BY ?propertyLabel

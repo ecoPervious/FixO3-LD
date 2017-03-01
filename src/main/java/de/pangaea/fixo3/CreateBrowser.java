@@ -19,16 +19,16 @@ package de.pangaea.fixo3;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.StringWriter;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
 import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
+import org.apache.jena.rdf.model.Model;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.ISODateTimeFormat;
 
@@ -142,10 +142,30 @@ public class CreateBrowser {
 
 			observatory.append("<br/>");
 
-			observatory.append("<div id=\"sparql\">");
+			String q1c = FileUtils.readFileToString(new File("src/main/resources/sparql/browser-query1c.rq"))
+					.replaceAll("\\?obsId", obsId.replaceAll("http://fixo3.eu/vocab/", "fixo3:"));
+
+			QueryExecution qe1c = QueryExecutionFactory.sparqlService(service, q1c);
+			Model m1c = qe1c.execConstruct();
+			StringWriter sw1c = new StringWriter();
+			m1c.write(sw1c, "Turtle");
+			m1c.close();
+
+			observatory.append("<div id=\"action\">");
+			observatory.append("<a href=\"#openModal" + (++openModalCount) + "\">Show RDF</a>");
+			observatory.append("</div>");
+			observatory.append("<div id=\"openModal" + (openModalCount) + "\" class=\"modalDialogPopUp\">");
+			observatory.append("<div>");
+			observatory.append("<a href=\"#close\" title=\"Close\" class=\"close\">X</a>");
+			observatory.append(sw1c.toString().replaceAll("<", "&lt;").replaceAll(">", "&gt;")
+					.replaceAll("  ", "&nbsp;&nbsp;").replaceAll("\n", "<br/>"));
+			observatory.append("</div>");
+			observatory.append("</div>");
+
+			observatory.append("<div id=\"action\">");
 			observatory.append("<a href=\"#openModal" + (++openModalCount) + "\">Show SPARQL</a>");
 			observatory.append("</div>");
-			observatory.append("<div id=\"openModal" + (openModalCount) + "\" class=\"modalDialogSparql\">");
+			observatory.append("<div id=\"openModal" + (openModalCount) + "\" class=\"modalDialogPopUp\">");
 			observatory.append("<div>");
 			observatory.append("<a href=\"#close\" title=\"Close\" class=\"close\">X</a>");
 			observatory.append(q1.replaceAll("SELECT\\s\\?obsId", "SELECT")
@@ -220,10 +240,31 @@ public class CreateBrowser {
 
 				observatory.append("<br/>");
 
-				observatory.append("<div id=\"sparql\">");
+				String q2c = FileUtils.readFileToString(new File("src/main/resources/sparql/browser-query2c.rq"))
+						.replaceAll("OBS_ID", obsId.replaceAll("http://fixo3.eu/vocab/", "fixo3:"))
+						.replaceAll("\\?sensorId", sensorId.replaceAll("http://fixo3.eu/vocab/", "fixo3:"));
+
+				QueryExecution qe2c = QueryExecutionFactory.sparqlService(service, q2c);
+				Model m2c = qe2c.execConstruct();
+				StringWriter sw2c = new StringWriter();
+				m2c.write(sw2c, "Turtle");
+				m2c.close();
+
+				observatory.append("<div id=\"action\">");
+				observatory.append("<a href=\"#openModal" + (++openModalCount) + "\">Show RDF</a>");
+				observatory.append("</div>");
+				observatory.append("<div id=\"openModal" + (openModalCount) + "\" class=\"modalDialogPopUp\">");
+				observatory.append("<div>");
+				observatory.append("<a href=\"#close\" title=\"Close\" class=\"close\">X</a>");
+				observatory.append(sw2c.toString().replaceAll("<", "&lt;").replaceAll(">", "&gt;")
+						.replaceAll("  ", "&nbsp;&nbsp;").replaceAll("\n", "<br/>"));
+				observatory.append("</div>");
+				observatory.append("</div>");
+
+				observatory.append("<div id=\"action\">");
 				observatory.append("<a href=\"#openModal" + (++openModalCount) + "\">Show SPARQL</a>");
 				observatory.append("</div>");
-				observatory.append("<div id=\"openModal" + (openModalCount) + "\" class=\"modalDialogSparql\">");
+				observatory.append("<div id=\"openModal" + (openModalCount) + "\" class=\"modalDialogPopUp\">");
 				observatory.append("<div>");
 				observatory.append("<a href=\"#close\" title=\"Close\" class=\"close\">X</a>");
 				observatory.append(q2.replaceAll("SELECT\\s\\?sensorId", "SELECT")
@@ -336,13 +377,33 @@ public class CreateBrowser {
 
 				observatory.append("</table>");
 				observatory.append("</div>");
-				
+
 				observatory.append("<br/>");
 
-				observatory.append("<div id=\"sparql\">");
+				String q3c = FileUtils.readFileToString(new File("src/main/resources/sparql/browser-query3c.rq"))
+						.replaceAll("SENSOR_ID", sensorId.replaceAll("http://fixo3.eu/vocab/", "fixo3:"));
+
+				QueryExecution qe3c = QueryExecutionFactory.sparqlService(service, q3c);
+				Model m3c = qe3c.execConstruct();
+				StringWriter sw3c = new StringWriter();
+				m3c.write(sw3c, "Turtle");
+				m3c.close();
+
+				observatory.append("<div id=\"action\">");
+				observatory.append("<a href=\"#openModal" + (++openModalCount) + "\">Show RDF</a>");
+				observatory.append("</div>");
+				observatory.append("<div id=\"openModal" + (openModalCount) + "\" class=\"modalDialogPopUp\">");
+				observatory.append("<div>");
+				observatory.append("<a href=\"#close\" title=\"Close\" class=\"close\">X</a>");
+				observatory.append(sw3c.toString().replaceAll("<", "&lt;").replaceAll(">", "&gt;")
+						.replaceAll("  ", "&nbsp;&nbsp;").replaceAll("\n", "<br/>"));
+				observatory.append("</div>");
+				observatory.append("</div>");
+
+				observatory.append("<div id=\"action\">");
 				observatory.append("<a href=\"#openModal" + (++openModalCount) + "\">Show SPARQL</a>");
 				observatory.append("</div>");
-				observatory.append("<div id=\"openModal" + (openModalCount) + "\" class=\"modalDialogSparql\">");
+				observatory.append("<div id=\"openModal" + (openModalCount) + "\" class=\"modalDialogPopUp\">");
 				observatory.append("<div>");
 				observatory.append("<a href=\"#close\" title=\"Close\" class=\"close\">X</a>");
 				observatory.append(q3.replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("  ", "&nbsp;&nbsp;")
@@ -352,10 +413,12 @@ public class CreateBrowser {
 
 				String q5 = FileUtils.readFileToString(new File("src/main/resources/sparql/browser-query5.rq"))
 						.replaceAll("SENSOR_ID", sensorId.replaceAll("http://fixo3.eu/vocab/", "fixo3:"))
-						.replaceAll("PROPERTY_ID", observedPropertyId.replaceAll("http://esonetyellowpages.com/vocab/", "eyp:"))
+						.replaceAll("PROPERTY_ID",
+								observedPropertyId.replaceAll("http://esonetyellowpages.com/vocab/", "eyp:"))
 						.replaceAll("FEATURE_ID", featureId.replaceAll("http://esonetyellowpages.com/vocab/", "eyp:"))
-						.replaceAll("STIMULUS_ID", stimulusId.replaceAll("http://esonetyellowpages.com/vocab/", "eyp:"));
-				
+						.replaceAll("STIMULUS_ID",
+								stimulusId.replaceAll("http://esonetyellowpages.com/vocab/", "eyp:"));
+
 				QueryExecution qe5 = QueryExecutionFactory.sparqlService(service, q5);
 
 				ResultSet rs5 = qe5.execSelect();
@@ -413,10 +476,35 @@ public class CreateBrowser {
 
 				plotCount++;
 
-				observatory.append("<div id=\"sparql\">");
+				String q5c = FileUtils.readFileToString(new File("src/main/resources/sparql/browser-query5c.rq"))
+						.replaceAll("SENSOR_ID", sensorId.replaceAll("http://fixo3.eu/vocab/", "fixo3:"))
+						.replaceAll("PROPERTY_ID",
+								observedPropertyId.replaceAll("http://esonetyellowpages.com/vocab/", "eyp:"))
+						.replaceAll("FEATURE_ID", featureId.replaceAll("http://esonetyellowpages.com/vocab/", "eyp:"))
+						.replaceAll("STIMULUS_ID",
+								stimulusId.replaceAll("http://esonetyellowpages.com/vocab/", "eyp:"));
+
+				QueryExecution qe5c = QueryExecutionFactory.sparqlService(service, q5c);
+				Model m5c = qe5c.execConstruct();
+				StringWriter sw5c = new StringWriter();
+				m5c.write(sw5c, "Turtle");
+				m5c.close();
+
+				observatory.append("<div id=\"action\">");
+				observatory.append("<a href=\"#openModal" + (++openModalCount) + "\">Show RDF</a>");
+				observatory.append("</div>");
+				observatory.append("<div id=\"openModal" + (openModalCount) + "\" class=\"modalDialogPopUp\">");
+				observatory.append("<div>");
+				observatory.append("<a href=\"#close\" title=\"Close\" class=\"close\">X</a>");
+				observatory.append(sw5c.toString().replaceAll("<", "&lt;").replaceAll(">", "&gt;")
+						.replaceAll("  ", "&nbsp;&nbsp;").replaceAll("\n", "<br/>"));
+				observatory.append("</div>");
+				observatory.append("</div>");
+
+				observatory.append("<div id=\"action\">");
 				observatory.append("<a href=\"#openModal" + (++openModalCount) + "\">Show SPARQL</a>");
 				observatory.append("</div>");
-				observatory.append("<div id=\"openModal" + (openModalCount) + "\" class=\"modalDialogSparql\">");
+				observatory.append("<div id=\"openModal" + (openModalCount) + "\" class=\"modalDialogPopUp\">");
 				observatory.append("<div>");
 				observatory.append("<a href=\"#close\" title=\"Close\" class=\"close\">X</a>");
 				observatory.append(q5.replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("  ", "&nbsp;&nbsp;")
@@ -440,13 +528,35 @@ public class CreateBrowser {
 
 		qe1.close();
 
-		String q0 = FileUtils.readFileToString(new File("src/main/resources/sparql/browser-query0.rq"));
-
-		observatories.append("<div id=\"sparql\">");
-		observatories.append("<a href=\"#openModal\">Show SPARQL</a><br/>");
+		observatories.append("<div id=\"action\">");
 		observatories.append("<a href=\"" + endpoint + "\">Endpoint</a>");
 		observatories.append("</div>");
-		observatories.append("<div id=\"openModal\" class=\"modalDialogSparql\">");
+
+		String q0c = FileUtils.readFileToString(new File("src/main/resources/sparql/browser-query0c.rq"));
+
+		QueryExecution qe0c = QueryExecutionFactory.sparqlService(service, q0c);
+		Model m0c = qe0c.execConstruct();
+		StringWriter sw0c = new StringWriter();
+		m0c.write(sw0c, "Turtle");
+		m0c.close();
+
+		observatories.append("<div id=\"action\">");
+		observatories.append("<a href=\"#openModal" + (++openModalCount) + "\">Show RDF</a>");
+		observatories.append("</div>");
+		observatories.append("<div id=\"openModal" + (openModalCount) + "\" class=\"modalDialogPopUp\">");
+		observatories.append("<div>");
+		observatories.append("<a href=\"#close\" title=\"Close\" class=\"close\">X</a>");
+		observatories.append(sw0c.toString().replaceAll("<", "&lt;").replaceAll(">", "&gt;")
+				.replaceAll("  ", "&nbsp;&nbsp;").replaceAll("\n", "<br/>"));
+		observatories.append("</div>");
+		observatories.append("</div>");
+
+		String q0 = FileUtils.readFileToString(new File("src/main/resources/sparql/browser-query0.rq"));
+
+		observatories.append("<div id=\"action\">");
+		observatories.append("<a href=\"#openModal" + (++openModalCount) + "\">Show SPARQL</a>");
+		observatories.append("</div>");
+		observatories.append("<div id=\"openModal" + (openModalCount) + "\" class=\"modalDialogPopUp\">");
 		observatories.append("<div>");
 		observatories.append("<a href=\"#close\" title=\"Close\" class=\"close\">X</a>");
 		observatories.append(q0.replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("  ", "&nbsp;&nbsp;")
@@ -455,7 +565,6 @@ public class CreateBrowser {
 		observatories.append("</div>");
 
 		observatories.append("</div>");
-		
 		observatories.append("</body>");
 		observatories.append("</html>");
 

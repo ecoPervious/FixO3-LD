@@ -1,0 +1,34 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ssn: <https://www.w3.org/ns/ssn/>
+PREFIX schema: <http://schema.org/>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX eyp: <http://esonetyellowpages.com/vocab/>
+PREFIX fixo3: <http://fixo3.eu/vocab/>
+
+CONSTRUCT {
+  ?obsId rdf:type ssn:Observation .
+  ?obsId ssn:observedBy SENSOR_ID .
+  ?obsId ssn:featureOfInterest FEATURE_ID .
+  ?obsId ssn:observedProperty PROPERTY_ID .
+  ?obsId ssn:fromStimulus STIMULUS_ID .
+  ?obsId ssn:observationResultTime ?timeId .
+  ?timeId time:inXSDDateTime ?time . 
+  ?obsId ssn:observationResult ?outputId . 
+  ?outputId ssn:hasValue ?valueId .
+  ?valueId schema:value ?value . 
+  ?valueId schema:unitCode ?unit .
+}
+WHERE {
+  ?obsId rdf:type ssn:Observation .
+  ?obsId ssn:observedBy SENSOR_ID .
+  ?obsId ssn:featureOfInterest FEATURE_ID .
+  ?obsId ssn:observedProperty PROPERTY_ID .
+  ?obsId ssn:fromStimulus STIMULUS_ID .
+  ?obsId ssn:observationResultTime ?timeId .
+  ?timeId time:inXSDDateTime ?time . 
+  ?obsId ssn:observationResult ?outputId . 
+  ?outputId ssn:hasValue ?valueId .
+  ?valueId schema:value ?value . 
+  ?valueId schema:unitCode ?unit .
+}
